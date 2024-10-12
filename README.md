@@ -120,4 +120,4 @@
 * フォロー機能は実装しない予定（ユーザーごとの発信情報を見るページは作成しないため）
 
 ### ER図
-[ER図リンク](https://drive.google.com/file/d/1CLNCKOWylP9r_RxP_1x9GjDxdiBAlNUH/view?usp=sharing)
+[ER図リンク](https://app.diagrams.net/#G1CLNCKOWylP9r_RxP_1x9GjDxdiBAlNUH#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D)
