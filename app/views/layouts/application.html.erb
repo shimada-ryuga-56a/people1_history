@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="night">
   <head>
     <title><%= content_for(:title) || "Myapp" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,7 +17,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body class="bg-slate-900 text-slate-50">
+  <body class="">
     <%= yield %>
   </body>
 </html>
