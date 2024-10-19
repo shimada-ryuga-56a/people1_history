@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_19_132652) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_19_145345) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "event_informations", force: :cascade do |t|
+    t.text "body", null: false
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_informations_on_event_id"
+    t.index ["user_id"], name: "index_event_informations_on_user_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.integer "category"
@@ -22,10 +32,21 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_19_132652) do
     t.text "place"
     t.integer "place_prefecture"
     t.boolean "is_canceled"
-    t.integer "tour_id"
     t.text "remark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "tour_id"
+    t.index ["tour_id"], name: "index_events_on_tour_id"
+  end
+
+  create_table "tour_informations", force: :cascade do |t|
+    t.text "body", null: false
+    t.bigint "user_id"
+    t.bigint "tour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tour_id"], name: "index_tour_informations_on_tour_id"
+    t.index ["user_id"], name: "index_tour_informations_on_user_id"
   end
 
   create_table "tours", force: :cascade do |t|
@@ -46,4 +67,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_19_132652) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "event_informations", "events"
+  add_foreign_key "event_informations", "users"
+  add_foreign_key "events", "tours"
+  add_foreign_key "tour_informations", "tours"
+  add_foreign_key "tour_informations", "users"
 end
