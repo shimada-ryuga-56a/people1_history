@@ -1,9 +1,22 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require "csv"
+
+CSV.foreach('db/csv/tours.csv', headers: true) do |row|
+  Tour.create!(
+    name: row['name'],
+    name_kana_ruby: row['name_kana_ruby']
+  )
+end
+
+CSV.foreach('db/csv/events.csv', headers: true) do |row|
+  Event.create!(
+    category: row['category'],
+    name: row['name'],
+    name_kana_ruby: row['name_kana_ruby'],
+    date: row['date'],
+    place: row['place'],
+    place_prefecture: row['place_prefecture'],
+    is_canceled: row['is_canceled'],
+    remark: row['remark'],
+    tour_id: row['tour_id']
+  )
+end

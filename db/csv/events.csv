@@ -1,0 +1,19 @@
+id,category,name,name_kana_ruby,date,place,place_prefecture,is_canceled,remark,tour_id
+1,event,BLT LIVE BOOSTER vol.1,ビーエルティーライブブースターボリュームワン,2021-06-03,恵比寿LIQUIDROOM,Tokyo,false,初ライブ,
+2,fes,JAPAN JAM 2022,ジャパンジャムニセンニジュウニ,2022-05-01,蘇我スポーツ公園,Chiba,false,初フェス。SUNSET STAGE出演。,
+3,event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-20,BIGCAT,Osaka,false,WurtS主催の対バンツアー。,
+4,event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-21,NAGOYA CLUB QUATTRO,Aichi,false,WurtS主催の対バンツアー。,
+5,event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-29,Spotify O-EAST,Tokyo,false,WurtS主催の対バンツアー。,
+6,event,BLT LIVE BOOSTER vol.2,ビーエルティーライブブースターボリュームツー,2022-06-26,日比谷野外大音楽堂,Tokyo,false,,
+7,event,GOOOOOON!,ゴーオン,2022-07-03,大阪城野外音楽堂,Osaka,false,,
+8,fes,ROCK IN JAPAN FESTIVAL 2022,ロッキンジャパンフェスティバルニセンニジュウニ,2022-08-07,蘇我スポーツ公園,Chiba,false,,
+9,tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-02,SPADE BOX,Aichi,false,,1
+10,tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-03,Music Club JANUS,Osaka,false,,1
+11,tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-09,Veats Shibuya,Tokyo,false,,1
+12,tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-12-20,Spotify O-EAST,Tokyo,false,,1
+13,tour,PEOPLE+,ピープルプラス,2022-05-04,WWW X,Tokyo,false,,2
+14,tour,PEOPLE+,ピープルプラス,2022-05-07,HIROSHIMA CLUB QUATTRO,Hiroshima,false,,2
+15,tour,PEOPLE+,ピープルプラス,2022-05-08,DRUM LOGOS,Fukuoka,false,,2
+16,tour,PEOPLE+,ピープルプラス,2022-05-14,Electric Lady Land,Aichi,false,,2
+17,tour,PEOPLE+,ピープルプラス,2022-05-15,BIGCAT,Osaka,false,,2
+18,tour,PEOPLE+,ピープルプラス,2022-05-20,Spotify O-EAST,Tokyo,false,,2
