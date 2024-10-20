@@ -24,5 +24,10 @@
       <%= render "shared/before_login_header" %>
     <% end %>
     <%= yield %>
+    <% if user_signed_in? %>
+      <%= render "shared/after_login_footer" %>
+    <% else %>
+      <%= render "shared/before_login_footer" %>
+    <% end %>
   </body>
 </html>
