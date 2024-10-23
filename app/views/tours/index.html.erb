@@ -1,8 +1,14 @@
-<h1>Tours index</h1>
-<p>Find me in app/views/tours/index.html.erb</p>
+<div class="mb-10">
+  <h1>Tours index</h1>
+  <p>Find me in app/views/tours/index.html.erb</p>
+</div>
 
-<% if @tours.present? %>
-  <%= render @tours %>
-<% else %>
-  <div class="mb-3">ツアー情報がありません</div>
-<% end %>
+<div class="justify-center">
+  <div class="flex inline-flex flex-wrap">
+    <% if @tours.present? %>
+      <%= render @tours %>
+    <% else %>
+      <div class="mb-3">ツアー情報がありません</div>
+  <% end %>
+  </div>
+</div>

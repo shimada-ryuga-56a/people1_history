@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   }
 
   resources :tours, only: [:index, :show]
+  resources :events, only: [:index, :show]
 
   get "up" => "rails/health#show", as: :rails_health_check
 
