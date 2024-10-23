@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
-  resources :tours, only: [:index, :show]
-  devise_for :users
+  root "static_pages#top"
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
+    # Twitter API認証用
+    :omniauth_callbacks => 'users/omniauth_callbacks',
+  }
+
+  resources :tours, only: [:index, :show]
+
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-
-  root "static_pages#top"
 end
