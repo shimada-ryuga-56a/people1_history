@@ -23,7 +23,9 @@
     <% else %>
       <%= render "shared/before_login_header" %>
     <% end %>
-    <%= yield %>
+    <div class="">
+      <%= yield %>
+    </div>
     <% if user_signed_in? %>
       <%= render "shared/after_login_footer" %>
     <% else %>
