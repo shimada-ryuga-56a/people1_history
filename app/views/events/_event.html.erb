@@ -1,0 +1,43 @@
+<% 
+=begin
+%>
+
+<div class="card bg-base-100 w-96 shadow-xl px-2 pb-10">
+  <figure>
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      <%= event.name %>
+      <div class="badge badge-secondary">
+        <%= event.category %>
+      </div>
+    </h2>
+    <p>
+      @<%= event.place %>（<%= event.place_prefecture %>）
+      <br>
+      <%= event.date %>
+    </p>
+  </div>
+</div>
+
+<%
+=end
+%>
+
+<div class="card bg-base-100 w-96 shadow-xl mx-2 mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><%= event.name %></h2>
+    <p>
+      @<%= event.place %>（<%= event.place_prefecture %>）
+        <br>
+      <%= event.date %>
+    </p>
+    <div class="badge badge-secondary"><%= event.category %></div>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">details</button>
+    </div>
+  </div>
+</div>

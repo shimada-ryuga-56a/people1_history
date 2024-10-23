@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="night">
+<html data-theme="aqua">
   <head>
     <title><%= content_for(:title) || "Myapp" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -23,9 +23,9 @@
     <% else %>
       <%= render "shared/before_login_header" %>
     <% end %>
-    <div class="">
+    <main class="">
       <%= yield %>
-    </div>
+    </main>
     <% if user_signed_in? %>
       <%= render "shared/after_login_footer" %>
     <% else %>
