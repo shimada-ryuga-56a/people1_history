@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   }
 
   resources :tours, only: [:index, :show]
-  resources :events, only: [:index, :show]
+  resources :events, only: [:index, :show] do
+    resource :setlist, only: [:new, :create]
+  end
 
   get "up" => "rails/health#show", as: :rails_health_check
 

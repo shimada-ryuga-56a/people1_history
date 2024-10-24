@@ -20,5 +20,9 @@
 
   <div class="divider"></div>
 
-  
+  <% if @event.setlist %>
+    <p><%= @event.setlist.id %></p>
+  <% else %>
+    <p>誰かセトリ投稿して</p>
+  <% end %>
 </div>

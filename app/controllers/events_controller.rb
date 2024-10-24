@@ -5,6 +5,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.includes(:setlist).find(params[:id])
   end
 end
