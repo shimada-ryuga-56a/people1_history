@@ -13,6 +13,7 @@ class Event < ApplicationRecord
 
   # enumでのイベントカテゴリー定義
   enum category: { tour: 1, one_man: 2, fes: 3, event: 4 }
+  scope :category, ->(s) { where(category: Event.categories.keys & s) if s.present? }
 
   enum place_prefecture: {
     undefined: 0, Hokkaido: 1, Aomori: 2, Iwate: 3, Miyagi: 4, Akita: 5, Yamagata: 6, Fukushima: 7,

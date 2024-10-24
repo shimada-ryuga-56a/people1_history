@@ -1,13 +1,28 @@
 <div class="p-10">
-  <h1>Events index</h1>
-</div>
+  <div class="">
+    <h1>Events index</h1>
+  </div>
 
-<div class="justify-center">
-  <div class="flex inline-flex flex-wrap">
-    <% if @events.present? %>
-      <%= render @events %>
-    <% else %>
-      <div class="mb-3">イベント情報がありません</div>
+  <%= form_with model: @event, method: :get, local: true do |f| %>
+    <div class="flex w-full flex-col">
+      <%= f.label :category, Event.human_attribute_name(:category) %>
+      <div class="cursor-pointer">
+        <%= f.collection_check_boxes :category, Event.categories, :first, :first do |s| %>
+          <%= s.check_box checked: @category.nil? || @category.include?(s.value), class: "checkbox checkbox-xs" %>
+          <%= s.label { Event.human_attribute_name("category.#{s.text}")} %>
+        <% end %>
+      </div>
+    </div>
+    <%= f.submit "Go", class: "" %>
   <% end %>
+
+  <div class="justify-center">
+    <div class="flex inline-flex flex-wrap">
+      <% if @events.present? %>
+        <%= render @events %>
+      <% else %>
+        <div class="mb-3">イベント情報がありません</div>
+    <% end %>
+    </div>
   </div>
 </div>
