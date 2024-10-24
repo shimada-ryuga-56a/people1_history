@@ -1,18 +1,24 @@
-<div class="card-actions justify-start">
-  <%= link_to "<<Go Back", :back, class: '' %>
-</div>
-
-<h1><%= @event.name %></h1>
-<p>
-日時：<%= @event.date %><br>
-会場：<%= @event.place_prefecture %>／<%= @event.place %><br>
-  <% if @event.remark %>
-    備考：<%= @event.remark %>
-  <% end %>
-</p>
-
-<% if @event.tour_id %>
-  <div class="card-actions justify-end">
-      <%= link_to "Tour Details", tour_path(@event.tour_id), class: 'btn btn-primary' %>
+<div class="p-10">
+  <div class="card-actions justify-start">
+    <%= link_to "<<Go Back", :back, class: '' %>
   </div>
-<% end %>
+
+  <h1><%= @event.name %></h1>
+  <p>
+  日時：<%= @event.date %><br>
+  会場：<%= @event.place_prefecture %>／<%= @event.place %><br>
+    <% if @event.remark %>
+      備考：<%= @event.remark %>
+    <% end %>
+  </p>
+
+  <% if @event.tour_id %>
+    <div class="card-actions justify-end">
+        <%= link_to "Tour Details", tour_path(@event.tour_id), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <div class="divider"></div>
+
+  
+</div>

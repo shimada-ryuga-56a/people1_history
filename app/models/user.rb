@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:twitter]
 
+  has_many :setlist
+
   # Twitter認証ログイン用
   # ユーザーの情報があれば探し、無ければ作成する
   def self.find_for_oauth(auth)
