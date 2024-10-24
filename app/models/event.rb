@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :tour, optional: true
   has_many :event_informations, dependent: :destroy
+  has_one :setlist
 
   validates :category, presence: true
   validates :name, presence: true
