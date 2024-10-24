@@ -2,6 +2,20 @@
   <h1>Events index</h1>
 </div>
 
+<%= form_with model: @event, method: :get, local: true do |f| %>
+  <div class="form-group col-5">
+    <%= f.label :category, Event.human_attribute_name(:category) %>
+    <div class="radio">
+      <%= f.collection_check_boxes :category, Event.categories, :first, :first do |s| %>
+        <%= s.check_box checked: @category.nil? || @category.include?(s.value) %>
+        <%= s.label { Event.human_attribute_name("category.#{s.text}")} %>
+      <% end %>
+    </div>
+  </div>
+  <%= f.submit "Go", class: "submit-btn" %>
+<% end %>
+
+
 <div class="justify-center">
   <div class="flex inline-flex flex-wrap">
     <% if @events.present? %>
