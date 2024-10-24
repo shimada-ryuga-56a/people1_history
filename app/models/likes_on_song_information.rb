@@ -1,0 +1,2 @@
+class LikesOnSongInformation < ApplicationRecord
+end

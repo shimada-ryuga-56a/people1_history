@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_24_070742) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_24_134025) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,9 +39,32 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_24_070742) do
     t.index ["tour_id"], name: "index_events_on_tour_id"
   end
 
+  create_table "likes_on_song_informations", force: :cascade do |t|
+    t.integer "information_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "setlists", force: :cascade do |t|
     t.integer "event_id", null: false
     t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "song_informations", force: :cascade do |t|
+    t.integer "song_id", null: false
+    t.integer "user_id", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "name_kana_ruby", null: false
+    t.text "youtube_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
