@@ -5,7 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:twitter]
 
-  has_many :setlist
+  has_many :setlists, dependent: :destroy
+  has_many :song_informations, dependent: :destroy
+  has_many :likes_on_song_informations, dependent: :destroy
+  has_many :likes_on_tour_informations, dependent: :destroy
+  has_many :likes_on_event_informations, dependent: :destroy
 
   # Twitter認証ログイン用
   # ユーザーの情報があれば探し、無ければ作成する
