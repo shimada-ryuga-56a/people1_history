@@ -1,10 +1,16 @@
 <div>
 <% if @song_informations.any? %>
-  <ul style="">
-    <% @song_informations.each do |song_information| %>
-      <li><%= song_information.user.name %>: <%= song_information.body %></li>
-    <% end %>
-  </ul>
+  <% @song_informations.each do |song_information| %>
+    <div class="card bg-base-100 w-96 shadow-xl mb-5">
+      <div class="card-body">
+        <h2 class="card-title"><%= song_information.body %></h2>
+        <p>
+          <%= song_information.user.name %><br>
+          <%= song_information.created_at %>
+        </p>
+      </div>
+    </div>
+  <% end %>
 <% else %>
   <p>投稿しましょう！</p>
 <% end %>

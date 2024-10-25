@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "song_informations/create"
   get "songs/index"
   get "songs/show"
   root "static_pages#top"
@@ -12,7 +13,9 @@ Rails.application.routes.draw do
   }
 
   resources :tours, only: [:index, :show]
-  resources :songs, only: [:index, :show]
+  resources :songs, only: [:index, :show] do
+    resources :song_informations, only: [:create, :destroy], shallow: true
+  end
   resources :events, only: [:index, :show] do
     resource :setlist, only: [:new, :create]
   end
