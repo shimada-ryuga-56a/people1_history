@@ -1,0 +1,12 @@
+<div>
+<% if @song_informations.any? %>
+  <ul style="">
+    <% @song_informations.each do |song_information| %>
+      <li><%= song_information.user.name %>: <%= song_information.body %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>投稿しましょう！</p>
+<% end %>
+
+</div>
