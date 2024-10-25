@@ -1,0 +1,17 @@
+<div class="p-10">
+  <div class="card-actions justify-start">
+    <%= link_to "<<Go Back", :back, class: '' %>
+  </div>
+
+  <h1><%= @song.name %></h1>
+
+  <iframe
+    src="https://www.youtube.com/embed/<%= find_youtube_url(@song.youtube_link) %>"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    class="w-full aspect-video">
+  </iframe>
+</div>

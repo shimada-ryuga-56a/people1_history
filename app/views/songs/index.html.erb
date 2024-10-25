@@ -1,0 +1,15 @@
+<div class="p-10">
+  <div class="">
+    <h1>Songs index</h1>
+  </div>
+
+  <div class="justify-center">
+    <div class="flex inline-flex flex-wrap">
+      <% if @songs.present? %>
+        <%= render @songs %>
+      <% else %>
+        <div class="mb-3">楽曲情報がありません</div>
+    <% end %>
+    </div>
+  </div>
+</div>

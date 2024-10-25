@@ -20,3 +20,11 @@ CSV.foreach('db/csv/events.csv', headers: true) do |row|
     tour_id: row['tour_id']
   )
 end
+
+CSV.foreach('db/csv/songs.csv', headers: true) do |row|
+  Song.create!(
+    name: row['name'],
+    name_kana_ruby: row['name_kana_ruby'],
+    youtube_link: row['youtube']
+  )
+end
