@@ -28,3 +28,11 @@ CSV.foreach('db/csv/songs.csv', headers: true) do |row|
     youtube_link: row['youtube']
   )
 end
+
+20.times do |n|
+  User.create!(
+    name: Faker::JapaneseMedia::Conan.character,
+    email: Faker::Internet.unique.email,
+    password: "password"
+  )
+end
