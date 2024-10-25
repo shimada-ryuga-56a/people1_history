@@ -1,5 +1,5 @@
 category,name,name_kana_ruby,date,place,place_prefecture,is_canceled,tour_id,remark
-event,BLT LIVE BOOSTER vol.1,ビーエルティーライブブースターボリュームワン,2021-06-03,恵比寿LIQUIDROOM,Tokyo,false,,初ライブ
+event,BLT LIVE BOOSTER vol.1,ビーエルティーライブブースターボリュームワン,2021-06-03,恵比寿LIQUIDROOM,Tokyo,false,,PEOPLE 1の初ライブ。対バン相手としてNEE、OAとして冨田直とナカムラマユが出演。
 fes,JAPAN JAM 2022,ジャパンジャムニセンニジュウニ,2022-05-01,千葉市蘇我スポーツ公園,Chiba,false,,初フェス。SUNSET STAGE出演。
 event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-20,BIGCAT,Osaka,false,,WurtS主催の対バンツアー。
 event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-21,名古屋CLUB QUATTRO,Aichi,false,,WurtS主催の対バンツアー。
@@ -84,27 +84,27 @@ fes,FM802 ROCK FESTIVAL RADIO CRAZY 2023,エフエムハチマルニロックフ
 fes,COUNTDOWN JAPAN 23/24,カウントダウンジャパンニーサンニーヨン,2023-12-31,幕張メッセ ,Chiba,false,,
 fes,FUKUOKA MUSIC FES.2024,フクオカミュージックフェスニセンニジュウヨン,2024-01-21,福岡PayPayドーム,Fukuoka,false,,
 event,礼賛 RELEASE PARTY「ON TIME」,オンタイム,2024-02-29,代官山UNIT,Tokyo,false,,
-event,"PLAYLIST presents ""ヘッドフォンを外して vol.7""",ヘッドフォンヲハズシテボニュームナナ,2024-03-01,豊洲PIT,Tokyo,false,,
-event,Catch Up TOUR -1 Time 1 Chance-,キャッチアップツアーワンタイムワンチャンス,2024-03-13,Zepp Nagoya,Aichi,false,,
-event,GOOD FLAGS,グッドフラッグス,2024-03-17,仙台PIT,Miyagi,false,,
+event,"PLAYLIST presents ""ヘッドフォンを外して vol.7""",ヘッドフォンヲハズシテボニュームナナ,2024-03-01,豊洲PIT,Tokyo,false,,Lucky Kilimanjaro、Teleとの対バンイベント。
+event,Catch Up TOUR -1 Time 1 Chance-,キャッチアップツアーワンタイムワンチャンス,2024-03-13,Zepp Nagoya,Aichi,false,,WANIMA主催の対バンイベント。
+event,GOOD FLAGS,グッドフラッグス,2024-03-17,仙台PIT,Miyagi,false,,Teleとの対バンイベント。
 fes,Vポイント presents ツタロックフェス2024,ツタロックフェスニセンニジュウヨン,2024-03-24,幕張メッセ 国際展示場 9～11ホール,Chiba,false,,
-event,SUPER JUMPIN'JACK 2024,スーパージャンピンジャックニセンニジュウヨン,2024-03-29,Zepp Osaka Bayside,Osaka,false,,
+event,SUPER JUMPIN'JACK 2024,スーパージャンピンジャックニセンニジュウヨン,2024-03-29,Zepp Osaka Bayside,Osaka,false,,対バンイベント。出演予定だったNEEの代打としてgo!go!vanillasと、Kroiが出演。
 fes,EIGHT BALL FESTIVAL 2024,エイトボールフェスティバルニセンニジュウヨン,2024-03-30,CONVEX岡山,Okayama,false,,
-event,秋山黄色presents 「BUG SESSION」,バグセッション,2024-04-05,Zepp Nagoya,Aichi,false,,
+event,秋山黄色presents 「BUG SESSION」,バグセッション,2024-04-05,Zepp Nagoya,Aichi,false,,秋山黄色主催の対バンイベント。
 event,"FM802 35th ANNIVERSARY ""Be FUNKY!!"" SPECIAL LIVE 紀陽銀行 presents REQUESTAGE 2024",ビーファンキー,2024-04-29,大阪城ホール,Osaka,false,,
 fes,JAPAN JAM 2024,ジャパンジャムニセンニジュウヨン,2024-05-04,千葉市蘇我スポーツ公園,Chiba,false,,
 fes,VIVA LA ROCK 2024,ビバラロックニセンニジュウヨン,2024-05-05,さいたまスーパーアリーナ,Saitama,false,,
 fes,OSAKA METROPOLITAN ROCK FESTIVAL 2024,オオサカメトロポリタンロックフェスティバルニセンニジュウヨン,2024-05-11,海とのふれあい広場,Osaka,false,,
 fes,TOKYO METROPOLITAN ROCK FESTIVAL 2024,トウキョウメトロポリタンロックフェスティバルニセンニジュウヨン,2024-05-18,若洲公園,Tokyo,false,,
-event,音楽と行こう SUPER LIVE Presented by au,オンガクトイコウスーパーライブ,2024-06-18,Zepp Osaka Bayside,Osaka,false,,
-event,東京、夏のサイレン,トウキョウナツノサイレン,2024-06-23,日比谷野外大音楽堂,Tokyo,false,,
+event,音楽と行こう SUPER LIVE Presented by au,オンガクトイコウスーパーライブ,2024-06-18,Zepp Osaka Bayside,Osaka,false,,出演を予定していたNEEの代打として出演。
+event,東京、夏のサイレン,トウキョウナツノサイレン,2024-06-23,日比谷野外大音楽堂,Tokyo,false,,NEEのワンマンライブにゲストとして出演。
 fes,ROCK IN JAPAN FESTIVAL 2024,ロッキンジャパンフェスティバルニセンニジュウヨン,2024-08-04,千葉市蘇我スポーツ公園,Chiba,false,,
 fes,WANIMA presents 1CHANCE FESTIVAL 2024,ワンチャンスフェスティバルニセンニジュウヨン,2024-08-24,熊本県農業公園カントリーパーク,Kumamoto,false,,
 fes,SPACE SHOWER TV 35th ANNIVERSARY SWEET LOVE SHOWER 2024,スイートラブシャワーニセンニジュウヨン,2024-08-31,山中湖交流プラザきらら,Yamanashi,false,,
 fes,JA共済 presents RADIO BERRY 30th ANNIVERSARY ベリテンライブ2024 Special,ベリテンライブニセンニジュウヨンスペシャル,2024-09-07,井頭公園 運動広場,Tochigi,false,,
 event,MIRRORBALL Lab vol.2,ミラーボールラボボリュームツー,2024-09-23,本多の森北電ホール,Ishikawa,false,,
-fes,[Alexandros] presents THIS FES '24 in Sagamihara,ディスフェス,2024-10-26,相模原ギオンフィールド,Kanagawa,false,,
-fes,氣志團万博2024 ～シン・キシダンバンパク～,キシダンバンパク,2024-11-09,幕張メッセ 国際展示場 9～11ホール ,Chiba,false,,
+fes,[Alexandros] presents THIS FES '24 in Sagamihara,ディスフェス,2024-10-26,相模原ギオンフィールド,Kanagawa,false,,[Alexandros]主催フェス。
+fes,氣志團万博2024 ～シン・キシダンバンパク～,キシダンバンパク,2024-11-09,幕張メッセ 国際展示場 9～11ホール ,Chiba,false,,氣志團主催フェス。
 one_man,PEOPLE 1の世界,ピープルワンノセカイ,2024-12-21,有明アリーナ,Tokyo,false,,
 one_man,PEOPLE 1の世界,ピープルワンノセカイ,2024-12-22,有明アリーナ,Tokyo,false,,
 fes,"FM802 35th ANNIVERSARY ""Be FUNKY!!"" ROCK FESTIVAL RADIO CRAZY 2024 -レディクレ 15th-",レディオクレイジーニセンニジュウヨン,2024-12-29,インテックス大阪,Osaka,false,,

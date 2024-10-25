@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "songs/index"
+  get "songs/show"
   root "static_pages#top"
 
   devise_for :users, controllers: {
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
   }
 
   resources :tours, only: [:index, :show]
+  resources :songs, only: [:index, :show]
   resources :events, only: [:index, :show] do
     resource :setlist, only: [:new, :create]
   end
