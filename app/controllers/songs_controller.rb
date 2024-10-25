@@ -5,5 +5,7 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find(params[:id])
+    @song_information = SongInformation.new
+    @song_informations = @song.song_informations.includes(:user).order(created_at: :desc)
   end
 end

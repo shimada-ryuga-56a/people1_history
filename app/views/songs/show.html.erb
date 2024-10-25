@@ -14,4 +14,9 @@
     allowfullscreen
     class="w-full aspect-video">
   </iframe>
+
+  <div class="divider"></div>
+  <%= render 'informations/form', information: @song_information, song: @song %>
+  <%= render "songs/song_information" %>
+
 </div>

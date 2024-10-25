@@ -37,3 +37,10 @@ end
   )
 end
 
+CSV.foreach('db/csv/song_informations.csv', headers: true) do |row|
+  SongInformation.create!(
+    user_id: row['user_id'],
+    song_id: row['song_id'],
+    body: row['body']
+  )
+end
