@@ -18,7 +18,7 @@ Rails.application.configure do
   config.server_timing = true
 
   # スマホ画面サイズにした際のエラー解消のために記述
-  config.web_console.allowed_ips = '0.0.0.0/0'
+  config.web_console.allowed_ips = "0.0.0.0/0"
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
