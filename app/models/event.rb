@@ -9,7 +9,7 @@ class Event < ApplicationRecord
                   format: { 
                     with: /\A[\p{katakana}　ー－&&[ ^ -~｡-ﾟ ]]+\z/,
                     message: "全角カタカナのみで入力して下さい" }
-  validates :is_canceled, inclusion: { in: [true, false] }
+  validates :is_canceled, inclusion: { in: [ true, false ] }
 
   # enumでのイベントカテゴリー定義
   enum category: { tour: 1, one_man: 2, fes: 3, event: 4 }
