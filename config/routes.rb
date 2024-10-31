@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get "song_informations/create"
-  get "songs/index"
-  get "songs/show"
   root "static_pages#top"
 
   devise_for :users, controllers: {

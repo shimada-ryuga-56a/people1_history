@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:twitter]
 
-  has_many :setlists, dependent: :destroy
+  has_many :setlists
   has_many :song_informations, dependent: :destroy
   has_many :likes_on_song_informations, dependent: :destroy
   has_many :likes_on_tour_informations, dependent: :destroy
