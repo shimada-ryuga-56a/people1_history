@@ -1,2 +1,29 @@
-<h1>Setlists#new</h1>
-<p>Find me in app/views/setlists/new.html.erb</p>
+<h1>Setlists new</h1>
+
+<%= form_with model: @setlist, url: event_setlist_path do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.fields_for :setlistitems do |i| %>
+    <div>
+      <%= i.label :song_title %>
+      <%= i.text_field :song_title, class: "border" %>
+    </div>
+    <div>
+      <%= i.label :position %>
+      <%= i.text_field :position, class: "border" %>
+    </div>
+    <div>
+      <%= i.label :is_encore %>
+      <%= i.check_box :is_encore %>
+    </div>
+    <div>
+      <%= i.label :is_song %>
+      <%= i.check_box :is_song %>
+    </div>
+    <div>
+      <%= i.label :is_arranged %>
+      <%= i.check_box :is_arranged %>
+    </div>
+  <% end %>
+
+  <%= f.submit "投稿", class: "btn btn-primary" %>
+<% end %>

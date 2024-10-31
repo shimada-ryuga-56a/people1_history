@@ -23,6 +23,6 @@
   <% if @event.setlist %>
     <p><%= @event.setlist.id %></p>
   <% else %>
-    <p>誰かセトリ投稿して</p>
+    <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary' %>
   <% end %>
 </div>

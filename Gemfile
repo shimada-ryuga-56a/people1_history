@@ -38,6 +38,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
 gem 'omniauth-rails_csrf_protection'
+gem 'pry-byebug'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
