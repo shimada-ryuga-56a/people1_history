@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   def index
-    @songs = Song.all.order(name_kana_ruby: :asc)
+    @songs = Song.order(name_kana_ruby: :asc)
   end
 
   def show

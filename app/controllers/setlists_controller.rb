@@ -10,7 +10,6 @@ class SetlistsController < ApplicationController
     if @setlist.save
       redirect_to events_path
     else
-      puts "#{@setlist.errors.full_messages}"
       render :new, status: :unprocessable_entity
     end
   end
@@ -18,6 +17,8 @@ class SetlistsController < ApplicationController
   private
 
   def setlist_params
-    params.permit(setlistitems_attributes: [ :song_title, :position, :is_encore, :is_song, :is_arranged, :_destroy ]).merge(user_id: current_user.id, event_id: params[:event_id])
+    params.permit(setlistitems_attributes: [:song_title, :position, :is_encore, :is_song, :is_arranged, :_destroy]).merge(
+      user_id: current_user.id, event_id: params[:event_id]
+    )
   end
 end
