@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:twitter]
 
-  has_many :setlists
+  has_many :setlists, dependent: :destroy
   has_many :song_informations, dependent: :destroy
   has_many :likes_on_song_informations, dependent: :destroy
   has_many :likes_on_tour_informations, dependent: :destroy
@@ -31,5 +31,4 @@ class User < ApplicationRecord
   def self.dummy_email(auth)
     "#{Time.now.strftime('%Y%m%d%H%M%S').to_i}-#{auth.uid}-#{auth.provider}@example.com"
   end
-
 end

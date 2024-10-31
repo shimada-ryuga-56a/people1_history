@@ -6,5 +6,4 @@ class Setlistitem < ApplicationRecord
   validates :is_encore, inclusion: { in: [true, false] }
   validates :song_title, presence: true
   validates :position, presence: true
-  validates :setlist_id, presence: true
 end
