@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   validates :name, presence: true
   validates :name_kana_ruby, presence: true,
                              format: {
-                               with: /\A[\p{katakana}　ー－&&[ ^ -~｡-ﾟ ]]+\z/
+                               with: /\A[ァ-ヶー－]+\z/
                              }
   validates :is_canceled, inclusion: { in: [true, false] }
 
