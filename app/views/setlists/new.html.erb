@@ -16,7 +16,9 @@
   <!-- Inserted elements will be injected before that target. -->
   <div data-nested-form-target="target"></div>
 
-  <button type="button" data-action="nested-form#add">Add Setlistitem</button>
+  <button type="button" data-action="nested-form#add" class="btn btn-info">楽曲を追加</button>
 
-  <%= f.submit "投稿", class: "btn btn-primary" %>
+  <div>
+    <%= f.submit "セットリストを投稿", class: "btn btn-primary" %>
+  </div>
 <% end %>

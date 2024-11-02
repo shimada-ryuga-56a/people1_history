@@ -2,12 +2,7 @@
   <li>
     <div class="nested-form-wrapper border p-3 mb-3" data-new-record="<%= f.object.new_record? %>">
       <div>
-        <%= f.label :song_title %>
-        <%= f.text_field :song_title, class: "border" %>
-      </div>
-      <div>
-        <%= f.label :position %>
-        <%= f.text_field :position, class: "border" %>
+        <%= f.text_field :song_title, class: "input input-bordered w-full max-w-xs", placeholder: "楽曲名" %>
       </div>
       <div>
         <%= f.label :is_encore %>
@@ -23,11 +18,11 @@
       </div>
 
       <div>
-        <button type="button" data-action="nested-form#remove">Remove Setlistitem</button>
+      <button type="button" data-action="nested-form#add" class="btn btn-info">楽曲を追加</button>
       </div>
 
       <div>
-        <button type="button" data-action="nested-form#add">Add Setlistitem</button>
+        <button type="button" data-action="nested-form#remove" class="btn btn-active btn-ghost">この曲を削除</button>
       </div>
 
       <%= f.hidden_field :_destroy %>
