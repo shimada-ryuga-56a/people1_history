@@ -1,32 +1,36 @@
-<div class="nested-form-wrapper border p-3 mb-3" data-new-record="<%= f.object.new_record? %>">
-  <div>
-    <%= f.label :song_title %>
-    <%= f.text_field :song_title, class: "border" %>
-  </div>
-  <div>
-    <%= f.label :position %>
-    <%= f.text_field :position, class: "border" %>
-  </div>
-  <div>
-    <%= f.label :is_encore %>
-    <%= f.check_box :is_encore %>
-  </div>
-  <div>
-    <%= f.label :is_song %>
-    <%= f.check_box :is_song %>
-  </div>
-  <div>
-    <%= f.label :is_arranged %>
-    <%= f.check_box :is_arranged %>
-  </div>
+<ul data-controller="sortable" data-sortable-animation-value="150">
+  <li>
+    <div class="nested-form-wrapper border p-3 mb-3" data-new-record="<%= f.object.new_record? %>">
+      <div>
+        <%= f.label :song_title %>
+        <%= f.text_field :song_title, class: "border" %>
+      </div>
+      <div>
+        <%= f.label :position %>
+        <%= f.text_field :position, class: "border" %>
+      </div>
+      <div>
+        <%= f.label :is_encore %>
+        <%= f.check_box :is_encore %>
+      </div>
+      <div>
+        <%= f.label :is_song %>
+        <%= f.check_box :is_song %>
+      </div>
+      <div>
+        <%= f.label :is_arranged %>
+        <%= f.check_box :is_arranged %>
+      </div>
 
-  <div>
-    <button type="button" data-action="nested-form#remove">Remove Setlistitem</button>
-  </div>
+      <div>
+        <button type="button" data-action="nested-form#remove">Remove Setlistitem</button>
+      </div>
 
-  <div>
-    <button type="button" data-action="nested-form#add">Add Setlistitem</button>
-  </div>
+      <div>
+        <button type="button" data-action="nested-form#add">Add Setlistitem</button>
+      </div>
 
-  <%= f.hidden_field :_destroy %>
-</div>
+      <%= f.hidden_field :_destroy %>
+    </div>
+  </li>
+</ul>
