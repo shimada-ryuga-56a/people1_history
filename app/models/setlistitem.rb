@@ -5,5 +5,4 @@ class Setlistitem < ApplicationRecord
   validates :is_arranged, inclusion: { in: [true, false] }
   validates :is_encore, inclusion: { in: [true, false] }
   validates :song_title, presence: true
-  validates :position, presence: true
 end

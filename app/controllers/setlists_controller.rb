@@ -1,7 +1,7 @@
 class SetlistsController < ApplicationController
   def new
     @setlist = Setlist.new
-    @setlist.setlistitems.build
+    50.times { @setlist.setlistitems.build }
   end
 
   def create
@@ -17,8 +17,9 @@ class SetlistsController < ApplicationController
   private
 
   def setlist_params
-    params.permit(setlistitems_attributes: [:song_title, :position, :is_encore, :is_song, :is_arranged, :_destroy]).merge(
-      user_id: current_user.id, event_id: params[:event_id]
-    )
+    params.require(:setlist).permit(
+      :event_id, 
+      setlistitems_attributes: [:song_title, :position, :is_encore, :is_song, :is_arranged, :_destroy]
+      ).merge(user_id: current_user.id, event_id: params[:event_id])
   end
 end
