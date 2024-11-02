@@ -13,8 +13,14 @@ Rails.application.routes.draw do
   resources :songs, only: [:index, :show] do
     resources :song_informations, only: [:create, :destroy], shallow: true
   end
+
   resources :events, only: [:index, :show] do
     resource :setlist, only: [:new, :create]
+  end
+
+  # セットリストのオートコンプリートのためのルーティング
+  resources :setlists do
+    get :search, on: :collection
   end
 
   get "up" => "rails/health#show", as: :rails_health_check

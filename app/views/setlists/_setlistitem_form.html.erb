@@ -1,8 +1,10 @@
 <ul data-controller="sortable" data-sortable-animation-value="150">
   <li>
     <div class="nested-form-wrapper border p-3 mb-3" data-new-record="<%= f.object.new_record? %>">
-      <div>
-        <%= f.text_field :song_title, class: "input input-bordered w-full max-w-xs", placeholder: "楽曲名" %>
+      <div data-controller="autocomplete" data-autocomplete-url-value="/setlists/search" role="combobox">
+        <%= f.text_field :song_title, class: "input input-bordered w-full max-w-xs", placeholder: "楽曲名", data: { autocomplete_target: 'input' } %>
+        <%= f.hidden_field :song_title, data: { autocomplete_target: 'hidden' } %>
+        <ul class="list-group bg-white absolute w-full md:text-sm max-w-max" data-autocomplete-target="results"></ul>
       </div>
       <div>
         <%= f.label :is_encore %>
