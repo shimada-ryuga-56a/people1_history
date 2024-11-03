@@ -5,8 +5,8 @@ class SetlistsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @setlist = Setlist.new(setlist_params)
+    # binding.pry
     if @setlist.save
       redirect_to events_path
     else
