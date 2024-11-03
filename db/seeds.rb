@@ -1,12 +1,12 @@
 require "csv"
 
-20.times do |n|
-  User.create!(
-    name: Faker::JapaneseMedia::Conan.character,
-    email: Faker::Internet.unique.email,
-    password: "password"
-  )
-end
+# 20.times do |n|
+#   User.create!(
+#     name: Faker::JapaneseMedia::Conan.character,
+#     email: Faker::Internet.unique.email,
+#     password: "password"
+#   )
+# end
 
 CSV.foreach('db/csv/tours.csv', headers: true) do |row|
   Tour.create!(
@@ -37,10 +37,10 @@ CSV.foreach('db/csv/songs.csv', headers: true) do |row|
   )
 end
 
-CSV.foreach('db/csv/song_informations.csv', headers: true) do |row|
-  SongInformation.create!(
-    user_id: row['user_id'],
-    song_id: row['song_id'],
-    body: row['body']
-  )
-end
+# CSV.foreach('db/csv/song_informations.csv', headers: true) do |row|
+#   SongInformation.create!(
+#     user_id: row['user_id'],
+#     song_id: row['song_id'],
+#     body: row['body']
+#   )
+# end

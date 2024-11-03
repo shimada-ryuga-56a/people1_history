@@ -5,8 +5,8 @@ class SetlistsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @setlist = Setlist.new(setlist_params)
+    # binding.pry
     if @setlist.save
       redirect_to events_path
     else
@@ -15,7 +15,7 @@ class SetlistsController < ApplicationController
   end
 
   def search
-    @songs = Song.where("name_kana_ruby like ?", "%#{params[:q]}%")
+    @songs = Song.where('name_kana_ruby like ?', "%#{params[:q]}%")
     respond_to do |format|
       format.js
     end
@@ -25,8 +25,8 @@ class SetlistsController < ApplicationController
 
   def setlist_params
     params.require(:setlist).permit(
-      :event_id, 
+      :event_id,
       setlistitems_attributes: [:song_title, :position, :is_encore, :is_song, :is_arranged, :_destroy]
-      ).merge(user_id: current_user.id, event_id: params[:event_id])
+    ).merge(user_id: current_user.id, event_id: params[:event_id])
   end
 end
