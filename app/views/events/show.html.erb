@@ -7,7 +7,7 @@
   <p>
   日時：<%= @event.date %><br>
   会場：<%= @event.place_prefecture %>／<%= @event.place %><br>
-    <% if @event.remark %>
+    <% if @event.remark.present? %>
       備考：<%= @event.remark %>
     <% end %>
   </p>
@@ -20,8 +20,8 @@
 
   <div class="divider"></div>
 
-  <% if @event.setlist %>
-    <p><%= @event.setlist.id %></p>
+  <% if @setlistitems.present? %>
+    <%= render 'events/setlistitem', setlistitems: @setlistitems %>
   <% else %>
     <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary' %>
   <% end %>
