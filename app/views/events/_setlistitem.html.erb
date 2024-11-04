@@ -1,5 +1,20 @@
 <% setlistitems.each do |item| %>
-  <p>
-    <%= song_display(item) %>
-  </p>
+  <div class="join join-vertical w-full">
+    <div class="collapse collapse-arrow join-item border-base-300 border mb-5">
+    <input type="radio" name="my-accordion-4" checked="checked" />
+      <div class="collapse-title text-xl font-medium">
+        <p><%= song_display(item) %></p>
+      </div>
+    <div class="collapse-content">
+      <div class="card bg-base-100 w-96 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">Card title!</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
