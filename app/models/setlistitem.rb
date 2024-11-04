@@ -7,9 +7,9 @@ class Setlistitem < ApplicationRecord
   validates :song_title, presence: true
 
   def set_song_id
-    @song = Song.find_by(name: "#{self.song_title}")
-    if @song
-      self.song_id = @song.id
-    end
+    @song = Song.find_by(name: song_title.to_s)
+    return unless @song
+
+    self.song_id = @song.id
   end
 end
