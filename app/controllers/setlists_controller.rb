@@ -6,7 +6,10 @@ class SetlistsController < ApplicationController
 
   def create
     @setlist = Setlist.new(setlist_params)
-    # binding.pry
+    @setlist.setlistitems.each do |item|
+      item.set_song_id
+    end
+
     if @setlist.save
       redirect_to events_path
     else
