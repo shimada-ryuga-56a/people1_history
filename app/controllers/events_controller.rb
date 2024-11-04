@@ -6,5 +6,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.includes(:setlist).find(params[:id])
+    return unless @event.setlist
+
+    @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
   end
 end
