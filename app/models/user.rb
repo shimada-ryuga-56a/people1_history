@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:twitter]
 
   has_many :setlists, dependent: :destroy
+  has_many :setlistitem_informations, dependent: :destroy
   has_many :song_informations, dependent: :destroy
   has_many :likes_on_song_informations, dependent: :destroy
   has_many :likes_on_tour_informations, dependent: :destroy
