@@ -12,4 +12,7 @@ class Setlistitem < ApplicationRecord
 
     self.song_id = @song.id
   end
+
+  def set_information
+  end
 end
