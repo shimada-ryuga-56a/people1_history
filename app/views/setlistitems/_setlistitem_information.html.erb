@@ -2,8 +2,9 @@
   <div class="card bg-base-100 w-96 shadow-xl">
     <div class="card-body">
       <h2 class="card-title">コメントを投稿しましょう！</h2>
-      <%= form_with model: new_info do |f| %>
-        <%= f.text_area :body, class: "textarea", placeholder: "コメントを入力" %>
+      <%= form_with model: SetlistitemInformation.new, url: setlistitem_informations_path do |f| %>
+        <%= f.text_area :body, class: "textarea w-full", placeholder: "コメントを入力" %>
+        <%= f.hidden_field :setlistitem_id, value: item.id %>
         <div class="card-actions justify-end">
           <%= f.submit '投稿', class: "btn btn-primary" %>
         </div>

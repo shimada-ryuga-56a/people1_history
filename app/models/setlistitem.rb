@@ -15,7 +15,6 @@ class Setlistitem < ApplicationRecord
   end
 
   def set_info
-    @new_info = SetlistitemInformation.new
     @infos = SetlistitemInformation.where(setlistitem_id: self.id)
   end
 end
