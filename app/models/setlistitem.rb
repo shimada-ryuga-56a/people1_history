@@ -1,5 +1,6 @@
 class Setlistitem < ApplicationRecord
   belongs_to :setlist
+  has_many :setlistitem_informations, dependent: :destroy
 
   validates :is_song, inclusion: { in: [true, false] }
   validates :is_arranged, inclusion: { in: [true, false] }
@@ -11,5 +12,9 @@ class Setlistitem < ApplicationRecord
     return unless @song
 
     self.song_id = @song.id
+  end
+
+  def set_info
+    @infos = SetlistitemInformation.where(setlistitem_id: id)
   end
 end

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resource :setlist, only: [:new, :create]
   end
 
+  resources :setlistitem_informations, only: [:create]
+
   # セットリストのオートコンプリートのためのルーティング
   resources :setlists do
     get :search, on: :collection
