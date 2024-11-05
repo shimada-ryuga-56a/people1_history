@@ -10,7 +10,7 @@ class EventsController < ApplicationController
 
     @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
     @setlistitems.each do |item|
-      item.set_information
+      item.set_info
     end
   end
 end

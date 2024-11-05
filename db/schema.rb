@@ -60,6 +60,14 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_04_122410) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "setlist_informations", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "setlistitem_id", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "setlistitem_informations", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "setlistitem_id", null: false
