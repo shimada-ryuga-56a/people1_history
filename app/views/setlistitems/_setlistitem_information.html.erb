@@ -16,8 +16,8 @@
       <% if info.setlistitem_id == item.id %>
         <div class="card bg-base-100 w-96 shadow-xl mb-3">
           <div class="card-body">
-            <h2 class="card-title"></h2>
-            <p><%= info.body %></p>
+            <h2 class="card-title"><%= info.body %></h2>
+            <p><%= info.created_at %></p>
           </div>
         </div>
       <% end %>
