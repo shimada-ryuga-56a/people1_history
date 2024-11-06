@@ -4,7 +4,7 @@ class SetlistitemInformationsController < ApplicationController
     if @new_info.save
       redirect_to event_path(@new_info.setlistitem.setlist.event.id)
     else
-      render :new, status: :unprocessable_entity
+      redirect_to event_path(@new_info.setlistitem.setlist.event.id), status: :unprocessable_entity
     end
   end
 
