@@ -35,7 +35,10 @@ class SetlistsController < ApplicationController
 
   def setlist_inspection
     if @event.setlist.present?
+      flash[:error] =  "すでにセットリストが存在します。"
       redirect_to event_path(@event.id)
+      p alert
+      p flash
     end
   end
 end
