@@ -4,7 +4,14 @@ class SetlistitemInformationsController < ApplicationController
     if @new_info.save
       redirect_to event_path(@new_info.setlistitem.setlist.event.id)
     else
-      render :new, status: :unprocessable_entity
+      @event = Event.find(@new_info.setlistitem.setlist.event.id)
+      @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
+      @infos = []
+      @setlistitems.each do |item|
+        @infos << SetlistitemInformation.where(setlistitem_id: item.id)
+      end
+      @infos.flatten!
+      render 'events/show', status: :unprocessable_entity
     end
   end
 

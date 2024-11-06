@@ -5,6 +5,8 @@ class SetlistsController < ApplicationController
   end
 
   def create
+    @event = Event.find(params[:event_id])
+    setlist_inspection && return
     @setlist = Setlist.new(setlist_params)
     @setlist.setlistitems.each(&:set_song_id)
 
@@ -29,5 +31,12 @@ class SetlistsController < ApplicationController
       :event_id,
       setlistitems_attributes: [:song_title, :position, :is_encore, :is_song, :is_arranged, :_destroy]
     ).merge(user_id: current_user.id, event_id: params[:event_id])
+  end
+
+  def setlist_inspection
+    return if @event.setlist.blank?
+
+    flash[:error] = I18n.t('flash.error.setlist_exist')
+    redirect_to event_path(@event.id)
   end
 end

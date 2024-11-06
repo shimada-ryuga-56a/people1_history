@@ -23,7 +23,8 @@
     <% else %>
       <%= render "shared/before_login_header" %>
     <% end %>
-    <main class="mb-20">
+    <main class="mb-20 mx-5">
+      <%= render 'shared/flash_messages' %>
       <%= yield %>
     </main>
     <% if user_signed_in? %>
