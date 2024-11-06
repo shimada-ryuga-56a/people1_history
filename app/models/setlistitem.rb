@@ -13,8 +13,4 @@ class Setlistitem < ApplicationRecord
 
     self.song_id = @song.id
   end
-
-  def set_info
-    @infos = SetlistitemInformation.where(setlistitem_id: id)
-  end
 end

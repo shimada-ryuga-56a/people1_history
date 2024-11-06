@@ -2,7 +2,7 @@ class SetlistitemInformationsController < ApplicationController
   def create
     @new_info = SetlistitemInformation.new(setlistitem_information_params)
     if @new_info.save
-      redirect_to events_path
+      redirect_to event_path(@new_info.setlistitem.setlist.event.id)
     else
       render :new, status: :unprocessable_entity
     end
