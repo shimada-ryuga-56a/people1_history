@@ -1,5 +1,5 @@
 <div class="collapse-content">
-  <div class="card bg-base-100 w-96 shadow-xl">
+  <div class="card bg-base-100 w-96 shadow-xl mb-3">
     <div class="card-body">
       <h2 class="card-title">コメントを投稿しましょう！</h2>
       <%= form_with model: SetlistitemInformation.new, url: setlistitem_informations_path do |f| %>
@@ -11,4 +11,16 @@
       <% end %>
     </div>
   </div>
+  <% if @infos.present? %>
+    <% @infos.each do |info| %>
+      <% if info.setlistitem_id == item.id %>
+        <div class="card bg-base-100 w-96 shadow-xl mb-3">
+          <div class="card-body">
+            <h2 class="card-title"></h2>
+            <p><%= info.body %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>

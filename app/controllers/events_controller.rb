@@ -9,6 +9,10 @@ class EventsController < ApplicationController
     return unless @event.setlist
 
     @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
-    @setlistitems.each(&:set_info)
+    @infos = []
+    @setlistitems.each do |item|
+      @infos << SetlistitemInformation.where(setlistitem_id: item.id)
+    end
+    @infos.flatten!
   end
 end
