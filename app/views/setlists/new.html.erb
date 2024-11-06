@@ -1,7 +1,7 @@
 <h1>Setlists new</h1>
 
 <%= form_with model: @setlist,data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, url: event_setlist_path do |f| %>
-  <%#= render 'shared/error_messages', object: f.object %>
+  <%= render 'shared/error_messages', model: f.object %>
 
   <template data-nested-form-target="template">
     <%= f.fields_for :setlistitems, Setlistitem.new, child_index: 'NEW_RECORD' do |i| %>

@@ -3,6 +3,7 @@
     <div class="card-body">
       <h2 class="card-title">コメントを投稿しましょう！</h2>
       <%= form_with model: SetlistitemInformation.new, url: setlistitem_informations_path do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
         <%= f.text_area :body, class: "textarea w-full", placeholder: "コメントを入力" %>
         <%= f.hidden_field :setlistitem_id, value: item.id %>
         <div class="card-actions justify-end">
