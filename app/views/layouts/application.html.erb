@@ -23,9 +23,15 @@
     <% else %>
       <%= render "shared/before_login_header" %>
     <% end %>
-    <main class="mb-20">
-      <%= yield %>
-    </main>
+    <% if user_signed_in? %>
+      <main class="mb-20 mx-5">
+        <%= yield %>
+      </main>
+    <% else %>
+      <main class="mb-20 mx-5">
+        <%= yield %>
+      </main>
+    <% end %>
     <% if user_signed_in? %>
       <%= render "shared/after_login_footer" %>
     <% else %>
