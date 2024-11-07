@@ -3,9 +3,14 @@
   <% @song_informations.each do |song_information| %>
     <div class="card bg-base-100 w-96 shadow-xl mb-5">
       <div class="card-body">
+        <div class="avatar flex items-center">
+          <div class="w-6 rounded-full mr-3">
+            <img src="<%= song_information.user.image %>" />
+          </div>
+          <%= song_information.user.name %>
+        </div>
         <h2 class="card-title"><%= song_information.body %></h2>
         <p>
-          <%= song_information.user.name %><br>
           <%= song_information.created_at %>
         </p>
       </div>
