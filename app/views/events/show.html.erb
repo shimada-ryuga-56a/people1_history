@@ -22,7 +22,13 @@
 
   <% if @setlistitems.present? %>
     <h2>Setlist</h2>
-    <p>投稿者：<%= @event.setlist.user.name %><p>
+      <div class="avatar flex items-center">
+        <p class="">作成者：<p>
+        <div class="w-12 rounded-full m-3">
+          <img src="<%= @event.setlist.user.image %>" />
+        </div>
+        <p><%= @event.setlist.user.name %><p>
+      </div>
     <%= render 'events/setlistitem', setlistitems: @setlistitems %>
   <% else %>
     <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary' %>
