@@ -1,12 +1,12 @@
-<div class="collapse-content">
-  <div class="card bg-base-100 w-96 shadow-xl mb-3">
+<div class="collapse-content w-full">
+  <div class="card bg-base-100 w-full shadow-xl mb-3">
     <div class="card-body">
       <h2 class="card-title">コメントを投稿しましょう！</h2>
       <%= form_with model: SetlistitemInformation.new, url: setlistitem_informations_path do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
         <%= f.text_area :body, class: "textarea w-full", placeholder: "コメントを入力" %>
         <%= f.hidden_field :setlistitem_id, value: item.id %>
-        <div class="card-actions justify-end">
+        <div class="card-actions">
           <%= f.submit '投稿', class: "btn btn-primary" %>
         </div>
       <% end %>
@@ -16,10 +16,10 @@
   <% if @infos.present? %>
     <% @infos.each do |info| %>
       <% if info.setlistitem_id == item.id %>
-        <div class="card bg-base-100 w-96 shadow-xl mb-3">
+        <div class="card bg-base-100 w-full shadow-xl mb-3">
           <div class="card-body">
             <div class="avatar flex items-center">
-              <div class="w-12 rounded-full mr-3">
+              <div class="w-6 rounded-full mr-3">
                 <img src="<%= info.user.image %>" />
               </div>
               <%= info.user.name %>
