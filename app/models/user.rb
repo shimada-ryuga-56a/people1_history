@@ -16,14 +16,20 @@ class User < ApplicationRecord
   # ユーザーの情報があれば探し、無ければ作成する
   def self.find_for_oauth(auth)
     user = User.find_by(uid: auth.uid, provider: auth.provider)
-
-    user ||= User.create!(
-      uid: auth.uid,
-      provider: auth.provider,
-      # name: auth[:info][:name],
-      email: User.dummy_email(auth),
-      password: Devise.friendly_token[0, 20]
-    )
+    
+    unless user
+      name = auth[:info][:name]
+      image_url = auth[:info][:image]
+      image = URI.parse(image_url) # パースする必要がある
+      user = User.create!(
+        uid: auth.uid,
+        provider: auth.provider,
+        name: name,
+        image: image,
+        email: User.dummy_email(auth),
+        password: Devise.friendly_token[0, 20]
+      )
+    end
 
     user
   end
