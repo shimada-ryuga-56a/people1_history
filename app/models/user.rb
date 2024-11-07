@@ -16,7 +16,7 @@ class User < ApplicationRecord
   # ユーザーの情報があれば探し、無ければ作成する
   def self.find_for_oauth(auth)
     user = User.find_by(uid: auth.uid, provider: auth.provider)
-    
+
     unless user
       name = auth[:info][:name]
       image_url = auth[:info][:image]
