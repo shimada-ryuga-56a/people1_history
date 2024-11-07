@@ -2,11 +2,11 @@ class EventsController < ApplicationController
   def index
     @events = Event.category(params[:category]).order(date: :desc)
     @categories = params[:category]
-    if params[:date] && params[:date].include?("1")
-      @events = @events
-    else
-      @events = @events.where(date: ..Date.today)
-    end
+    @events = if params[:date]&.include?('1')
+                @events
+              else
+                @events.where(date: ..Time.zone.today)
+              end
   end
 
   def show
