@@ -1,5 +1,6 @@
 <% flash.each do |message_type, message| %>
-  <div role="alert" class="alert alert-<%= message_type %>">
+  <%= "alert alert-#{message_type.to_s}" %>
+  <div role="alert" class="alert alert-<%= message_type.to_s %>">
     <svg
     xmlns="http://www.w3.org/2000/svg"
     class="h-6 w-6 shrink-0 stroke-current"
