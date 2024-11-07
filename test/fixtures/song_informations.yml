@@ -4,10 +4,8 @@ one:
   song_id: 1
   user_id: 1
   body: MyString
-  text: MyString
 
 two:
   song_id: 1
   user_id: 1
   body: MyString
-  text: MyString
