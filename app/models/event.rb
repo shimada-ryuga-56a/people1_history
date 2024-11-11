@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   belongs_to :tour, optional: true
   has_many :event_informations, dependent: :destroy
   has_one :setlist, dependent: :destroy
+  has_one_attached :visual_image
 
   validates :category, presence: true
   validates :name, presence: true
