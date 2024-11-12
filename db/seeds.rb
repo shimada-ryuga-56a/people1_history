@@ -26,5 +26,8 @@ CSV.foreach('db/csv/songs.csv', headers: true) do |row|
     song.name = row['name']
     song.name_kana_ruby = row['name_kana_ruby']
     song.youtube_link = row['youtube']
+    if row['jk'].present?
+      song.jk.attach(File.open(Rails.root.join(row['jk'])), filename:row['jk'])
+    end
   end
 end
