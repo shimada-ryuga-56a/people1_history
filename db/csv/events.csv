@@ -1,111 +1,111 @@
-category,name,name_kana_ruby,date,place,place_prefecture,is_canceled,tour_id,remark
-event,BLT LIVE BOOSTER vol.1,ビーエルティーライブブースターボリュームワン,2021-06-03,恵比寿LIQUIDROOM,Tokyo,false,,PEOPLE 1の初ライブ。対バン相手としてNEE、OAとして冨田直とナカムラマユが出演。
-fes,JAPAN JAM 2022,ジャパンジャムニセンニジュウニ,2022-05-01,千葉市蘇我スポーツ公園,Chiba,false,,初フェス。SUNSET STAGE出演。
-event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-20,BIGCAT,Osaka,false,,WurtS主催の対バンツアー。
-event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-21,名古屋CLUB QUATTRO,Aichi,false,,WurtS主催の対バンツアー。
-event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-29,Spotify O-EAST,Tokyo,false,,WurtS主催の対バンツアー。
-event,BLT LIVE BOOSTER vol.2,ビーエルティーライブブースターボリュームツー,2022-06-26,日比谷野外大音楽堂,Tokyo,false,,
-event,GOOOOOON!,ゴーオン,2022-07-03,大阪城野外音楽堂,Osaka,false,,
-fes,ROCK IN JAPAN FESTIVAL 2022,ロッキンジャパンフェスティバルニセンニジュウニ,2022-08-07,千葉市蘇我スポーツ公園,Chiba,false,,
-tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-02,名古屋SPADE BOX,Aichi,false,1,
-tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-03,Music Club JANUS,Osaka,false,1,
-tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-09,Veats Shibuya,Tokyo,false,1,
-tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-12-20,Spotify O-EAST,Tokyo,false,1,
-tour,PEOPLE+,ピープルプラス,2022-05-04,渋谷WWW X,Tokyo,false,2,
-tour,PEOPLE+,ピープルプラス,2022-05-07,広島CLUB QUATTRO,Hiroshima,false,2,
-tour,PEOPLE+,ピープルプラス,2022-05-08,福岡DRUM LOGOS,Fukuoka,false,2,
-tour,PEOPLE+,ピープルプラス,2022-05-14,Electric Lady Land,Aichi,false,2,
-tour,PEOPLE+,ピープルプラス,2022-05-15,BIGCAT,Osaka,false,2,
-tour,PEOPLE+,ピープルプラス,2022-05-20,Spotify O-EAST,Tokyo,false,2,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-10-21,ENNY LANE 24,Hokkaido,false,3,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-10-29,Rensa,Miyagi,false,3,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-03,NIIGATA LOTS,Niigata,false,3,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-05,DIAMONDHALL,Aichi,false,3,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-06,広島CLUB QUATTRO,Hiroshima,false,3,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-11,福岡DRUM LOGOS,Fukuoka,false,3,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-13,なんばHatch,Osaka,false,3,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-20,Zepp Haneda,Tokyo,false,3,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-12-09,なんばHatch,Osaka,false,3,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-12-15,DIAMONDHALL,Aichi,false,3,
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-12-20,KT Zepp Yokohama,Kanagawa,true,3,Deuさん体調不良により開催延期
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2023-03-23,KT Zepp Yokohama,Kanagawa,true,3,Deuさんリハーサル中の左手人差し指負傷のため開催延期
-tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2023-05-16,KT Zepp Yokohama,Kanagawa,false,3,
-tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-05-21,LOTS,Niigata,false,4,
-tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-05-28,PIT,Miyagi,false,4,
-tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-04,PENNY LANE 24,Hokkaido,false,4,
-tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-10,Olive Hall,Kagawa,false,4,
-tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-11,CLUB QUATTRO,Hiroshima,false,4,
-tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-18,Zepp Osaka Bayside,Osaka,false,4,
-tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-21,Zeep Nagoya,Aichi,false,4,
-tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-23,Zeep Fukuoka,Fukuoka,false,4,
-tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-30,Zeep Haneda,Tokyo,false,4,
-tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-07-08,Zeep DiverCity,Tokyo,false,4,
-tour,LOVE2,ラブラブ,2023-11-17,KT Zepp Yokohama,Kanagawa,false,5,
-tour,LOVE2,ラブラブ,2023-11-22,Zepp Fukuoka,Fukuoka,false,5,
-tour,LOVE2,ラブラブ,2023-11-26,Zepp Osaka Bayside,Osaka,false,5,
-tour,LOVE2,ラブラブ,2023-12-07,Zepp Nagoya,Aichi,false,5,
-tour,LOVE2,ラブラブ,2023-12-14,Zepp Sapporo,Hokkaido,false,5,
-one_man,続・LOVE2,ゾクラブラブ,2024-01-13,ぴあアリーナMM,Kanagawa,false,,
-tour,ぼくらのパーティーゲーム,ボクラノパーティーゲーム,2023-11-23,Zepp Fukuoka,Fukuoka,false,6,
-tour,ぼくらのパーティーゲーム,ボクラノパーティーゲーム,2023-11-27,Zepp Osaka Bayside,Osaka,false,6,
-tour,ぼくらのパーティーゲーム,ボクラノパーティーゲーム,2023-12-08,Zepp Nagoya,Aichi,false,6,
-tour,ぼくらのパーティーゲーム,ボクラノパーティーゲーム,2023-12-15,Zepp Sapporo,Hokkaido,false,6,
-tour,ぼくらのパーティーゲーム,ボクラノパーティーゲーム,2023-12-20,TOKIO TOKYO,Tokyo,false,6,【112号室会員限定ライブ】当初は一般販売も予定していたが、申込数が販売予定枚数を大きく超過したため、限定ライブに変更。
-one_man,さよなら、ぼくらのパーティーゲーム,サヨナラボクラノパーティーゲーム,2024-01-14,ぴあアリーナMM,Kanagawa,false,,
-tour,after dark,アフターダーク,2024-07-10,立川ステージガーデン,Tokyo,false,7,
-tour,after dark,アフターダーク,2024-07-14,神戸国際会館こくさいホール,Kochi,false,7,
-tour,after dark,アフターダーク,2024-07-21,札幌文化芸術劇場hitaru,Hokkaido,false,7,
-tour,after dark,アフターダーク,2024-07-28,新潟テルサ,Niigata,false,7,
-tour,after dark,アフターダーク,2024-08-16,Niterra日本特殊陶業市民会館 フォレストホール,Aichi,false,7,
-tour,after dark,アフターダーク,2024-08-17,Niterra日本特殊陶業市民会館 フォレストホール,Aichi,false,7,
-tour,after dark,アフターダーク,2024-09-11,NHKホール,Tokyo,false,7,
-tour,after dark,アフターダーク,2024-09-12,NHKホール,Tokyo,false,7,
-tour,after dark,アフターダーク,2024-09-16,福岡サンパレス,Fukuoka,false,7,
-tour,after dark,アフターダーク,2024-09-21,東京エレクトロンホール宮城,Miyagi,false,7,
-tour,after dark,アフターダーク,2024-09-29,オリックス劇場,Osaka,false,7,
-tour,after dark,アフターダーク,2024-09-30,オリックス劇場,Osaka,false,7,
-fes,RUSH BALL 2022,ラッシュボールニセンニジュウニ,2022-08-27,泉大津フェニックス,Osaka,false,,
-fes,SWEET LOVE SHOWER 2022,スイートラブシャワーニセンニジュウニ,2022-08-28,山中湖交流プラザ きらら,Yamanashi,false,,
-fes,FM802 ROCK FESTIVAL RADIO CRAZY 2022,エフエムハチゼロニロックフェスティバルレディオクレイジーニセンニジュウニ,2022-12-26,インテックス大阪,Osaka,false,,
-fes,COUNTDOWN JAPAN 22/23,カウントダウンジャパンニーニーニーサン,2022-12-31,幕張メッセ,Chiba,false,,
-event,Dancing Room 003,ダンシングルームゼロゼロサン,2023-03-03,DIAMONDHALL,Aichi,false,,
-event,ONE WEEK WONDER'23,ワンウィークワンダーニジュウサン,2023-03-03,KT Zepp Yokohama,Kanagawa,false,,
-event,Mrs. TAIBAN LIVE,ミセスタイバンライブ,2023-04-04,Zepp DiverCity,Tokyo,false,,
-fes,JAPAN JAM 2023,ジャパンジャムニセンニジュウサン,2023-05-05,千葉市蘇我スポーツ公園,Chiba,false,,
-fes,NUMBER SHOT2023,ナンバーショットニセンニジュウサン,2023-07-23,Zepp Fukuoka,Fukuoka,false,,
-fes,ROCK IN JAPAN FESTIVAL 2023,ロッキンジャパンフェスティバルニセンニジュウサン,2023-08-13,千葉市蘇我スポーツ公園,Chiba,false,,
-fes,MONSTER baSH 2023,モンスターバッシュニセンニジュウサン,2023-08-19,国営讃岐まんのう公園,Kagawa,false,,
-fes,Sky Jamboree 2023 〜one pray in nagasaki〜,スカイジャンボリーニセンニジュウサンワンプレイインナガサキ,2023-08-20,稲佐山公園野外ステージ,Nagasaki,false,,
-fes,SWEET LOVE SHOWER 2023,スイートラブシャワーニセンニジュウサン,2023-08-25,山中湖交流プラザ きらら,Yamanashi,false,,
-event,MIRRORBALL Lab vol.1,ミラーボールラボボリュームワン,2023-09-18,富山市芸術文化ホール オーバード・ホール 大ホール,Toyama,false,,
-fes,RISING SUN ROCK FESTIVAL 2023 in EZO,ライジンブサンロックフェスティバルニセンニジュウサンインエゾ,2023-08-11,石狩湾新港樽川ふ頭横野外特設ステージ,Hokkaido,false,,
-fes,ROCK KIDS 802-OCHIKEN Goes ON!!-SPECIAL LIVE HIGH!HIGH!HIGH!,ロックキッズハチマルニオチケンゴーズオンスペシャルライブハイハイハイ,2023-08-09,なんばHatch,Osaka,false,,
-fes,FM802 ROCK FESTIVAL RADIO CRAZY 2023,エフエムハチマルニロックフェスティバルレディオクレイジーニセンニジュウサン,2023-12-28,インテックス大阪,Osaka,false,,
-fes,COUNTDOWN JAPAN 23/24,カウントダウンジャパンニーサンニーヨン,2023-12-31,幕張メッセ ,Chiba,false,,
-fes,FUKUOKA MUSIC FES.2024,フクオカミュージックフェスニセンニジュウヨン,2024-01-21,福岡PayPayドーム,Fukuoka,false,,
-event,礼賛 RELEASE PARTY「ON TIME」,オンタイム,2024-02-29,代官山UNIT,Tokyo,false,,
-event,"PLAYLIST presents ""ヘッドフォンを外して vol.7""",ヘッドフォンヲハズシテボニュームナナ,2024-03-01,豊洲PIT,Tokyo,false,,Lucky Kilimanjaro、Teleとの対バンイベント。
-event,Catch Up TOUR -1 Time 1 Chance-,キャッチアップツアーワンタイムワンチャンス,2024-03-13,Zepp Nagoya,Aichi,false,,WANIMA主催の対バンイベント。
-event,GOOD FLAGS,グッドフラッグス,2024-03-17,仙台PIT,Miyagi,false,,Teleとの対バンイベント。
-fes,Vポイント presents ツタロックフェス2024,ツタロックフェスニセンニジュウヨン,2024-03-24,幕張メッセ 国際展示場 9～11ホール,Chiba,false,,
-event,SUPER JUMPIN'JACK 2024,スーパージャンピンジャックニセンニジュウヨン,2024-03-29,Zepp Osaka Bayside,Osaka,false,,対バンイベント。出演予定だったNEEの代打としてgo!go!vanillasと、Kroiが出演。
-fes,EIGHT BALL FESTIVAL 2024,エイトボールフェスティバルニセンニジュウヨン,2024-03-30,CONVEX岡山,Okayama,false,,
-event,秋山黄色presents 「BUG SESSION」,バグセッション,2024-04-05,Zepp Nagoya,Aichi,false,,秋山黄色主催の対バンイベント。
-event,"FM802 35th ANNIVERSARY ""Be FUNKY!!"" SPECIAL LIVE 紀陽銀行 presents REQUESTAGE 2024",ビーファンキー,2024-04-29,大阪城ホール,Osaka,false,,
-fes,JAPAN JAM 2024,ジャパンジャムニセンニジュウヨン,2024-05-04,千葉市蘇我スポーツ公園,Chiba,false,,
-fes,VIVA LA ROCK 2024,ビバラロックニセンニジュウヨン,2024-05-05,さいたまスーパーアリーナ,Saitama,false,,
-fes,OSAKA METROPOLITAN ROCK FESTIVAL 2024,オオサカメトロポリタンロックフェスティバルニセンニジュウヨン,2024-05-11,海とのふれあい広場,Osaka,false,,
-fes,TOKYO METROPOLITAN ROCK FESTIVAL 2024,トウキョウメトロポリタンロックフェスティバルニセンニジュウヨン,2024-05-18,若洲公園,Tokyo,false,,
-event,音楽と行こう SUPER LIVE Presented by au,オンガクトイコウスーパーライブ,2024-06-18,Zepp Osaka Bayside,Osaka,false,,出演を予定していたNEEの代打として出演。
-event,東京、夏のサイレン,トウキョウナツノサイレン,2024-06-23,日比谷野外大音楽堂,Tokyo,false,,NEEのワンマンライブにゲストとして出演。
-fes,ROCK IN JAPAN FESTIVAL 2024,ロッキンジャパンフェスティバルニセンニジュウヨン,2024-08-04,千葉市蘇我スポーツ公園,Chiba,false,,
-fes,WANIMA presents 1CHANCE FESTIVAL 2024,ワンチャンスフェスティバルニセンニジュウヨン,2024-08-24,熊本県農業公園カントリーパーク,Kumamoto,false,,
-fes,SPACE SHOWER TV 35th ANNIVERSARY SWEET LOVE SHOWER 2024,スイートラブシャワーニセンニジュウヨン,2024-08-31,山中湖交流プラザきらら,Yamanashi,false,,
-fes,JA共済 presents RADIO BERRY 30th ANNIVERSARY ベリテンライブ2024 Special,ベリテンライブニセンニジュウヨンスペシャル,2024-09-07,井頭公園 運動広場,Tochigi,false,,
-event,MIRRORBALL Lab vol.2,ミラーボールラボボリュームツー,2024-09-23,本多の森北電ホール,Ishikawa,false,,
-fes,[Alexandros] presents THIS FES '24 in Sagamihara,ディスフェス,2024-10-26,相模原ギオンフィールド,Kanagawa,false,,[Alexandros]主催フェス。
-fes,氣志團万博2024 ～シン・キシダンバンパク～,キシダンバンパク,2024-11-09,幕張メッセ 国際展示場 9～11ホール ,Chiba,false,,氣志團主催フェス。
-one_man,PEOPLE 1の世界,ピープルワンノセカイ,2024-12-21,有明アリーナ,Tokyo,false,,
-one_man,PEOPLE 1の世界,ピープルワンノセカイ,2024-12-22,有明アリーナ,Tokyo,false,,
-fes,"FM802 35th ANNIVERSARY ""Be FUNKY!!"" ROCK FESTIVAL RADIO CRAZY 2024 -レディクレ 15th-",レディオクレイジーニセンニジュウヨン,2024-12-29,インテックス大阪,Osaka,false,,
-fes,COUNTDOWN JAPAN 24/25,カウントダウンジャパンニーヨンニーゴー,2024-12-30,幕張メッセ,Chiba,false,,
+category,name,name_kana_ruby,date,place,place_prefecture,is_canceled,tour_id,remark,visual_image
+event,BLT LIVE BOOSTER vol.1,ビーエルティーライブブースターボリュームワン,2021-06-03,恵比寿LIQUIDROOM,Tokyo,FALSE,,PEOPLE 1の初ライブ。対バン相手としてNEE、OAとして冨田直とナカムラマユが出演。,app/assets/images/events_visual/2021-06-03 BLT_LIVE_BOOSTER_vol.1_main.jpg
+fes,JAPAN JAM 2022,ジャパンジャムニセンニジュウニ,2022-05-01,千葉市蘇我スポーツ公園,Chiba,FALSE,,初フェス。SUNSET STAGE出演。,app/assets/images/events_visual/2022-05-01  JAPAN JAM 2022 .jpg
+event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-20,BIGCAT,Osaka,FALSE,,WurtS主催の対バンツアー。,app/assets/images/events_visual/W's LIVE 2022 .jpeg
+event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-21,名古屋CLUB QUATTRO,Aichi,FALSE,,WurtS主催の対バンツアー。,app/assets/images/events_visual/W's LIVE 2022 .jpeg
+event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-29,Spotify O-EAST,Tokyo,FALSE,,WurtS主催の対バンツアー。,app/assets/images/events_visual/W's LIVE 2022 .jpeg
+event,BLT LIVE BOOSTER vol.2,ビーエルティーライブブースターボリュームツー,2022-06-26,日比谷野外大音楽堂,Tokyo,FALSE,,,app/assets/images/events_visual/2022-06-26  BLT LIVE BOOSTER vol.2 .jpg
+event,GOOOOOON!,ゴーオン,2022-07-03,大阪城野外音楽堂,Osaka,FALSE,,,app/assets/images/events_visual/2022-07-03  GOOOOOON! .png
+fes,ROCK IN JAPAN FESTIVAL 2022,ロッキンジャパンフェスティバルニセンニジュウニ,2022-08-07,千葉市蘇我スポーツ公園,Chiba,FALSE,,,app/assets/images/events_visual/2022-08-07  ROCK IN JAPAN FESTIVAL 2022 .jpg
+tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-02,名古屋SPADE BOX,Aichi,FALSE,1,,app/assets/images/events_visual/ベッドルーム大衆音楽 .jpg
+tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-03,Music Club JANUS,Osaka,FALSE,1,,app/assets/images/events_visual/ベッドルーム大衆音楽 .jpg
+tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-09,Veats Shibuya,Tokyo,FALSE,1,,app/assets/images/events_visual/ベッドルーム大衆音楽 .jpg
+tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-12-20,Spotify O-EAST,Tokyo,FALSE,1,,app/assets/images/events_visual/ベッドルーム大衆音楽 .jpg
+tour,PEOPLE+,ピープルプラス,2022-05-04,渋谷WWW X,Tokyo,FALSE,2,,app/assets/images/events_visual/PEOPLE+ .jpg
+tour,PEOPLE+,ピープルプラス,2022-05-07,広島CLUB QUATTRO,Hiroshima,FALSE,2,,app/assets/images/events_visual/PEOPLE+ .jpg
+tour,PEOPLE+,ピープルプラス,2022-05-08,福岡DRUM LOGOS,Fukuoka,FALSE,2,,app/assets/images/events_visual/PEOPLE+ .jpg
+tour,PEOPLE+,ピープルプラス,2022-05-14,Electric Lady Land,Aichi,FALSE,2,,app/assets/images/events_visual/PEOPLE+ .jpg
+tour,PEOPLE+,ピープルプラス,2022-05-15,BIGCAT,Osaka,FALSE,2,,app/assets/images/events_visual/PEOPLE+ .jpg
+tour,PEOPLE+,ピープルプラス,2022-05-20,Spotify O-EAST,Tokyo,FALSE,2,,app/assets/images/events_visual/PEOPLE+ .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-10-21,ENNY LANE 24,Hokkaido,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-10-29,Rensa,Miyagi,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-03,NIIGATA LOTS,Niigata,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-05,DIAMONDHALL,Aichi,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-06,広島CLUB QUATTRO,Hiroshima,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-11,福岡DRUM LOGOS,Fukuoka,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-13,なんばHatch,Osaka,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-11-20,Zepp Haneda,Tokyo,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-12-09,なんばHatch,Osaka,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-12-15,DIAMONDHALL,Aichi,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2022-12-20,KT Zepp Yokohama,Kanagawa,TRUE,3,Deuさん体調不良により開催延期,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2023-03-23,KT Zepp Yokohama,Kanagawa,TRUE,3,Deuさんリハーサル中の左手人差し指負傷のため開催延期,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,嘘だらけのPEOPLE 1,ウソダラケノピープルワン,2023-05-16,KT Zepp Yokohama,Kanagawa,FALSE,3,,app/assets/images/events_visual/嘘だらけのPEOPLE 1 .jpg
+tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-05-21,LOTS,Niigata,FALSE,4,,app/assets/images/events_visual/PEOPLE SAVE THE F×××ING WORLD.jpg
+tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-05-28,PIT,Miyagi,FALSE,4,,app/assets/images/events_visual/PEOPLE SAVE THE F×××ING WORLD.jpg
+tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-04,PENNY LANE 24,Hokkaido,FALSE,4,,app/assets/images/events_visual/PEOPLE SAVE THE F×××ING WORLD.jpg
+tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-10,Olive Hall,Kagawa,FALSE,4,,app/assets/images/events_visual/PEOPLE SAVE THE F×××ING WORLD.jpg
+tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-11,CLUB QUATTRO,Hiroshima,FALSE,4,,app/assets/images/events_visual/PEOPLE SAVE THE F×××ING WORLD.jpg
+tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-18,Zepp Osaka Bayside,Osaka,FALSE,4,,app/assets/images/events_visual/PEOPLE SAVE THE F×××ING WORLD.jpg
+tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-21,Zeep Nagoya,Aichi,FALSE,4,,app/assets/images/events_visual/PEOPLE SAVE THE F×××ING WORLD.jpg
+tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-23,Zeep Fukuoka,Fukuoka,FALSE,4,,app/assets/images/events_visual/PEOPLE SAVE THE F×××ING WORLD.jpg
+tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-06-30,Zeep Haneda,Tokyo,FALSE,4,,app/assets/images/events_visual/PEOPLE SAVE THE F×××ING WORLD.jpg
+tour,PEOPLE SAVE THE F×××ING WORLD,ピープルセーブザファッキンワールド,2023-07-08,Zeep DiverCity,Tokyo,FALSE,4,,app/assets/images/events_visual/PEOPLE SAVE THE F×××ING WORLD.jpg
+tour,LOVE2,ラブラブ,2023-11-17,KT Zepp Yokohama,Kanagawa,FALSE,5,,app/assets/images/events_visual/LOVE2.jpeg
+tour,LOVE2,ラブラブ,2023-11-22,Zepp Fukuoka,Fukuoka,FALSE,5,,app/assets/images/events_visual/LOVE2.jpeg
+tour,LOVE2,ラブラブ,2023-11-26,Zepp Osaka Bayside,Osaka,FALSE,5,,app/assets/images/events_visual/LOVE2.jpeg
+tour,LOVE2,ラブラブ,2023-12-07,Zepp Nagoya,Aichi,FALSE,5,,app/assets/images/events_visual/LOVE2.jpeg
+tour,LOVE2,ラブラブ,2023-12-14,Zepp Sapporo,Hokkaido,FALSE,5,,app/assets/images/events_visual/LOVE2.jpeg
+one_man,続・LOVE2,ゾクラブラブ,2024-01-13,ぴあアリーナMM,Kanagawa,FALSE,,,app/assets/images/events_visual/LOVE2.jpeg
+tour,ぼくらのパーティーゲーム,ボクラノパーティーゲーム,2023-11-23,Zepp Fukuoka,Fukuoka,FALSE,6,,app/assets/images/events_visual/ぼくらのパーテイーゲーム.jpeg
+tour,ぼくらのパーティーゲーム,ボクラノパーティーゲーム,2023-11-27,Zepp Osaka Bayside,Osaka,FALSE,6,,app/assets/images/events_visual/ぼくらのパーテイーゲーム.jpeg
+tour,ぼくらのパーティーゲーム,ボクラノパーティーゲーム,2023-12-08,Zepp Nagoya,Aichi,FALSE,6,,app/assets/images/events_visual/ぼくらのパーテイーゲーム.jpeg
+tour,ぼくらのパーティーゲーム,ボクラノパーティーゲーム,2023-12-15,Zepp Sapporo,Hokkaido,FALSE,6,,app/assets/images/events_visual/ぼくらのパーテイーゲーム.jpeg
+tour,ぼくらのパーティーゲーム,ボクラノパーティーゲーム,2023-12-20,TOKIO TOKYO,Tokyo,FALSE,6,【112号室会員限定ライブ】当初は一般販売も予定していたが、申込数が販売予定枚数を大きく超過したため、限定ライブに変更。,app/assets/images/events_visual/ぼくらのパーテイーゲーム.jpeg
+one_man,さよなら、ぼくらのパーティーゲーム,サヨナラボクラノパーティーゲーム,2024-01-14,ぴあアリーナMM,Kanagawa,FALSE,,,app/assets/images/events_visual/ぼくらのパーテイーゲーム.jpeg
+tour,after dark,アフターダーク,2024-07-10,立川ステージガーデン,Tokyo,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-07-14,神戸国際会館こくさいホール,Kochi,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-07-21,札幌文化芸術劇場hitaru,Hokkaido,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-07-28,新潟テルサ,Niigata,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-08-16,Niterra日本特殊陶業市民会館 フォレストホール,Aichi,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-08-17,Niterra日本特殊陶業市民会館 フォレストホール,Aichi,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-09-11,NHKホール,Tokyo,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-09-12,NHKホール,Tokyo,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-09-16,福岡サンパレス,Fukuoka,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-09-21,東京エレクトロンホール宮城,Miyagi,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-09-29,オリックス劇場,Osaka,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+tour,after dark,アフターダーク,2024-09-30,オリックス劇場,Osaka,FALSE,7,,app/assets/images/events_visual/after dark .jpg
+fes,RUSH BALL 2022,ラッシュボールニセンニジュウニ,2022-08-27,泉大津フェニックス,Osaka,FALSE,,,app/assets/images/events_visual/2022-08-27  RUSH BALL 2022 .jpg
+fes,SWEET LOVE SHOWER 2022,スイートラブシャワーニセンニジュウニ,2022-08-28,山中湖交流プラザ きらら,Yamanashi,FALSE,,,app/assets/images/events_visual/2022-08-28  SWEET LOVE SHOWER 2022 .webp
+fes,FM802 ROCK FESTIVAL RADIO CRAZY 2022,エフエムハチゼロニロックフェスティバルレディオクレイジーニセンニジュウニ,2022-12-26,インテックス大阪,Osaka,FALSE,,,app/assets/images/events_visual/2022-12-26  FM802 ROCK FESTIVAL RADIO CRAZY 2022.jpg
+fes,COUNTDOWN JAPAN 22/23,カウントダウンジャパンニーニーニーサン,2022-12-31,幕張メッセ,Chiba,FALSE,,,app/assets/images/events_visual/2022-12-31  COUNTDOWN JAPAN 22:23 .jpg
+event,Dancing Room 003,ダンシングルームゼロゼロサン,2023-03-03,DIAMONDHALL,Aichi,FALSE,,,app/assets/images/events_visual/2023-03-03  Dancing Room 003 .jpg
+event,ONE WEEK WONDER'23,ワンウィークワンダーニジュウサン,2023-03-03,KT Zepp Yokohama,Kanagawa,FALSE,,,app/assets/images/events_visual/2023-03-03  ONE WEEK WONDER'23 .png
+event,Mrs. TAIBAN LIVE,ミセスタイバンライブ,2023-04-04,Zepp DiverCity,Tokyo,FALSE,,,app/assets/images/events_visual/2023-04-04  Mrs. TAIBAN LIVE .png
+fes,JAPAN JAM 2023,ジャパンジャムニセンニジュウサン,2023-05-05,千葉市蘇我スポーツ公園,Chiba,FALSE,,,app/assets/images/events_visual/2023-05-05  JAPAN JAM 2023 .jpg
+fes,NUMBER SHOT2023,ナンバーショットニセンニジュウサン,2023-07-23,Zepp Fukuoka,Fukuoka,FALSE,,,app/assets/images/events_visual/2023-07-23  NUMBER SHOT2023 .png
+fes,ROCK IN JAPAN FESTIVAL 2023,ロッキンジャパンフェスティバルニセンニジュウサン,2023-08-13,千葉市蘇我スポーツ公園,Chiba,FALSE,,,app/assets/images/events_visual/2023-08-13  ROCK IN JAPAN FESTIVAL 2023 .jpg
+fes,MONSTER baSH 2023,モンスターバッシュニセンニジュウサン,2023-08-19,国営讃岐まんのう公園,Kagawa,FALSE,,,app/assets/images/events_visual/2023-08-19  MONSTER baSH 2023 .jpg
+fes,Sky Jamboree 2023 〜one pray in nagasaki〜,スカイジャンボリーニセンニジュウサンワンプレイインナガサキ,2023-08-20,稲佐山公園野外ステージ,Nagasaki,FALSE,,,app/assets/images/events_visual/2023-08-20  Sky Jamboree 2023 〜one pray in nagasaki〜.jpeg
+fes,SWEET LOVE SHOWER 2023,スイートラブシャワーニセンニジュウサン,2023-08-25,山中湖交流プラザ きらら,Yamanashi,FALSE,,,app/assets/images/events_visual/2023-08-25  SWEET LOVE SHOWER 2023 .jpeg
+event,MIRRORBALL Lab vol.1,ミラーボールラボボリュームワン,2023-09-18,富山市芸術文化ホール オーバード・ホール 大ホール,Toyama,FALSE,,,app/assets/images/events_visual/2023-09-18  MIRRORBALL Lab vol.1 .jpg
+fes,RISING SUN ROCK FESTIVAL 2023 in EZO,ライジンブサンロックフェスティバルニセンニジュウサンインエゾ,2023-08-11,石狩湾新港樽川ふ頭横野外特設ステージ,Hokkaido,FALSE,,,app/assets/images/events_visual/2023-08-11  RISING SUN ROCK FESTIVAL 2023 in EZO.jpg
+fes,ROCK KIDS 802-OCHIKEN Goes ON!!-SPECIAL LIVE HIGH!HIGH!HIGH!,ロックキッズハチマルニオチケンゴーズオンスペシャルライブハイハイハイ,2023-08-09,なんばHatch,Osaka,FALSE,,,app/assets/images/events_visual/2023-08-09  ROCK KIDS 802-OCHIKEN Goes ON!!-SPECIAL LIVE HIGH!HIGH!HIGH!.jpg
+fes,FM802 ROCK FESTIVAL RADIO CRAZY 2023,エフエムハチマルニロックフェスティバルレディオクレイジーニセンニジュウサン,2023-12-28,インテックス大阪,Osaka,FALSE,,,app/assets/images/events_visual/2023-12-28  FM802 ROCK FESTIVAL RADIO CRAZY 2023.png
+fes,COUNTDOWN JAPAN 23/24,カウントダウンジャパンニーサンニーヨン,2023-12-31,幕張メッセ ,Chiba,FALSE,,,app/assets/images/events_visual/2023-12-31  COUNTDOWN JAPAN 23:24 .jpg
+fes,FUKUOKA MUSIC FES.2024,フクオカミュージックフェスニセンニジュウヨン,2024-01-21,福岡PayPayドーム,Fukuoka,FALSE,,,app/assets/images/events_visual/2024-01-21  FUKUOKA MUSIC FES.2024 .jpg
+event,礼賛 RELEASE PARTY「ON TIME」,オンタイム,2024-02-29,代官山UNIT,Tokyo,FALSE,,,app/assets/images/events_visual/2024-02-29  礼賛 RELEASE PARTY「ON TIME」 .jpeg
+event,"PLAYLIST presents ""ヘッドフォンを外して vol.7""",ヘッドフォンヲハズシテボニュームナナ,2024-03-01,豊洲PIT,Tokyo,FALSE,,Lucky Kilimanjaro、Teleとの対バンイベント。,"app/assets/images/events_visual/2024-03-01  PLAYLIST presents ""ヘッドフォンを外して vol.7"".jpg"
+event,Catch Up TOUR -1 Time 1 Chance-,キャッチアップツアーワンタイムワンチャンス,2024-03-13,Zepp Nagoya,Aichi,FALSE,,WANIMA主催の対バンイベント。,app/assets/images/events_visual/2024-03-13  Catch Up TOUR -1 Time 1 Chance- .png
+event,GOOD FLAGS,グッドフラッグス,2024-03-17,仙台PIT,Miyagi,FALSE,,Teleとの対バンイベント。,app/assets/images/events_visual/2024-03-17  GOOD FLAGS .jpg
+fes,Vポイント presents ツタロックフェス2024,ツタロックフェスニセンニジュウヨン,2024-03-24,幕張メッセ 国際展示場 9～11ホール,Chiba,FALSE,,,app/assets/images/events_visual/2024-03-24  Vポイント presents ツタロックフェス2024.webp
+event,SUPER JUMPIN'JACK 2024,スーパージャンピンジャックニセンニジュウヨン,2024-03-29,Zepp Osaka Bayside,Osaka,FALSE,,対バンイベント。出演予定だったNEEの代打としてgo!go!vanillasと、Kroiが出演。,app/assets/images/events_visual/2024-03-29  SUPER JUMPIN'JACK 2024 .avif
+fes,EIGHT BALL FESTIVAL 2024,エイトボールフェスティバルニセンニジュウヨン,2024-03-30,CONVEX岡山,Okayama,FALSE,,,app/assets/images/events_visual/2024-03-30  EIGHT BALL FESTIVAL 2024 .jpeg
+event,秋山黄色presents 「BUG SESSION」,バグセッション,2024-04-05,Zepp Nagoya,Aichi,FALSE,,秋山黄色主催の対バンイベント。,app/assets/images/events_visual/2024-04-05  秋山黄色presents 「BUG SESSION」.jpg
+event,"FM802 35th ANNIVERSARY ""Be FUNKY!!"" SPECIAL LIVE 紀陽銀行 presents REQUESTAGE 2024",ビーファンキー,2024-04-29,大阪城ホール,Osaka,FALSE,,,"app/assets/images/events_visual/2024-04-29  FM802 35th ANNIVERSARY ""Be FUNKY!!"" SPECIAL LIVE 紀陽銀行 presents REQUESTAGE 2024.png"
+fes,JAPAN JAM 2024,ジャパンジャムニセンニジュウヨン,2024-05-04,千葉市蘇我スポーツ公園,Chiba,FALSE,,,app/assets/images/events_visual/2024-05-04  JAPAN JAM 2024 .png
+fes,VIVA LA ROCK 2024,ビバラロックニセンニジュウヨン,2024-05-05,さいたまスーパーアリーナ,Saitama,FALSE,,,app/assets/images/events_visual/2024-05-05  VIVA LA ROCK 2024 .jpg
+fes,OSAKA METROPOLITAN ROCK FESTIVAL 2024,オオサカメトロポリタンロックフェスティバルニセンニジュウヨン,2024-05-11,海とのふれあい広場,Osaka,FALSE,,,app/assets/images/events_visual/2024-05-11  OSAKA METROPOLITAN ROCK FESTIVAL 2024.jpg
+fes,TOKYO METROPOLITAN ROCK FESTIVAL 2024,トウキョウメトロポリタンロックフェスティバルニセンニジュウヨン,2024-05-18,若洲公園,Tokyo,FALSE,,,app/assets/images/events_visual/2024-05-11  OSAKA METROPOLITAN ROCK FESTIVAL 2024.jpg
+event,音楽と行こう SUPER LIVE Presented by au,オンガクトイコウスーパーライブ,2024-06-18,Zepp Osaka Bayside,Osaka,FALSE,,出演を予定していたNEEの代打として出演。,app/assets/images/events_visual/2024-06-18  音楽と行こう SUPER LIVE Presented by au.jpeg
+event,東京、夏のサイレン,トウキョウナツノサイレン,2024-06-23,日比谷野外大音楽堂,Tokyo,FALSE,,NEEのワンマンライブにゲストとして出演。,app/assets/images/events_visual/2024-06-23  東京、夏のサイレン .jpeg
+fes,ROCK IN JAPAN FESTIVAL 2024,ロッキンジャパンフェスティバルニセンニジュウヨン,2024-08-04,千葉市蘇我スポーツ公園,Chiba,FALSE,,,app/assets/images/events_visual/2024-08-04  ROCK IN JAPAN FESTIVAL 2024 .avif
+fes,WANIMA presents 1CHANCE FESTIVAL 2024,ワンチャンスフェスティバルニセンニジュウヨン,2024-08-24,熊本県農業公園カントリーパーク,Kumamoto,FALSE,,,app/assets/images/events_visual/2024-08-24  WANIMA presents 1CHANCE FESTIVAL 2024.jpg
+fes,SPACE SHOWER TV 35th ANNIVERSARY SWEET LOVE SHOWER 2024,スイートラブシャワーニセンニジュウヨン,2024-08-31,山中湖交流プラザきらら,Yamanashi,FALSE,,,app/assets/images/events_visual/2024-08-31  SPACE SHOWER TV 35th ANNIVERSARY SWEET LOVE SHOWER 2024.jpg
+fes,JA共済 presents RADIO BERRY 30th ANNIVERSARY ベリテンライブ2024 Special,ベリテンライブニセンニジュウヨンスペシャル,2024-09-07,井頭公園 運動広場,Tochigi,FALSE,,,app/assets/images/events_visual/2024-09-07  JA共済 presents RADIO BERRY 30th ANNIVERSARY ベリテンライブ2024 Special.jpg
+event,MIRRORBALL Lab vol.2,ミラーボールラボボリュームツー,2024-09-23,本多の森北電ホール,Ishikawa,FALSE,,,app/assets/images/events_visual/2024-09-23  MIRRORBALL Lab vol.2 .jpg
+fes,[Alexandros] presents THIS FES '24 in Sagamihara,ディスフェス,2024-10-26,相模原ギオンフィールド,Kanagawa,FALSE,,[Alexandros]主催フェス。,app/assets/images/events_visual/2024-10-26  [Alexandros] presents THIS FES '24 in Sagamihara.jpg
+fes,氣志團万博2024 ～シン・キシダンバンパク～,キシダンバンパク,2024-11-09,幕張メッセ 国際展示場 9～11ホール,Chiba,FALSE,,氣志團主催フェス。,app/assets/images/events_visual/2024-11-09  氣志團万博2024 ～シン・キシダンバンパク～.jpg
+one_man,PEOPLE 1の世界,ピープルワンノセカイ,2024-12-21,有明アリーナ,Tokyo,FALSE,,,app/assets/images/events_visual/PEOPLE 1の世界 .jpg
+one_man,PEOPLE 1の世界,ピープルワンノセカイ,2024-12-22,有明アリーナ,Tokyo,FALSE,,,app/assets/images/events_visual/PEOPLE 1の世界 .jpg
+fes,"FM802 35th ANNIVERSARY ""Be FUNKY!!"" ROCK FESTIVAL RADIO CRAZY 2024 -レディクレ 15th-",レディオクレイジーニセンニジュウヨン,2024-12-29,インテックス大阪,Osaka,FALSE,,,"app/assets/images/events_visual/2024-12-29  FM802 35th ANNIVERSARY ""Be FUNKY!!"" ROCK FESTIVAL RADIO CRAZY 2024 -レディクレ 15th-.jpg"
+fes,COUNTDOWN JAPAN 24/25,カウントダウンジャパンニーヨンニーゴー,2024-12-30,幕張メッセ,Chiba,FALSE,,,app/assets/images/events_visual/2024-12-30  COUNTDOWN JAPAN 24:25 .webp
