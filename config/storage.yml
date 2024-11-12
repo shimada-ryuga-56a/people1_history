@@ -23,7 +23,7 @@ google:
       "client_x509_cert_url": "<%= Rails.application.credentials.dig(:google_cloud_storage, :client_x509_cert_url) %>",
       "universe_domain": "googleapis.com"
     }
-  bucket: {people1_images}
+  bucket: people1_images
 
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
