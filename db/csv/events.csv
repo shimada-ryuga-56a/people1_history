@@ -1,3 +1,2 @@
 category,name,name_kana_ruby,date,place,place_prefecture,is_canceled,tour_id,remark,visual_image
 event,BLT LIVE BOOSTER vol.1,ビーエルティーライブブースターボリュームワン,2021-06-03,恵比寿LIQUIDROOM,Tokyo,FALSE,,PEOPLE 1の初ライブ。対バン相手としてNEE、OAとして冨田直とナカムラマユが出演。,app/assets/images/events_visual/2021-06-03 BLT_LIVE_BOOSTER_vol.1_main.jpg
-
