@@ -18,6 +18,9 @@ CSV.foreach('db/csv/events.csv', headers: true) do |row|
     event.is_canceled = row['is_canceled']
     event.remark = row['remark']
     event.tour_id = row['tour_id']
+    if row['visual_image'].present? && File.exist?(Rails.root.join(row['visual_image']))
+      event.visual_image.attach(io: File.open(Rails.root.join(row['visual_image'])), filename: File.basename(row['visual_image']))
+    end
   end
 end
 
