@@ -23,7 +23,8 @@ CSV.foreach('db/csv/events.csv', headers: true) do |row|
       begin
       event.visual_image.attach(io: File.open(file.path),filename: File.basename(row['visual_image']))
       ensure
-      file.close.unlink
+      file.close
+      file.unlink
       end
     end
   end
@@ -37,9 +38,10 @@ CSV.foreach('db/csv/songs.csv', headers: true) do |row|
     if row['jk'].present? && File.exist?(Rails.root.join(row['jk']))
       file = ImageProcessing::MiniMagick.source(File.open(Rails.root.join(row['jk']))).resize_to_fit(900, 900).call
       begin
-      event.jk.attach(io: File.open(file.path),filename: File.basename(row['jk']))
+      song.jk.attach(io: File.open(file.path),filename: File.basename(row['jk']))
       ensure
-      file.close.unlink
+      file.close
+      file.unlink
       end
     end
   end
