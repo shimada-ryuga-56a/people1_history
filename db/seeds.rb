@@ -19,7 +19,12 @@ CSV.foreach('db/csv/events.csv', headers: true) do |row|
     event.remark = row['remark']
     event.tour_id = row['tour_id']
     if row['visual_image'].present? && File.exist?(Rails.root.join(row['visual_image']))
-      event.visual_image.attach(io: File.open(Rails.root.join(row['visual_image'])), filename: File.basename(row['visual_image']))
+      file = ImageProcessing::MiniMagick.source(File.open(Rails.root.join(row['visual_image']))).resize_to_fit(900, 900).call
+      begin
+      event.visual_image.attach(io: File.open(file.path),filename: File.basename(row['visual_image']))
+      ensure
+      file.close.unlink
+      end
     end
   end
 end
@@ -30,7 +35,12 @@ CSV.foreach('db/csv/songs.csv', headers: true) do |row|
     song.name_kana_ruby = row['name_kana_ruby']
     song.youtube_link = row['youtube']
     if row['jk'].present? && File.exist?(Rails.root.join(row['jk']))
-      song.jk.attach(io: File.open(Rails.root.join(row['jk'])), filename: File.basename(row['jk']))
+      file = ImageProcessing::MiniMagick.source(File.open(Rails.root.join(row['jk']))).resize_to_fit(900, 900).call
+      begin
+      event.jk.attach(io: File.open(file.path),filename: File.basename(row['jk']))
+      ensure
+      file.close.unlink
+      end
     end
   end
 end
