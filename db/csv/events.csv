@@ -1,2 +1,13 @@
 category,name,name_kana_ruby,date,place,place_prefecture,is_canceled,tour_id,remark,visual_image
 event,BLT LIVE BOOSTER vol.1,ビーエルティーライブブースターボリュームワン,2021-06-03,恵比寿LIQUIDROOM,Tokyo,FALSE,,PEOPLE 1の初ライブ。対バン相手としてNEE、OAとして冨田直とナカムラマユが出演。,app/assets/images/events_visual/2021-06-03 BLT_LIVE_BOOSTER_vol.1_main.jpg
+fes,JAPAN JAM 2022,ジャパンジャムニセンニジュウニ,2022-05-01,千葉市蘇我スポーツ公園,Chiba,FALSE,,初フェス。SUNSET STAGE出演。,app/assets/images/events_visual/2022-05-01  JAPAN JAM 2022 .jpg
+event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-20,BIGCAT,Osaka,FALSE,,WurtS主催の対バンツアー。,app/assets/images/events_visual/W's LIVE 2022 .jpeg
+event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-21,名古屋CLUB QUATTRO,Aichi,FALSE,,WurtS主催の対バンツアー。,app/assets/images/events_visual/W's LIVE 2022 .jpeg
+event,W's LIVE 2022,ワーズライブニセンニンジュウニ,2022-06-29,Spotify O-EAST,Tokyo,FALSE,,WurtS主催の対バンツアー。,app/assets/images/events_visual/W's LIVE 2022 .jpeg
+event,BLT LIVE BOOSTER vol.2,ビーエルティーライブブースターボリュームツー,2022-06-26,日比谷野外大音楽堂,Tokyo,FALSE,,,app/assets/images/events_visual/2022-06-26  BLT LIVE BOOSTER vol.2 .jpg
+event,GOOOOOON!,ゴーオン,2022-07-03,大阪城野外音楽堂,Osaka,FALSE,,,app/assets/images/events_visual/2022-07-03  GOOOOOON! .png
+fes,ROCK IN JAPAN FESTIVAL 2022,ロッキンジャパンフェスティバルニセンニジュウニ,2022-08-07,千葉市蘇我スポーツ公園,Chiba,FALSE,,,app/assets/images/events_visual/2022-08-07  ROCK IN JAPAN FESTIVAL 2022 .jpg
+tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-02,名古屋SPADE BOX,Aichi,FALSE,1,,app/assets/images/events_visual/ベッドルーム大衆音楽 .jpg
+tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-03,Music Club JANUS,Osaka,FALSE,1,,app/assets/images/events_visual/ベッドルーム大衆音楽 .jpg
+tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-10-09,Veats Shibuya,Tokyo,FALSE,1,,app/assets/images/events_visual/ベッドルーム大衆音楽 .jpg
+tour,ベッドルーム大衆音楽,ベッドルームタイシュウオンガク,2021-12-20,Spotify O-EAST,Tokyo,FALSE,1,,app/assets/images/events_visual/ベッドルーム大衆音楽 .jpg

@@ -1,7 +1,7 @@
 <div class="card bg-base-100 w-96 shadow-xl mx-2 mb-4">
   <figure class="mt-10">
     <% if event.visual_image.attached? %>
-      <%= image_tag event.visual_image.variant(resize_to_fill: [400, 300]) %>
+      <%= image_tag event.visual_image.variant(resize_to_fill: [250, 200]) %>
     <% end %>
   </figure>
   <div class="card-body">
