@@ -1,7 +1,7 @@
 <div class="card card-compact bg-base-100 w-96 shadow-xl mx-2 mb-5">
   <figure>
   <% if song.jk.attached? %>
-    <%= image_tag song.jk %>
+    <%= image_tag song.jk.variant(resize_to_fill: [200, 200]) %>
   <% else %>
     <img
       src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
