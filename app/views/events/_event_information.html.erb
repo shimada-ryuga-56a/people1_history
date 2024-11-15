@@ -1,4 +1,5 @@
 <%= form_with model: EventInformation.new, url: event_event_informations_path(event_id: params[:id]) do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
   <div class="card bg-base-100 w-96 shadow-xl mb-5">
     <div class="card-body">
       <h2 class="card-title"><%= f.label :body %></h2>
