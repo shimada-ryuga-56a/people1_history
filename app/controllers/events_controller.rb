@@ -3,9 +3,9 @@ class EventsController < ApplicationController
     @events = Event.category(params[:category]).order(date: :desc)
     @categories = params[:category]
     @events = if params[:date]&.include?('1')
-                @events
+                @events.page(params[:page])
               else
-                @events.where(date: ..Time.zone.today)
+                @events.where(date: ..Time.zone.today).page(params[:page])
               end
   end
 

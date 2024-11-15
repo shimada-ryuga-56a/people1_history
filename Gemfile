@@ -36,6 +36,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'dotenv-rails'
 gem 'google-cloud-storage'
+gem 'kaminari'
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-twitter'

@@ -2,3 +2,10 @@ ja:
   flash:
     error:
       setlist_exist: "すでにセットリストが存在します。"
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
