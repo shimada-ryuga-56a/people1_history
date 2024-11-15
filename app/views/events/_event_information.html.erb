@@ -2,8 +2,8 @@
   <%= render 'shared/error_messages', model: f.object %>
   <div class="card bg-base-100 w-96 shadow-xl mb-5">
     <div class="card-body">
-      <h2 class="card-title"><%= f.label :body %></h2>
-      <%= f.text_area :body, class: "textarea", placeholder: "情報を投稿しましょう" %>
+      <h2 class="card-title">コメントを投稿しましょう！</h2>
+      <%= f.text_area :body, class: "textarea", placeholder: "コメントを入力" %>
       <div class="card-actions justify-end">
         <%= f.submit 'Post', class: "btn btn-primary" %>
       </div>
