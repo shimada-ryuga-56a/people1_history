@@ -6,7 +6,7 @@ class TourInformationsController < ApplicationController
     else
       @tour = Tour.find(params[:id])
       @tours = Event.where(tour_id: params[:id])
-      @informations = TourInformation.where(tour_id: params[:id]).order(created_at: "DESC")
+      @informations = TourInformation.where(tour_id: params[:id]).order(created_at: 'DESC')
       render 'tours/show', status: :unprocessable_entity
     end
   end
