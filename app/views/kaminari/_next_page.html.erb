@@ -6,8 +6,7 @@
     per_page:      number of items to fetch per page
     remote:        data-remote
 -%>
-<button class="join-item btn btn-sm">
-  <span class="next">
-    <%= link_to_unless current_page.last?, t('views.pagination.next').html_safe, url, rel: 'next', remote: remote %>
-  </span>
-</button>
+
+<span class="next">
+  <%= link_to_unless current_page.last?, t('views.pagination.next').html_safe, url, rel: 'next', remote: remote, class: 'join-item btn btn-xs md:btn-sm' %>
+</span>
