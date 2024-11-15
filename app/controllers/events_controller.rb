@@ -11,6 +11,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.includes(:setlist).find(params[:id])
+    @event_infos = EventInformation.where(event_id: params[:id])
     return unless @event.setlist
 
     @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
@@ -19,7 +20,5 @@ class EventsController < ApplicationController
       @infos << SetlistitemInformation.where(setlistitem_id: item.id)
     end
     @infos.flatten!
-
-    @event_infos = EventInformation.where(event_id: params[:id])
   end
 end

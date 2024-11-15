@@ -37,3 +37,7 @@
 <% else %>
   <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary' %>
 <% end %>
+
+<div class="divider"></div>
+
+<%= render 'events/event_information', infos: @event_infos %>

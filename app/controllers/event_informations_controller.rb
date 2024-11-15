@@ -5,16 +5,15 @@ class EventInformationsController < ApplicationController
       redirect_to event_path(id: params[:event_id])
     else
       @event = Event.includes(:setlist).find(params[:id])
+      @event_infos = EventInformation.where(event_id: params[:id])
       return unless @event.setlist
-  
+
       @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
       @infos = []
       @setlistitems.each do |item|
         @infos << SetlistitemInformation.where(setlistitem_id: item.id)
       end
       @infos.flatten!
-  
-      @event_infos = EventInformation.where(event_id: params[:id])
       render 'events/show', status: :unprocessable_entity
     end
   end
