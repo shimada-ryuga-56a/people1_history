@@ -1,7 +1,10 @@
 ja:
   flash:
+    success:
+      post: "投稿に成功しました。"
     error:
       setlist_exist: "すでにセットリストが存在します。"
+      post: "投稿に失敗しました。"
   views:
     pagination:
       first: "&laquo;"
