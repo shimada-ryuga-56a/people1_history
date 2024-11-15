@@ -9,7 +9,10 @@ Rails.application.routes.draw do
     :omniauth_callbacks => 'users/omniauth_callbacks',
   }
 
-  resources :tours, only: [:index, :show]
+  resources :tours, only: [:index, :show] do
+    resources :tour_informations, only: [:create]
+  end
+
   resources :songs, only: [:index, :show] do
     resources :song_informations, only: [:create, :destroy], shallow: true
   end
