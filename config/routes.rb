@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   resources :setlistitem_informations, only: [:create]
+  resource :mypage, only: [:show]
 
   # セットリストのオートコンプリートのためのルーティング
   resources :setlists do
