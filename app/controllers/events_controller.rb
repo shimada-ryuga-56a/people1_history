@@ -19,5 +19,7 @@ class EventsController < ApplicationController
       @infos << SetlistitemInformation.where(setlistitem_id: item.id)
     end
     @infos.flatten!
+
+    @event_infos = EventInformation.where(event_id: params[:id])
   end
 end

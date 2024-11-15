@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :events, only: [:index, :show] do
+    resources :event_informations, only: [:create]
     resource :setlist, only: [:new, :create]
   end
 
