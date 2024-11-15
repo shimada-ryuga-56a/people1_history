@@ -1,3 +1,8 @@
+<div class="">
+  <% if @event.visual_image.attached? %>
+    <%= image_tag @event.visual_image.variant(resize_to_fill: [600, 300]), class: "w-full h-auto contrast-50	" %>
+  <% end %>
+</div>
 
 <h1><%= @event.name %></h1>
 <p>
