@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     resources :song_informations, only: [:create, :destroy], shallow: true
   end
 
+  resources :song_informations, only: [], shallow: true do
+    resource :likes_on_song_informations, only: [:create, :destroy], shallow: true
+  end
+
   resources :events, only: [:index, :show] do
     resources :event_informations, only: [:create]
     resource :setlist, only: [:new, :create]
