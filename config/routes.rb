@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "likes_on_setlistitem_informations/create"
+  get "likes_on_setlistitem_informations/destroy"
   get "likes_on_event_informations/create"
   get "likes_on_event_informations/destroy"
   root "static_pages#top"
