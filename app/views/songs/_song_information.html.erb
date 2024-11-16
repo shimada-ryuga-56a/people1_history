@@ -19,6 +19,11 @@
               <i class="fa-solid fa-heart"></i>
               <%= song_information.likes_on_song_informations.count %> いいね
             <% end %>
+          <% else %>
+            <%= link_to song_information_likes_on_song_informations_path(song_information), method: :post do %>
+              <i class="fa-regular fa-heart"></i>
+              <%= song_information.likes_on_song_informations.count %> いいね
+            <% end %>
           <% end %>
         </div>
       </div>
