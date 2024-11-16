@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "likes_on_event_informations/create"
+  get "likes_on_event_informations/destroy"
   root "static_pages#top"
 
   devise_for :users, controllers: {
@@ -19,6 +21,10 @@ Rails.application.routes.draw do
 
   resources :song_informations, only: [], shallow: true do
     resource :likes_on_song_informations, only: [:create, :destroy], shallow: true
+  end
+
+  resources :event_informations, only: [], shallow: true do
+    resource :likes_on_event_informations, only: [:create, :destroy], shallow: true
   end
 
   resources :events, only: [:index, :show] do
