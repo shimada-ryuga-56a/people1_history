@@ -1,4 +1,9 @@
 ja:
+  model:
+    song:
+      validates:
+        kana_ruby: "全角カタカナで入力して下さい。"
+        hiragana_ruby: "全角ひらがなで入力して下さい。"
   flash:
     success:
       post: "投稿に成功しました。"

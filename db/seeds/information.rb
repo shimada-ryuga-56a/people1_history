@@ -26,5 +26,6 @@ CSV.foreach('db/csv/songs.csv', headers: true) do |row|
     song.name = row['name']
     song.name_kana_ruby = row['name_kana_ruby']
     song.youtube_link = row['youtube']
+    song.name_hiragana_ruby = row['name_hiragana_ruby']
   end
 end
