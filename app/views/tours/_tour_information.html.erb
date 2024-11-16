@@ -21,6 +21,9 @@
           </div>
           <%= info.user.name %>
           <p class="text-sm">　<%= info.created_at %></p>
+          <div>
+            <%= render partial: "info_fav_btn", locals: {tour_information: info} %>
+          </div>
         </div>
         <h2 class="card-title"><%= info.body %></h2>
       </div>
