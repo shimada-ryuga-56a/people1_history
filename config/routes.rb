@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "likes_on_tour_informations/create"
+  get "likes_on_tour_informations/destroy"
   root "static_pages#top"
 
   devise_for :users, controllers: {
