@@ -26,6 +26,9 @@
             </div>
             <h2 class="card-title"><%= info.body %></h2>
             <p><%= info.created_at %></p>
+            <div>
+              <%= render partial: "setlistitems/info_fav_btn", locals: {setlistitem_information: info} %>
+            </div>
           </div>
         </div>
       <% end %>
