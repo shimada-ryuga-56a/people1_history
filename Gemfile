@@ -41,7 +41,8 @@ gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-twitter'
 gem 'pry-byebug'
-gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+gem "font-awesome-sass", "~> 6.5.2"
+gem 'sass-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem 'image_processing', '~> 1.2'
