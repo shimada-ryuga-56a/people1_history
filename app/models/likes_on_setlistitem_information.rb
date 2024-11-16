@@ -1,0 +1,2 @@
+class LikesOnSetlistitemInformation < ApplicationRecord
+end
