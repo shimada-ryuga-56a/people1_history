@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "likes_on_tour_informations/create"
+  get "likes_on_tour_informations/destroy"
   root "static_pages#top"
 
   devise_for :users, controllers: {
@@ -13,6 +15,10 @@ Rails.application.routes.draw do
     resources :tour_informations, only: [:create]
   end
 
+  resources :tour_informations, only: [] do
+    resource :likes_on_tour_informations, only: [:create, :destroy], shallow: true
+  end
+
   resources :songs, only: [:index, :show] do
     resources :song_informations, only: [:create, :destroy], shallow: true
   end
@@ -21,13 +27,13 @@ Rails.application.routes.draw do
     resource :likes_on_song_informations, only: [:create, :destroy], shallow: true
   end
 
-  resources :event_informations, only: [], shallow: true do
-    resource :likes_on_event_informations, only: [:create, :destroy], shallow: true
-  end
-
   resources :events, only: [:index, :show] do
     resources :event_informations, only: [:create]
     resource :setlist, only: [:new, :create]
+  end
+
+  resources :event_informations, only: [], shallow: true do
+    resource :likes_on_event_informations, only: [:create, :destroy], shallow: true
   end
 
   resources :setlistitem_informations, only: [:create] do
