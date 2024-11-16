@@ -18,7 +18,7 @@ class SetlistsController < ApplicationController
   end
 
   def search
-    @songs = Song.where('name_kana_ruby like ?', "%#{params[:q]}%")
+    @songs = Song.where(['name_kana_ruby LIKE(?) or name LIKE(?) or name_hiragana_ruby LIKE(?)', "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%"])
     respond_to do |format|
       format.js
     end
