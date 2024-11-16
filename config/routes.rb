@@ -32,7 +32,10 @@ Rails.application.routes.draw do
     resource :setlist, only: [:new, :create]
   end
 
-  resources :setlistitem_informations, only: [:create]
+  resources :setlistitem_informations, only: [:create] do
+    resource :likes_on_setlistitem_informations, only: [:create, :destroy], shallow: true
+  end
+
   resource :mypage, only: [:show]
 
   # セットリストのオートコンプリートのためのルーティング
