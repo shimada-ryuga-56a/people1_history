@@ -1,0 +1,2 @@
+module LikesOnSongInformationsHelper
+end
