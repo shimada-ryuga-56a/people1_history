@@ -6,7 +6,6 @@ class EventInformation < ApplicationRecord
 
   validates :body, presence: true
 
-
   def liked_by?(user)
     likes_on_event_informations.exists?(user_id: user.id)
   end
