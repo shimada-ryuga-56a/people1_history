@@ -4,9 +4,8 @@ class LikesOnEventInformation < ApplicationRecord
 
   has_many :notices, as: :noticeable, dependent: :destroy
 
-  private
-
   def create_notice(user)
-    Notice.create!(noticeable: self, user_id: user.id, action_type: Notice.action_types[:like])
+    @notice = Notice.new(noticeable_type: LikesOnEventInformation, noticeable_id: self.id, user_id: user.id, action_type: Notice.action_types[:like])
+    @notice.save
   end
 end
