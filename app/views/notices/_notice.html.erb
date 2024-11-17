@@ -5,7 +5,7 @@
       <div class="w-8 md:w-12 lg:w-16 mr-3 rounded-xl">
         <%= image_tag notice.noticeable.user.image %>
       </div>
-      <p class="mr-3"><%= notice.noticeable.user.name.truncate(3) %>さんがいいねしました！</p>
+      <p class="mr-3"><%= notice.noticeable.user.name.truncate(7) %>さんがいいねしました！</p>
       <p class="stat-desc font-light"><%= time_ago_in_words(notice.created_at) %>前<p>
     </div>
     <% case notice.noticeable %>
