@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_16_124412) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_17_052617) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -93,6 +93,17 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_16_124412) do
     t.integer "tour_information_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notices", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "noticeable_type"
+    t.bigint "noticeable_id"
+    t.integer "action_type", null: false
+    t.boolean "unread", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["noticeable_type", "noticeable_id"], name: "index_notices_on_noticeable"
   end
 
   create_table "setlist_informations", force: :cascade do |t|
