@@ -8,7 +8,9 @@
       <p class="mb-5">
         PEOPLE 1リスナー（通称大衆）向けに作成した、<strong>非公式</strong>ファンサイトです。ライブ後・楽曲リリース後の感想戦や、インスタライブやインタビュー等で発信された情報交換のプラットフォームとして利用することができます。また、PEOPLE 1の活動を年表形式で保存・閲覧できるPEOPLE 1ヒストリーも後日解禁予定です。
       </p>
-      <button class="btn btn-primary">Get Started</button>
+      <%- User.omniauth_providers.each do |provider| %>
+        <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path("user", provider), data: { turbo: false }, class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
