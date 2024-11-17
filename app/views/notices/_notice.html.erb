@@ -1,3 +1,18 @@
 <% notices.each do |notice| %>
-  <p><%= notice.noticeable.user.name %></p>
+  <% if notice.action_type = "like" %>
+    <% case notice.noticeable %>
+    <% when LikesOnEventInformation %>
+      <p><%= notice.noticeable.user.name %>からいいねがありました。</p>
+      <p><%= notice.noticeable.event_information.body %></p>
+    <% when LikesOnTourInformation %>
+      <p><%= notice.noticeable.user.name %>からいいねがありました。</p>
+      <p><%= notice.noticeable.tour_information.body %></p>
+    <% when LikesOnSetlistitemInformation %>
+      <p><%= notice.noticeable.user.name %>からいいねがありました。</p>
+      <p><%= notice.noticeable.setlistitem_information.body %></p>
+    <% when LikesOnSongInformation %>
+      <p><%= notice.noticeable.user.name %>からいいねがありました。</p>
+      <p><%= notice.noticeable.song_information.body %></p>
+    <% end %>
+  <% end %>
 <% end %>
