@@ -1,2 +1,9 @@
 <h1>Notices#index</h1>
-<p><%= @notices.length %></p>
+
+<% if @notices.present? %>
+  <% @notices.each do |notice| %>
+    <p><%= notice.noticeable.user.name %></p>
+  <% end %>
+<% else %>
+  <p>通知はありません。</p>
+<% end %>
