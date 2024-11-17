@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     :omniauth_callbacks => 'users/omniauth_callbacks',
   }
 
-  resources :notices, only: [:index, :destroy]
+  resources :notices, only: [:index]
+  delete "notices" => "notices#destroy"
 
   resources :tours, only: [:index, :show] do
     resources :tour_informations, only: [:create]
