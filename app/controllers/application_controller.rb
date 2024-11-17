@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
 
   def any_unread_notice?
     return unless user_signed_in?
-    @notice = Notice.find_by(user_id: current_user, unread: true)
+    @unread_notice = Notice.find_by(user_id: current_user, unread: true)
   end
 end
