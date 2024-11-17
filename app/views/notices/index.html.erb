@@ -1,8 +1,7 @@
 <h1>Notices#index</h1>
 
-<%= link_to "すべて既読", "/notices", data: { "turbo-method": :delete } %>
-
 <% if @notices.present? %>
+  <%= link_to "すべて既読", "/notices", data: { "turbo-method": :delete }, class: "btn btn-neutral" %>
   <%= render partial: "notice", locals: {notices: @notices} %>
 <% else %>
   <p>通知はありません。</p>
