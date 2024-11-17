@@ -1,12 +1,12 @@
 <% notices.each do |notice| %>
   <div class="mb-5">
   <% if notice.action_type = "like" %>
-    <div class="avatar flex items-center">
-      <div class="w-8 md:w-12 lg:w-16 rounded-xl">
-        <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-        alt="Tailwind-CSS-Avatar-component" />
+    <div class="avatar flex items-center mb-3">
+      <div class="w-8 md:w-12 lg:w-16 mr-3 rounded-xl">
+        <%= image_tag notice.noticeable.user.image %>
       </div>
-      <p><%= notice.noticeable.user.name %>からいいねがありました。</p>
+      <p class="mr-3"><%= notice.noticeable.user.name.truncate(3) %>さんがいいねしました！</p>
+      <p class="stat-desc font-light"><%= time_ago_in_words(notice.created_at) %>前<p>
     </div>
     <% case notice.noticeable %>
     <% when LikesOnEventInformation %>
