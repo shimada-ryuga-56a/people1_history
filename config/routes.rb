@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get "likes_on_tour_informations/create"
-  get "likes_on_tour_informations/destroy"
   root "static_pages#top"
 
   devise_for :users, controllers: {
@@ -10,6 +8,9 @@ Rails.application.routes.draw do
     # Twitter API認証用
     :omniauth_callbacks => 'users/omniauth_callbacks',
   }
+
+  resources :notices, only: [:index]
+  delete "notices" => "notices#destroy"
 
   resources :tours, only: [:index, :show] do
     resources :tour_informations, only: [:create]
