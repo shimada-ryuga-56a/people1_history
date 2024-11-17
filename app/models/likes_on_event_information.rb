@@ -8,4 +8,9 @@ class LikesOnEventInformation < ApplicationRecord
     @notice = Notice.new(noticeable_type: LikesOnEventInformation, noticeable_id: self.id, user_id: user.id, action_type: Notice.action_types[:like])
     @notice.save
   end
+
+  def destroy_notice(user)
+    @notice = Notice.find_by(noticeable_type: "LikesOnEventInformation", noticeable_id: self.id, user_id: user.id)
+    @notice.destroy
+  end
 end
