@@ -1,5 +1,5 @@
 <% flash.each do |message_type, message| %>
-  <div role="alert" class="alert alert-<%= message_type %> flex justify-center my-3">
+  <div role="alert" class="alert alert-<%= message_type %> flex my-3">
     <% case message_type %>
     <% when "error" %>
       <svg
