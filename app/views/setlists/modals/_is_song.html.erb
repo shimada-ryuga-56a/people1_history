@@ -1,0 +1,10 @@
+<div data-controller="dialog" data-action="click->dialog#backdropClose">
+  <dialog data-dialog-target="dialog" class="bg-neutral-200 p-3 text-slate-900 rounded-lg">
+    <p>
+      <i class="fa-solid fa-circle-question mr-1"></i>「楽曲」ボタンについて<br>
+      MCやSE、ソロなど、公演の流れに関する曲以外の情報は、「楽曲」からチェックを外してください。楽曲名欄には、「MC」「ギターソロ」のような形で入力をお願いします。
+    </p>
+    <button type="button" data-action="dialog#close" autofocus class="place-items-end"><i class="fa-regular fa-circle-xmark mr-1"></i>閉じる</button>
+  </dialog>
+  <button type="button" data-action="dialog#open"><i class="fa-solid fa-circle-question ml-3"></i></button>
+</div>
