@@ -1,6 +1,6 @@
 <h1>Setlists new</h1>
 
-<%= form_with model: @setlist,data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, url: event_setlist_path do |f| %>
+<%= form_with model: @setlist, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, local: true, url: event_setlist_path do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
 
   <template data-nested-form-target="template">
@@ -10,9 +10,9 @@
   </template>
 
   <!-- Inserted elements will be injected before that target. -->
-  <div data-nested-form-target="target"></div>
-
-  <button type="button" data-action="nested-form#add" class="btn btn-info">楽曲を追加</button>
+  <div data-nested-form-target="target">
+    <button type="button" data-action="nested-form#add" class="btn btn-info">楽曲を追加</button>
+  </div>
 
   <div>
     <%= f.submit "セットリストを投稿", class: "btn btn-primary" %>
