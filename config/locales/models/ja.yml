@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      setlistitem:
+        is_song: 楽曲
+        is_arranged: 新訳
+        is_rehearsal: リハーサル
+        is_encore: アンコール
