@@ -1,20 +1,41 @@
-<h1>Setlists new</h1>
+<div class="m-3 leading-7">
+  <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
+    <%= @event.name %><br>
+    @<%= @event.place %>
+    <br>セットリスト登録フォーム
+  </h1>
 
-<%= form_with model: @setlist,data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, url: event_setlist_path do |f| %>
-  <%= render 'shared/error_messages', model: f.object %>
-
-  <template data-nested-form-target="template">
-    <%= f.fields_for :setlistitems, Setlistitem.new, child_index: 'NEW_RECORD' do |i| %>
-      <%= render "setlistitem_form", f: i %>
-    <% end %>
-  </template>
-
-  <!-- Inserted elements will be injected before that target. -->
-  <div data-nested-form-target="target"></div>
-
-  <button type="button" data-action="nested-form#add" class="btn btn-info">楽曲を追加</button>
-
-  <div>
-    <%= f.submit "セットリストを投稿", class: "btn btn-primary" %>
+  <div class="mb-3">
+    <div class="divider">
+      <h2>注意事項</h2>
+    </div>
+    <ul class="list-outside list-disc ml-6 mr-4 leading-8">
+      <li>セットリスト投稿にご協力いただき、誠にありがとうございます。</li>
+      <li>MCやSE、ソロなど、公演の流れに関する曲以外の情報は、「楽曲」からチェックを外してください。楽曲名欄には、「MC」「ギターソロ」のような形で入力をお願いします。</li>
+      <li>その他のチェックボックスの使用方法につきましては、チェックボックス隣のインフォメーションボタンからご確認ください。</li>
+    </ul>
   </div>
-<% end %>
+
+  <div class="mb-5">
+    <div class="divider"></div>
+    <h2 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">セットリスト登録</h2>
+    <%= form_with model: @setlist, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, url: event_setlist_path do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <template data-nested-form-target="template">
+        <%= f.fields_for :setlistitems, Setlistitem.new, child_index: 'NEW_RECORD' do |i| %>
+          <%= render "setlistitem_form", f: i %>
+        <% end %>
+      </template>
+
+      <!-- Inserted elements will be injected before that target. -->
+      <div data-nested-form-target="target">
+        <button type="button" data-action="nested-form#add" class="btn btn-info">楽曲を追加</button>
+      </div>
+    </div>
+
+    <div>
+      <%= f.submit "セットリストを投稿", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

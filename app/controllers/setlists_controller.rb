@@ -1,5 +1,6 @@
 class SetlistsController < ApplicationController
   def new
+    @event = Event.find(params[:event_id])
     @setlist = Setlist.new
     50.times { @setlist.setlistitems.build }
   end
@@ -11,8 +12,10 @@ class SetlistsController < ApplicationController
     @setlist.setlistitems.each(&:set_song_id)
 
     if @setlist.save
-      redirect_to events_path
+      flash[:success] = I18n.t('flash.success.setlist_post')
+      redirect_to event_path(@event.id)
     else
+      flash.now[:error] = I18n.t('flash.error.setlist_post')
       render :new, status: :unprocessable_entity
     end
   end
@@ -30,7 +33,7 @@ class SetlistsController < ApplicationController
   def setlist_params
     params.require(:setlist).permit(
       :event_id,
-      setlistitems_attributes: [:song_title, :position, :is_encore, :is_song, :is_arranged, :_destroy]
+      setlistitems_attributes: [:song_title, :position, :is_encore, :is_song, :is_arranged, :is_rehearsal, :_destroy]
     ).merge(user_id: current_user.id, event_id: params[:event_id])
   end
 

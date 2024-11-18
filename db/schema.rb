@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_17_052617) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_18_065616) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -131,6 +131,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_17_052617) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "setlist_id"
+    t.boolean "is_rehearsal", default: false, null: false
   end
 
   create_table "setlists", force: :cascade do |t|
