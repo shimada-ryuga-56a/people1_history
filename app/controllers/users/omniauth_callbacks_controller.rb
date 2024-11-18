@@ -39,7 +39,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     # persisted?でDBに保存済みかどうか判断
     if @user.persisted?
       # サインアップ時に行いたい処理があればここに書きます。
-      flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
+      flash[:info] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
       sign_in_and_redirect @user, event: :authentication
     else
       session["devise.#{provider}_data"] = request.env['omniauth.auth']
