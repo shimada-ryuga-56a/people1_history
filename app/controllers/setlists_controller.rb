@@ -11,7 +11,7 @@ class SetlistsController < ApplicationController
     @setlist.setlistitems.each(&:set_song_id)
 
     if @setlist.save
-      flash[:info] = I18n.t('flash.success.setlist_post')
+      flash[:success] = I18n.t('flash.success.setlist_post')
       redirect_to event_path(@event.id)
     else
       render :new, status: :unprocessable_entity
