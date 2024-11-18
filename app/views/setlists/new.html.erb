@@ -3,7 +3,21 @@
     <%= @event.name %><br>セットリスト登録フォーム
   </h1>
 
+  <div class="mb-3">
+    <div class="divider">
+      <h2>注意事項</h2>
+    </div>
+    <ul class="list-outside list-disc ml-6 mr-4 leading-8">
+      <li>セットリスト投稿にご協力いただき、誠にありがとうございます。</li>
+      <li>MCやSE、ソロなど、公演の流れに関する曲以外の情報は、「楽曲」からチェックを外してください。楽曲名欄には、「MC」「ギターソロ」など、わかりやすい形で入力をお願いします。</li>
+      <li>その他のチェックボックスの使用方法につきましては、チェックボックス隣のインフォメーションボタンからご確認ください。li>
+    </ul>
+  </div>
+
   <div class="mb-5">
+    <div class="divider">
+      <h2>セットリスト登録</h2>
+    </div>
     <%= form_with model: @setlist, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, url: event_setlist_path do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
 
