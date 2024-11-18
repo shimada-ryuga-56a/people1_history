@@ -11,7 +11,7 @@ class SetlistsController < ApplicationController
     @setlist.setlistitems.each(&:set_song_id)
 
     if @setlist.save
-      redirect_to events_path
+      redirect_to event_path(@event.id)
     else
       render :new, status: :unprocessable_entity
     end
