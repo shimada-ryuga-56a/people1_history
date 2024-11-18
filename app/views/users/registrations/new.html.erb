@@ -1,5 +1,18 @@
-<p class="text-center">Xでログインしてください。</p>
-
+<div
+  class="hero min-h-screen"
+  style="background-image: url(<%= asset_path "top.jpeg" %>);">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-neutral-content text-center">
+    <div class="max-w-md text-slate-100">
+      <h1 class="text-2xl md:text-3xl mb-5 font-bold">Xでログインしてください。</h1>
+      <% unless user_signed_in? %>
+        <%= button_to user_twitter_omniauth_authorize_path, data: { turbo: false }, class: "btn text-slate-100" do %>
+          <i class="fa-brands fa-square-x-twitter fa-2x"></i><p>でサインイン</p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 <% 
 =begin
 %>
