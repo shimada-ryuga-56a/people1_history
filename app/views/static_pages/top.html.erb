@@ -10,7 +10,9 @@
       </p>
       <% unless user_signed_in? %>
         <%- User.omniauth_providers.each do |provider| %>
-          <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path("user", provider), data: { turbo: false }, class: "btn btn-primary" %>
+          <%= button_to omniauth_authorize_path("user", provider), data: { turbo: false }, class: "btn btn-primary" do %>
+            <i class="fa-brands fa-square-x-twitter"></i><p>でサインイン</p>
+          <% end %>
         <% end %>
       <% end %>
     </div>
