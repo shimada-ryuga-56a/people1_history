@@ -220,6 +220,11 @@
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.2.101.tgz#d0544b1bc51d420c1bb27f3281ccae54945e70f6"
   integrity sha512-YgFCyD+9mBhpJdfgf4QtJwk+vZbByVMXsEGREM6GrPk9A1pYXkkIpzYd3+843E+33e3S81yywhqZc3DyrZGPSg==
 
+"@stimulus-components/dialog@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@stimulus-components/dialog/-/dialog-1.0.1.tgz#879452b4efb817e16f44c09ac920ae618d12591e"
+  integrity sha512-7cpazrXeFKVmmuGnJOrykEvjRNRTOhLuI7SzgDdAlKWxM8ivBKziBHwjJGR96vCvSkoKwlGMGRcDzXgVRnr/7w==
+
 "@stimulus-components/rails-nested-form@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@stimulus-components/rails-nested-form/-/rails-nested-form-5.0.0.tgz#b443ad8ba5220328cfd704ca956ebf95ab8c4848"
