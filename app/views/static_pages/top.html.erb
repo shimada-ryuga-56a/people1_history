@@ -9,10 +9,8 @@
         PEOPLE 1リスナー（通称大衆）向けに作成した、<strong>非公式</strong>ファンサイトです。ライブ後・楽曲リリース後の感想戦や、インスタライブやインタビュー等で発信された情報交換のプラットフォームとして利用することができます。また、PEOPLE 1の活動を年表形式で保存・閲覧できるPEOPLE 1ヒストリーも後日解禁予定です。
       </p>
       <% unless user_signed_in? %>
-        <%- User.omniauth_providers.each do |provider| %>
-          <%= button_to omniauth_authorize_path("user", provider), data: { turbo: false }, class: "btn text-slate-100" do %>
-            <i class="fa-brands fa-square-x-twitter fa-2x"></i><p>でサインイン</p>
-          <% end %>
+        <%= button_to user_twitter_omniauth_authorize_path, data: { turbo: false }, class: "btn text-slate-100" do %>
+          <i class="fa-brands fa-square-x-twitter fa-2x"></i><p>でサインイン</p>
         <% end %>
       <% end %>
     </div>
