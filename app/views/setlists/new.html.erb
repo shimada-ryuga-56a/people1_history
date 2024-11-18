@@ -1,4 +1,4 @@
-<h1>Setlists new</h1>
+<h1 class="flex items-center"><%= @event.name %>セットリスト登録フォーム</h1>
 
 <%= form_with model: @setlist, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, url: event_setlist_path do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
