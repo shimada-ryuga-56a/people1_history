@@ -14,6 +14,7 @@ class SetlistsController < ApplicationController
       flash[:success] = I18n.t('flash.success.setlist_post')
       redirect_to event_path(@event.id)
     else
+      flash.now[:error] = I18n.t('flash.error.setlist_post')
       render :new, status: :unprocessable_entity
     end
   end
