@@ -1,21 +1,24 @@
 Rails.application.routes.draw do
   root "static_pages#top"
 
-  devise_for :users, skip: :all
+  # （ここから）Twitter認証以外を認めないようにルーティングを設定しようとした痕跡
+  # devise_for :users, skip: :all
 
-  devise_scope :user do
-    match '/users/auth/twitter', to: 'users/omniauth_callbacks#passthru', via: [:get, :post], as: :user_twitter_omniauth_authorize
-    match '/users/auth/twitter/callback', to: 'users/omniauth_callbacks#twitter', via: [:get, :post], as: :user_twitter_omniauth_callback
-    get '/users/sign_out' => 'users/sessions#destroy', as: :destroy_user_session
-  end
+  # devise_scope :user do
+  #   match '/users/auth/twitter', to: 'users/omniauth_callbacks#passthru', via: [:get, :post], as: :user_twitter_omniauth_authorize
+  #   match '/users/auth/twitter/callback', to: 'users/omniauth_callbacks#twitter', via: [:get, :post], as: :user_twitter_omniauth_callback
+  #   get '/users/sign_out' => 'users/sessions#destroy', as: :destroy_user_session
+  # end
 
-  # devise_for :users, controllers: {
-  #   sessions: 'users/sessions',
-  #   passwords: 'users/passwords',
-  #   registrations: 'users/registrations',
-  #   # Twitter API認証用
-  #   :omniauth_callbacks => 'users/omniauth_callbacks',
-  # }
+  # （ここまで）
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
+    # Twitter API認証用
+    :omniauth_callbacks => 'users/omniauth_callbacks',
+  }
 
   resources :notices, only: [:index]
   delete "notices" => "notices#destroy"
