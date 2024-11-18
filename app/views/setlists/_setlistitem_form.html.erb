@@ -4,9 +4,18 @@
     <ul class="list-group bg-white absolute w-full md:text-sm max-w-max" data-autocomplete-target="results"></ul>
   </div>
   <div class="mb-3 flex">
-    <div class="mr-3">
+    <div class="mr-3 flex">
       <%= f.label :is_song %>
       <%= f.check_box :is_song %>
+      <div data-controller="dialog" data-action="click->dialog#backdropClose">
+        <dialog data-dialog-target="dialog">
+          <p>The modal's content here</p>
+
+          <button type="button" data-action="dialog#close" autofocus>Cancel</button>
+        </dialog>
+    
+        <button type="button" data-action="dialog#open">Open modal</button>
+      </div>
     </div>
     <div>
       <%= f.label :is_arranged %>
