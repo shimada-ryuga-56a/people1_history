@@ -1,5 +1,5 @@
 <% if model.errors.any? %>
-  <div class="bg-yellow-100 border border-yellow-500 text-yellow-700 p-4 rounded" role="alert">
+  <div class="bg-yellow-100 border border-yellow-500 text-yellow-700 p-4 rounded mb-5" role="alert">
     <ul>
       <% model.errors.full_messages.each do |message| %>
       <li class='error-message'><%= message %></li>

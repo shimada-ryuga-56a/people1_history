@@ -19,7 +19,7 @@
   <div class="mb-5">
     <div class="divider"></div>
     <h2 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">セットリスト登録</h2>
-    <%= form_with model: @setlist, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, url: event_setlist_path do |f| %>
+    <%= form_with model: @setlist, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, url: event_setlist_path, local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
 
       <template data-nested-form-target="template">
@@ -30,12 +30,12 @@
 
       <!-- Inserted elements will be injected before that target. -->
       <div data-nested-form-target="target">
-        <button type="button" data-action="nested-form#add" class="btn btn-info">楽曲を追加</button>
+        <button type="button" data-action="nested-form#add" class="btn btn-info mb-5">楽曲を追加</button>
       </div>
-    </div>
 
-    <div>
-      <%= f.submit "セットリストを投稿", class: "btn btn-primary" %>
-    </div>
-  <% end %>
+      <div>
+        <%= f.submit "セットリストを投稿", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
