@@ -9,6 +9,14 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'users/sessions#destroy', as: :destroy_user_session
   end
 
+  # devise_for :users, controllers: {
+  #   sessions: 'users/sessions',
+  #   passwords: 'users/passwords',
+  #   registrations: 'users/registrations',
+  #   # Twitter API認証用
+  #   :omniauth_callbacks => 'users/omniauth_callbacks',
+  # }
+
   resources :notices, only: [:index]
   delete "notices" => "notices#destroy"
 
