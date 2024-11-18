@@ -1,6 +1,6 @@
-<div class="nested-form-wrapper border p-3 mb-3 mx-2" data-new-record="<%= f.object.new_record? %>">
+<div class="nested-form-wrapper border p-3 mb-5 mx-2" data-new-record="<%= f.object.new_record? %>">
   <div data-controller="autocomplete" data-autocomplete-url-value="/setlists/search" role="combobox", class="mb-3">
-    <%= f.text_field :song_title, class: "input input-bordered w-full max-w-xs", placeholder: "楽曲名", data: { autocomplete_target: 'input' } %>
+    <%= f.text_field :song_title, class: "input input-bordered w-full min-w-xs", placeholder: "楽曲名", data: { autocomplete_target: 'input' } %>
     <ul class="list-group bg-white absolute w-full md:text-sm max-w-max" data-autocomplete-target="results"></ul>
   </div>
   <div class="mb-3 flex">
