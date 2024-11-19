@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "static_pages#top"
+  get "contact" => "static_pages#contact"
 
   # （ここから）Twitter認証以外を認めないようにルーティングを設定しようとした痕跡
   # devise_for :users, skip: :all
