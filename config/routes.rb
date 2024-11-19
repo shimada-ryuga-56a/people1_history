@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   delete "notices" => "notices#destroy"
 
   resources :members, only: [:index]
+  resources :histories, only: [:index]
 
   resources :tours, only: [:index, :show] do
     resources :tour_informations, only: [:create]
