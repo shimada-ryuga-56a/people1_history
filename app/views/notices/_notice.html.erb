@@ -3,7 +3,7 @@
   <div class="divider"></div>
   <% if notice.action_type = "like" %>
     <div class="avatar flex items-center mb-3">
-      <div class="w-8 md:w-12 lg:w-16 mr-3 rounded-xl">
+      <div class="w-8 md:w-12 mr-3 rounded-xl">
         <%= image_tag notice.noticeable.user.image %>
       </div>
       <p class="mr-3"><%= notice.noticeable.user.name.truncate(7) %>さんがいいねしました！</p>
