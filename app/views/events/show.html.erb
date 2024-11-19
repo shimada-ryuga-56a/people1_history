@@ -6,7 +6,7 @@
 <% end %>
 
 <div class="m-5">
-  <div class="mb-5">
+  <div class="mb-5 leading-8">
     <h1 class="text-center text-xl md:text-2xl font-semibold mb-2"><%= @event.name %></h1>
     <p>
     日時：<%= I18n.l(@event.date, format: "%Y/%m/%d(%a)") %><br>
@@ -23,23 +23,22 @@
     </div>
   <% end %>
 
+  <div class="divider mb-5">
+    <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">セットリスト</h2>
+  </div>
   <% if @setlistitems.present? %>
-    <div class="divider mb-5">
-      <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">セットリスト</h2>
-    </div>
-      <div class="avatar flex items-center justify-end mb-5">
-        <p class="">作成者：<p>
-        <div class="w-6 rounded-full mr-2">
-          <img src="<%= @event.setlist.user.image %>" />
-        </div>
-        <p><%= @event.setlist.user.name %><p>
+    <div class="avatar flex items-center justify-end mb-5">
+      <p class="">作成者：<p>
+      <div class="w-6 rounded-full mr-2">
+        <img src="<%= @event.setlist.user.image %>" />
       </div>
+      <p><%= @event.setlist.user.name %><p>
+    </div>
     <%= render 'events/setlistitem', setlistitems: @setlistitems %>
   <% else %>
-    <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary' %>
+    <p class="mb-3">セットリストはまだ投稿されていません。投稿しましょう！</p>
+    <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary mb-5' %>
   <% end %>
-
-  <div class="divider"></div>
 
   <%= render 'events/event_information', infos: @event_infos %>
 </div>

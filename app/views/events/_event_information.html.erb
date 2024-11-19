@@ -1,3 +1,7 @@
+<div class="divider mb-5">
+  <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">イベント情報</h2>
+</div>
+
 <%= form_with model: EventInformation.new, url: event_event_informations_path(event_id: @event.id) do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <div class="card bg-base-100 shadow-xl mb-5">
