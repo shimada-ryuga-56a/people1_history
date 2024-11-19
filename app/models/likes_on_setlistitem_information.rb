@@ -10,13 +10,13 @@ class LikesOnSetlistitemInformation < ApplicationRecord
   private
 
   def create_notice
-    @notice = Notice.new(noticeable_type: LikesOnSetlistitemInformation, noticeable_id: id, user_id: user.id,
-                         action_type: Notice.action_types[:like])
+    @notice = Notice.new(noticeable_type: LikesOnSetlistitemInformation, noticeable_id: id, from_whom_id: user.id,
+                         user_id: setlistitem_information.user_id, action_type: Notice.action_types[:like])
     @notice.save
   end
 
   def destroy_notice
-    @notice = Notice.find_by(noticeable_type: 'LikesOnSetlistitemInformation', noticeable_id: id, user_id: user.id)
+    @notice = Notice.find_by(noticeable_type: 'LikesOnSetlistitemInformation', noticeable_id: id, from_whom_id: user.id)
     @notice.destroy if @notice.present?
   end
 end
