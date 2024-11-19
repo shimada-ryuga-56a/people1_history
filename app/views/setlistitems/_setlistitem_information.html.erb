@@ -1,7 +1,10 @@
 <div class="collapse-content w-full">
   <div class="card bg-base-100 w-full shadow-xl mb-3">
     <div class="card-body">
-      <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう！</h2>
+      <div class="flex">
+        <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう！</h2>
+        <%= render partial: "setlistitems/modals/setlistitem_info_modal" %>
+      </div>
       <%= form_with model: SetlistitemInformation.new, url: setlistitem_informations_path do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
         <%= f.text_area :body, class: "textarea w-full my-4 border-slate-400", placeholder: "コメントを入力" %>
