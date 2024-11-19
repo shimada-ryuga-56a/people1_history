@@ -11,7 +11,7 @@ class LikesOnSongInformation < ApplicationRecord
 
   def create_notice
     @notice = Notice.new(noticeable_type: LikesOnSongInformation, noticeable_id: id, user_id: user.id,
-                         action_type: Notice.action_types[:like])
+                         user_id: self.song_information.user_id, action_type: Notice.action_types[:like])
     @notice.save
   end
 

@@ -11,7 +11,7 @@ class LikesOnSetlistitemInformation < ApplicationRecord
 
   def create_notice
     @notice = Notice.new(noticeable_type: LikesOnSetlistitemInformation, noticeable_id: id, from_whom_id: user.id,
-                         action_type: Notice.action_types[:like])
+                         user_id: self.setlistitem_information.user_id, action_type: Notice.action_types[:like])
     @notice.save
   end
 
