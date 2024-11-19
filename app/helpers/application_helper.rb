@@ -1,12 +1,12 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: 'Pluspo',
-      title: '都内スポーツ施設の横断検索サービス',
+      site: '大衆情報局',
+      title: 'PEOPLE 1リスナーの情報交換プラットフォーム',
       reverse: true,
       charset: 'utf-8',
-      description: 'Pluspoを使えば「スポーツ・日時・場所」の好きな組み合わせで自由にスポーツ施設を検索できます。',
-      keywords: 'スポーツ,スポーツ施設,東京',
+      description: 'PEOPLE 1に関する情報やトリビアを交換できる、非公式Webサービスです。',
+      keywords: 'PEOPLE 1,ぴぽ,Deu',
       canonical: request.original_url,
       separator: '|',
       og: {
