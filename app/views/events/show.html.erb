@@ -5,39 +5,41 @@
   </div>
 <% end %>
 
-<div class="mt-10">
-  <h1><%= @event.name %></h1>
-  <p>
-  日時：<%= @event.date %><br>
-  会場：<%= @event.place_prefecture %>／<%= @event.place %><br>
-    <% if @event.remark.present? %>
-      備考：<%= @event.remark %>
-    <% end %>
-  </p>
-</div>
-
-<% if @event.tour_id %>
-  <div class="card-actions justify-end">
-      <%= link_to "Tour Details", tour_path(@event.tour_id), class: 'btn btn-primary' %>
+<div class="m-5">
+  <div>
+    <h1><%= @event.name %></h1>
+    <p>
+    日時：<%= @event.date %><br>
+    会場：<%= @event.place_prefecture %>／<%= @event.place %><br>
+      <% if @event.remark.present? %>
+        備考：<%= @event.remark %>
+      <% end %>
+    </p>
   </div>
-<% end %>
 
-<div class="divider"></div>
-
-<% if @setlistitems.present? %>
-  <h2>Setlist</h2>
-    <div class="avatar flex items-center">
-      <p class="">作成者：<p>
-      <div class="w-6 rounded-full m-3">
-        <img src="<%= @event.setlist.user.image %>" />
-      </div>
-      <p><%= @event.setlist.user.name %><p>
+  <% if @event.tour_id %>
+    <div class="card-actions justify-end">
+        <%= link_to "Tour Details", tour_path(@event.tour_id), class: 'btn btn-primary' %>
     </div>
-  <%= render 'events/setlistitem', setlistitems: @setlistitems %>
-<% else %>
-  <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary' %>
-<% end %>
+  <% end %>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<%= render 'events/event_information', infos: @event_infos %>
+  <% if @setlistitems.present? %>
+    <h2>Setlist</h2>
+      <div class="avatar flex items-center">
+        <p class="">作成者：<p>
+        <div class="w-6 rounded-full m-3">
+          <img src="<%= @event.setlist.user.image %>" />
+        </div>
+        <p><%= @event.setlist.user.name %><p>
+      </div>
+    <%= render 'events/setlistitem', setlistitems: @setlistitems %>
+  <% else %>
+    <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary' %>
+  <% end %>
+
+  <div class="divider"></div>
+
+  <%= render 'events/event_information', infos: @event_infos %>
+</div>

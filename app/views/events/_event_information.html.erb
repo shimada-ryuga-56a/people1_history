@@ -1,6 +1,6 @@
 <%= form_with model: EventInformation.new, url: event_event_informations_path(event_id: params[:id]) do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
-  <div class="card bg-base-100 w-96 shadow-xl mb-5">
+  <div class="card bg-base-100 shadow-xl mb-5">
     <div class="card-body">
       <h2 class="card-title">コメントを投稿しましょう！</h2>
       <%= f.text_area :body, class: "textarea", placeholder: "コメントを入力" %>
@@ -15,7 +15,7 @@
 <% if infos.present? %>
   <div class="lg:flex">
   <% infos.each do |info| %>
-    <div class="card bg-base-100 w-96 shadow-xl mb-3">
+    <div class="card bg-base-100 shadow-xl mb-3">
       <div class="card-body">
         <div class="avatar flex items-center">
           <div class="w-6 rounded-full mr-3">
