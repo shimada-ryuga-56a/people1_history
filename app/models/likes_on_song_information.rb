@@ -4,6 +4,9 @@ class LikesOnSongInformation < ApplicationRecord
 
   has_many :notices, as: :noticeable, dependent: :destroy
 
+  validates :song_information_id, presence: true
+  validates :user_id, presence: true
+
   after_create :create_notice
   before_destroy :destroy_notice
 
