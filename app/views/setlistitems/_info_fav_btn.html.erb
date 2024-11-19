@@ -1,11 +1,13 @@
-<% if setlistitem_information.liked_by?(current_user) %>
-  <%= link_to setlistitem_information_likes_on_setlistitem_informations_path(setlistitem_information), data: { "turbo-method": :delete } do %>
-    <i class="fa-solid fa-heart"></i>
+<div class="text-xs md:text-base">
+  <% if setlistitem_information.liked_by?(current_user) %>
+    <%= link_to setlistitem_information_likes_on_setlistitem_informations_path(setlistitem_information), data: { "turbo-method": :delete } do %>
+      <i class="fa-solid fa-heart"></i>
+    <% end %>
+    <%= setlistitem_information.likes_on_setlistitem_informations.count %> いいね
+  <% else %>
+    <%= link_to setlistitem_information_likes_on_setlistitem_informations_path(setlistitem_information), data: { "turbo-method": :post } do %>
+      <i class="fa-regular fa-heart"></i>
+    <% end %>
     <%= setlistitem_information.likes_on_setlistitem_informations.count %> いいね
   <% end %>
-<% else %>
-  <%= link_to setlistitem_information_likes_on_setlistitem_informations_path(setlistitem_information), data: { "turbo-method": :post } do %>
-    <i class="fa-regular fa-heart"></i>
-    <%= setlistitem_information.likes_on_setlistitem_informations.count %> いいね
-  <% end %>
-<% end %>
+</div>
