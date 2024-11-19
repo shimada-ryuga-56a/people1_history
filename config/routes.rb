@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "static_pages#top"
   get "contact" => "static_pages#contact"
+  get "in_progress" => "static_pages#in_progress"
 
   # （ここから）Twitter認証以外を認めないようにルーティングを設定しようとした痕跡
   # devise_for :users, skip: :all
@@ -23,6 +24,8 @@ Rails.application.routes.draw do
 
   resources :notices, only: [:index]
   delete "notices" => "notices#destroy"
+
+  resources :members, only: [:index]
 
   resources :tours, only: [:index, :show] do
     resources :tour_informations, only: [:create]
