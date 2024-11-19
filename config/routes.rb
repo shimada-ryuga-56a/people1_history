@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :members, only: [:index]
   resources :histories, only: [:index]
 
-  resources :tours, only: [:index, :show] do
+  resources :tours, only: [:show] do
     resources :tour_informations, only: [:create]
   end
 
