@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_18_065616) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_19_012323) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -96,7 +96,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_18_065616) do
   end
 
   create_table "notices", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "from_whom_id"
     t.string "noticeable_type"
     t.bigint "noticeable_id"
     t.integer "action_type", null: false
