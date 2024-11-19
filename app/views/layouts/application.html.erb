@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html data-theme="aqua">
   <head>
-    <title><%= content_for(:title) || "Myapp" %></title>
+    <%= display_meta_tags site: "大衆情報局" %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes,viewport-fit=cover">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag('mini_favicon.ico') %>
 
     <%= yield :head %>
 
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="apple-touch-icon" href="favicon.ico">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <script src="https://kit.fontawesome.com/03ee00071c.js" crossorigin="anonymous"></script>
+    <%= display_meta_tags(default_meta_tags) %>
   </head>
 
   <body class="">

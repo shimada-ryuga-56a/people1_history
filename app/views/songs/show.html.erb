@@ -1,9 +1,5 @@
 <div class="">
-  <div class="card-actions justify-start">
-    <%= link_to "<<Go Back", :back, class: '' %>
-  </div>
-
-  <h1><%= @song.name %></h1>
+  <h1><%= title @song.name %></h1>
 
   <iframe
     src="https://www.youtube.com/embed/<%= find_youtube_url(@song.youtube_link) %>"
