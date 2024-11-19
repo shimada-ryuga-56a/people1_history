@@ -43,8 +43,24 @@ ja:
       validates:
         kana_ruby: "全角カタカナで入力して下さい。"
         hiragana_ruby: "全角ひらがなで入力して下さい。"
+  flash:
+    success:
+      post: "投稿に成功しました。"
+      setlist_post: "セットリストが投稿されました！"
+    error:
+      setlist_exist: "すでにセットリストが存在します。"
+      post: "投稿に失敗しました。"
+      setlist_post: "セットリストを投稿できませんでした。"
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
+  enums:
     event:
-      event/place_prefecture:
+      place_prefecture:
         undefined: 未定
         Hokkaido: 北海道
         Aomori: 青森県
@@ -94,18 +110,3 @@ ja:
         Kagoshima: 鹿児島県
         Okinawa: 沖縄県
         abroad: 海外
-  flash:
-    success:
-      post: "投稿に成功しました。"
-      setlist_post: "セットリストが投稿されました！"
-    error:
-      setlist_exist: "すでにセットリストが存在します。"
-      post: "投稿に失敗しました。"
-      setlist_post: "セットリストを投稿できませんでした。"
-  views:
-    pagination:
-      first: "&laquo;"
-      last: "&raquo;"
-      previous: "&lsaquo;"
-      next: "&rsaquo;"
-      truncate: "&hellip;"

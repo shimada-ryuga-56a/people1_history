@@ -120,6 +120,8 @@ GEM
       dotenv (= 3.1.4)
       railties (>= 6.1)
     drb (2.2.1)
+    enum_help (0.0.19)
+      activesupport (>= 3.0.0)
     erubi (1.13.0)
     faker (3.5.1)
       i18n (>= 1.8.11, < 2)
@@ -447,6 +449,7 @@ DEPENDENCIES
   devise
   devise-i18n-views
   dotenv-rails
+  enum_help
   faker
   google-cloud-storage
   image_processing (~> 1.2)
