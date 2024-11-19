@@ -16,7 +16,7 @@ class LikesOnSongInformation < ApplicationRecord
   end
 
   def destroy_notice
-    @notice = Notice.find_by(noticeable_type: 'LikesOnSongInformation', noticeable_id: id, user_id: user.id)
+    @notice = Notice.find_by(noticeable_type: 'LikesOnSongInformation', noticeable_id: id, from_whom_id: user.id)
     @notice.destroy if @notice.present?
   end
 end
