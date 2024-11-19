@@ -1,0 +1,18 @@
+<div data-controller="dialog" data-action="click->dialog#backdropClose">
+  <dialog data-dialog-target="dialog" class="bg-neutral-200 p-3 text-slate-900 rounded-lg">
+    <div class="mb-3 leading-8">
+      <p>
+        <i class="fa-solid fa-circle-question mr-1"></i>イベント情報とは？<br>
+        このイベントに関する情報全般を投稿できます。当日のライブの様子や、Deuさんのインスタライブで後日語られたことなど、<strong>自由に</strong>投稿してください！<br>
+        【例】
+        <ul class="list-disc list-outside pl-5">
+          <li>秋山黄色来てたわ。</li>
+          <li>一年前から開催決まっていたらしいよ。</li>
+          <li>終演後にDeuさんとTakeuchiさんと写真撮れた！</li>
+        </ul>
+      </p>
+    </div>
+    <button type="button" data-action="dialog#close" autofocus class="place-items-end"><i class="fa-regular fa-circle-xmark mr-1"></i>閉じる</button>
+  </dialog>
+  <button type="button" data-action="dialog#open"><i class="fa-solid fa-circle-question ml-3"></i></button>
+</div>

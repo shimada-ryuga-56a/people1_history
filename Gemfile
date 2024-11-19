@@ -36,6 +36,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-i18n-views'
 gem 'dotenv-rails'
+gem 'enum_help'
 gem 'google-cloud-storage'
 gem 'kaminari'
 gem 'omniauth'
