@@ -8,3 +8,8 @@ ja:
         is_arranged: 新訳
         is_rehearsal: リハーサル
         is_encore: アンコール
+      category:
+        tour: ツアー
+        one_man: ワンマン
+        fes: フェス
+        event: その他
