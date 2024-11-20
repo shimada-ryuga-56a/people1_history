@@ -10,6 +10,7 @@ class LikesOnTourInformation < ApplicationRecord
   private
 
   def create_notice
+    return if user.id == tour_information.user_id
     @notice = Notice.new(noticeable_type: LikesOnTourInformation, noticeable_id: id, from_whom_id: user.id,
                          user_id: tour_information.user_id, action_type: Notice.action_types[:like])
     @notice.save
