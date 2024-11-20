@@ -1,5 +1,5 @@
 <%= form_with model: information, url: song_song_informations_path(song) do |f| %>
-  <div class="card bg-base-100 w-96 shadow-xl mb-5">
+  <div class="card shadow-2xl mb-5">
     <div class="card-body">
       <h2 class="card-title"><%= f.label :body %></h2>
       <%= f.text_area :body, class: "textarea", placeholder: "情報を投稿しましょう" %>
