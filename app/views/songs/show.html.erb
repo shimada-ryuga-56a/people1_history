@@ -1,18 +1,59 @@
-<div class="">
-  <h1><%= title @song.name %></h1>
+<div class="m-3">
+  <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
+    <%= title @song.name %>
+  </h1>
 
-  <iframe
-    src="https://www.youtube.com/embed/<%= find_youtube_url(@song.youtube_link) %>"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-    class="w-full aspect-video">
-  </iframe>
+  <% if @song.youtube_link.present? %>
+    <iframe
+      src="https://www.youtube.com/embed/<%= find_youtube_url(@song.youtube_link) %>"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+      class="w-full aspect-video mb-10">
+    </iframe>
+  <% end %>
+
+  <div class="divider mb-3">
+    <h1 class="font-bold sm:text-lg md:text-xl">
+      演奏記録
+    </h1>
+  </div>
+
+  <div class="mb-3 leading-8">
+    <% if @events.present? %>
+      <div class="mb-2">
+        <p>【ライブ初演奏🎉】</p>
+        <p>
+          <%= I18n.l(@events.first.date, format: "%Y/%m/%d（%a）") %><br>
+          <%= link_to event_path(@events.first.id), class: "link" do %>
+            <p>
+              <%= @events.first.name %><br>
+              @<%= @events.first.place %>（<%= @events.first.place_prefecture_i18n %>）
+            </p>
+          <% end %>
+        </p>
+      </div>
+      <div class="mb-2">
+        <p>【直近での演奏👻】</p>
+        <p>
+          <%= I18n.l(@events.last.date, format: "%Y/%m/%d（%a）") %><br>
+          <%= link_to event_path(@events.last.id), class: "link" do %>
+            <p>
+              <%= @events.last.name %><br>
+              @<%= @events.last.place %>（<%= @events.last.place_prefecture_i18n %>）
+            </p>
+          <% end %>
+        </p>
+      </div>
+      <p class="text-center">👏今まで計<%= @events.length %>回演奏されました👏</p>
+    <% else %>
+      <p class="text-center">ライブ演奏の情報は現時点ではありません🤥</p>
+    <% end %>
+  </div>
 
   <div class="divider"></div>
-  <%= render 'informations/form', information: @song_information, song: @song %>
+  <%= render 'form', information: @song_information, song: @song %>
   <%= render "songs/song_information" %>
-
 </div>

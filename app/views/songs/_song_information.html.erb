@@ -1,26 +1,24 @@
 <div>
 <% if @song_informations.any? %>
-  <% @song_informations.each do |song_information| %>
-    <div class="card bg-base-100 w-96 shadow-xl mb-5">
+  <% @song_informations.each do |info| %>
+    <div class="card bg-base-100 w-full shadow-xl mb-3">
       <div class="card-body">
         <div class="avatar flex items-center">
-          <div class="w-6 rounded-full mr-3">
-            <img src="<%= song_information.user.image %>" />
+          <div class="w-4 md:w-6 rounded-full mr-1 md:mr-2">
+            <img src="<%= info.user.image %>" />
           </div>
-          <%= song_information.user.name %>
+          <h3 class="text-xs	md:text-base mr-1"><%= info.user.name %></h3>
+          <p class="font-light text-slate-300 text-xs	md:text-base">（<%= time_ago_in_words(info.created_at) %>前）</p>
         </div>
-        <h2 class="card-title"><%= song_information.body %></h2>
-        <p>
-          <%= song_information.created_at %>
-        </p>
+        <h2 class="card-title text-base md:text-lg"><%= info.body %></h2>
         <div>
-          <%= render partial: "info_fav_btn", locals: {song_information: song_information} %>
+          <%= render partial: "songs/info_fav_btn", locals: {song_information: info} %>
         </div>
       </div>
     </div>
   <% end %>
 <% else %>
-  <p>投稿しましょう！</p>
+  <p>まだ情報がありません。投稿しましょう！</p>
 <% end %>
 
 </div>
