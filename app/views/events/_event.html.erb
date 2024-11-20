@@ -1,15 +1,16 @@
-<div class="card w-full lg:w-1/2 shadow-2xl mb-4">
+<div class="card w-full shadow-2xl mb-4">
   <figure class="mt-10">
-    <% if event.visual_image.attached? %>
-      <%= image_tag event.visual_image.variant(resize_to_fill: [250, 200]) %>
-    <% end %>
+    <%= image_tag 'default_people_1.jpg' %>
+    <%# if event.visual_image.attached? %>
+      <%#= image_tag event.visual_image.variant(resize_to_fill: [250, 200]) %>
+    <%# end %>
   </figure>
-  <div class="card-body">
+  <div class="card-body leading-8	">
     <h2 class="card-title"><%= event.name %></h2>
     <p>
-      @<%= event.place %>（<%= event.place_prefecture %>）
+      @<%= event.place %>（<%= event.place_prefecture_i18n %>）
         <br>
-      <%= event.date %>
+      <%= I18n.l(event.date, format: "%Y/%m/%d(%a)") %>
     </p>
     <div class="badge badge-secondary"><%= event.category %></div>
     <div class="card-actions justify-end">
