@@ -1,14 +1,14 @@
-<div class="card card-compact bg-base-100 w-full shadow-xl mb-5">
+<div class="card shadow-2xl mb-5">
   <figure>
   <%= image_tag 'default_people_1.jpg' %>
   <%# if song.jk.attached? %>
     <%#= image_tag song.jk.variant(resize_to_fill: [200, 200]) %>
   <%# end %>
   </figure>
-  <div class="card-body p-2">
-    <h2 class="card-title"><%= song.name %></h2>
+  <div class="card-body p-4">
+    <h2 class="card-title mb-3"><%= song.name %></h2>
     <div class="card-actions justify-end">
-      <%= link_to "Details", song_path(song), class: 'btn btn-primary' %>
+      <%= link_to "詳細", song_path(song), class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
