@@ -1,37 +1,36 @@
-<div class="">
-  <div class="">
-    <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
-      <%= title "イベント一覧" %>
-    </h1>
+<div class="m-3">
+  <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
+    <%= title "イベント一覧" %>
+  </h1>
+
+  <div class="divider mb-5">絞り込み</div>
+  <div class="my-5">
+    <%= form_with url: events_path, method: :get, local: true do |f| %>
+      <div class="flex w-full flex-col">
+        <div class="mb-2 text-sm">
+          <%= f.collection_check_boxes :category, Event.categories, :first, :first do |s| %>
+            <%= s.check_box checked: @category.nil? || @category.include?(s.value), class: "checkbox checkbox-xs" %>
+            <%= s.label { Event.human_attribute_name("category.#{s.text}")} %>
+          <% end %>
+        </div>
+        <div class="mb-4 text-sm">
+          <%= f.check_box :date, class: "checkbox checkbox-xs" %>
+          <%= f.label '開催前のイベントも表示' %>
+        </div>
+      </div>
+      <button class="btn btn-active">
+        <%= f.submit "検索" %>
+      </button>
+    <% end %>
   </div>
 
-  <%= form_with url: events_path, method: :get, local: true do |f| %>
-    <div class="flex w-full flex-col">
-      <%= f.label :category, Event.human_attribute_name(:category) %>
-      <div>
-        <%= f.collection_check_boxes :category, Event.categories, :first, :first do |s| %>
-          <%= s.check_box checked: @category.nil? || @category.include?(s.value), class: "checkbox checkbox-xs" %>
-          <%= s.label { Event.human_attribute_name("category.#{s.text}")} %>
-        <% end %>
-      </div>
-      <div>
-        <%= f.check_box :date, class: "checkbox checkbox-xs" %>
-        <%= f.label '開催前のイベントも表示' %>
-      </div>
-    </div>
-    <button class="btn">
-      <%= f.submit "Go", class: "" %>
-    </button>
-  <% end %>
-
-  <div class="justify-center">
-    <div class="flex inline-flex flex-wrap">
-      <% if @events.present? %>
-        <%= render @events %>
-      <% else %>
-        <div class="mb-3">イベント情報がありません</div>
+  <div class="divider"></div>
+  <div>
+    <% if @events.present? %>
+      <%= render @events %>
+    <% else %>
+      <div class="mb-3">イベント情報がありません</div>
     <% end %>
-    </div>
   </div>
 </div>
 
