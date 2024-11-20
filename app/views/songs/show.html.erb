@@ -1,5 +1,7 @@
-<div class="">
-  <h1><%= title @song.name %></h1>
+<div class="m-3">
+  <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
+    <%= title @song.name %>
+  </h1>
 
   <iframe
     src="https://www.youtube.com/embed/<%= find_youtube_url(@song.youtube_link) %>"
@@ -12,7 +14,6 @@
   </iframe>
 
   <div class="divider"></div>
-  <%= render 'informations/form', information: @song_information, song: @song %>
+  <%= render 'form', information: @song_information, song: @song %>
   <%= render "songs/song_information" %>
-
 </div>
