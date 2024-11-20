@@ -1,14 +1,11 @@
-<div class="card card-compact bg-base-100 w-96 shadow-xl mx-2 mb-5">
+<div class="card card-compact bg-base-100 w-full shadow-xl mb-5">
   <figure>
-  <% if song.jk.attached? %>
-    <%= image_tag song.jk.variant(resize_to_fill: [200, 200]) %>
-  <% else %>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  <% end %>
+  <%= image_tag 'default_people_1.jpg' %>
+  <%# if song.jk.attached? %>
+    <%#= image_tag song.jk.variant(resize_to_fill: [200, 200]) %>
+  <%# end %>
   </figure>
-  <div class="card-body">
+  <div class="card-body p-2">
     <h2 class="card-title"><%= song.name %></h2>
     <div class="card-actions justify-end">
       <%= link_to "Details", song_path(song), class: 'btn btn-primary' %>
