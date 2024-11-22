@@ -1,4 +1,4 @@
-<%= turbo_stream.replace "new_setlistitem_info" do %>
+<%= turbo_stream.replace "new_setlistitem_info_#{@item.id}" do %>
   <%= render partial: "form", locals: {item: @item} %>
 <% end %>
 
