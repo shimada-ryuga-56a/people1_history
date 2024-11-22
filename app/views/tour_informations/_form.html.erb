@@ -1,11 +1,16 @@
-<%= form_with model: TourInformation.new, url: tour_tour_informations_path(tour_id: params[:id]) do |f| %>
-  <div class="card bg-base-100 shadow-xl mb-5">
-    <div class="card-body">
-      <h2 class="card-title"><%= f.label :body %></h2>
-      <%= f.text_area :body, class: "textarea", placeholder: "情報を投稿しましょう" %>
-      <div class="card-actions justify-end">
-        <%= f.submit 'Post', class: "btn btn-primary" %>
+<%= turbo_frame_tag "new_info" do %>
+  <%= form_with model: TourInformation.new, url: tour_tour_informations_path(tour_id: params[:id]) do |f| %>
+    <div class="card shadow-2xl mb-5">
+      <div class="card-body">
+        <div class="flex">
+          <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう！</h2>
+          <%= render partial: "tour_informations/modals/tour_info_modal" %>
+        </div>
+        <%= f.text_area :body, class: "textarea", placeholder: "コメントを入力" %>
+        <div class="card-actions justify-end">
+          <%= f.submit '投稿', class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
