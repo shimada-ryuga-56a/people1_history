@@ -1,10 +1,15 @@
 class SongInformationsController < ApplicationController
   def create
-    song_information = current_user.song_informations.build(song_information_params)
-    if song_information.save
-      redirect_to song_path(song_information.song), success: '保存できました'
-    else
-      redirect_to song_path(song_information.song), danger: '保存できませんでした'
+    @info = current_user.song_informations.build(song_information_params)
+    respond_to do |format|
+      if @info.save
+        @new_info = SongInformation.new
+        @song = Song.find(params[:song_id])
+        format.turbo_stream
+        # redirect_to song_path(@info.song), success: '保存できました'
+      else
+        redirect_to song_path(@info.song), danger: '保存できませんでした'
+      end
     end
   end
 

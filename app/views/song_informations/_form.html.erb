@@ -1,14 +1,16 @@
-<%= form_with model: information, url: song_song_informations_path(song) do |f| %>
-  <div class="card shadow-2xl mb-5">
-    <div class="card-body">
-      <div class="flex">
-        <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう！</h2>
-        <%= render partial: "songs/modals/song_info_modal" %>
-      </div>
-      <%= f.text_area :body, class: "textarea", placeholder: "コメントを入力" %>
-      <div class="card-actions justify-end">
-        <%= f.submit '投稿', class: "btn btn-primary" %>
+<%= turbo_frame_tag "new_info" do %>
+  <%= form_with model: info, url: song_song_informations_path(song) do |f| %>
+    <div class="card shadow-2xl mb-5">
+      <div class="card-body">
+        <div class="flex">
+          <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう！</h2>
+          <%= render partial: "songs/modals/song_info_modal" %>
+        </div>
+        <%= f.text_area :body, class: "textarea", placeholder: "コメントを入力" %>
+        <div class="card-actions justify-end">
+          <%= f.submit '投稿', class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>

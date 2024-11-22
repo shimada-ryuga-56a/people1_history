@@ -1,0 +1,8 @@
+<%= turbo_stream.replace "new_info" do %>
+  <%= render partial: "form", locals: { song: @song, info: @new_info } %>
+<% end %>
+
+<%# イベントインフォの記述を流用 %>
+<%#= turbo_stream.prepend "event_informations" do %>
+  <%#= render partial: "event_informations/event_information", locals: { event_information: @info } %>
+<%# end %>
