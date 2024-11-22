@@ -1,22 +1,27 @@
 class EventInformationsController < ApplicationController
   def create
     @info = EventInformation.new(event_information_params)
-    if @info.save
-      flash[:success] = I18n.t('flash.success.post')
-      redirect_to event_path(id: params[:event_id])
-    else
-      @event = Event.includes(:setlist).find(params[:id])
-      @event_infos = EventInformation.where(event_id: params[:id]).order(created_at: 'DESC')
-      return unless @event.setlist
+    respond_to do |format|
+      if @info.save
+        @new_info = EventInformation.new
+        @event = Event.find(params[:event_id])
+        @event_informations = EventInformation.where(event_id: params[:id]).order(created_at: 'DESC')
+        # flash[:success] = I18n.t('flash.success.post')
+        format.turbo_stream
+      else
+        @event = Event.includes(:setlist).find(params[:id])
+        @event_infomations = EventInformation.where(event_id: params[:id]).order(created_at: 'DESC')
+        return unless @event.setlist
 
-      @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
-      @infos = []
-      @setlistitems.each do |item|
-        @infos << SetlistitemInformation.where(setlistitem_id: item.id)
+        @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
+        @infos = []
+        @setlistitems.each do |item|
+          @infos << SetlistitemInformation.where(setlistitem_id: item.id)
+        end
+        @infos.flatten!
+        flash.now[:error] = I18n.t('flash.error.post')
+        format.html { render 'events/show', status: :unprocessable_entity }
       end
-      @infos.flatten!
-      flash.now[:error] = I18n.t('flash.error.post')
-      render 'events/show', status: :unprocessable_entity
     end
   end
 

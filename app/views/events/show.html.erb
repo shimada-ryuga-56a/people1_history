@@ -46,5 +46,5 @@
     <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary mb-5' %>
   <% end %>
 
-  <%= render 'events/event_information', infos: @event_infos %>
+  <%= render 'events/information_index', event_informations: @event_infomations %>
 </div>
