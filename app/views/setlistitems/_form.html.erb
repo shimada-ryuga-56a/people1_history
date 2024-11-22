@@ -1,16 +1,18 @@
-<div class="card bg-base-100 w-full shadow-xl mb-3">
-  <div class="card-body">
-    <div class="flex">
-      <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう！</h2>
-      <%= render partial: "setlistitems/modals/setlistitem_info_modal" %>
-    </div>
-    <%= form_with model: SetlistitemInformation.new, url: setlistitem_informations_path do |f| %>
-      <%= render 'shared/error_messages', model: f.object %>
-      <%= f.text_area :body, class: "textarea w-full my-4 border-slate-400", placeholder: "コメントを入力" %>
-      <%= f.hidden_field :setlistitem_id, value: item.id %>
-      <div class="card-actions">
-        <%= f.submit '投稿', class: "btn btn-primary" %>
+<%= turbo_frame_tag "new_setlist_info" do %>
+  <div class="card bg-base-100 w-full shadow-xl mb-3">
+    <div class="card-body">
+      <div class="flex">
+        <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう！</h2>
+        <%= render partial: "setlistitems/modals/setlistitem_info_modal" %>
       </div>
-    <% end %>
+      <%= form_with model: SetlistitemInformation.new, url: setlistitem_informations_path do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
+        <%= f.text_area :body, class: "textarea w-full my-4 border-slate-400", placeholder: "コメントを入力" %>
+        <%= f.hidden_field :setlistitem_id, value: item.id %>
+        <div class="card-actions">
+          <%= f.submit '投稿', class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
