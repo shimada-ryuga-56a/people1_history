@@ -55,5 +55,7 @@
 
   <div class="divider"></div>
   <%= render partial: "song_informations/form", locals: { info: @song_information, song: @song } %>
-  <%= render partial: "song_informations/song_informations" %>
+  <%= turbo_frame_tag 'song_informations' do %>
+    <%= render partial: "song_informations/song_informations" %>
+  <% end %>
 </div>
