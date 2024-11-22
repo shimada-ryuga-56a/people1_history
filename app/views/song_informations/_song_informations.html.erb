@@ -1,0 +1,5 @@
+<div>
+  <% @song_informations.each do |info| %>
+    <%= render partial: "song_informations/song_information", locals: {info: info} %>
+  <% end %>
+</div>
