@@ -1,17 +1,19 @@
 class SetlistitemInformationsController < ApplicationController
   def create
-    @new_info = SetlistitemInformation.new(setlistitem_information_params)
-    if @new_info.save
-      redirect_to event_path(@new_info.setlistitem.setlist.event.id)
-    else
-      @event = Event.find(@new_info.setlistitem.setlist.event.id)
-      @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
-      @infos = []
-      @setlistitems.each do |item|
-        @infos << SetlistitemInformation.where(setlistitem_id: item.id)
+    @info = SetlistitemInformation.new(setlistitem_information_params)
+    respond_to do |format|
+      if @info.save
+        format.turbo_stream
+      else
+        @event = Event.find(@new_info.setlistitem.setlist.event.id)
+        @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
+        @infos = []
+        @setlistitems.each do |item|
+          @infos << SetlistitemInformation.where(setlistitem_id: item.id)
+        end
+        @infos.flatten!
+        render 'events/show', status: :unprocessable_entity
       end
-      @infos.flatten!
-      render 'events/show', status: :unprocessable_entity
     end
   end
 

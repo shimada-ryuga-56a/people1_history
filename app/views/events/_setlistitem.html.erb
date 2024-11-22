@@ -6,8 +6,8 @@
         <p><%= song_display(item) %></p>
       </div>
       <div class="collapse-content w-full">
-        <%= render partial: 'setlistitems/form', locals: {item: item} %>
-        <%= render partial: 'setlistitems/setlistitem_informations', locals: {item: item, infos: infos} %>
+        <%= render partial: 'setlistitem_informations/form', locals: {item: item} %>
+        <%= render partial: 'setlistitem_informations/setlistitem_informations', locals: {item: item, infos: infos} %>
       </div>
     </div>
   </div>
