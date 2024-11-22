@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
     @infos = []
     @setlistitems.each do |item|
-      @infos << SetlistitemInformation.where(setlistitem_id: item.id)
+      @infos << SetlistitemInformation.where(setlistitem_id: item.id).order(created_at: 'DESC')
     end
     @infos.flatten!
   end
