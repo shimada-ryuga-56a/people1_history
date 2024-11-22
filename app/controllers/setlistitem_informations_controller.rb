@@ -3,6 +3,7 @@ class SetlistitemInformationsController < ApplicationController
     @info = SetlistitemInformation.new(setlistitem_information_params)
     respond_to do |format|
       if @info.save
+        @item = Setlistitem.find(@info.setlistitem_id)
         format.turbo_stream
       else
         @event = Event.find(@new_info.setlistitem.setlist.event.id)
