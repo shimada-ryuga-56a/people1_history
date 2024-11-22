@@ -225,6 +225,13 @@
   resolved "https://registry.yarnpkg.com/@stimulus-components/dialog/-/dialog-1.0.1.tgz#879452b4efb817e16f44c09ac920ae618d12591e"
   integrity sha512-7cpazrXeFKVmmuGnJOrykEvjRNRTOhLuI7SzgDdAlKWxM8ivBKziBHwjJGR96vCvSkoKwlGMGRcDzXgVRnr/7w==
 
+"@stimulus-components/notification@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@stimulus-components/notification/-/notification-3.0.0.tgz#f67ec72bb0601ec33f597494def72e6ca93dd4a5"
+  integrity sha512-oZrIAcEayLNIhcetMJSLP6S9ryWjiFWBI5JKm639UuRsfSRyxiaHMddb3Xch/Umq6K24h/t2l1zVxxOm/UnMOA==
+  dependencies:
+    stimulus-use "^0.52.2"
+
 "@stimulus-components/rails-nested-form@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@stimulus-components/rails-nested-form/-/rails-nested-form-5.0.0.tgz#b443ad8ba5220328cfd704ca956ebf95ab8c4848"
@@ -847,6 +854,11 @@ stimulus-autocomplete@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/stimulus-autocomplete/-/stimulus-autocomplete-3.1.0.tgz#7c9292706556ed0a87abf60ea2688bf0ea1176a8"
   integrity sha512-SmVViCdA8yCl99oV2kzllNOqYjx7wruY+1OjAVsDTkZMNFZG5j+SqDKHMYbu+dRFy/SWq/PParzwZHvLAgH+YA==
+
+stimulus-use@^0.52.2:
+  version "0.52.2"
+  resolved "https://registry.yarnpkg.com/stimulus-use/-/stimulus-use-0.52.2.tgz#fc992fababe03f8d8bc2d9470c8cdb40bd075917"
+  integrity sha512-413+tIw9n6Jnb0OFiQE1i3aP01i0hhGgAnPp1P6cNuBbhhqG2IOp8t1O/4s5Tw2lTvSYrFeLNdaY8sYlDaULeg==
 
 "string-width-cjs@npm:string-width@^4.2.0":
   version "4.2.3"
