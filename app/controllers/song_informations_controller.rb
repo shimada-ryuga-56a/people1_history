@@ -8,7 +8,7 @@ class SongInformationsController < ApplicationController
         format.turbo_stream
         # redirect_to song_path(@info.song), success: '保存できました'
       else
-        format.html {redirect_to song_path(@info.song), danger: '保存できませんでした'}
+        format.html { redirect_to song_path(@info.song), danger: '保存できませんでした' }
       end
     end
   end
