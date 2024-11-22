@@ -1,0 +1,7 @@
+<% if infos.present? %>
+  <% infos.each do |info| %>
+    <% if info.setlistitem_id == item.id %>
+      <%= render partial: 'setlistitems/setlistitem_information', locals: {info: info} %>
+    <% end %>
+  <% end %>
+<% end %>

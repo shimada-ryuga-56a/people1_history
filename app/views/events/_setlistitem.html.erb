@@ -7,7 +7,7 @@
       </div>
       <div class="collapse-content w-full">
         <%= render partial: 'setlistitems/form', locals: {item: item} %>
-        <%= render 'setlistitems/setlistitem_information', item: item %>
+        <%= render partial: 'setlistitems/setlistitem_informations', locals: {item: item, infos: infos} %>
       </div>
     </div>
   </div>
