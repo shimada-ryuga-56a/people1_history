@@ -37,6 +37,6 @@
   </div>
 
   <div class="divider"></div>
-  <%= render partial: 'tour_informations/form' %>
+  <%= render partial: 'tour_informations/form', locals: {tour: @tour} %>
   <%= render partial: 'tour_informations/tour_informations', locals: {infos: @informations} %>
 </div>

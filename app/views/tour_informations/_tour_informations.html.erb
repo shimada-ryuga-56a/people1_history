@@ -1,5 +1,5 @@
-<div>
+<%= turbo_frame_tag 'tour_informations' do %>
   <% infos.each do |info| %>
     <%= render partial: "tour_informations/tour_information", locals: {tour_information: info} %>
   <% end %>
-</div>
+<% end %>

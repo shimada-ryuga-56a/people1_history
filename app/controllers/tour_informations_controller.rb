@@ -1,13 +1,16 @@
 class TourInformationsController < ApplicationController
   def create
     @info = TourInformation.new(tour_information_params)
-    if @info.save
-      redirect_to tour_path(id: params[:tour_id])
-    else
-      @tour = Tour.find(params[:id])
-      @tours = Event.where(tour_id: params[:id])
-      @informations = TourInformation.where(tour_id: params[:id]).order(created_at: 'DESC')
-      render 'tours/show', status: :unprocessable_entity
+    respond_to do |format|
+      if @info.save
+        @tour = Tour.find(@info.tour_id)
+        format.turbo_stream
+      else
+        @tour = Tour.find(params[:tour_id])
+        @tours = Event.where(tour_id: params[:tour_id])
+        @informations = TourInformation.where(tour_id: params[:id]).order(created_at: 'DESC')
+        format.html { render 'tours/show', status: :unprocessable_entity }
+      end
     end
   end
 
