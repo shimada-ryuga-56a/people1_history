@@ -5,12 +5,11 @@ class EventInformationsController < ApplicationController
       if @info.save
         @new_info = EventInformation.new
         @event = Event.find(params[:event_id])
-        @event_informations = EventInformation.where(event_id: params[:id]).order(created_at: 'DESC')
         # flash[:success] = I18n.t('flash.success.post')
         format.turbo_stream
       else
-        @event = Event.includes(:setlist).find(params[:id])
-        @event_infomations = EventInformation.where(event_id: params[:id]).order(created_at: 'DESC')
+        @event = Event.includes(:setlist).find(params[:event_id])
+        @event_infomations = EventInformation.where(event_id: params[:event_id]).order(created_at: 'DESC')
         return unless @event.setlist
 
         @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)

@@ -40,7 +40,7 @@
       </div>
       <p><%= @event.setlist.user.name %><p>
     </div>
-    <%= render 'events/setlistitem', setlistitems: @setlistitems %>
+    <%= render partial: 'events/setlistitem', locals: {setlistitems: @setlistitems, infos: @infos} %>
   <% else %>
     <p class="mb-3">セットリストはまだ投稿されていません。投稿しましょう！</p>
     <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary mb-5' %>

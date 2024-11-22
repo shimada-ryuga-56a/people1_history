@@ -5,7 +5,10 @@
       <div class="collapse-title text-base md:text-xl font-medium">
         <p><%= song_display(item) %></p>
       </div>
-      <%= render 'setlistitems/setlistitem_information', item: item %>
+      <div class="collapse-content w-full">
+        <%= render partial: 'setlistitem_informations/form', locals: {item: item} %>
+        <%= render partial: 'setlistitem_informations/setlistitem_informations', locals: {item: item, infos: infos} %>
+      </div>
     </div>
   </div>
 <% end %>
