@@ -6,14 +6,15 @@ class SetlistitemInformationsController < ApplicationController
         @item = Setlistitem.find(@info.setlistitem_id)
         format.turbo_stream
       else
-        @event = Event.find(@new_info.setlistitem.setlist.event.id)
+        @event = Event.find(@info.setlistitem.setlist.event.id)
+        @event_infomations = EventInformation.where(event_id: @event.id).order(created_at: 'DESC')
         @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
         @infos = []
         @setlistitems.each do |item|
           @infos << SetlistitemInformation.where(setlistitem_id: item.id)
         end
         @infos.flatten!
-        render 'events/show', status: :unprocessable_entity
+        format.html {render 'events/show', status: :unprocessable_entity}
       end
     end
   end
