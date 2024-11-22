@@ -1,33 +1,15 @@
-<%= form_with model: TourInformation.new, url: tour_tour_informations_path(tour_id: params[:id]) do |f| %>
-  <div class="card bg-base-100 shadow-xl mb-5">
-    <div class="card-body">
-      <h2 class="card-title"><%= f.label :body %></h2>
-      <%= f.text_area :body, class: "textarea", placeholder: "情報を投稿しましょう" %>
-      <div class="card-actions justify-end">
-        <%= f.submit 'Post', class: "btn btn-primary" %>
-      </div>
+<div class="card bg-base-100 shadow-xl mb-3">
+<div class="card-body">
+  <div class="avatar flex items-center">
+    <div class="w-6 rounded-full mr-3">
+      <img src="<%= info.user.image %>" />
     </div>
+    <%= info.user.name %>
+    <p class="text-sm">　<%= info.created_at %></p>
   </div>
-<% end %>
-
-<% if infos.present? %>
+  <h2 class="card-title"><%= info.body %></h2>
   <div>
-  <% infos.each do |info| %>
-    <div class="card bg-base-100 shadow-xl mb-3">
-      <div class="card-body">
-        <div class="avatar flex items-center">
-          <div class="w-6 rounded-full mr-3">
-            <img src="<%= info.user.image %>" />
-          </div>
-          <%= info.user.name %>
-          <p class="text-sm">　<%= info.created_at %></p>
-        </div>
-        <h2 class="card-title"><%= info.body %></h2>
-        <div>
-          <%= render partial: "info_fav_btn", locals: {tour_information: info} %>
-        </div>
-      </div>
-    </div>
-  <% end %>
+    <%= render partial: "info_fav_btn", locals: {tour_information: info} %>
   </div>
-<% end %>
+</div>
+</div>
