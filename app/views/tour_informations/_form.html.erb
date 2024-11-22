@@ -1,5 +1,5 @@
 <%= turbo_frame_tag "new_tour_info" do %>
-  <%= form_with model: TourInformation.new, url: tour_tour_informations_path(tour_id: params[:id]) do |f| %>
+  <%= form_with model: TourInformation.new, url: tour_tour_informations_path(tour_id: tour.id) do |f| %>
     <div class="card shadow-2xl mb-5">
       <div class="card-body">
         <div class="flex">
