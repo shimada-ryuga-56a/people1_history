@@ -1,35 +1,42 @@
-<h1><%= title @tour.name %></h1>
+<div class="m-3">
+  <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
+    <%= title @tour.name %>
+  </h1>
 
-<h2>公演詳細</h2>
-
-<div class="overflow-x-auto">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Place</th>
-        <th></th>
-        <th>Remark</th>
-      </tr>
-    </thead>
-    <% @tours.each do |event| %>
-      <tbody>
+  <div class="overflow-x-auto">
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= event.date %></td>
-          <td>
-            <p><%= event.place %>（<%= event.place_prefecture %>）<p>
-          </td>
-          <td>
-            <p class="link link-primary"><%= link_to 'Show more', (event_path(event)) %><p>
-          </td>
-          <% if event.remark.present? %>
-            <td>※<%= event.remark %></td>
-          <% end %>
+          <th>日程</th>
+          <th>場所</th>
+          <th></th>
+          <th>備考</th>
         </tr>
-      </tbody>
-    <% end %>
-  </table>
-</div>
+      </thead>
+      <% @tours.each do |event| %>
+        <tbody class="<%= "bg-slate-400 text-black" if event.is_canceled? %>">
+          <tr>
+            <td>
+              <%= I18n.l(event.date, format: "%Y/%m/%d(%a)") %>
+            </td>
+            <td>
+              <p><%= event.place %>（<%= event.place_prefecture_i18n %>）<p>
+            </td>
+            <td>
+              <p class="link link-primary"><%= link_to '詳細', (event_path(event)) %><p>
+            </td>
+            <td>
+              <% if event.remark.present? %>
+                ※<%= event.remark %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
 
-<div class="divider"></div>
-<%= render 'tour_information', infos: @informations %>
+  <div class="divider"></div>
+  <%= render partial: 'tour_informations/form', locals: {tour: @tour} %>
+  <%= render partial: 'tour_informations/tour_informations', locals: {infos: @informations} %>
+</div>
