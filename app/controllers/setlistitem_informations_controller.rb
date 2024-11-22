@@ -14,7 +14,7 @@ class SetlistitemInformationsController < ApplicationController
           @infos << SetlistitemInformation.where(setlistitem_id: item.id)
         end
         @infos.flatten!
-        format.html {render 'events/show', status: :unprocessable_entity}
+        format.html { render 'events/show', status: :unprocessable_entity }
       end
     end
   end
