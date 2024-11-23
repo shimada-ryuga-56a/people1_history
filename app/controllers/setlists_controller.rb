@@ -18,7 +18,7 @@ class SetlistsController < ApplicationController
         format.html { redirect_to event_path(@event.id) }
       else
         flash.now[:error] = I18n.t('flash.error.setlist_post')
-        render :new, status: :unprocessable_entity
+        format.turbo_stream { render 'setlists/create_failure', status: :unprocessable_entity }
       end
     end
   end
