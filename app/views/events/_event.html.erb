@@ -14,7 +14,7 @@
     </p>
     <div class="badge badge-secondary"><%= event.category %></div>
     <div class="card-actions justify-end">
-      <%= link_to "詳細", event_path(event), class: 'btn btn-primary' %>
+      <%= link_to "詳細", event_path(event), class: 'btn btn-primary', data: {turbo: false}  %>
     </div>
   </div>
 </div>
