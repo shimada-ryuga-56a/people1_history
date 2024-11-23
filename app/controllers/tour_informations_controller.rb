@@ -6,13 +6,12 @@ class TourInformationsController < ApplicationController
         @new_info = TourInformation.new
         @tour = Tour.find(@info.tour_id)
         flash.now[:success] = I18n.t('flash.success.post')
-        format.turbo_stream
+        format.turbo_stream { render 'tour_informations/create' }
       else
         @new_info = @info
         @tour = Tour.find(params[:tour_id])
-        @tours = Event.where(tour_id: params[:tour_id])
-        @informations = TourInformation.where(tour_id: params[:id]).order(created_at: 'DESC')
-        format.html { render 'tours/show', status: :unprocessable_entity }
+        flash.now[:error] = I18n.t('flash.error.post')
+        format.turbo_stream { render 'tour_informations/create_error', status: :unprocessable_entity }
       end
     end
   end
