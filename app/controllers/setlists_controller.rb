@@ -1,6 +1,7 @@
 class SetlistsController < ApplicationController
   def new
     @event = Event.find(params[:event_id])
+    setlist_inspection && return
     @setlist = Setlist.new
     50.times { @setlist.setlistitems.build }
   end
@@ -11,12 +12,14 @@ class SetlistsController < ApplicationController
     @setlist = Setlist.new(setlist_params)
     @setlist.setlistitems.each(&:set_song_id)
 
-    if @setlist.save
-      flash[:success] = I18n.t('flash.success.setlist_post')
-      redirect_to event_path(@event.id)
-    else
-      flash.now[:error] = I18n.t('flash.error.setlist_post')
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @setlist.save
+        flash[:success] = I18n.t('flash.success.setlist_post')
+        format.html { redirect_to event_path(@event.id) }
+      else
+        flash.now[:error] = I18n.t('flash.error.setlist_post')
+        format.turbo_stream { render 'setlists/create_failure', status: :unprocessable_entity }
+      end
     end
   end
 
