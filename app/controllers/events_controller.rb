@@ -8,6 +8,7 @@ class EventsController < ApplicationController
                 @events.where(date: ..Time.zone.today).page(params[:page])
               end
     respond_to do |format|
+      format.html {"events/index"}
       format.turbo_stream
     end
   end
@@ -25,5 +26,8 @@ class EventsController < ApplicationController
     end
     @infos.flatten!
     @setlistitem_new_info = SetlistitemInformation.new
+  end
+  respond_to do |format|
+    format.html {"events/show"}
   end
 end
