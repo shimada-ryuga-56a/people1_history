@@ -4,6 +4,7 @@ class SetlistitemInformationsController < ApplicationController
     respond_to do |format|
       if @info.save
         @item = Setlistitem.find(@info.setlistitem_id)
+        flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream
       else
         @event = Event.find(@info.setlistitem.setlist.event.id)
