@@ -5,7 +5,7 @@ class EventInformationsController < ApplicationController
       if @info.save
         @new_info = EventInformation.new
         @event = Event.find(params[:event_id])
-        # flash[:success] = I18n.t('flash.success.post')
+        flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream
       else
         @event = Event.includes(:setlist).find(params[:event_id])
