@@ -1,0 +1,7 @@
+<%= turbo_stream.replace "new_setlistitem_info_#{@item.id}" do %>
+  <%= render partial: "form", locals: {item: @item} %>
+<% end %>
+
+<%= turbo_stream.replace "flash_message" do %>
+  <%= render partial: "shared/flash_messages" %>
+<% end %>
