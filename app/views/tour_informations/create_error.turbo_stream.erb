@@ -2,10 +2,6 @@
   <%= render partial: "form", locals: {tour: @tour, new_info: @new_info} %>
 <% end %>
 
-<%= turbo_stream.prepend "tour_informations" do %>
-  <%= render partial: "tour_informations/tour_information", locals: {tour_information: @info} %>
-<% end %>
-
 <%= turbo_stream.replace "flash_message" do %>
   <%= render partial: "shared/flash_messages" %>
 <% end %>

@@ -5,21 +5,13 @@ class EventInformationsController < ApplicationController
       if @info.save
         @new_info = EventInformation.new
         @event = Event.find(params[:event_id])
-        # flash[:success] = I18n.t('flash.success.post')
-        format.turbo_stream
+        flash.now[:success] = I18n.t('flash.success.post')
+        format.turbo_stream { render 'create' }
       else
         @event = Event.includes(:setlist).find(params[:event_id])
-        @event_infomations = EventInformation.where(event_id: params[:event_id]).order(created_at: 'DESC')
-        return unless @event.setlist
-
-        @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
-        @infos = []
-        @setlistitems.each do |item|
-          @infos << SetlistitemInformation.where(setlistitem_id: item.id)
-        end
-        @infos.flatten!
+        @new_info = @info
         flash.now[:error] = I18n.t('flash.error.post')
-        format.html { render 'events/show', status: :unprocessable_entity }
+        format.turbo_stream { render 'create_failure', status: :unprocessable_entity }
       end
     end
   end
