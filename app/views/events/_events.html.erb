@@ -1,5 +1,7 @@
-<% if @events.present? %>
-  <%= render @events %>
-<% else %>
-  <div class="mb-3">イベント情報がありません</div>
+<%= turbo_frame_tag "events" do %>
+  <% if @events.present? %>
+    <%= render @events %>
+  <% else %>
+    <div class="mb-3">イベント情報がありません</div>
+  <% end %>
 <% end %>

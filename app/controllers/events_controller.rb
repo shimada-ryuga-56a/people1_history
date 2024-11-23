@@ -7,6 +7,9 @@ class EventsController < ApplicationController
               else
                 @events.where(date: ..Time.zone.today).page(params[:page])
               end
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 
   def show
