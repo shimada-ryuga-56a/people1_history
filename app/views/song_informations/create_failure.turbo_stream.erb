@@ -1,0 +1,7 @@
+<%= turbo_stream.replace "new_info" do %>
+  <%= render partial: "form", locals: { song: @song, info: @new_song_information } %>
+<% end %>
+
+<%= turbo_stream.replace "flash_message" do %>
+  <%= render partial: "shared/flash_messages" %>
+<% end %>

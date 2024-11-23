@@ -10,7 +10,8 @@ class SongInformationsController < ApplicationController
       else
         @new_song_information = @info
         @song_informations = SongInformation.where(song_id: params[:song_id]).order(created_at: 'DESC')
-        format.html { render 'songs/show', status: :unprocessable_entity }
+        flash.now[:error] = I18n.t('flash.error.post')
+        format.turbo_stream { render 'create_failure', status: :unprocessable_entity }
       end
     end
   end
