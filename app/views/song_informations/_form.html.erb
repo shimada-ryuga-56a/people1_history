@@ -1,5 +1,6 @@
 <%= turbo_frame_tag "new_info" do %>
   <%= form_with model: info, url: song_song_informations_path(song) do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
     <div class="card shadow-2xl mb-5">
       <div class="card-body">
         <div class="flex">
