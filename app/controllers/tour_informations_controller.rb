@@ -4,6 +4,7 @@ class TourInformationsController < ApplicationController
     respond_to do |format|
       if @info.save
         @tour = Tour.find(@info.tour_id)
+        flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream
       else
         @tour = Tour.find(params[:tour_id])
