@@ -5,8 +5,8 @@ class SongInformationsController < ApplicationController
       if @info.save
         @new_info = SongInformation.new
         @song = Song.find(params[:song_id])
+        flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream
-        # redirect_to song_path(@info.song), success: '保存できました'
       else
         format.html { redirect_to song_path(@info.song), danger: '保存できませんでした' }
       end

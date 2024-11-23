@@ -5,3 +5,7 @@
 <%= turbo_stream.prepend "song_informations" do %>
   <%= render partial: "song_informations/song_information", locals: { song_information: @info } %>
 <% end %>
+
+<%= turbo_stream.replace "flash_message" do %>
+  <%= render partial: "shared/flash_messages" %>
+<% end %>
