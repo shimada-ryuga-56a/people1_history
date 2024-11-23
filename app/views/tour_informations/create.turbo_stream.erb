@@ -1,5 +1,5 @@
 <%= turbo_stream.replace "new_tour_info" do %>
-  <%= render partial: "form", locals: {tour: @tour} %>
+  <%= render partial: "form", locals: {tour: @tour, new_info: @new_info} %>
 <% end %>
 
 <%= turbo_stream.prepend "tour_informations" do %>
