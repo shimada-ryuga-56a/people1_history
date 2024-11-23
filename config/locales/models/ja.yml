@@ -8,6 +8,14 @@ ja:
         is_arranged: 新訳
         is_rehearsal: リハーサル
         is_encore: アンコール
+      setlistitem_information:
+        body: コメント
+      event_information:
+        body: コメント
+      song_information:
+        body: コメント
+      tour_information:
+        body: コメント
       category:
         tour: ツアー
         one_man: ワンマン
