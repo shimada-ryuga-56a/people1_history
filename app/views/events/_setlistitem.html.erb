@@ -1,11 +1,16 @@
 <% setlistitems.each do |item| %>
   <div class="join join-vertical w-full">
     <div class="collapse collapse-arrow join-item border-base-300 border mb-5 bg-base-300">
-      <input type="radio" name="my-accordion-4" checked="checked" />
+      <input type="radio" name="my-accordion-4" />
       <div class="collapse-title text-base md:text-xl font-medium">
-        <p><%= song_display(item) %></p>
+        <%= song_display(item) %>
       </div>
       <div class="collapse-content w-full">
+        <% if item.song_id.present? %>
+          <div class="mb-5">
+            <%= link_to "楽曲の詳細を見る", song_path(id: item.song_id), class: "link" %>
+          </div>
+        <% end %>
         <%= render partial: 'setlistitem_informations/form', locals: {item: item} %>
         <%= render partial: 'setlistitem_informations/setlistitem_informations', locals: {item: item, infos: infos} %>
       </div>
