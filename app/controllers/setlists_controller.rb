@@ -1,6 +1,7 @@
 class SetlistsController < ApplicationController
   def new
     @event = Event.find(params[:event_id])
+    setlist_inspection && return
     @setlist = Setlist.new
     50.times { @setlist.setlistitems.build }
   end
