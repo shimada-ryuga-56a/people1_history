@@ -21,5 +21,6 @@ class EventsController < ApplicationController
       @infos << SetlistitemInformation.where(setlistitem_id: item.id).order(created_at: 'DESC')
     end
     @infos.flatten!
+    @setlistitem_new_info = SetlistitemInformation.new
   end
 end

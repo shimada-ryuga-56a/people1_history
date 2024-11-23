@@ -3,6 +3,7 @@ class SetlistitemInformationsController < ApplicationController
     @info = SetlistitemInformation.new(setlistitem_information_params)
     respond_to do |format|
       if @info.save
+        @setlistitem_new_info = SetlistitemInformation.new
         @item = Setlistitem.find(@info.setlistitem_id)
         flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream

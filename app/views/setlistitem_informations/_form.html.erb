@@ -5,7 +5,7 @@
         <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう！</h2>
         <%= render partial: "setlistitems/modals/setlistitem_info_modal" %>
       </div>
-      <%= form_with model: SetlistitemInformation.new, url: setlistitem_informations_path do |f| %>
+      <%= form_with model: @setlistitem_new_info, url: setlistitem_informations_path do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
         <%= f.text_area :body, class: "textarea w-full my-4 border-slate-400", placeholder: "コメントを入力" %>
         <%= f.hidden_field :setlistitem_id, value: item.id %>
