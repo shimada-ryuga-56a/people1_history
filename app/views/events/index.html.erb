@@ -26,11 +26,7 @@
 
   <div class="divider"></div>
   <div>
-    <% if @events.present? %>
-      <%= render @events %>
-    <% else %>
-      <div class="mb-3">イベント情報がありません</div>
-    <% end %>
+    <%= render partial: 'events' %>
   </div>
 
   <%= paginate @events %>
