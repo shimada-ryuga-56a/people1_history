@@ -27,4 +27,12 @@ class Event < ApplicationRecord
     Fukuoka: 40, Saga: 41, Nagasaki: 42, Kumamoto: 43, Oita: 44, Miyazaki: 45, Kagoshima: 46, Okinawa: 47,
     abroad: 60
   }
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[name name_kana_ruby category]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    %w[name name_kana_ruby]
+  end
 end

@@ -1,19 +1,9 @@
 <div data-controller="dialog" data-action="click->dialog#backdropClose">
   <dialog data-dialog-target="dialog" class="bg-neutral-200 p-5 text-slate-900 rounded-lg">
     <div class="mb-3 leading-8">
-      <%= form_with url: events_path, method: :get do |f| %>
-        <div class="flex w-full flex-col">
-          <div class="mb-2 text-sm">
-            <%= f.collection_check_boxes :category, Event.categories, :first, :first do |s| %>
-              <%= s.check_box checked: @category.nil? || @category.include?(s.value), class: "checkbox checkbox-xs" %>
-              <%= s.label { Event.human_attribute_name("category.#{s.text}")} %>
-            <% end %>
-          </div>
-          <div class="mb-4 text-sm">
-            <%= f.check_box :date, class: "checkbox checkbox-xs" %>
-            <%= f.label '開催前のイベントも表示' %>
-          </div>
-        </div>
+      <%= search_form_for @q, url: events_path, method: :get do |f| %>
+        <%= f.label "イベント名" %>
+        <%= f.search_field :name_or_name_kana_ruby_cont, placeholder: 'イベント名を入力', type: "text", class: "input input-bordered w-full mb-3 border-neutral-content bg-transparent" %>
         <button class="btn btn-active">
           <%= f.submit "検索" %>
         </button>
