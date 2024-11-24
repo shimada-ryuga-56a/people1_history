@@ -5,23 +5,7 @@
 
   <div class="divider mb-5">絞り込み</div>
   <div class="my-5">
-    <%= form_with url: events_path, method: :get, data: {turbo_stream: true} do |f| %>
-      <div class="flex w-full flex-col">
-        <div class="mb-2 text-sm">
-          <%= f.collection_check_boxes :category, Event.categories, :first, :first do |s| %>
-            <%= s.check_box checked: @category.nil? || @category.include?(s.value), class: "checkbox checkbox-xs" %>
-            <%= s.label { Event.human_attribute_name("category.#{s.text}")} %>
-          <% end %>
-        </div>
-        <div class="mb-4 text-sm">
-          <%= f.check_box :date, class: "checkbox checkbox-xs" %>
-          <%= f.label '開催前のイベントも表示' %>
-        </div>
-      </div>
-      <button class="btn btn-active">
-        <%= f.submit "検索" %>
-      </button>
-    <% end %>
+    <%= render partial: 'search_form' %>
   </div>
 
   <%= turbo_frame_tag "events_list" do %>
