@@ -16,7 +16,7 @@
     <h1 class="text-center text-xl md:text-2xl font-semibold mb-2"><%= title @event.name %></h1>
     <p>
     日時：<%= I18n.l(@event.date, format: "%Y/%m/%d(%a)") %><br>
-    会場：<%= @event.place_prefecture_i18n %> <%= @event.place %><br>
+    会場：<%= t("activerecord.attributes.event.place_prefecture.#{@event.place_prefecture}") %> <%= @event.place %><br>
       <% if @event.remark.present? %>
         備考：<%= @event.remark %>
       <% end %>

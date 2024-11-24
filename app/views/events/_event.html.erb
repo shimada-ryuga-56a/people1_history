@@ -8,7 +8,7 @@
   <div class="card-body leading-8	">
     <h2 class="card-title"><%= event.name %></h2>
     <p>
-      @<%= event.place %>（<%= event.place_prefecture_i18n %>）
+      @<%= event.place %>（<%= t("activerecord.attributes.event.place_prefecture.#{event.place_prefecture}") %>）
         <br>
       <%= I18n.l(event.date, format: "%Y/%m/%d(%a)") %>
     </p>
