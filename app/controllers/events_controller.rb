@@ -1,16 +1,18 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.category(params[:category]).order(date: :desc)
-    @categories = params[:category]
-    @events = if params[:date]&.include?('1')
-                @events.page(params[:page])
-              else
-                @events.where(date: ..Time.zone.today).page(params[:page])
-              end
-    respond_to do |format|
-      format.turbo_stream {render 'index'}
-      format.html {"events/index"}
+    @q = Event.ransack(params[:q])
+    if params[:q].present?
+      @events = @q.result(distinct: true).page(params[:page])
+    else
+      @events = Event.all.page(params[:page])
     end
+    # @events = Event.category(params[:category]).order(date: :desc)
+    # @categories = params[:category]
+    # @events = if params[:date]&.include?('1')
+    #             @events.page(params[:page])
+    #           else
+    #             @events.where(date: ..Time.zone.today).page(params[:page])
+    #           end
   end
 
   def show
