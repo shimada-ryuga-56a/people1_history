@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     if params[:q].present?
       @events = @q.result(distinct: true).order(date: :desc).page(params[:page])
     else
-      @events = Event.all.order(date: :desc).page(params[:page])
+      @events = Event.where("date <= ?", Date.today).order(date: :desc).page(params[:page])
     end
   end
 
