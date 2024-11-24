@@ -22,7 +22,7 @@
 
         <div class="mb-3">
           <%= f.label "都道府県" %>
-          <%= f.select :place_prefecture_eq, Event.place_prefectures.invert.map{|key, value| [value, Event.place_prefectures[value]]}, { include_blank: "指定なし" }, class: "select select-sm max-w-xs border-neutral-content bg-transparent"%>
+          <%= f.select :place_prefecture_eq, Event.place_prefectures.invert.map{|key, value| [t("activerecord.attributes.event.place_prefecture.#{value}"), Event.place_prefectures[value]]}, { include_blank: "指定なし" }, class: "select select-sm max-w-xs border-neutral-content bg-transparent"%>
         </div>
 
         <div class="mb-3">
