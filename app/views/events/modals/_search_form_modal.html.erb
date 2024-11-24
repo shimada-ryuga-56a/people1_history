@@ -1,23 +1,28 @@
 <div data-controller="dialog" data-action="click->dialog#backdropClose">
   <dialog data-dialog-target="dialog" class="bg-neutral-200 p-5 text-slate-900 rounded-lg">
+    <div class="grid justify-items-end">
+      <button type="button" data-action="dialog#close" autofocus><i class="fa-regular fa-circle-xmark mr-1"></i></button>
+    </div>
     <div class="mb-3 leading-8">
       <%= search_form_for @q, url: events_path, method: :get do |f| %>
 
-        <div>
+        <div class="mb-3">
           <%= f.label "イベント名" %>
-          <%= f.search_field :name_or_name_kana_ruby_cont, placeholder: 'イベント名を入力', type: "text", class: "input input-bordered w-full mb-3 border-neutral-content bg-transparent" %>
+          <%= f.search_field :name_or_name_kana_ruby_cont, placeholder: 'イベント名を入力', type: "text", class: "input input-bordered w-full border-neutral-content bg-transparent" %>
         </div>
 
         <div class="mb-3">
           <% @categories.each do |category| %>
-            <%= f.check_box :category_eq_any, { multiple: true, include_hidden: false }, category[1] %>
-            <%= f.label category[0] %>
+            <div class="flex">
+              <%= f.check_box :category_eq_any, { multiple: true, include_hidden: false }, category[1] %>
+              <%= f.label category[0], class: "ml-1" %>
+            </div>
           <% end %>
         </div>
 
-        <div>
+        <div class="mb-3">
           <%= f.label "都道府県" %>
-          <%= f.select :place_prefecture_eq, Event.place_prefectures.invert.map{|key, value| [value, Event.place_prefectures[value]]}, { include_blank: "指定なし" }, class: "select select-sm max-w-xs border-neutral-content bg-transparent mb-3"%>
+          <%= f.select :place_prefecture_eq, Event.place_prefectures.invert.map{|key, value| [value, Event.place_prefectures[value]]}, { include_blank: "指定なし" }, class: "select select-sm max-w-xs border-neutral-content bg-transparent"%>
         </div>
 
         <div class="flex items-center">
@@ -28,7 +33,6 @@
         </div>
       <% end %>
     </div>
-    <button type="button" data-action="dialog#close" autofocus class="place-items-end"><i class="fa-regular fa-circle-xmark mr-1"></i>閉じる</button>
   </dialog>
   <button type="button" data-action="dialog#open" class="btn btn-active btn-ghost">
     <i class="fa-solid fa-magnifying-glass"></i>
