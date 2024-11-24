@@ -27,6 +27,7 @@ class Event < ApplicationRecord
     abroad: 60
   }
 
+  # Event.pastで開催済みのイベントのみの絞り込みを可能に
   scope :past, -> { where("date <= ?", Date.today) }
 
   def self.ransackable_attributes(auth_object = nil)
