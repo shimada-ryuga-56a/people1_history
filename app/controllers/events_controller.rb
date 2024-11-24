@@ -8,8 +8,8 @@ class EventsController < ApplicationController
                 @events.where(date: ..Time.zone.today).page(params[:page])
               end
     respond_to do |format|
+      format.turbo_stream {render 'index'}
       format.html {"events/index"}
-      format.turbo_stream
     end
   end
 

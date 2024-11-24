@@ -5,7 +5,7 @@
 
   <div class="divider mb-5">絞り込み</div>
   <div class="my-5">
-    <%= form_with url: events_path, method: :get, local: true do |f| %>
+    <%= form_with url: events_path, method: :get, data: {turbo_stream: true} do |f| %>
       <div class="flex w-full flex-col">
         <div class="mb-2 text-sm">
           <%= f.collection_check_boxes :category, Event.categories, :first, :first do |s| %>
