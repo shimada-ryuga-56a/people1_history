@@ -1,7 +1,7 @@
-<%= turbo_frame_tag "events_list" do %>
-  <% if @events.present? %>
-    <%= render @events %>
-  <% else %>
-    <div class="mb-3">イベント情報がありません</div>
-  <% end %>
+<% if @events.present? %>
+  <%= render @events %>
+<% else %>
+  <div class="mb-3">イベント情報がありません</div>
 <% end %>
+
+<%= paginate @events %>

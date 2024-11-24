@@ -24,10 +24,10 @@
     <% end %>
   </div>
 
-  <div class="divider"></div>
-  <div>
-    <%= render partial: 'events' %>
-  </div>
-
-  <%= paginate @events %>
+  <%= turbo_frame_tag "events_list" do %>
+    <div class="divider"></div>
+    <div>
+      <%= render partial: 'events' %>
+    </div>
+  <% end %>
 </div>
