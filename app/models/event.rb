@@ -27,6 +27,8 @@ class Event < ApplicationRecord
     abroad: 60
   }
 
+  scope :past, -> { where("date <= ?", Date.today) }
+
   def self.ransackable_attributes(auth_object = nil)
     %w[name name_kana_ruby category date place_prefecture]
   end
