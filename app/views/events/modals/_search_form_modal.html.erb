@@ -1,0 +1,25 @@
+<div data-controller="dialog" data-action="click->dialog#backdropClose">
+  <dialog data-dialog-target="dialog" class="bg-neutral-200 p-3 text-slate-900 rounded-lg">
+    <div class="mb-3 leading-8">
+      <%= form_with url: events_path, method: :get do |f| %>
+        <div class="flex w-full flex-col">
+          <div class="mb-2 text-sm">
+            <%= f.collection_check_boxes :category, Event.categories, :first, :first do |s| %>
+              <%= s.check_box checked: @category.nil? || @category.include?(s.value), class: "checkbox checkbox-xs" %>
+              <%= s.label { Event.human_attribute_name("category.#{s.text}")} %>
+            <% end %>
+          </div>
+          <div class="mb-4 text-sm">
+            <%= f.check_box :date, class: "checkbox checkbox-xs" %>
+            <%= f.label '開催前のイベントも表示' %>
+          </div>
+        </div>
+        <button class="btn btn-active">
+          <%= f.submit "検索" %>
+        </button>
+      <% end %>
+    </div>
+    <button type="button" data-action="dialog#close" autofocus class="place-items-end"><i class="fa-regular fa-circle-xmark mr-1"></i>閉じる</button>
+  </dialog>
+  <button type="button" data-action="dialog#open"><i class="fa-solid fa-circle-question ml-3"></i></button>
+</div>
