@@ -3,15 +3,11 @@
     <%= title "イベント一覧" %>
   </h1>
 
-  <div class="divider mb-5">絞り込み</div>
-  <div class="my-5">
+  <div class="mb-5">
     <%= render partial: "events/modals/search_form_modal" %>
   </div>
 
-  <%= turbo_frame_tag "events_list" do %>
-    <div class="divider"></div>
-    <div>
-      <%= render partial: 'events' %>
-    </div>
-  <% end %>
+  <div>
+    <%= render partial: 'events' %>
+  </div>
 </div>
