@@ -1,4 +1,4 @@
-<div class="card w-full shadow-2xl mb-4">
+<div class="card w-full shadow-2xl mb-2">
   <figure class="mt-10">
     <%= image_tag 'default_people_1.jpg' %>
     <%# if event.visual_image.attached? %>
@@ -14,7 +14,7 @@
     </p>
     <div class="badge badge-secondary"><%= event.category %></div>
     <div class="card-actions justify-end">
-      <%= link_to "詳細", event_path(event), class: 'btn btn-primary'  %>
+      <%= link_to "詳細", event_path(event), class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
