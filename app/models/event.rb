@@ -28,7 +28,7 @@ class Event < ApplicationRecord
   }
 
   def self.ransackable_attributes(auth_object = nil)
-    %w[name name_kana_ruby category]
+    %w[name name_kana_ruby category date place_prefecture]
   end
 
   def self.ransackable_associations(auth_object = nil)
