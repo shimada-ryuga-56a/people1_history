@@ -2,9 +2,9 @@ class EventsController < ApplicationController
   def index
     @q = Event.ransack(params[:q])
     if params[:q].present?
-      @events = @q.result(distinct: true).page(params[:page])
+      @events = @q.result(distinct: true).order(date: :desc).page(params[:page])
     else
-      @events = Event.all.page(params[:page])
+      @events = Event.all.order(date: :desc).page(params[:page])
     end
     # @events = Event.category(params[:category]).order(date: :desc)
     # @categories = params[:category]
