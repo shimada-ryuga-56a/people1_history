@@ -2,8 +2,17 @@
   <dialog data-dialog-target="dialog" class="bg-neutral-200 p-5 text-slate-900 rounded-lg">
     <div class="mb-3 leading-8">
       <%= search_form_for @q, url: events_path, method: :get do |f| %>
+
         <%= f.label "イベント名" %>
         <%= f.search_field :name_or_name_kana_ruby_cont, placeholder: 'イベント名を入力', type: "text", class: "input input-bordered w-full mb-3 border-neutral-content bg-transparent" %>
+
+        <div>
+          <% @categories.each do |category| %>
+            <%= f.check_box :category_eq_any, { multiple: true, include_hidden: false }, category[1] %>
+            <%= f.label category[0] %>
+          <% end %>
+        </div>
+
         <button class="btn btn-active">
           <%= f.submit "検索" %>
         </button>
