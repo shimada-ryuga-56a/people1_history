@@ -1,11 +1,13 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.category(params[:category]).order(date: :desc)
-    @categories = params[:category]
-    @events = if params[:date]&.include?('1')
-                @events.page(params[:page])
+    @categories = Event.categories
+    @q = Event.ransack(params[:q])
+    @events = if params[:q].present? && params[:q][:date_gteq] == '1'
+                @q.result(distinct: true).order(date: :desc).page(params[:page])
+              elsif params[:q].present? && params[:q][:date_gteq] == '0'
+                @q.result(distinct: true).past.order(date: :desc).page(params[:page])
               else
-                @events.where(date: ..Time.zone.today).page(params[:page])
+                Event.past.order(date: :desc).page(params[:page])
               end
   end
 
@@ -22,5 +24,8 @@ class EventsController < ApplicationController
     end
     @infos.flatten!
     @setlistitem_new_info = SetlistitemInformation.new
+  end
+  respond_to do |format|
+    format.html { 'events/show' }
   end
 end

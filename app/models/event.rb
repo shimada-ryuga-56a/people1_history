@@ -14,7 +14,6 @@ class Event < ApplicationRecord
 
   # enumでのイベントカテゴリー定義
   enum :category, { tour: 1, one_man: 2, fes: 3, event: 4 }
-  scope :category, ->(s) { where(category: Event.categories.keys & s) if s.present? }
 
   enum :place_prefecture, {
     undefined: 0, Hokkaido: 1, Aomori: 2, Iwate: 3, Miyagi: 4, Akita: 5, Yamagata: 6, Fukushima: 7,
@@ -27,4 +26,15 @@ class Event < ApplicationRecord
     Fukuoka: 40, Saga: 41, Nagasaki: 42, Kumamoto: 43, Oita: 44, Miyazaki: 45, Kagoshima: 46, Okinawa: 47,
     abroad: 60
   }
+
+  # Event.pastで開催済みのイベントのみの絞り込みを可能に
+  scope :past, -> { where(date: ..Time.zone.today) }
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[name name_kana_ruby category date place_prefecture]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[name name_kana_ruby]
+  end
 end
