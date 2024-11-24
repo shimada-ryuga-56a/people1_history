@@ -1,18 +1,12 @@
 class EventsController < ApplicationController
   def index
+    @categories = Event.categories_i18n
     @q = Event.ransack(params[:q])
     if params[:q].present?
       @events = @q.result(distinct: true).order(date: :desc).page(params[:page])
     else
       @events = Event.all.order(date: :desc).page(params[:page])
     end
-    # @events = Event.category(params[:category]).order(date: :desc)
-    # @categories = params[:category]
-    # @events = if params[:date]&.include?('1')
-    #             @events.page(params[:page])
-    #           else
-    #             @events.where(date: ..Time.zone.today).page(params[:page])
-    #           end
   end
 
   def show
