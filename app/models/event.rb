@@ -28,13 +28,13 @@ class Event < ApplicationRecord
   }
 
   # Event.pastで開催済みのイベントのみの絞り込みを可能に
-  scope :past, -> { where("date <= ?", Date.today) }
+  scope :past, -> { where(date: ..Time.zone.today) }
 
-  def self.ransackable_attributes(auth_object = nil)
+  def self.ransackable_attributes(_auth_object = nil)
     %w[name name_kana_ruby category date place_prefecture]
   end
 
-  def self.ransackable_associations(auth_object = nil)
+  def self.ransackable_associations(_auth_object = nil)
     %w[name name_kana_ruby]
   end
 end
