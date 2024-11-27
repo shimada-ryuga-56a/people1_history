@@ -2,10 +2,8 @@ class EventsController < ApplicationController
   def index
     @categories = Event.categories
     @q = Event.ransack(params[:q])
-    @events = if params[:q].present? && params[:q][:date_gteq] == '1'
+    @events = if params[:q].present?
                 @q.result(distinct: true).order(date: :desc).page(params[:page])
-              elsif params[:q].present? && params[:q][:date_gteq] == '0'
-                @q.result(distinct: true).past.order(date: :desc).page(params[:page])
               else
                 Event.past.order(date: :desc).page(params[:page])
               end
