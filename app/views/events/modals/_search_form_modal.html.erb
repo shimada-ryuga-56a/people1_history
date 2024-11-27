@@ -26,8 +26,16 @@
         </div>
 
         <div class="mb-3">
-          <%= f.check_box :date_gteq %>
-          <%= f.label "開催前のライブも表示する" %>
+          <%= f.label "開催期間" %>
+          <div>
+            <%= f.date_field :date_gteq, include_blank: true, class: "p-1 text-white mb-3" %>
+            <span>~</span>
+            <%= f.date_field :date_lteq, include_blank: true, class: "p-1 text-white mb-3" %>
+          </div>
+          <p class="text-xs">
+            ※デフォルトでは開催済みのイベントのみが表示されます。
+            未開催のイベントを表示したい場合、未来の期間を含めて検索を行ってください。
+          </p>
         </div>
 
         <div class="flex items-center">
