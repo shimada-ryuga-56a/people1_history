@@ -13,7 +13,12 @@
 
 <div class="m-5">
   <div class="mb-5 leading-8">
-    <h1 class="text-center text-xl md:text-2xl font-semibold mb-2"><%= title @event.name %></h1>
+    <h1 class="text-center text-xl md:text-2xl font-semibold mb-2">
+      <%= title @event.name %>
+      <% if @event.is_canceled? %>
+        <br>（開催見合わせ）
+      <% end %>
+    </h1>
     <p>
     日時：<%= I18n.l(@event.date, format: "%Y/%m/%d(%a)") %><br>
     会場：<%= t("activerecord.attributes.event.place_prefecture.#{@event.place_prefecture}") %> <%= @event.place %><br>

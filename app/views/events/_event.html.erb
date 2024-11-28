@@ -13,6 +13,11 @@
       <%= I18n.l(event.date, format: "%Y/%m/%d(%a)") %>
     </p>
     <div class="badge badge-secondary"><%= event.category %></div>
+    <% if event.is_canceled? %>
+      <div class="badge badge-error">
+        <p>canceled</p>
+      </div>
+    <% end %>
     <div class="card-actions justify-end">
       <%= link_to "詳細", event_path(event), class: 'btn btn-primary' %>
     </div>
