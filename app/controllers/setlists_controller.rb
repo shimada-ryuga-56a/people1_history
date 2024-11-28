@@ -46,6 +46,7 @@ class SetlistsController < ApplicationController
       redirect_to event_path(@event.id)
     end
     return if @event.setlist.blank?
+
     flash[:error] = I18n.t('flash.error.setlist_exist')
     redirect_to event_path(@event.id)
   end
