@@ -51,6 +51,7 @@ ja:
       setlist_exist: "すでにセットリストが存在します。"
       post: "投稿に失敗しました。"
       setlist_post: "セットリストを投稿できませんでした。"
+      cannot_post_setlist: "セットリストを投稿できません。"
   views:
     pagination:
       first: "&laquo;"

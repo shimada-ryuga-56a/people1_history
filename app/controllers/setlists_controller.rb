@@ -41,6 +41,10 @@ class SetlistsController < ApplicationController
   end
 
   def setlist_inspection
+    if @event.is_canceled?
+      flash[:error] = I18n.t('flash.error.cannot_post_setlist')
+      redirect_to event_path(@event.id)
+    end
     return if @event.setlist.blank?
 
     flash[:error] = I18n.t('flash.error.setlist_exist')
