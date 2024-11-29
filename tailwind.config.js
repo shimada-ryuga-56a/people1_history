@@ -10,4 +10,12 @@ module.exports = {
     themes: ["aqua"],
     darkTheme: false, // ダークモードをONにする場合は削除
   },
+  theme: {
+    extend: {},
+    fontFamily: {
+      body: [
+        "DotGothic16"
+      ],
+    }
+  },
 }
