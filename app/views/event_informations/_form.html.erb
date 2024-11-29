@@ -8,7 +8,7 @@
         </div>
         <%= render 'shared/error_messages', model: f.object %>
         <%= f.text_area :body, class: "textarea w-full mb-4 border-slate-400",
-          placeholder: "（投稿のヒント）" + ["関係者席に誰かいた？", "楽しかった〜？", "感想教えて！", "覚えてたらライブ前後のBGMについても教えて！", "天気とかどうでした？"].sample %>
+          placeholder: event_information_hint %>
         <div class="card-actions">
           <%= f.submit '投稿', class: "btn btn-primary" %>
         </div>

@@ -7,7 +7,7 @@
           <%= render partial: "songs/modals/song_info_modal" %>
         </div>
         <%= render 'shared/error_messages', model: f.object %>
-        <%= f.text_area :body, class: "textarea", placeholder: "（投稿のヒント）" + ["メンバーが話してたエピソードとかを教えて！", "ライブのMCとかで話してたエピソードあれば教えてください！", "メンバーがSNSでこの曲に触れてたら教えてください！", "インタビューで話されてたエピソードなども教えてください！"].sample %>
+        <%= f.text_area :body, class: "textarea", placeholder: song_information_hint %>
         <div class="card-actions justify-end">
           <%= f.submit '投稿', class: "btn btn-primary" %>
         </div>

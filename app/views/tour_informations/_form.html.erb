@@ -7,7 +7,7 @@
           <%= render partial: "tour_informations/modals/tour_info_modal" %>
         </div>
         <%= render 'shared/error_messages', model: f.object %>
-        <%= f.text_area :body, class: "textarea", placeholder: "（投稿のヒント）" + ["ツアーのコンセプトは〇〇らしい！等", "Deuさんが〇〇って言ってた！等"].sample %>
+        <%= f.text_area :body, class: "textarea", placeholder: tour_information_hint %>
         <div class="card-actions justify-end">
           <%= f.submit '投稿', class: "btn btn-primary" %>
         </div>
