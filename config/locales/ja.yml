@@ -45,8 +45,8 @@ ja:
         hiragana_ruby: "全角ひらがなで入力して下さい。"
   flash:
     success:
-      post: "投稿に成功しました。"
-      setlist_post: "セットリストが投稿されました🎉"
+      post: "情報提供ありがとうございます！"
+      setlist_post: "ご協力ありがとうございます！"
     error:
       setlist_exist: "すでにセットリストが存在します。"
       post: "投稿に失敗しました。"

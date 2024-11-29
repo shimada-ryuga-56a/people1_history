@@ -49,7 +49,7 @@
   <% elsif @event.is_canceled? %>
     <p class="mb-3">開催見合わせのため、セットリスト情報はありません。</p>
   <% else %>
-    <p class="mb-3">セットリストはまだ投稿されていません。投稿しましょう！</p>
+    <p class="mb-3">セットリストはまだ投稿されていません。投稿にご協力お願いします！🙇</p>
     <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary mb-5' %>
   <% end %>
 
