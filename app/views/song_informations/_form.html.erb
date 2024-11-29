@@ -3,11 +3,11 @@
     <div class="card shadow-2xl mb-5">
       <div class="card-body">
         <div class="flex">
-          <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう！</h2>
+          <h2 class="card-title text-base	md:text-xl">情報の提供にご協力お願いします！🙇</h2>
           <%= render partial: "songs/modals/song_info_modal" %>
         </div>
         <%= render 'shared/error_messages', model: f.object %>
-        <%= f.text_area :body, class: "textarea", placeholder: "コメントを入力" %>
+        <%= f.text_area :body, class: "textarea", placeholder: "（投稿のヒント）" + ["メンバーが話してたエピソードとかを教えて！", "ライブのMCとかで話してたエピソードあれば教えてください！", "メンバーがSNSでこの曲に触れてたら教えてください！", "インタビューで話されてたエピソードなども教えてください！"].sample %>
         <div class="card-actions justify-end">
           <%= f.submit '投稿', class: "btn btn-primary" %>
         </div>

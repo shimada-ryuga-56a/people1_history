@@ -2,12 +2,13 @@
   <div class="card bg-base-100 w-full shadow-xl mb-3">
     <div class="card-body">
       <div class="flex">
-        <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう！</h2>
+        <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう✊</h2>
         <%= render partial: "setlistitems/modals/setlistitem_info_modal" %>
       </div>
       <%= form_with model: @setlistitem_new_info, url: setlistitem_informations_path do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
-        <%= f.text_area :body, class: "textarea w-full my-4 border-slate-400", placeholder: "コメントを入力" %>
+        <%= f.text_area :body, class: "textarea w-full my-4 border-slate-400",
+          placeholder: "（投稿のヒント）" + ["？ボタンで投稿のヒントが見れます！", "Itoさんが〇〇って言ってた！等", "トラブルとかもあったら教えて👂", "メンバーの発言なども教えてください！", "歌詞変えとかあったら教えて！", "楽しかった〜？", "歌詞間違えてたらこっそり教えて👂"].sample %>
         <%= f.hidden_field :setlistitem_id, value: item.id %>
         <div class="card-actions">
           <%= f.submit '投稿', class: "btn btn-primary" %>
