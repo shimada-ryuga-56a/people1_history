@@ -32,8 +32,8 @@ id,disc_id,version,price
 31,23,streaming,
 32,24,streaming,
 33,25,streaming,
-34,25,normal,
-35,25,limited_product_edition,
+34,25,normal,3080
+35,25,limited_product_edition,9900
 36,26,streaming,
 37,27,streaming,
 38,28,streaming,
