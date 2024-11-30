@@ -1,0 +1,2 @@
+class DiscVersion < ApplicationRecord
+end
