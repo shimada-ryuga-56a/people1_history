@@ -45,7 +45,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_30_060734) do
   create_table "disc_versions", force: :cascade do |t|
     t.integer "disc_id", null: false
     t.integer "version", null: false
-    t.integer "price", null: false
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
