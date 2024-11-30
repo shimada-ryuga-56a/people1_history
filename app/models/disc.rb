@@ -1,4 +1,6 @@
 class Disc < ApplicationRecord
+  has_many :disc_versions, dependent: :destroy
+
   validates :title, presence: true
   validates :title_ruby, presence: true
   validates :announcement_date, presence: true
