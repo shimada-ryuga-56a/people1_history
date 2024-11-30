@@ -38,7 +38,7 @@ CSV.foreach('db/csv/discs.csv', headers: true) do |row|
     disc.release_date = row['release_date']
     disc.type = row['type']
   end
-end 1
+end
 
 CSV.foreach('db/csv/disc_versions.csv', headers: true) do |row|
   DiscVersion.find_or_create_by!(title: row['disc_id'], version: row['version']) do |disc_version|
