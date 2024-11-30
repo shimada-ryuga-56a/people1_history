@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "new_info" do %>
+<% content = capture do %>
   <%= form_with model: info, url: song_song_informations_path(song) do |f| %>
     <div class="card shadow-2xl mb-5">
       <div class="card-body">
@@ -14,4 +14,12 @@
       </div>
     </div>
   <% end %>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= turbo_frame_tag "new_info" do %>
+    <%= content %>
+  <% end %>
+<% else %>
+  <%= content %>
 <% end %>
