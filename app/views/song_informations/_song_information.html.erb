@@ -10,7 +10,9 @@
       </div>
       <h2 class="card-title text-base md:text-lg"><%= song_information.body %></h2>
       <div>
-        <%= render partial: "songs/info_fav_btn", locals: {song_information: song_information} %>
+        <% if user_signed_in? %>
+          <%= render partial: "songs/info_fav_btn", locals: {song_information: song_information} %>
+        <% end %>
       </div>
     </div>
   </div>
