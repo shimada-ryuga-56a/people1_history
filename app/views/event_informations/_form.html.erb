@@ -1,24 +1,4 @@
-<% if user_signed_in? %>
-  <%= turbo_frame_tag "new_info" do %>
-    <%= form_with model: info, url: event_event_informations_path(event_id: event.id) do |f| %>
-      <div class="card bg-base-100 shadow-xl mb-5">
-        <div class="card-body">
-          <div class="flex">
-            <h2 class="card-title text-base	md:text-xl">コメントを投稿しましょう✊</h2>
-            <%= render partial: "events/modals/event_info_modal" %>
-          </div>
-          <%= render 'shared/error_messages', model: f.object %>
-          <%= f.text_area :body, class: "textarea w-full mb-4 border-slate-400",
-            placeholder: event_information_hint %>
-          <div class="card-actions">
-            <%= f.submit '投稿', class: "btn btn-primary" %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-<%# 以下は認証前のユーザー用フォーム %>
-<% else %>
+<% content = capture do %>
   <%= form_with model: info, url: event_event_informations_path(event_id: event.id) do |f| %>
     <div class="card bg-base-100 shadow-xl mb-5">
       <div class="card-body">
@@ -27,12 +7,19 @@
           <%= render partial: "events/modals/event_info_modal" %>
         </div>
         <%= render 'shared/error_messages', model: f.object %>
-        <%= f.text_area :body, class: "textarea w-full mb-4 border-slate-400",
-          placeholder: event_information_hint %>
+        <%= f.text_area :body, class: "textarea w-full mb-4 border-slate-400", placeholder: event_information_hint %>
         <div class="card-actions">
           <%= f.submit '投稿', class: "btn btn-primary" %>
         </div>
       </div>
     </div>
   <% end %>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= turbo_frame_tag "new_info" do %>
+    <%= content %>
+  <% end %>
+<% else %>
+  <%= content %>
 <% end %>
