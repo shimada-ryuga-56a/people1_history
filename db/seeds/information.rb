@@ -36,7 +36,7 @@ CSV.foreach('db/csv/discs.csv', headers: true) do |row|
     disc.title_ruby = row['title_ruby']
     disc.announcement_date = row['announcement_date']
     disc.release_date = row['release_date']
-    disc.type = row['type']
+    disc.production_type = row['production_type']
   end
 end
 

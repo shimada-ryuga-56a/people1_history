@@ -55,7 +55,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_30_060734) do
     t.string "title_ruby", null: false
     t.date "announcement_date", null: false
     t.date "release_date"
-    t.integer "type", null: false
+    t.integer "production_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

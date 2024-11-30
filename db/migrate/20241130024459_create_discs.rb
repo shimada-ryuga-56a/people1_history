@@ -5,7 +5,7 @@ class CreateDiscs < ActiveRecord::Migration[8.0]
       t.string :title_ruby, null: false
       t.date :announcement_date, null: false
       t.date :release_date
-      t.integer :type, null: false
+      t.integer :production_type, null: false
 
       t.timestamps
     end
