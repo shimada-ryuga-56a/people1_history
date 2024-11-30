@@ -1,0 +1,2 @@
+class DiscContent < ApplicationRecord
+end
