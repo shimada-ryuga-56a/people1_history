@@ -2,7 +2,9 @@
   <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">イベント情報</h2>
 </div>
 
-<%= render partial: "event_informations/form", locals: {info: @info, event: @event} %>
+<% if user_signed_in? %>
+  <%= render partial: "event_informations/form", locals: {info: @info, event: @event} %>
+<% end %>
 
 <%= turbo_frame_tag 'event_informations' do %>
   <%= render partial: "event_informations/event_informations", locals: {event_informations: event_informations} %>

@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
     @categories = Event.categories
     @q = Event.ransack(params[:q])
