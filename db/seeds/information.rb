@@ -40,10 +40,10 @@ CSV.foreach('db/csv/discs.csv', headers: true) do |row|
   end
 end
 
-# CSV.foreach('db/csv/disc_versions.csv', headers: true) do |row|
-#   DiscVersion.find_or_create_by!(title: row['disc_id'], version: row['version']) do |disc_version|
-#     disc_version.disc_id = row['disc_id']
-#     disc_version.version = row['version']
-#     disc_version.price = row['price']
-#   end
-# end
+CSV.foreach('db/csv/disc_versions.csv', headers: true) do |row|
+  DiscVersion.find_or_create_by!(disc_id: row['disc_id'], version: row['version']) do |disc_version|
+    disc_version.disc_id = row['disc_id']
+    disc_version.version = row['version']
+    disc_version.price = row['price']
+  end
+end
