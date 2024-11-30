@@ -29,3 +29,31 @@ CSV.foreach('db/csv/songs.csv', headers: true) do |row|
     song.name_hiragana_ruby = row['name_hiragana_ruby']
   end
 end
+
+CSV.foreach('db/csv/discs.csv', headers: true) do |row|
+  Disc.find_or_create_by!(title: row['title'], release_date: row['release_date']) do |disc|
+    disc.title = row['title']
+    disc.title_ruby = row['title_ruby']
+    disc.announcement_date = row['announcement_date']
+    disc.release_date = row['release_date']
+    disc.type = row['type']
+  end
+end
+
+CSV.foreach('db/csv/discs.csv', headers: true) do |row|
+  Disc.find_or_create_by!(title: row['title'], release_date: row['release_date']) do |disc|
+    disc.title = row['title']
+    disc.title_ruby = row['title_ruby']
+    disc.announcement_date = row['announcement_date']
+    disc.release_date = row['release_date']
+    disc.type = row['type']
+  end
+end
+
+CSV.foreach('db/csv/disc_versions.csv', headers: true) do |row|
+  DiscVersion.find_or_create_by!(title: row['disc_id'], version: row['version']) do |disc_version|
+    disc_version.disc_id = row['disc_id']
+    disc_version.version = row['version']
+    disc_version.price = row['price']
+  end
+end
