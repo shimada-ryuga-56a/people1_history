@@ -3,5 +3,5 @@ class DiscVersion < ApplicationRecord
 
   validates :version, presence: true
 
-  enum :version, { streaming: 0, normal: 1, first_press_limited: 2, limited_product_edition: 3 }
+  enum :version, { streaming: 0, normal: 1, first_press_limited: 2, limited_product_edition: 3, limited_time_edition: 4 }
 end
