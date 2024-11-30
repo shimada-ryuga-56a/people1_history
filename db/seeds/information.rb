@@ -47,3 +47,11 @@ CSV.foreach('db/csv/disc_versions.csv', headers: true) do |row|
     disc_version.price = row['price']
   end
 end
+
+CSV.foreach('db/csv/disc_contents.csv', headers: true) do |row|
+  DiscContent.find_or_create_by!(disc_version_id: row['disc_version_id'], content_type: row['content_type'], event_id: row['event_id']) do |disc_content|
+    disc_content.disc_version_id = row['disc_version_id']
+    disc_content.content_type = row['content_type']
+    disc_content.event_id = row['event_id']
+  end
+end
