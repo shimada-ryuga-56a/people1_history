@@ -10,7 +10,9 @@
       </div>
       <h2 class="card-title text-base md:text-lg"><%= setlistitem_info.body %></h2>
       <div>
-        <%= render partial: "setlistitems/info_fav_btn", locals: {setlistitem_information: setlistitem_info} %>
+        <% if user_signed_in? %>
+          <%= render partial: "setlistitems/info_fav_btn", locals: {setlistitem_information: setlistitem_info} %>
+        <% end %>
       </div>
     </div>
   </div>

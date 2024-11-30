@@ -1,4 +1,6 @@
 class SongsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
     @songs = Song.order(name_kana_ruby: :asc).page(params[:page])
   end
