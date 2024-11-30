@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "new_setlistitem_info_#{item.id}" do %>
+<% content = capture do %>
   <div class="card bg-base-100 w-full shadow-xl mb-3">
     <div class="card-body">
       <div class="flex">
@@ -15,4 +15,12 @@
       <% end %>
     </div>
   </div>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= turbo_frame_tag "new_setlistitem_info_#{item.id}" do %>
+    <%= content %>
+  <% end %>
+<% else %>
+  <%= content %>
 <% end %>
