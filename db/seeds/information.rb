@@ -29,3 +29,29 @@ CSV.foreach('db/csv/songs.csv', headers: true) do |row|
     song.name_hiragana_ruby = row['name_hiragana_ruby']
   end
 end
+
+CSV.foreach('db/csv/discs.csv', headers: true) do |row|
+  Disc.find_or_create_by!(title: row['title'], release_date: row['release_date']) do |disc|
+    disc.title = row['title']
+    disc.title_ruby = row['title_ruby']
+    disc.announcement_date = row['announcement_date']
+    disc.release_date = row['release_date']
+    disc.production_type = row['production_type']
+  end
+end
+
+CSV.foreach('db/csv/disc_versions.csv', headers: true) do |row|
+  DiscVersion.find_or_create_by!(disc_id: row['disc_id'], version: row['version']) do |disc_version|
+    disc_version.disc_id = row['disc_id']
+    disc_version.version = row['version']
+    disc_version.price = row['price']
+  end
+end
+
+CSV.foreach('db/csv/disc_contents.csv', headers: true) do |row|
+  DiscContent.find_or_create_by!(disc_version_id: row['disc_version_id'], content_type: row['content_type'], event_id: row['event_id']) do |disc_content|
+    disc_content.disc_version_id = row['disc_version_id']
+    disc_content.content_type = row['content_type']
+    disc_content.event_id = row['event_id']
+  end
+end

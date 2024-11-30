@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_19_013007) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_30_145557) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -40,6 +40,41 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_19_013007) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "disc_contents", force: :cascade do |t|
+    t.integer "disc_version_id", null: false
+    t.integer "content_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "event_id"
+  end
+
+  create_table "disc_items", force: :cascade do |t|
+    t.integer "disc_content_id", null: false
+    t.integer "position", null: false
+    t.integer "song_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "disc_versions", force: :cascade do |t|
+    t.integer "disc_id", null: false
+    t.integer "version", null: false
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "discs", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "title_ruby", null: false
+    t.date "announcement_date", null: false
+    t.date "release_date"
+    t.integer "production_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "event_informations", force: :cascade do |t|
