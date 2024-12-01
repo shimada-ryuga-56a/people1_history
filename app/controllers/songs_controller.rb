@@ -11,8 +11,6 @@ class SongsController < ApplicationController
     @song_informations = @song.song_informations.includes(:user).order(created_at: :desc)
     @events = Event.joins(setlist: :setlistitems).where(setlistitems: { song_id: params[:id] }).order(:date)
     @song_disc_contents = DiscContent.joins(:disc_items).where(disc_contents: {content_type: 0}, disc_items: {song_id: params[:id]})
-    p @song_disc_contents
     @movie_disc_contents = DiscContent.joins(:disc_items).where(disc_contents: {content_type: [1, 2]}, disc_items: {song_id: params[:id]})
-    p @movie_disc_contents
   end
 end
