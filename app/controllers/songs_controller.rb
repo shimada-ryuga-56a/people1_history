@@ -10,6 +10,6 @@ class SongsController < ApplicationController
     @new_song_information = SongInformation.new
     @song_informations = @song.song_informations.includes(:user).order(created_at: :desc)
     @events = Event.joins(setlist: :setlistitems).where(setlistitems: { song_id: params[:id] }).order(:date)
-    @discs = Disc.joins(disc_versions: {disc_contents: :disc_items}).where(disc_items: {song_id: 1}).select(:title, :version)
+    @disc_versions = DiscVersion.joins(disc_contents: :disc_items).where(disc_items: {song_id: params[:id]})
   end
 end
