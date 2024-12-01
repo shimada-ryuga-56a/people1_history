@@ -5,4 +5,8 @@ class DiscItemDecorator < Draper::Decorator
     disc_content.disc_version.disc.title
   end
 
+  def show_disc_version
+    disc_content.disc_version.version
+  end
+
 end

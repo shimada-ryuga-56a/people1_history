@@ -66,7 +66,7 @@
         <% @song_disc_items.each do |disc_item| %>
           <li class="text-left">
             <%= disc_item.show_song_title %>
-            （<%= t("activerecord.attributes.disc_version.#{disc_item.disc_content.disc_version.version}") %>）
+            （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
           </p>
         <% end %>
       </ul>
@@ -79,7 +79,7 @@
         <% @movie_disc_items.each do |disc_item| %>
           <li class="text-left">
             <%= disc_item.show_song_title %>
-            （<%= t("activerecord.attributes.disc_version.#{disc_item.disc_content.disc_version.version}") %>）
+            （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
           </p>
         <% end %>
       </ul>
