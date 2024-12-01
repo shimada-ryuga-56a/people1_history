@@ -59,10 +59,11 @@
     </h1>
   </div>
 
-    <div class="mb-5 leading-8">
-    <% if @disc_versions.present? %>
+  <div class="mb-5 leading-8">
+    <p class="text-left">音源</p>
+    <% if @song_disc_versions.present? %>
       <ul class="list-disc ml-5">
-        <% @disc_versions.each do |disc| %>
+        <% @song_disc_versions.each do |disc| %>
           <li class="text-left">
             <%= disc.disc.title %>
             （<%= t("activerecord.attributes.disc_version.#{disc.version}") %>）
@@ -70,7 +71,20 @@
         <% end %>
       </ul>
     <% else %>
-      <p class="text-center">収録情報はありません🤥</p>
+      <p class="text-left">収録情報はありません🤥</p>
+    <% end %>
+    <p class="text-left">ライブ映像</p>
+    <% if @movie_disc_versions.present? %>
+      <ul class="list-disc ml-5">
+        <% @movie_disc_versions.each do |disc| %>
+          <li class="text-left">
+            <%= disc.disc.title %>
+            （<%= t("activerecord.attributes.disc_version.#{disc.version}") %>）
+          </p>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="text-left">収録情報はありません🤥</p>
     <% end %>
   </div>
 
