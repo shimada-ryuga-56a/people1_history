@@ -61,12 +61,12 @@
 
   <div class="mb-5 leading-8">
     <p class="text-left">音源</p>
-    <% if @song_disc_contents.present? %>
+    <% if @song_disc_items.present? %>
       <ul class="list-disc ml-5">
-        <% @song_disc_contents.each do |disc_content| %>
+        <% @song_disc_items.each do |disc_item| %>
           <li class="text-left">
-            <%= disc_content.disc_version.disc.title %>
-            （<%= t("activerecord.attributes.disc_version.#{disc_content.disc_version.version}") %>）
+            <%= disc_item.disc_content.disc_version.disc.title %>
+            （<%= t("activerecord.attributes.disc_version.#{disc_item.disc_content.disc_version.version}") %>）
           </p>
         <% end %>
       </ul>
@@ -74,12 +74,12 @@
       <p class="text-left">収録情報はありません🤥</p>
     <% end %>
     <p class="text-left">ライブ映像</p>
-    <% if @movie_disc_contents.present? %>
+    <% if @movie_disc_items.present? %>
       <ul class="list-disc ml-5">
-        <% @movie_disc_contents.each do |disc_content| %>
+        <% @movie_disc_items.each do |disc_item| %>
           <li class="text-left">
-            <%= disc_content.disc_version.disc.title %>
-            （<%= t("activerecord.attributes.disc_version.#{disc_content.disc_version.version}") %>）
+            <%= disc_item.disc_content.disc_version.disc.title %>
+            （<%= t("activerecord.attributes.disc_version.#{disc_item.disc_content.disc_version.version}") %>）
           </p>
         <% end %>
       </ul>
