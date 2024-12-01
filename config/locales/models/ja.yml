@@ -16,6 +16,12 @@ ja:
         body: コメント
       tour_information:
         body: コメント
+      disc_version:
+        streaming: ストリーミング
+        normal: 通常版
+        first_press_limited: 初回限定版
+        limited_product_edition: 完全生産限定盤
+        limited_time_edition: 期間生産限定盤
       event:
         tour: ツアー
         one_man: ワンマン

@@ -65,7 +65,7 @@
         <% @disc_versions.each do |disc| %>
           <li class="text-left">
             <%= disc.disc.title %>
-            （<%= disc.version %>）
+            （<%= t("activerecord.attributes.disc_version.#{disc.version}") %>）
           </p>
         <% end %>
       </ul>
