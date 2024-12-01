@@ -1,10 +1,8 @@
 class DiscItemDecorator < Draper::Decorator
   delegate_all
 
-  #   def created_at
-  #     helpers.content_tag :span, class: 'time' do
-  #       object.created_at.strftime("%a %m/%d/%y")
-  #     end
-  #   end
+  def show_song_title
+    disc_content.disc_version.disc.title
+  end
 
 end
