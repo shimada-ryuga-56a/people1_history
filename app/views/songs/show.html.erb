@@ -61,7 +61,11 @@
 
     <div class="mb-5 leading-8">
     <% if @discs.present? %>
-      <p class="text-center"></p>
+      <p class="text-center">
+        <% @discs.each do |disc| %>
+          <%= disc.title %>
+        <% end %>
+      </p>
     <% else %>
       <p class="text-center">収録情報はありません🤥</p>
     <% end %>
