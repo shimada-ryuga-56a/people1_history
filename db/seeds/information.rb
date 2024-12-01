@@ -55,3 +55,13 @@ CSV.foreach('db/csv/disc_contents.csv', headers: true) do |row|
     disc_content.event_id = row['event_id']
   end
 end
+
+CSV.foreach('db/csv/disc_items.csv', headers: true) do |row|
+  DiscItem.find_or_create_by!(disc_content_id: row['disc_content_id'], position: row['position'], event_id: row['event_id']) do |disc_item|
+    disc_item.disc_content_id = row['disc_content_id']
+    disc_content.position = row['position']
+    disc_content.song_id = row['song_id']
+    disc_content.is_arranged = row['is_arranged']
+    disc_content.title = row['title']
+  end
+end
