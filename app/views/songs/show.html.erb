@@ -73,7 +73,7 @@
     <% else %>
       <p class="text-left">収録情報はありません🤥</p>
     <% end %>
-    <p class="text-left">ライブ映像</p>
+    <p class="text-left">映像</p>
     <% if @movie_disc_items.present? %>
       <ul class="list-disc ml-5">
         <% @movie_disc_items.each do |disc_item| %>
@@ -83,6 +83,11 @@
               （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
               <%= disc_item.show_event_title %>
               ＠<%= disc_item.show_event_place %>公演
+            <% end %>
+            <% if disc_item.title.present? %>
+              <%= disc_item.show_song_title %>
+              （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+              <%= disc_item.title %>
             <% end %>
           </li>
         <% end %>
