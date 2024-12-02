@@ -78,13 +78,12 @@
       <ul class="list-disc ml-5">
         <% @movie_disc_items.each do |disc_item| %>
           <li class="text-left">
+            <%= disc_item.show_disc_title %>
+            （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
             <% if disc_item.disc_content.event.present? %>
-              <%= disc_item.show_disc_title %>
-              （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
               <%= disc_item.show_event_title %>
               ＠<%= disc_item.show_event_place %>公演
-            <% end %>
-            <% if disc_item.title.present? %>
+            <% elsif disc_item.title.present? %>
               <%= disc_item.show_disc_title %>
               （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
               <%= disc_item.title %>
