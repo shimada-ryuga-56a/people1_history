@@ -59,8 +59,8 @@
     </h1>
   </div>
 
-  <div class="mb-5 leading-8">
-    <p class="text-left">音源</p>
+  <div class="mb-5 mx-3 leading-8">
+    <p class="text-left">【音源】</p>
     <% if @song_disc_items.present? %>
       <ul class="list-disc ml-5">
         <% @song_disc_items.each do |disc_item| %>
@@ -73,7 +73,7 @@
     <% else %>
       <p class="text-left">収録情報はありません🤥</p>
     <% end %>
-    <p class="text-left">映像</p>
+    <p class="text-left">【映像】</p>
     <% if @movie_disc_items.present? %>
       <ul class="list-disc ml-5">
         <% @movie_disc_items.each do |disc_item| %>
