@@ -3,7 +3,7 @@
     <%= title @disc.title %>
   </h1>
   
-  <div>
+  <div class="mb-5">
     <div class="divider mb-3">
       <h1 class="font-bold sm:text-lg md:text-xl">
         概要
@@ -13,6 +13,23 @@
       <p>形態：<%= @disc.production_type %></p>
       <p>解禁日：<%= I18n.l(@disc.announcement_date, format: "%Y/%m/%d(%a)") %></p>
       <p>発売日：<%= I18n.l(@disc.release_date, format: "%Y/%m/%d(%a)") %></p>
+    </div>
+  </div>
+
+  <div>
+    <div class="divider mb-3">
+      <h1 class="font-bold sm:text-lg md:text-xl">
+        収録内容
+      </h1>
+    </div>
+    <div>
+      <% if @disc_versions.present? %>
+        <% @disc_versions.each do |version| %>
+          <p><%= version.version %></p>
+        <% end %>
+      <% else %>
+        <p>現時点で公開されている情報はありません</p>
+      <% end %>
     </div>
   </div>
 
