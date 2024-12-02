@@ -1,3 +1,6 @@
 <% @disc_versions.each do |version| %>
   <p><%= version.version %></p>
+  <% @disc_contents.each do |content| %>
+    <p><%= content.content_type if content.disc_version_id == version.id %></p>
+  <% end %>
 <% end %>
