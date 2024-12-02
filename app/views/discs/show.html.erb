@@ -24,7 +24,7 @@
     </div>
     <div>
       <% if @disc_versions.present? %>
-        <%= render partial: "version", locals: {disc_versions: @disc_versions} %>
+        <%= render partial: "version" %>
       <% else %>
         <p>現時点で公開されている情報はありません</p>
       <% end %>
