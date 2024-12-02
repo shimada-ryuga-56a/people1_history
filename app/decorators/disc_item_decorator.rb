@@ -16,5 +16,4 @@ class DiscItemDecorator < Draper::Decorator
   def show_event_place
     disc_content.event.place
   end
-
 end

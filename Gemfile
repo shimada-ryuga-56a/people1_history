@@ -36,6 +36,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-i18n-views'
 gem 'dotenv-rails'
+gem 'draper'
 gem 'enum_help'
 gem 'google-cloud-storage'
 gem 'kaminari'
@@ -46,7 +47,6 @@ gem 'omniauth-twitter'
 gem 'pry-byebug'
 gem 'rails-i18n'
 gem 'ransack'
-gem 'draper'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem 'image_processing', '~> 1.2'
