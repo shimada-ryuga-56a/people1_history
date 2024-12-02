@@ -9,4 +9,12 @@ class DiscItemDecorator < Draper::Decorator
     disc_content.disc_version.version
   end
 
+  def show_event_title
+    disc_content.event.name
+  end
+
+  def show_event_place
+    disc_content.event.place
+  end
+
 end

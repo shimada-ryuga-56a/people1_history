@@ -81,8 +81,8 @@
             <%= disc_item.show_song_title %>
             （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
             <% if disc_item.disc_content.event.present? %>
-              <%= disc_item.disc_content.event.name %>
-              ＠<%= disc_item.disc_content.event.place %>公演
+              <%= disc_item.show_event_title %>
+              ＠<%= disc_item.show_event_place %>公演
             <% end %>
           </li>
         <% end %>
