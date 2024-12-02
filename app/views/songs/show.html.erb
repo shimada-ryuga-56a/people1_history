@@ -21,7 +21,7 @@
     </h1>
   </div>
 
-  <div class="mb-3 leading-8">
+  <div class="mb-5 leading-8">
     <% if @events.present? %>
       <div class="mb-2">
         <p>【ライブ初演奏🎉】</p>
@@ -50,6 +50,49 @@
       <p class="text-center">👏今まで計<%= @events.length %>回演奏されました👏</p>
     <% else %>
       <p class="text-center">ライブ演奏の情報は現時点ではありません🤥</p>
+    <% end %>
+  </div>
+
+  <div class="divider mb-3">
+    <h1 class="font-bold sm:text-lg md:text-xl">
+      収録情報
+    </h1>
+  </div>
+
+  <div class="mb-5 mx-3 leading-8">
+    <p class="text-left">【音源】</p>
+    <% if @song_disc_items.present? %>
+      <ul class="list-disc ml-5">
+        <% @song_disc_items.each do |disc_item| %>
+          <li class="text-left">
+            <%= disc_item.show_disc_title %>
+            （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="text-left">収録情報はありません🤥</p>
+    <% end %>
+    <p class="text-left">【映像】</p>
+    <% if @movie_disc_items.present? %>
+      <ul class="list-disc ml-5">
+        <% @movie_disc_items.each do |disc_item| %>
+          <li class="text-left">
+            <%= disc_item.show_disc_title %>
+            （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+            <% if disc_item.disc_content.event.present? %>
+              <%= disc_item.show_event_title %>
+              ＠<%= disc_item.show_event_place %>公演
+            <% elsif disc_item.title.present? %>
+              <%= disc_item.show_disc_title %>
+              （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+              <%= disc_item.title %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="text-left">収録情報はありません🤥</p>
     <% end %>
   </div>
 
