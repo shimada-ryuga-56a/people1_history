@@ -2,5 +2,20 @@
   <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
     <%= title @disc.title %>
   </h1>
-  <p>Find me in app/views/discs/show.html.erb</p>
+  
+  <div>
+    <div class="divider mb-3">
+      <h1 class="font-bold sm:text-lg md:text-xl">
+        概要
+      </h1>
+    </div>
+    <div>
+      <p>形態：<%= @disc.production_type %></p>
+      <p>解禁日：<%= I18n.l(@disc.announcement_date, format: "%Y/%m/%d(%a)") %></p>
+      <p>発売日：<%= I18n.l(@disc.release_date, format: "%Y/%m/%d(%a)") %></p>
+    </div>
+  </div>
+
+  <div class="mb-5 leading-8">
+  </div>
 </div>
