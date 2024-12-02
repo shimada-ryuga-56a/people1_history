@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "discs/show"
   root "static_pages#top"
   get "contact" => "static_pages#contact"
   get "in_progress" => "static_pages#in_progress"
