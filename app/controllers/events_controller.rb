@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.includes(:setlist).find(params[:id])
+    @disc_contents = DiscContent.includes(:event, disc_version: :disc).where(event_id: params[:id])
     @info = EventInformation.new
     @event_infomations = EventInformation.where(event_id: params[:id]).order(created_at: 'DESC')
     return unless @event.setlist
