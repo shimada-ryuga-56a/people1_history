@@ -2,7 +2,7 @@
   <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
     <%= title @disc.title %>
   </h1>
-  
+
   <div class="mb-5">
     <div class="divider mb-3">
       <h1 class="font-bold sm:text-lg md:text-xl">
@@ -10,7 +10,7 @@
       </h1>
     </div>
     <div>
-      <p>形態：<%= @disc.production_type %></p>
+      <p>形態：<%= t("activerecord.attributes.disc.#{@disc.production_type}") %></p>
       <p>解禁日：<%= I18n.l(@disc.announcement_date, format: "%Y/%m/%d(%a)") %></p>
       <p>発売日：<%= I18n.l(@disc.release_date, format: "%Y/%m/%d(%a)") %></p>
     </div>
