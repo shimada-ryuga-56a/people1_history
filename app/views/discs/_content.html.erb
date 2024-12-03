@@ -1,8 +1,9 @@
 <% @disc_contents.each do |content| %>
   <% if content.disc_version_id == version.id %>
+    <%= content.event.name if content.events? %>
     <% @disc_items.each do |item| %>
-      <p><%=  item.song.name if item.disc_content_id == content.id && item.song_id.present? %></p>
-      <p><%=  item.title if item.disc_content_id == content.id && item.title.present? %></p>
+      <p><%= item.song.name if item.disc_content_id == content.id && item.song_id.present? %></p>
+      <p><%= item.title if item.disc_content_id == content.id && item.title.present? %></p>
     <% end %>
   <% end %>
 <% end %>
