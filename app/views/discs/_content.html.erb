@@ -2,6 +2,7 @@
   <% if content.disc_version_id == version.id %>
     <div class="my-3">
       <%= "【" + content.event.name + "】" if content.events? %>
+      <%= "【特典映像】" if content.others? %>
     </div>
     <% @disc_items.each do |item| %>
       <p><%= item.song.name if item.disc_content_id == content.id && item.song_id.present? %></p>
