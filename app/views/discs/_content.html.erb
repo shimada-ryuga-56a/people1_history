@@ -4,9 +4,6 @@
       <%= "【" + content.event.name + "】" if content.events? %>
       <%= "【特典映像】" if content.others? %>
     </div>
-    <% @disc_items.each do |item| %>
-      <p><%= item.song.name if item.disc_content_id == content.id && item.song_id.present? %></p>
-      <p><%= item.title if item.disc_content_id == content.id && item.title.present? %></p>
-    <% end %>
+    <%= render partial: "item", locals: {content: content} %>
   <% end %>
 <% end %>

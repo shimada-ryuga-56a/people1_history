@@ -1,0 +1,4 @@
+<% @disc_items.each do |item| %>
+  <p><%= item.song.name if item.disc_content_id == content.id && item.song_id.present? %></p>
+  <p><%= item.title if item.disc_content_id == content.id && item.title.present? %></p>
+<% end %>
