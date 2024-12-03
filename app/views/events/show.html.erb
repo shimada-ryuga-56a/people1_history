@@ -48,7 +48,12 @@
     <% if @disc_contents.present? %>
       <ul>
         <% @disc_contents.each do |content| %>
-          <li><%= content.disc_version.disc.title %>（<%= t("activerecord.attributes.disc_version.#{content.disc_version.version}") %>）</li>
+          <li>
+            <%= link_to disc_path(content.disc_version.disc.id), class: "link link-primary" do %>
+              <%= content.disc_version.disc.title %>
+              （<%= t("activerecord.attributes.disc_version.#{content.disc_version.version}") %>）
+            <% end %>
+          </li>
         <% end %>
         <p>に収録されているヨ！</p>
     <% else %>

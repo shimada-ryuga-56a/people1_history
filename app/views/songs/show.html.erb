@@ -27,7 +27,7 @@
         <p>【ライブ初演奏🎉】</p>
         <p>
           <%= I18n.l(@events.first.date, format: "%Y/%m/%d（%a）") %><br>
-          <%= link_to event_path(@events.first.id), class: "link" do %>
+          <%= link_to event_path(@events.first.id), class: "link link-primary" do %>
             <p>
               <%= @events.first.name %><br>
               @<%= @events.first.place %>（<%= @events.first.place_prefecture_i18n %>）
@@ -39,7 +39,7 @@
         <p>【直近での演奏👻】</p>
         <p>
           <%= I18n.l(@events.last.date, format: "%Y/%m/%d（%a）") %><br>
-          <%= link_to event_path(@events.last.id), class: "link" do %>
+          <%= link_to event_path(@events.last.id), class: "link link-primary" do %>
             <p>
               <%= @events.last.name %><br>
               @<%= @events.last.place %>（<%= @events.last.place_prefecture_i18n %>）
@@ -65,8 +65,10 @@
       <ul class="list-disc ml-5">
         <% @song_disc_items.each do |disc_item| %>
           <li class="text-left">
-            <%= disc_item.show_disc_title %>
-            （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+            <%= link_to disc_path(disc_item.disc_content.disc_version.disc_id), class: "link link-primary" do %>
+              <%= disc_item.show_disc_title %>
+              （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+            <% end %>
           </li>
         <% end %>
       </ul>
@@ -78,8 +80,12 @@
       <ul class="list-disc ml-5">
         <% @movie_disc_items.each do |disc_item| %>
           <li class="text-left">
-            <%= disc_item.show_disc_title %>
-            （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+            <%= link_to disc_path(disc_item.disc_content.disc_version.disc_id) do %>
+              <p class="link link-primary">
+              <%= disc_item.show_disc_title %>
+              （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+              </p>
+            <% end %>
             <% if disc_item.disc_content.event.present? %>
               <%= disc_item.show_event_title %>
               ＠<%= disc_item.show_event_place %>公演
