@@ -12,6 +12,6 @@ class Disc < ApplicationRecord
   private
 
   def required_either_song_or_title
-    return if song_id.present? ^ title.present?
+    nil if song_id.present? ^ title.present?
   end
 end
