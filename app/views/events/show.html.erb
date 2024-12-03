@@ -34,6 +34,17 @@
     </div>
   <% end %>
 
+  <div class="mb-5">
+    <div class="divider mb-5">
+      <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">収録情報</h2>
+    </div>
+    <% if @disc_contents.present? %>
+      <p>収録されてるヨ！</p>
+    <% else %>
+      <p class="text-center">🤥この日の映像は発売されてないヨ🤥</p>
+    <% end %>
+  </div>
+
   <div class="divider mb-5">
     <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">セットリスト</h2>
   </div>
