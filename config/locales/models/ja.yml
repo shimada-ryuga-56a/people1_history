@@ -16,6 +16,11 @@ ja:
         body: コメント
       tour_information:
         body: コメント
+      disc:
+        single: Single
+        ep: EP
+        album: Album
+        movie: 映像作品
       disc_version:
         streaming: ストリーミング
         normal: 通常版

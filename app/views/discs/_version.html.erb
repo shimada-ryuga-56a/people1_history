@@ -1,0 +1,11 @@
+<% @disc_versions.each do |version| %>
+  <div class="collapse bg-base-200 mb-5">
+    <input type="checkbox" />
+    <div class="collapse-title text-xl font-medium">
+      <%= t("activerecord.attributes.disc_version.#{version.version}") %>
+    </div>
+    <div class="collapse-content">
+      <%= render partial: "content", locals: {version: version} %>
+    </div>
+  </div>
+<% end %>
