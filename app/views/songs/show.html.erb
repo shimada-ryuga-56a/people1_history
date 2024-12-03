@@ -85,14 +85,14 @@
               <%= disc_item.show_disc_title %>
               （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
               </p>
-              <% if disc_item.disc_content.event.present? %>
-                <%= disc_item.show_event_title %>
-                ＠<%= disc_item.show_event_place %>公演
-              <% elsif disc_item.title.present? %>
-                <%= disc_item.show_disc_title %>
-                （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
-                <%= disc_item.title %>
-              <% end %>
+            <% end %>
+            <% if disc_item.disc_content.event.present? %>
+              <%= disc_item.show_event_title %>
+              ＠<%= disc_item.show_event_place %>公演
+            <% elsif disc_item.title.present? %>
+              <%= disc_item.show_disc_title %>
+              （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+              <%= disc_item.title %>
             <% end %>
           </li>
         <% end %>
