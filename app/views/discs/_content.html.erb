@@ -1,7 +1,9 @@
 <% @disc_contents.each do |content| %>
   <% if content.disc_version_id == version.id %>
     <div class="my-3">
-      <%= "【" + content.event.name + "】" if content.events? %>
+      <%  if content.events? %>
+        <%= link_to "【" + content.event.name + " ＠" + content.event.place + "】", event_path(content.event_id), class: "link" %>
+      <% end %>
       <%= "【特典映像】" if content.others? %>
     </div>
     <%= render partial: "item", locals: {content: content} %>
