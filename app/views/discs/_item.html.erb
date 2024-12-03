@@ -3,6 +3,6 @@
     <% if item.disc_content_id == content.id && item.song_id.present? %>
       <%= link_to show_item_title(item), song_path(item.song_id) %>
     <% end %>
-    <p><%= item.title if item.disc_content_id == content.id && item.title.present? %></p>
+    <p><%= item.position.to_s + ". " + item.title if item.disc_content_id == content.id && item.title.present? %></p>
   </div>
 <% end %>
