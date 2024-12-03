@@ -65,8 +65,10 @@
       <ul class="list-disc ml-5">
         <% @song_disc_items.each do |disc_item| %>
           <li class="text-left">
-            <%= disc_item.show_disc_title %>
-            （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+            <%= link_to disc_path(disc_item.disc_content.disc_version.disc_id), class: "link link-primary" do %>
+              <%= disc_item.show_disc_title %>
+              （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+            <% end %>
           </li>
         <% end %>
       </ul>
@@ -78,15 +80,19 @@
       <ul class="list-disc ml-5">
         <% @movie_disc_items.each do |disc_item| %>
           <li class="text-left">
-            <%= disc_item.show_disc_title %>
-            （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
-            <% if disc_item.disc_content.event.present? %>
-              <%= disc_item.show_event_title %>
-              ＠<%= disc_item.show_event_place %>公演
-            <% elsif disc_item.title.present? %>
+            <%= link_to disc_path(disc_item.disc_content.disc_version.disc_id) do %>
+              <p class="link link-primary">
               <%= disc_item.show_disc_title %>
               （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
-              <%= disc_item.title %>
+              </p>
+              <% if disc_item.disc_content.event.present? %>
+                <%= disc_item.show_event_title %>
+                ＠<%= disc_item.show_event_place %>公演
+              <% elsif disc_item.title.present? %>
+                <%= disc_item.show_disc_title %>
+                （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
+                <%= disc_item.title %>
+              <% end %>
             <% end %>
           </li>
         <% end %>
