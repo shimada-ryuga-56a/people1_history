@@ -27,7 +27,7 @@
         <p>【ライブ初演奏🎉】</p>
         <p>
           <%= I18n.l(@events.first.date, format: "%Y/%m/%d（%a）") %><br>
-          <%= link_to event_path(@events.first.id), class: "link" do %>
+          <%= link_to event_path(@events.first.id), class: "link link-primary" do %>
             <p>
               <%= @events.first.name %><br>
               @<%= @events.first.place %>（<%= @events.first.place_prefecture_i18n %>）
@@ -39,7 +39,7 @@
         <p>【直近での演奏👻】</p>
         <p>
           <%= I18n.l(@events.last.date, format: "%Y/%m/%d（%a）") %><br>
-          <%= link_to event_path(@events.last.id), class: "link" do %>
+          <%= link_to event_path(@events.last.id), class: "link link-primary" do %>
             <p>
               <%= @events.last.name %><br>
               @<%= @events.last.place %>（<%= @events.last.place_prefecture_i18n %>）
