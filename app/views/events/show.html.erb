@@ -49,7 +49,7 @@
       <ul>
         <% @disc_contents.each do |content| %>
           <li>
-            <%= link_to disc_path(content.disc_version.disc.id), class: "link" do %>
+            <%= link_to disc_path(content.disc_version.disc.id), class: "link link-primary" do %>
               <%= content.disc_version.disc.title %>
               （<%= t("activerecord.attributes.disc_version.#{content.disc_version.version}") %>）
             <% end %>
