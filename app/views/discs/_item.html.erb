@@ -1,7 +1,7 @@
 <% @disc_items.each do |item| %>
   <div class="mb-2">
     <% if item.disc_content_id == content.id && item.song_id.present? %>
-      <p><%= link_to item.song.name, song_path(item.song_id) %></p>
+      <%= link_to show_item_title(item), song_path(item.song_id) %>
     <% end %>
     <p><%= item.title if item.disc_content_id == content.id && item.title.present? %></p>
   </div>
