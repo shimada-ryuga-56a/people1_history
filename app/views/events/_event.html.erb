@@ -1,9 +1,9 @@
 <div class="card w-full shadow-2xl mb-2">
   <figure class="mt-10">
-    <%#= image_tag 'default_people_1.jpg' %>
-    <%# if event.visual_image.attached? %>
-      <%#= image_tag event.visual_image.variant(resize_to_fill: [250, 200]) %>
-    <%# end %>
+    <turbo-frame id="visual_image_<%= event.id %>" src="/visual_images/<%= event.id %>" loading="lazy">
+      <span class="loading loading-spinner loading-xs mr-1"></span>
+      <p class="text-center">NOW LOADING...</p>
+    </turbo-frame>
   </figure>
   <div class="card-body leading-8	">
     <h2 class="card-title"><%= event.name %></h2>
