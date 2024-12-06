@@ -7,7 +7,7 @@ module.exports = {
   ],
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["aqua"],
+    themes: ["aqua", "dark", "synthwave"],
     darkTheme: false, // ダークモードをONにする場合は削除
   },
   theme: {
