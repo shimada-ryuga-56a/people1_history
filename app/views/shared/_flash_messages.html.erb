@@ -4,11 +4,18 @@
       <div
         role="alert"
         data-controller="notification"
-        data-notification-delay-value="4000"
+        data-notification-delay-value="2000"
         class="transition transform duration-1000 hidden alert flex my-1
-          <%= "text-info-content bg-neutral" if message_type == "info" || "notice" %>
-          <%= "text-error-content bg-error" if message_type == "error" %>
-          <%= "text-success-content bg-success" if message_type == "success" %>"
+        <% case message_type %>
+          <% when "info", "notice" %>
+            <%= " text-info-content bg-neutral" %>
+          <% when "error" %>
+            <%= " text-error-content bg-error" %>
+          <% when "success" %>
+            <%= " text-success-content bg-success" %>
+          <% else %>
+            <%= " text-info-content bg-neutral" %>
+        <% end %>"
         data-transition-enter-from="opacity-0 translate-x-0"
         data-transition-enter-to="opacity-100 translate-x-0"
         data-transition-leave-from="opacity-100 translate-x-0"
@@ -50,6 +57,18 @@
               stroke-linejoin="round"
               stroke-width="2"
               d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        <% else %>
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="h-6 w-6 shrink-0 stroke-current">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         <% end %>
         <span><%= message %></span>
