@@ -2,8 +2,6 @@
   <% if @event.visual_image.attached? %>
     <%= image_tag @event.visual_image.variant(resize_to_fill: [400, 200], format: :webp) %>
   <% else %>
-    <img
-    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-    alt="Shoes" />
+    <%= image_tag 'default_people_1.jpg', class: "h-40" %>
   <% end %>
 </turbo-frame>
