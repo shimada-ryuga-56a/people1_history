@@ -1,0 +1,9 @@
+<turbo-frame id="visual_image_<%= @event.id %>">
+  <% if @event.visual_image.attached? %>
+    <%= image_tag @event.visual_image.variant(resize_to_fill: [400, 200], format: :webp) %>
+  <% else %>
+    <img
+    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+    alt="Shoes" />
+  <% end %>
+</turbo-frame>
