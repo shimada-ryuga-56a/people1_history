@@ -7,7 +7,14 @@ module.exports = {
   ],
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["aqua", "dark", "synthwave"],
+    themes: [
+      {
+        aqua: {
+          ...require("daisyui/src/theming/themes")["aqua"],
+          accent: '#fffdde'
+        },
+      },
+      "dark", "synthwave"],
     darkTheme: false, // ダークモードをONにする場合は削除
   },
   theme: {

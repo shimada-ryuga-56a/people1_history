@@ -1,23 +1,27 @@
-<div class="card w-full shadow-2xl mb-2">
-  <figure class="mt-10">
-    <turbo-frame id="visual_image_<%= event.id %>" src="/visual_images/<%= event.id %>" loading="lazy">
-      <span class="loading loading-spinner loading-xs mr-1"></span>
-      <p class="text-center">NOW LOADING...</p>
+<div class="card w-full shadow-2xl mb-7 bg-base-300 text-base-content">
+  <figure>
+    <turbo-frame id="visual_image_<%= event.id %>" src="/visual_images/<%= event.id %>" loading="lazy"> 
+      <div class="my-3 flex">
+        <span class="loading loading-spinner loading-xs mr-1"></span>
+        <p class="text-center">画像読み込み中...</p>
+      </div>
     </turbo-frame>
   </figure>
-  <div class="card-body leading-8	">
+  <div class="card-body leading-8	p-5">
     <h2 class="card-title"><%= event.name %></h2>
     <p>
       @<%= event.place %>（<%= t("activerecord.attributes.event.place_prefecture.#{event.place_prefecture}") %>）
         <br>
-      <%= I18n.l(event.date, format: "%Y/%m/%d(%a)") %>
     </p>
-    <div class="badge badge-secondary"><%= event.category %></div>
-    <% if event.is_canceled? %>
-      <div class="badge badge-error">
-        <p>canceled</p>
-      </div>
+    <div class="flex items-center">
+      <%= I18n.l(event.date, format: "%Y/%m/%d(%a)") %>
+      <div class="badge badge-secondary text-info-content"><%= event.category %></div>
+      <% if event.is_canceled? %>
+        <div class="badge badge-error">
+          <p>canceled</p>
+        </div>
     <% end %>
+    </div>
     <div class="card-actions justify-end">
       <%= link_to "詳細", event_path(event), class: 'btn btn-primary' %>
     </div>

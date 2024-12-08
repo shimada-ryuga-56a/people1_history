@@ -2,7 +2,8 @@ class SongsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @songs = Song.order(name_kana_ruby: :asc).page(params[:page])
+    @q = Song.ransack(params[:q])
+    @songs = @q.result(distinct: true).order(name_kana_ruby: :asc).page(params[:page])
   end
 
   def show
