@@ -1,7 +1,7 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: '大衆情報局',
+      site: 'ぴぽの掲示板',
       title: 'PEOPLE 1リスナーの情報交換プラットフォーム',
       reverse: true,
       charset: 'utf-8',
