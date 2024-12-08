@@ -6,6 +6,11 @@
     <div class="mb-3 leading-8">
       <%= search_form_for @q, url: songs_path, method: :get do |f| %>
 
+        <div class="mb-3">
+          <%= f.label "楽曲名" %>
+          <%= f.search_field :name_or_name_kana_ruby_or_name_hiragana_ruby_cont, placeholder: '楽曲名を入力', type: "text", class: "input input-bordered w-full border-neutral-content bg-transparent" %>
+        </div>
+
         <div class="flex items-center">
           <button class="btn btn-active">
             <%= f.submit "検索" %>
