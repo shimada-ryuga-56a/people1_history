@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "contact" => "static_pages#contact"
   get "in_progress" => "static_pages#in_progress"
   get '/visual_images/:id' => "events#image"
+  get '/jacket/:id' => "songs#jacket"
 
   # （ここから）Twitter認証以外を認めないようにルーティングを設定しようとした痕跡
   # devise_for :users, skip: :all

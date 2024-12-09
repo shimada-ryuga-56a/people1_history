@@ -1,0 +1,7 @@
+<turbo-frame id="jacket_<%= @song.id %>">
+  <% if @jacket.present? %>
+    <%= image_tag @jacket.variant(resize_to_fill: [500, 250]) %>
+  <% else %>
+    <%= image_tag 'default_people_1.jpg' %>
+  <% end %>
+</turbo_frame>

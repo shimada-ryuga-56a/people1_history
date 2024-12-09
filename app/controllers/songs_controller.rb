@@ -18,4 +18,14 @@ class SongsController < ApplicationController
       disc_contents: { content_type: [1, 2] }, disc_items: { song_id: params[:id] }
     ).decorate
   end
+
+  def jacket
+    @song = Song.find(params[:id])
+    return if @song.disc_items.blank?
+
+    @item = DiscItem.left_joins(disc_content: { disc_version: :disc }).where(
+      song_id: params[:id]
+    ).order('discs.release_date ASC').first
+    @jacket = @item.disc_content.disc_version.jacket if @item.disc_content.disc_version.jacket.attached?
+  end
 end
