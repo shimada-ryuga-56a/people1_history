@@ -1,6 +1,7 @@
 class DiscVersion < ApplicationRecord
   belongs_to :disc
   has_many :disc_contents, dependent: :destroy
+  has_one_attached :jacket
 
   validates :version, presence: true
 
