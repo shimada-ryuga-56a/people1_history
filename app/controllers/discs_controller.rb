@@ -5,4 +5,8 @@ class DiscsController < ApplicationController
     @disc_contents = DiscContent.includes(:event, disc_version: :disc).where(disc: { id: params[:id] }).order(:id)
     @disc_items = DiscItem.includes(:song, disc_content: [:event, { disc_version: :disc }]).where(disc: { id: params[:id] })
   end
+
+  def jacket
+    @disc_version = DiscVersion.find(params[:id])
+  end
 end
