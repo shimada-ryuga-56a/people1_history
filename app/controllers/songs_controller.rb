@@ -18,4 +18,9 @@ class SongsController < ApplicationController
       disc_contents: { content_type: [1, 2] }, disc_items: { song_id: params[:id] }
     ).decorate
   end
+
+  def jacket
+    @song = Song.find(params[:id])
+    p @song
+  end
 end
