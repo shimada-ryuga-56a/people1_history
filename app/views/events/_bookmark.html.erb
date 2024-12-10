@@ -1,3 +1,7 @@
 <div class="flex justify-end mb-5">
-  <i class="fa-regular fa-bookmark fa-lg md:fa-2x"></i>
+  <% if event.bookmarked_by?(current_user) %>
+    <i class="fa-solid fa-bookmark fa-lg md:fa-2x"></i>
+  <% else %>
+    <i class="fa-regular fa-bookmark fa-lg md:fa-2x"></i>
+  <% end %>
 </div>
