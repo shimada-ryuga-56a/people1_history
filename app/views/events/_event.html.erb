@@ -24,6 +24,8 @@
         </div>
     <% end %>
     </div>
-    <%= render partial: 'bookmark', locals: {event: event} %>
+    <% if user_signed_in? %>
+      <%= render partial: 'bookmark', locals: {event: event} %>
+    <% end %>
   </div>
 </div>
