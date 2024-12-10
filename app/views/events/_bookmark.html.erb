@@ -1,7 +1,11 @@
 <div class="flex justify-end mb-5">
   <% if event.bookmarked_by?(current_user) %>
-    <i class="fa-solid fa-bookmark fa-lg md:fa-2x"></i>
+    <%= link_to event_bookmark_path(current_user.event_bookmarks.find_by(event_id: event.id)), data: { "turbo-method": :delete } do %>
+      <i class="fa-solid fa-bookmark fa-lg md:fa-2x"></i>
+    <% end %>
   <% else %>
-    <i class="fa-regular fa-bookmark fa-lg md:fa-2x"></i>
+    <%= link_to event_event_bookmarks_path(event), data: { "turbo-method": :post } do %>
+      <i class="fa-regular fa-bookmark fa-lg md:fa-2x"></i>
+    <% end %>
   <% end %>
 </div>
