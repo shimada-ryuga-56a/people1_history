@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @categories = Event.categories
-    @q = Event.ransack(params[:q])
+    @q = Event.includes(event_bookmarks: :users).ransack(params[:q])
     @events = if params[:q].present?
                 @q.result(distinct: true).order(date: :desc).page(params[:page])
               else
