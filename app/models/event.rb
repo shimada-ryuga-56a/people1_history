@@ -32,6 +32,10 @@ class Event < ApplicationRecord
   # Event.pastで開催済みのイベントのみの絞り込みを可能に
   scope :past, -> { where(date: ..Time.zone.today) }
 
+  def bookmarked_by?(user)
+    event_bookmarks.exists?(user_id: user.id)
+  end
+
   def self.ransackable_attributes(_auth_object = nil)
     %w[name name_kana_ruby category date place_prefecture]
   end
