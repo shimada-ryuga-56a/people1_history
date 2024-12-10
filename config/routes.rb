@@ -50,7 +50,12 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index, :show] do
     resources :event_informations, only: [:create]
+    resources :event_bookmarks, only: [:create, :destroy], shallow: true
     resource :setlist, only: [:new, :create]
+  end
+
+  resources :event_informations, only: [], shallow: true do
+    resource :likes_on_event_informations, only: [:create, :destroy], shallow: true
   end
 
   resources :event_informations, only: [], shallow: true do
