@@ -8,7 +8,9 @@
     </turbo-frame>
   </figure>
   <div class="card-body leading-8	p-5">
-    <h2 class="card-title"><%= event.name %></h2>
+    <h2 class="card-title link">
+      <%= link_to event.name, event_path(event) %>
+    </h2>
     <p>
       @<%= event.place %>（<%= t("activerecord.attributes.event.place_prefecture.#{event.place_prefecture}") %>）
         <br>
