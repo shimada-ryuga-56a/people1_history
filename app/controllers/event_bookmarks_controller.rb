@@ -4,7 +4,7 @@ class EventBookmarksController < ApplicationController
     event_bookmark = current_user.event_bookmarks.new(event_id: @event.id)
     event_bookmark.save
     respond_to do |format|
-      format.turbo_stream { render 'events/bookmark', locals: {event: @event} }
+      format.turbo_stream { render 'events/bookmark', locals: { event: @event } }
     end
   end
 
@@ -12,7 +12,7 @@ class EventBookmarksController < ApplicationController
     event_bookmark = current_user.event_bookmarks.find(params[:id])
     event_bookmark.destroy
     respond_to do |format|
-      format.turbo_stream { render 'events/bookmark', locals: {event: Event.find(event_bookmark.event.id)} }
+      format.turbo_stream { render 'events/bookmark', locals: { event: Event.find(event_bookmark.event.id) } }
     end
   end
 end
