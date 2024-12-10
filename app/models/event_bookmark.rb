@@ -1,0 +1,2 @@
+class EventBookmark < ApplicationRecord
+end
