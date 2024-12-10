@@ -3,12 +3,20 @@
     <% if event.bookmarked_by?(current_user) %>
       <%= link_to event_bookmark_path(current_user.event_bookmarks.find_by(event_id: event.id)), data: { "turbo-method": :delete }, class: "flex items-center" do %>
         <i class="fa-solid fa-bookmark fa-lg md:fa-2x mr-2"></i>
-        <p>行った！</p>
+        <% if event.date < Date.today %>
+          <p>行った！</p>
+        <% else %>
+          <p>行く！！</p>
+        <% end %>
       <% end %>
     <% else %>
       <%= link_to event_event_bookmarks_path(event), data: { "turbo-method": :post }, class: "flex items-center" do %>
         <i class="fa-regular fa-bookmark fa-lg md:fa-2x mr-2"></i>
-        <p>行った？</p>
+        <% if event.date < Date.today %>
+          <p>行った？</p>
+        <% else %>
+          <p>行く？？</p>
+        <% end %>
       <% end %>
     <% end %>
   </div>
