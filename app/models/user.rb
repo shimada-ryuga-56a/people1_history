@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :likes_on_setlistitem_informations, dependent: :destroy
   has_many :notices, dependent: :destroy
   has_many :event_bookmarks, dependent: :destroy
+  has_many :bookmark_events, through: :event_bookmarks, source: :event
 
   # Twitter認証ログイン用
   # ユーザーの情報があれば探し、無ければ作成する
