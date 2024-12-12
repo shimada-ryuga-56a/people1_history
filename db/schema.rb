@@ -111,12 +111,13 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_12_021854) do
   end
 
   create_table "information", force: :cascade do |t|
-    t.string "reportable_type", null: false
-    t.integer "reportable_id", null: false
+    t.string "reportable_type"
+    t.bigint "reportable_id"
     t.string "body", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["reportable_type", "reportable_id"], name: "index_information_on_reportable"
   end
 
   create_table "likes_on_event_informations", force: :cascade do |t|
