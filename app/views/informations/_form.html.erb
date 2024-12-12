@@ -1,5 +1,5 @@
 <% content = capture do %>
-  <%= form_with model: [reportable, new_info], url: disc_informations_path(disc_id: reportable.id) do |f| %>
+  <%= form_with model: [reportable, new_info], url: form_url do |f| %>
     <div class="card shadow-2xl mb-5">
       <div class="card-body">
         <div class="flex">
