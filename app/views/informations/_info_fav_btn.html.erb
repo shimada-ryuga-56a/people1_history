@@ -1,0 +1,15 @@
+<div class="text-sm md:text-base">
+  <%= turbo_frame_tag do %>
+    <%# if information.liked_by?(current_user) %>
+      <%#= link_to , data: { "turbo-method": :delete } do %>
+        <i class="fa-solid fa-heart"></i>
+      <%# end %>
+      <%#= setlistitem_information.likes_on_setlistitem_informations.count %> いいね
+    <%# else %>
+      <%#= link_to , data: { "turbo-method": :post } do %>
+        <i class="fa-regular fa-heart"></i>
+      <%# end %>
+      <%#= setlistitem_information.likes_on_setlistitem_informations.count %> いいね
+    <%# end %>
+  <% end %>
+</div>
