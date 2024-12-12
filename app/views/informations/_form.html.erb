@@ -1,0 +1,25 @@
+<% content = capture do %>
+  <%= form_with model: [reportable, new_info], url: disc_informations_path(disc_id: reportable.id) do |f| %>
+    <div class="card shadow-2xl mb-5">
+      <div class="card-body">
+        <div class="flex">
+          <h2 class="card-title text-base	md:text-xl">情報の提供にご協力お願いします！🙇</h2>
+          <%#= render partial: "modal" %>
+        </div>
+        <%= render 'shared/error_messages', model: f.object %>
+        <%= f.text_area :body, class: "textarea", placeholder: song_information_hint %>
+        <div class="card-actions justify-end">
+          <%= f.submit '投稿', class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= turbo_frame_tag "new_info" do %>
+    <%= content %>
+  <% end %>
+<% else %>
+  <%= content %>
+<% end %>
