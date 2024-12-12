@@ -16,6 +16,8 @@ ja:
         body: コメント
       tour_information:
         body: コメント
+      information:
+        body: コメント
       disc:
         single: Single
         ep: EP
