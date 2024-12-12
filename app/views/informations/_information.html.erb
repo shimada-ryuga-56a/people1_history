@@ -11,7 +11,7 @@
       <h2 class="card-title text-base md:text-lg"><%= info.body %></h2>
       <div>
         <% if user_signed_in? %>
-          <%= render partial: "informations/info_fav_btn", locals: {} %>
+          <%= render partial: "informations/info_fav_btn", locals: { information: info} %>
         <% end %>
       </div>
     </div>
