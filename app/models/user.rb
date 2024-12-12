@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :setlists, dependent: :destroy
   has_many :setlistitem_informations, dependent: :destroy
   has_many :song_informations, dependent: :destroy
+  has_many :likes_on_informations, dependent: :destroy
   has_many :likes_on_song_informations, dependent: :destroy
   has_many :likes_on_tour_informations, dependent: :destroy
   has_many :likes_on_event_informations, dependent: :destroy
