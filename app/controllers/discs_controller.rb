@@ -6,7 +6,7 @@ class DiscsController < ApplicationController
     @disc_items = DiscItem.includes(:song, disc_content: [:event, { disc_version: :disc }]).where(disc: { id: params[:id] })
     @new_info = @disc.informations.build
     @form_url = disc_informations_path(disc_id: @disc.id)
-    @infos = Information.includes(:user).where(reportable_type: "Disc").order(created_at: :desc)
+    @infos = Information.includes(:user).where(reportable_type: 'Disc').order(created_at: :desc)
   end
 
   def jacket
