@@ -1,0 +1,2 @@
+module Discs::InformationsHelper
+end
