@@ -1,6 +1,6 @@
 class Disc < ApplicationRecord
   has_many :disc_versions, dependent: :destroy
-  has_many :informations, as: :reportable
+  has_many :informations, as: :reportable, dependent: :destroy
 
   validates :title, presence: true
   validates :title_ruby, presence: true
