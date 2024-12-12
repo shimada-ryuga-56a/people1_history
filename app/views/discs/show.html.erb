@@ -1,4 +1,4 @@
-<div class="m-3">
+<div class="m-5">
   <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
     <%= title @disc.title %>
   </h1>
@@ -30,6 +30,18 @@
       <% end %>
     </div>
   </div>
+
+  <div>
+    <div class="divider mb-5">
+      <h1 class="font-bold sm:text-lg md:text-xl">
+        ディスク情報
+      </h1>
+    </div>
+    <div>
+    <%= render partial: "informations/form", locals: { reportable: @disc, new_info: @new_info, form_url: @form_url } %>
+  </div>
+
+  <%= render partial: "informations/informations", locals: { infos: @infos } %>
 
   <div class="mb-5 leading-8">
   </div>

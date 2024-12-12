@@ -1,0 +1,5 @@
+<%= turbo_frame_tag 'infos' do %>
+  <% infos.each do |info| %>
+    <%= render partial: "informations/information", locals: { info: info } %>
+  <% end %>
+<% end %>
