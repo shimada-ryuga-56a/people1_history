@@ -45,6 +45,10 @@ class SetlistsController < ApplicationController
       flash[:error] = I18n.t('flash.error.cannot_post_setlist')
       redirect_to event_path(@event.id)
     end
+    if @event.date > Time.zone.today
+      flash[:error] = I18n.t('flash.error.cannot_post_setlist')
+      redirect_to event_path(@event.id)
+    end
     return if @event.setlist.blank?
 
     flash[:error] = I18n.t('flash.error.setlist_exist')
