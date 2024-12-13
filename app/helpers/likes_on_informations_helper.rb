@@ -1,0 +1,2 @@
+module LikesOnInformationsHelper
+end

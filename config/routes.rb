@@ -39,6 +39,10 @@ Rails.application.routes.draw do
     resources :tour_informations, only: [:create]
   end
 
+  resources :informations, only: [] do
+    resource :likes_on_informations, only: [:create, :destroy], shallow: true
+  end
+
   resources :tour_informations, only: [] do
     resource :likes_on_tour_informations, only: [:create, :destroy], shallow: true
   end
