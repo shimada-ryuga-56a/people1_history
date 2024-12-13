@@ -45,7 +45,7 @@ class SetlistsController < ApplicationController
       flash[:error] = I18n.t('flash.error.cannot_post_setlist')
       redirect_to event_path(@event.id)
     end
-    if @event.date > Date.today
+    if @event.date > Time.zone.today
       flash[:error] = I18n.t('flash.error.cannot_post_setlist')
       redirect_to event_path(@event.id)
     end
