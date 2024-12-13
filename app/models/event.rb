@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   has_many :event_bookmarks, dependent: :destroy
   has_many :disc_contents, dependent: :destroy
   has_one :setlist, dependent: :destroy
+  has_many :link_contents, as: :linkable, dependent: :destroy
   has_one_attached :visual_image
 
   validates :category, presence: true

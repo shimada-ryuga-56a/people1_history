@@ -1,4 +1,6 @@
 class Link < ApplicationRecord
+  has_many :link_contents, dependent: :destroy
+
   validates :platform, presence: true
   validates :url_link, presence: true
   validates :remark, presence: true
