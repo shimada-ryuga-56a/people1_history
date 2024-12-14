@@ -6,4 +6,16 @@ module SongsHelper
       youtube_link.gsub('https://www.youtube.com/watch?v=', '')
     end
   end
+
+  def find_tiktok_id(tiktok_link)
+    if tiktok_link.include?('https://www.tiktok.com')
+      tiktok_link.gsub(/https:\/\/www.tiktok.com\/@.+\//, '').gsub(/\?is_from.+/, '')
+    end
+  end
+
+  def find_video_id(tiktok_link)
+    if tiktok_link.include?('https://www.tiktok.com')
+      tiktok_link.gsub(/.+&web_id=/, '')
+    end
+  end
 end
