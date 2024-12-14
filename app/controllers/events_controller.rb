@@ -26,9 +26,6 @@ class EventsController < ApplicationController
     @infos.flatten!
     @setlistitem_new_info = SetlistitemInformation.new
   end
-  respond_to do |format|
-    format.html { 'events/show' }
-  end
 
   def image
     @event = Event.includes(visual_image_attachment: :blob).find(params[:id])
