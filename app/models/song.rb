@@ -1,6 +1,7 @@
 class Song < ApplicationRecord
   has_many :song_informations, dependent: :destroy
   has_many :disc_items, dependent: :destroy
+  has_many :link_contents, as: :linkable, dependent: :destroy
   has_one_attached :jk
 
   with_options presence: true do
