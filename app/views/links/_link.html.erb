@@ -1,0 +1,21 @@
+<% if link.include?('https://youtu.be/') || link.include?('https://www.youtube.com/') %>
+  <iframe
+    src="https://www.youtube.com/embed/<%= find_youtube_url(link) %>"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    class="w-full aspect-video mb-5">
+  </iframe>
+<% end %>
+
+<% if link.include?('https://www.tiktok.com') %>
+  <blockquote class="tiktok-embed"
+  cite="https://www.tiktok.com/@ppppeople1/video/<%= find_tiktok_id(link) %>"
+  data-video-id="<%= find_tiktok_id(link) %>"
+  style="max-width: 320px; ">
+    <section>
+    </section>
+  </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+<% end %>
