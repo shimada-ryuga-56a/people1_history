@@ -1,3 +1,7 @@
+<% if platform == "YouTubeMusic" %>
+  <p class="mb-5 text-center">（下記動画はご利用いただけない場合がございます）</p>
+<% end %>
+
 <% if link.include?('https://youtu.be/') || link.include?('https://www.youtube.com/') %>
   <iframe
     src="https://www.youtube.com/embed/<%= find_youtube_url(link) %>"

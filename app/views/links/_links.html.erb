@@ -6,7 +6,7 @@
 
 <% if link_contents.present? %>
   <% link_contents.each do |link| %>
-    <%= render partial: "links/link", locals: { link: link.link.url_link } %>
+    <%= render partial: "links/link", locals: { link: link.link.url_link, platform: link.link.platform } %>
   <% end %>
 <% else %>
   <p class="text-center">
