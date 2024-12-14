@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.includes([:setlist, link_contents: :link]).find(params[:id])
+    @event = Event.includes([:setlist, { link_contents: :link }]).find(params[:id])
     @link_contents = @event.link_contents
     @disc_contents = DiscContent.includes(:event, disc_version: :disc).where(event_id: params[:id])
     @info = EventInformation.new

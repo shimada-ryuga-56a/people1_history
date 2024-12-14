@@ -8,14 +8,14 @@ module SongsHelper
   end
 
   def find_tiktok_id(tiktok_link)
-    if tiktok_link.include?('https://www.tiktok.com')
-      tiktok_link.gsub(/https:\/\/www.tiktok.com\/@.+\//, '').gsub(/\?is_from.+/, '')
-    end
+    return unless tiktok_link.include?('https://www.tiktok.com')
+
+    tiktok_link.gsub(%r{https://www.tiktok.com/@.+/}, '').gsub(/\?is_from.+/, '')
   end
 
   def find_video_id(tiktok_link)
-    if tiktok_link.include?('https://www.tiktok.com')
-      tiktok_link.gsub(/.+&web_id=/, '')
-    end
+    return unless tiktok_link.include?('https://www.tiktok.com')
+
+    tiktok_link.gsub(/.+&web_id=/, '')
   end
 end
