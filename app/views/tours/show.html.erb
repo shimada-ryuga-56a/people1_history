@@ -36,6 +36,8 @@
     </table>
   </div>
 
+  <%= render partial: "links/links", locals: { link_contents: @link_contents } %>
+
   <div class="divider"></div>
   <%= render partial: 'tour_informations/form', locals: {tour: @tour, new_info: @new_info} %>
   <%= render partial: 'tour_informations/tour_informations', locals: {infos: @informations} %>

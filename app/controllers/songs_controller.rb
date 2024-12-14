@@ -7,7 +7,8 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find(params[:id])
+    @song = Song.includes(link_contents: :link).find(params[:id])
+    @link_contents = @song.link_contents
     @new_song_information = SongInformation.new
     @song_informations = @song.song_informations.includes(:user).order(created_at: :desc)
     @events = Event.includes(setlist: :setlistitems).where(setlistitems: { song_id: params[:id] }).order(:date)

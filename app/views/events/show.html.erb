@@ -82,5 +82,7 @@
     <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary mb-5' %>
   <% end %>
 
+  <%= render partial: "links/links", locals: { link_contents: @link_contents } %>
+
   <%= render 'events/information_index', event_informations: @event_infomations %>
 </div>

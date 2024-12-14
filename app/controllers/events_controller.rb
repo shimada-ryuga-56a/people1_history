@@ -12,7 +12,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.includes(:setlist).find(params[:id])
+    @event = Event.includes([:setlist, { link_contents: :link }]).find(params[:id])
+    @link_contents = @event.link_contents
     @disc_contents = DiscContent.includes(:event, disc_version: :disc).where(event_id: params[:id])
     @info = EventInformation.new
     @event_infomations = EventInformation.where(event_id: params[:id]).order(created_at: 'DESC')
@@ -25,9 +26,6 @@ class EventsController < ApplicationController
     end
     @infos.flatten!
     @setlistitem_new_info = SetlistitemInformation.new
-  end
-  respond_to do |format|
-    format.html { 'events/show' }
   end
 
   def image
