@@ -1,9 +1,15 @@
+<div class="divider mb-5">
+  <h1 class="font-bold sm:text-lg md:text-xl">
+    SNS動画
+  </h1>
+</div>
+
 <% if link_contents.present? %>
   <% link_contents.each do |link| %>
     <%= render partial: "links/link", locals: { link: link.link.url_link } %>
   <% end %>
 <% else %>
   <p class="text-center">
-    SNS上で動画は見つかりませんでした🤥
+    SNS上の動画は見つかりませんでした🤥
   </p>
 <% end %>
