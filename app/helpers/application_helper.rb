@@ -5,7 +5,7 @@ module ApplicationHelper
       title: 'PEOPLE 1リスナーの情報交換プラットフォーム',
       reverse: true,
       charset: 'utf-8',
-      description: 'PEOPLE 1に関する情報やトリビアを交換できる、非公式Webサービスです。',
+      description: 'PEOPLE 1に関する情報を交換できる、非公式Webサービスです。',
       keywords: 'PEOPLE 1,ぴぽ,Deu',
       canonical: request.original_url,
       separator: '|',
