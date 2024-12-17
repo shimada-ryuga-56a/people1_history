@@ -29,6 +29,11 @@
           <%= image_tag 'default_people_1.jpg', class: "h-40" %>
         <% end %>
       <% when Disc %>
+        <% if history.disc_versions.first.jacket.attached? %>
+          <%= image_tag history.disc_versions.first.jacket.variant(resize_to_fill: [400, 400], format: :webp) %>
+        <% else %>
+          <%= image_tag 'default_people_1.jpg', class: "h-40" %>
+        <% end %>
       <% end %>
       <% case history %>
       <% when Event %>
