@@ -1,6 +1,6 @@
 <li>
   <hr />
-    <div class="timeline-start">
+    <div class="timeline-start text-left text-sm md:text-lg lg:text-2xl">
       <% case history %>
       <% when Event %>
         <%= I18n.l(history.date, format: "%Y/%m/%d(%a)") %>
@@ -20,8 +20,8 @@
             clip-rule="evenodd" />
         </svg>
       </div>
-    <div class="timeline-end timeline-box flex flex-col bg-base-300 text-base-content my-3 w-full">
-      <div class="my-2">
+    <div class="timeline-end timeline-box flex bg-base-300 text-base-content my-3 w-full">
+      <div class="my-2 w-1/3 items-center justify-center">
         <% case history %>
         <% when Event %>
           <turbo-frame id="history_event_<%= history.id %>" src="/history_events/<%= history.id %>" loading="lazy">
@@ -39,16 +39,19 @@
           </turbo-frame>
         <% end %>
       </div>
-      <% case history %>
-      <% when Event %>
-        <%= history.name %><br>
-        ＠<%= history.place %><br>
-        開催
-      <% when Disc %>
-        <%= t("activerecord.attributes.disc.#{history.production_type}") %><br>
-        <%= history.title %><br>
-        解禁
-      <% end %>
+      <div class="divider divider-horizontal"></div>
+      <div class="flex items-center w-2/3 text-base md:text-lg lg:text-2xl">
+        <% case history %>
+        <% when Event %>
+          <%= history.name %>
+          ＠<%= history.place %><br>
+          開催
+        <% when Disc %>
+          <%= t("activerecord.attributes.disc.#{history.production_type}") %><br>
+          <%= history.title %><br>
+          解禁
+        <% end %>
+      </div>
     </div>
   <hr />
 </li>
