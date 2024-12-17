@@ -24,17 +24,19 @@
       <div class="my-2">
         <% case history %>
         <% when Event %>
-          <% if history.visual_image.attached? %>
-            <%= image_tag history.visual_image.variant(resize_to_fill: [400, 400], format: :webp) %>
-          <% else %>
-            <%= image_tag 'default_people_1.jpg', class: "h-40" %>
-          <% end %>
+          <turbo-frame id="history_event_<%= history.id %>" src="/history_events/<%= history.id %>" loading="lazy">
+            <div class="my-3 flex">
+              <span class="loading loading-spinner loading-xs mr-1"></span>
+              <p class="text-center">画像読み込み中...</p>
+            </div>
+          </turbo-frame>
         <% when Disc %>
-          <% if history.disc_versions.first.jacket.attached? %>
-            <%= image_tag history.disc_versions.first.jacket.variant(resize_to_fill: [400, 400], format: :webp) %>
-          <% else %>
-            <%= image_tag 'default_people_1.jpg', class: "h-40" %>
-          <% end %>
+          <turbo-frame id="history_disc_<%= history.id %>" src="/history_discs/<%= history.id %>" loading="lazy">
+            <div class="my-3 flex">
+              <span class="loading loading-spinner loading-xs mr-1"></span>
+              <p class="text-center">画像読み込み中...</p>
+            </div>
+          </turbo-frame>
         <% end %>
       </div>
       <% case history %>

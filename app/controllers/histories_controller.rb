@@ -12,4 +12,13 @@ class HistoriesController < ApplicationController
     end
     @histories = Kaminari.paginate_array(@histories).page(params[:page]).per(20)
   end
+
+  def disc_image
+    @disc = Disc.find(params[:id])
+    @disc_version = DiscVersion.includes(jacket_attachment: :blob).where(disc_id: @disc.id).first
+  end
+
+  def event_image
+    @event = Event.includes(visual_image_attachment: :blob).find(params[:id])
+  end
 end
