@@ -21,13 +21,15 @@
         </svg>
       </div>
     <div class="timeline-end timeline-box flex flex-col bg-base-300 text-base-content my-3 w-full">
-      <div class="avatar">
-        <div class="w-10 rounded">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-            alt="Tailwind-CSS-Avatar-component" />
-        </div>
-      </div>
+      <% case history %>
+      <% when Event %>
+        <% if history.visual_image.attached? %>
+          <%= image_tag history.visual_image.variant(resize_to_fill: [400, 400], format: :webp) %>
+        <% else %>
+          <%= image_tag 'default_people_1.jpg', class: "h-40" %>
+        <% end %>
+      <% when Disc %>
+      <% end %>
       <% case history %>
       <% when Event %>
         <%= history.name %><br>
