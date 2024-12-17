@@ -1,0 +1,5 @@
+<% @histories.each do |history| %>
+  <%= render partial: 'history', locals: { history: history } %>
+<% end %>
+
+<%= paginate @histories %>
