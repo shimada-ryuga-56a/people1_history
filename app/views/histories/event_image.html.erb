@@ -1,0 +1,7 @@
+<turbo-frame id="history_event_<%= @event.id %>">
+  <% if @event.visual_image.attached? %>
+    <%= image_tag @event.visual_image.variant(resize_to_fill: [400, 400], format: :webp) %>
+  <% else %>
+    <%= image_tag 'default_people_1.jpg', class: "h-40" %>
+  <% end %>
+</turbo-frame>
