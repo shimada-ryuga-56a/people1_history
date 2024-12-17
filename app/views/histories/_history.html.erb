@@ -1,0 +1,10 @@
+<% case history %>
+<% when Event %>
+  <div class="m-2">
+    <p><%= history.date %> <%= history.name %> @<%= history.place %> 開催</p>
+  </div>
+<% when Disc %>
+  <div class="m-2">
+    <p><%= history.release_date %> <%= history.title %> 解禁</p>
+  </div>
+<% end %>
