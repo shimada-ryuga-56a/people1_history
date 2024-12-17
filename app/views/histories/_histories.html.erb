@@ -1,5 +1,9 @@
-<% @histories.each do |history| %>
-  <%= render partial: 'history', locals: { history: history } %>
-<% end %>
+<div class="flex text-left">
+  <ul class="timeline timeline-vertical">
+    <% @histories.each do |history| %>
+      <%= render partial: 'history', locals: { history: history } %>
+    <% end %>
+  </ul>
+</div>
 
 <%= paginate @histories %>
