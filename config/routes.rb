@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/jacket/:id' => "songs#jacket"
   get '/version_jacket/:id' => "discs#jacket"
   get '/history_discs/:id' => "histories#disc_image"
+  get '/history_events/:id' => "histories#event_image"
 
   # （ここから）Twitter認証以外を認めないようにルーティングを設定しようとした痕跡
   # devise_for :users, skip: :all
