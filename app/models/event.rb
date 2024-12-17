@@ -9,6 +9,7 @@ class Event < ApplicationRecord
 
   validates :category, presence: true
   validates :name, presence: true
+  validates :date, presence: true
   validates :name_kana_ruby, presence: true,
                              format: {
                                with: /\A[ァ-ヶー－]+\z/
