@@ -1,7 +1,7 @@
-<div class="flex text-left">
+<div class="">
   <ul class="timeline timeline-vertical">
-    <% @histories.each do |history| %>
-      <%= render partial: 'history', locals: { history: history } %>
+    <% @histories.each_with_index do |history, i| %>
+      <%= render partial: 'history', locals: { history: history, i: i + 1 } %>
     <% end %>
   </ul>
 </div>
