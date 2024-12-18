@@ -1,9 +1,9 @@
 <turbo-frame id="history_disc_<%= @disc.id %>">
   <div class="flex items-center justify-center">
     <% if @disc_version.jacket.attached? %>
-      <%= image_tag @disc_version.jacket.variant(resize_to_fill: [400, 400], format: :webp) %>
+      <%= image_tag @disc_version.jacket.variant(resize_to_fill: [400, 400], format: :webp), class: "max-h-20" %>
     <% else %>
-      <%= image_tag 'default_people_1.jpg' %>
+      <%= image_tag 'default_people_1.jpg', class: "max-h-20" %>
     <% end %>
   </div>
 </turbo-frame>
