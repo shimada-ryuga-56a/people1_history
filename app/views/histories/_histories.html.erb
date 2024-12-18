@@ -1,7 +1,12 @@
 <div class="">
   <ul class="timeline timeline-vertical timeline-compact">
     <% @histories.each_with_index do |history, i| %>
-      <%= render partial: 'history', locals: { history: history, i: i + 1 } %>
+      <% case history %>
+      <% when Event %>
+        <%= render partial: 'histories/event', locals: { event: history, i: i + 1 } %>
+      <% when Disc %>
+        <%= render partial: 'histories/disc', locals: { disc: history, i: i + 1 } %>
+      <% end %>
     <% end %>
   </ul>
 </div>
