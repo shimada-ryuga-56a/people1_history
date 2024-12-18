@@ -25,10 +25,19 @@
         </turbo-frame>
       </div>
       <div class="divider divider-horizontal"></div>
-      <div class="flex flex-col justify-center w-2/3 md:w-4/5 text-base md:text-lg lg:text-2xl">
+      <div class="flex flex-col justify-center w-2/3 md:w-4/5 text-base md:text-lg lg:text-xl">
         <p class="link"><%= link_to event.name, event_path(event) %></p>
         <p class="my-1 text-xs md:text-sm lg:text-base">＠<%= event.place %></p>
-        <p><%= event.date <= Time.zone.today ? "開催" : "開催予定" %></p>
+        <p>
+          <% if event.is_canceled == true %>
+            開催見合わせ
+            <p class="my-1 text-xs">※<%= event.remark %></p>
+          <% elsif event.date <= Time.zone.today %>
+            <%= "開催" %>
+          <% else %>
+            <%= "開催予定" %>
+          <% end %>
+        </p>
       </div>
     </div>
   <hr />
