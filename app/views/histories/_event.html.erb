@@ -7,10 +7,10 @@
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
-        fill="currentColor"
+        fill="<%= "currentColor" if event.date <= Time.zone.today %>"
         class="h-5 w-5">
         <path
-          fill-rule=""
+          fill-rule="<%= "evenodd" if event.date <= Time.zone.today %>"
           d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
           clip-rule="evenodd" />
       </svg>
@@ -28,7 +28,7 @@
       <div class="flex flex-col justify-center w-2/3 md:w-4/5 text-base md:text-lg lg:text-2xl">
         <p class="link"><%= link_to event.name, event_path(event) %></p>
         <p class="my-1 text-xs md:text-sm lg:text-base">＠<%= event.place %></p>
-        <p>開催</p>
+        <p><%= event.date <= Time.zone.today ? "開催" : "開催予定" %></p>
       </div>
     </div>
   <hr />
