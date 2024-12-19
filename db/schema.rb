@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_17_025816) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_19_112640) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -108,6 +108,14 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_17_025816) do
     t.bigint "tour_id"
     t.boolean "is_canceled", default: false, null: false
     t.index ["tour_id"], name: "index_events_on_tour_id"
+  end
+
+  create_table "histories", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "user_id", null: false
+    t.date "date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "information", force: :cascade do |t|
