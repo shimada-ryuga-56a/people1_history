@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_many :event_bookmarks, dependent: :destroy
   has_many :bookmark_events, through: :event_bookmarks, source: :event
   has_many :informations, as: :reportable, dependent: :destroy
+  has_many :histories, dependent: :destroy
 
   # Twitter認証ログイン用
   # ユーザーの情報があれば探し、無ければ作成する
