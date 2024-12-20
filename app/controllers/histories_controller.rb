@@ -18,6 +18,16 @@ class HistoriesController < ApplicationController
   end
 
   def create
+    @history = History.new(history_params)
+    respond_to do |format|
+      if @history.save
+        flash[:success] = I18n.t('flash.success.post')
+        format.html { redirect_to histories_path }
+      else
+        flash.now[:error] = I18n.t('flash.error.post')
+        format.turbo_stream { render 'histories/create_failure', status: :unprocessable_entity }
+      end
+    end
   end
 
   def disc_image
@@ -27,5 +37,11 @@ class HistoriesController < ApplicationController
 
   def event_image
     @event = Event.includes(visual_image_attachment: :blob).find(params[:id])
+  end
+
+  private
+
+  def history_params
+    params.require(:history).permit(:title, :remark, :date).merge(user_id: current_user.id)
   end
 end
