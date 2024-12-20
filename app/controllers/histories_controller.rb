@@ -19,14 +19,12 @@ class HistoriesController < ApplicationController
 
   def create
     @history = History.new(history_params)
-    respond_to do |format|
-      if @history.save
-        flash[:success] = I18n.t('flash.success.post')
-        format.html { redirect_to histories_path }
-      else
-        flash.now[:error] = I18n.t('flash.error.post')
-        format.turbo_stream { render 'histories/create_failure', status: :unprocessable_entity }
-      end
+    if @history.save
+      flash[:success] = I18n.t('flash.success.post')
+      redirect_to histories_path
+    else
+      flash.now[:error] = I18n.t('flash.error.post')
+      render "new", status: :unprocessable_entity
     end
   end
 
