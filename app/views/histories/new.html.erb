@@ -3,21 +3,5 @@
     <%= title "ヒストリー登録ページ" %>
   </h1>
 
-  <%= form_with model: @history, local: true do |f| %>
-    <div class="my-2 flex flex-col">
-      <%= f.label "日付" %>
-      <%= f.date_field :date, class: "bg-base-100 text-base-content border border-base-content rounded-lg p-1 my-3 max-w-40" %>
-    </div>
-    <div>
-      <%= f.label "タイトル" %>
-      <%= f.text_field :title, placeholder: "(例)🎊MusicStation初出演！🎊", class: "input input-bordered w-full my-3" %>
-    </div>
-    <div>
-      <%= f.label "説明欄" %>
-      <%= f.text_field :remark, class: "textarea textarea-bordered w-full h-24 my-3", placeholder: "(例)メリバを披露" %>
-    </div>
-    <div class="btn btn-primary my-2">
-      <%= f.submit %>
-    </div>
-  <% end %>
+  <%= render partial: "histories/form", locals: { history: @history } %>
 </div>
