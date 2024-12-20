@@ -1,7 +1,0 @@
-<%= turbo_stream.replace "form" do %>
-  <%= render partial: "histories/form", locals: { history: @history } %>
-<% end %>
-
-<%= turbo_stream.replace "flash_message" do %>
-  <%= render partial: "shared/flash_messages" %>
-<% end %>
