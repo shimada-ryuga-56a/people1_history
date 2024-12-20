@@ -8,6 +8,10 @@ ja:
         is_arranged: 新訳
         is_rehearsal: リハーサル
         is_encore: アンコール
+      history:
+        title: タイトル
+        remark: 説明
+        date: 日付
       setlistitem_information:
         body: コメント
       event_information:
