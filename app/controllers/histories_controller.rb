@@ -40,6 +40,6 @@ class HistoriesController < ApplicationController
   private
 
   def history_params
-    params.require(:history).permit(:title, :remark, :date).merge(user_id: current_user.id)
+    params.require(:history).permit(:title, :remark, :date, :image).merge(user_id: current_user.id)
   end
 end
