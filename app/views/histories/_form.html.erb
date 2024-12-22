@@ -13,10 +13,8 @@
     <%= f.text_field :remark, class: "textarea textarea-bordered w-full h-24 my-3", placeholder: "(例)メリバを披露" %>
   </div>
   <div class="flex flex-col">
-    <%= f.label :images, '画像' %>
-    <%= f.file_field :images, multiple: true, class: "file-input file-input-bordered w-full max-w-xs my-3" %>
+    <%= f.label :image, '画像（一枚のみ）' %>
+    <%= f.file_field :image, class: "file-input file-input-bordered w-full max-w-xs my-3" %>
   </div>
-  <div class="btn btn-primary my-4">
-    <%= f.submit %>
-  </div>
+    <%= f.submit "登録する", class: "btn btn-primary my-4" %>
 <% end %>
