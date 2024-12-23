@@ -1,0 +1,9 @@
+<turbo-frame id="history_history_<%= @history.id %>">
+  <div class="flex items-center justify-center">
+    <% if @history.image.attached? %>
+      <%= image_tag @history.image.variant(resize_to_fill: [400, 400], format: :webp), class: "max-h-20" %>
+    <% else %>
+      <%= image_tag 'default_people_1.jpg', class: "max-h-20" %>
+    <% end %>
+  </div>
+</turbo-frame>
