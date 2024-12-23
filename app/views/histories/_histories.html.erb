@@ -6,6 +6,8 @@
         <%= render partial: 'histories/event', locals: { event: history, i: i + 1 } %>
       <% when Disc %>
         <%= render partial: 'histories/disc', locals: { disc: history, i: i + 1 } %>
+      <% when History %>
+        <%= render partial: 'histories/history', locals: { history: history, i: i + 1 } %>
       <% end %>
     <% end %>
   </ul>
