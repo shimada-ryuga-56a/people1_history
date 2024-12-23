@@ -24,7 +24,7 @@ class HistoriesController < ApplicationController
       redirect_to histories_path
     else
       flash.now[:error] = I18n.t('flash.error.post')
-      render "new", status: :unprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 
