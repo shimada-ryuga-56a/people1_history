@@ -3,6 +3,7 @@ class HistoriesController < ApplicationController
     @histories = []
     @histories << Event.all
     @histories << Disc.all
+    @histories << History.all
     @histories.flatten!.sort_by! do |history|
       if history.respond_to?('date')
         history.date
@@ -35,6 +36,10 @@ class HistoriesController < ApplicationController
 
   def event_image
     @event = Event.includes(visual_image_attachment: :blob).find(params[:id])
+  end
+
+  def history_image
+    @history = History.includes(image_attachment: :blob).find(params[:id])
   end
 
   private
