@@ -59,3 +59,7 @@ ja:
       previous: "&lsaquo;"
       next: "&rsaquo;"
       truncate: "&hellip;"
+  errors:
+    messages:
+      invalid_format: "はJPEGまたはPNG形式のみサポートしています。"
+      too_big_size: "サイズが大きすぎます。"

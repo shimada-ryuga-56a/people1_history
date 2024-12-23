@@ -12,6 +12,7 @@ ja:
         title: タイトル
         remark: 説明
         date: 日付
+        image: 画像
       setlistitem_information:
         body: コメント
       event_information:
