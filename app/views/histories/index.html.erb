@@ -3,5 +3,9 @@
     <%= title "ヒストリー一覧" %>
   </h1>
 
+  <div class="flex flex-row-reverse">
+    <%= link_to "ヒストリー登録", new_history_path, class: "btn btn-primary mb-5" %>
+  </div>
+
   <%= render partial: 'histories' %>
 </div>

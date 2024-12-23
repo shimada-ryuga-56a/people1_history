@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_19_114655) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_20_040813) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -111,12 +111,12 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_19_114655) do
   end
 
   create_table "histories", force: :cascade do |t|
-    t.text "body", null: false
+    t.text "title", null: false
     t.integer "user_id", null: false
     t.date "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "remark"
+    t.text "remark", null: false
   end
 
   create_table "information", force: :cascade do |t|
