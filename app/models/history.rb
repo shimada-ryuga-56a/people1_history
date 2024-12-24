@@ -3,7 +3,6 @@ class History < ApplicationRecord
   has_one_attached :image
 
   validates :title, presence: true
-  validates :remark, presence: true
   validates :date, presence: true
   validates :image, image: true
 end
