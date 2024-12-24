@@ -3,24 +3,24 @@
     <%= title "ヒストリー詳細" %>
   </h1>
 
-  <div class="flex justify-end mb-5">
-    <div class="flex items-center md:text-lg">
+  <div class="flex justify-end mb-5 lg:mr-5">
+    <div class="flex items-center md:text-lg lg:text-xl">
       <p>作成者：</p>
-      <img src="<%= current_user.image %>" class="w-5 md:w-6 rounded-full mx-1">
-      <p><%= current_user.name %></p>
+      <img src="<%= @history.user.image %>" class="w-5 md:w-6 lg:w-8 rounded-full mx-1">
+      <p><%= @history.user.name %></p>
     </div>
   </div>
 
-  <div class="">
+  <div class="lg:mb-8">
     <div class="flex justify-center mb-5">
       <% if @history.image.attached? %>
-        <%= image_tag @history.image.variant(resize_to_fill: [400, 400]), class: "max-w-160" %>
+        <%= image_tag @history.image.variant(resize_to_fill: [600, 600]), class: "max-w-200" %>
       <% else %>
-        <%= image_tag 'default_people_1.jpg', class: "max-w-160" %>
+        <%= image_tag 'default_people_1.jpg', class: "max-w-200" %>
       <% end %>
     </div>
     <div class="text-center">
-      <p class="md:text-2xl md:mb-5 lg:text-2xl"><%= @history.title %></p>
+      <p class="md:text-2xl md:mb-5 lg:text-3xl"><%= @history.title %></p>
     </div>
   </div>
 
