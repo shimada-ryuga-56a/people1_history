@@ -14,6 +14,10 @@ class HistoriesController < ApplicationController
     @histories = Kaminari.paginate_array(@histories).page(params[:page]).per(20)
   end
 
+  def show
+    @history = History.find(params[:id])
+  end
+
   def new
     @history = History.new
   end
@@ -39,6 +43,10 @@ class HistoriesController < ApplicationController
   end
 
   def history_image
+    @history = History.includes(image_attachment: :blob).find(params[:id])
+  end
+
+  def show_page_image
     @history = History.includes(image_attachment: :blob).find(params[:id])
   end
 
