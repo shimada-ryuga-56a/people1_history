@@ -16,5 +16,5 @@
     <%= f.label :image, '画像（任意）' %>
     <%= f.file_field :image, class: "file-input file-input-bordered w-full max-w-xs my-3" %>
   </div>
-    <%= f.submit "登録する", class: "btn btn-primary my-4" %>
+    <%= f.submit "登録する", class: "btn btn-primary my-4", data: { turbo_confirm: "ヒストリーを投稿します！よろしいですか？" } %>
 <% end %>
