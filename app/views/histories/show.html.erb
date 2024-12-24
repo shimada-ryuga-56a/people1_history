@@ -13,11 +13,10 @@
 
   <div class="lg:mb-8">
     <div class="flex justify-center mb-5">
-      <% if @history.image.attached? %>
-        <%= image_tag @history.image.variant(resize_to_fill: [600, 600]), class: "max-w-200" %>
-      <% else %>
-        <%= image_tag 'default_people_1.jpg', class: "max-w-200" %>
-      <% end %>
+      <div class="my-3 flex">
+        <span class="loading loading-spinner loading-xs mr-1"></span>
+        <p class="text-center">画像読み込み中...</p>
+      </div>
     </div>
     <div class="text-center">
       <p class="mb-3"><%= I18n.l(@history.date, format: "%Y/%m/%d(%a)") %></p>
