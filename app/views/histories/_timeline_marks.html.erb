@@ -3,4 +3,6 @@
     <%= render partial: "history_timeline_mark", locals: { history: history, previous_history: previous_history } %>
   <% when Disc %>
     <%= render partial: "disc_timeline_mark", locals: { disc: history, previous_history: previous_history } %>
+  <% when Event %>
+    <%= render partial: "event_timeline_mark", locals: { event: history, previous_history: previous_history } %>
 <% end %>
