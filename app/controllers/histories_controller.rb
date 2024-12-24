@@ -29,6 +29,10 @@ class HistoriesController < ApplicationController
     end
   end
 
+  def show
+    @history = History.find(params[:id])
+  end
+
   def disc_image
     @disc = Disc.find(params[:id])
     @disc_version = DiscVersion.includes(jacket_attachment: :blob).where(disc_id: @disc.id).first
