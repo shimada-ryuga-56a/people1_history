@@ -46,6 +46,10 @@ class HistoriesController < ApplicationController
     @history = History.includes(image_attachment: :blob).find(params[:id])
   end
 
+  def show_page_image
+    @history = History.includes(image_attachment: :blob).find(params[:id])
+  end
+
   private
 
   def history_params
