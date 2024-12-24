@@ -13,10 +13,12 @@
 
   <div class="lg:mb-8">
     <div class="flex justify-center mb-5">
-      <div class="my-3 flex">
-        <span class="loading loading-spinner loading-xs mr-1"></span>
-        <p class="text-center">画像読み込み中...</p>
-      </div>
+      <turbo-frame id="history_image" src="/histories/images/<%= @history.id %>" loading="lazy">
+        <div class="my-3 flex">
+          <span class="loading loading-spinner loading-xs mr-1"></span>
+          <p class="text-center">画像読み込み中...</p>
+        </div>
+      </turbo-frame>
     </div>
     <div class="text-center">
       <p class="mb-3"><%= I18n.l(@history.date, format: "%Y/%m/%d(%a)") %></p>
