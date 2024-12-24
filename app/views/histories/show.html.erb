@@ -3,5 +3,31 @@
     <%= title "ヒストリー詳細" %>
   </h1>
 
-  
+  <div class="flex justify-end mb-5">
+    <div class="flex items-center">
+      <p>作成者：</p>
+      <img src="<%= current_user.image %>" class="w-5 rounded-full mx-1">
+      <p><%= current_user.name %></p>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="flex justify-center mb-5">
+      <% if @history.image.attached? %>
+        <%= image_tag @history.image.variant(resize_to_fill: [400, 400]), class: "w-3/4 max-h-80" %>
+      <% else %>
+        <%= image_tag 'default_people_1.jpg', class: "w-3/4 max-h-80" %>
+      <% end %>
+    </div>
+    <div>
+      <p class="flex text-center"><%= @history.title %></p>
+    </div>
+  </div>
+
+  <% if @history.remark.present? %>
+    <div class="divider mb-3">
+      <p>概要</p>
+    </div>
+    <p><%= @history.remark %></p>
+  <% end %>
 </div>
