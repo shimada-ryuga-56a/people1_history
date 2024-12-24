@@ -20,6 +20,7 @@
       <% end %>
     </div>
     <div class="text-center">
+      <p class="mb-3"><%= I18n.l(@history.date, format: "%Y/%m/%d(%a)") %></p>
       <p class="md:text-2xl md:mb-5 lg:text-3xl"><%= @history.title %></p>
     </div>
   </div>
