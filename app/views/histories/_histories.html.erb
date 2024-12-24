@@ -3,11 +3,11 @@
     <% @histories.each_with_index do |history, i| %>
       <% case history %>
       <% when Event %>
-        <%= render partial: 'histories/event', locals: { event: history, i: i } %>
+        <%= render partial: 'histories/event', locals: { event: history, previous_history: @histories[i - 1] } %>
       <% when Disc %>
-        <%= render partial: 'histories/disc', locals: { disc: history, i: i } %>
+        <%= render partial: 'histories/disc', locals: { disc: history, previous_history: @histories[i - 1] } %>
       <% when History %>
-        <%= render partial: 'histories/history', locals: { history: history, i: i } %>
+        <%= render partial: 'histories/history', locals: { history: history, previous_history: @histories[i - 1] } %>
       <% end %>
     <% end %>
   </ul>
