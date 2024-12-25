@@ -11,8 +11,12 @@
     </div>
     <div>
       <p>形態：<%= t("activerecord.attributes.disc.#{@disc.production_type}") %></p>
-      <p>解禁日：<%= I18n.l(@disc.announcement_date, format: "%Y/%m/%d(%a)") %></p>
-      <p>発売日：<%= I18n.l(@disc.release_date, format: "%Y/%m/%d(%a)") %></p>
+      <% if @disc.announcement_date.present? %>
+        <p>解禁日：<%= I18n.l(@disc.announcement_date, format: "%Y/%m/%d(%a)") %></p>
+      <% end %>
+      <% if @disc.release_date.present? %>
+        <p>発売日：<%= I18n.l(@disc.release_date, format: "%Y/%m/%d(%a)") %></p>
+      <% end %>
     </div>
   </div>
 
