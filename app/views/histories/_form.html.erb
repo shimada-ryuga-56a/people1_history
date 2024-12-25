@@ -9,12 +9,12 @@
     <%= f.text_field :title, placeholder: "(例)🎊MusicStation初出演！🎊", class: "input input-bordered w-full my-3" %>
   </div>
   <div>
-    <%= f.label "説明欄（必須）" %>
+    <%= f.label "説明欄（任意）" %>
     <%= f.text_field :remark, class: "textarea textarea-bordered w-full h-24 my-3", placeholder: "(例)メリバを披露" %>
   </div>
   <div class="flex flex-col">
-    <%= f.label :image, '画像（一枚のみ）' %>
+    <%= f.label :image, '画像（任意）' %>
     <%= f.file_field :image, class: "file-input file-input-bordered w-full max-w-xs my-3" %>
   </div>
-    <%= f.submit "登録する", class: "btn btn-primary my-4" %>
+    <%= f.submit "登録する", class: "btn btn-primary my-4", data: { turbo_confirm: "ヒストリーを投稿します！よろしいですか？" } %>
 <% end %>
