@@ -12,9 +12,17 @@
       </div>
       <div class="divider divider-horizontal"></div>
       <div class="flex flex-col justify-center w-2/3 md:w-4/5 text-base md:text-lg lg:text-xl">
-        <p class="my-1 text-xs md:text-sm lg:text-base"><%= t("activerecord.attributes.disc.#{disc.production_type}") %></p>
+        <% if disc.has_release_date? %>
+          <p class="my-1 text-xs md:text-sm lg:text-base">
+            <%= t("activerecord.attributes.disc.#{disc.production_type}") %>
+          </p>
+        <% end %>
         <p class="link"><%= link_to disc.title, disc_path(disc) %></p>
-        <p class="my-1"><%= disc.release_date <= Time.zone.today ? "解禁" : "解禁予定" %></p>
+        <% if disc.has_release_date? %>
+          <p class="my-1"><%= disc.release_date <= Time.zone.today ? "解禁" : "解禁予定" %></p>
+        <% else %>
+          <p class="my-1">情報を解禁</p>
+        <% end %>
       </div>
     </div>
   <hr />
