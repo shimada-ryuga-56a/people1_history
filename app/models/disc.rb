@@ -12,22 +12,22 @@ class Disc < ApplicationRecord
   enum :production_type, { single: 0, ep: 1, album: 2, movie: 3 }
 
   def date_inspection(another_date)
-    if self.respond_to?('announcement_date')
-      self.announcement_date != another_date
-    elsif self.respond_to?('release_date')
-      self.release_date != another_date
+    if respond_to?('announcement_date')
+      announcement_date != another_date
+    elsif respond_to?('release_date')
+      release_date != another_date
     end
   end
 
   def about_date
-    if self.respond_to?('announcement_date')
-      self.announcement_date
-    elsif self.respond_to?('release_date')
-      self.release_date
+    if respond_to?('announcement_date')
+      announcement_date
+    elsif respond_to?('release_date')
+      release_date
     end
   end
 
-  def has_release_date?
-    self.respond_to?('release_date')
+  def release_date?
+    respond_to?('release_date')
   end
 end
