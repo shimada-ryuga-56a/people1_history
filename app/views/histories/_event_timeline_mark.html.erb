@@ -22,13 +22,13 @@
       <% end %>
     </div>
   <% when Disc %>
-    <% if event.date != previous_history.release_date %>
+    <% if previous_history.date_inspection(event.date) %>
       <div class="timeline-start text-left text-sm md:text-lg lg:text-xl">
         <%= I18n.l(event.date, format: "%Y/%m/%d(%a)") %>
       </div>
     <% end %>
     <div class="timeline-middle">
-      <% if event.date != previous_history.release_date %>
+      <% if previous_history.date_inspection(event.date) %>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
