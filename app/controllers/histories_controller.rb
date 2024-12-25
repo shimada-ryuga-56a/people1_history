@@ -2,12 +2,15 @@ class HistoriesController < ApplicationController
   def index
     @histories = []
     @histories << Event.all
-    @histories << Disc.all
+    @histories << Disc.all.select(:title, :release_date, :production_type, :id)
+    @histories << Disc.all.select(:title, :announcement_date, :production_type, :id)
     @histories << History.all
     @histories.flatten!.sort_by! do |history|
       if history.respond_to?('date')
         history.date
-      else
+      elsif history.respond_to?('announcement_date')
+        history.announcement_date
+      elsif history.respond_to?('release_date')
         history.release_date
       end
     end
