@@ -52,7 +52,11 @@ class HistoriesController < ApplicationController
   end
 
   def edit
-    @history = History.find(params[:id])
+    @history = current_user.histories.find_by(id: params[:id])
+    unless @history.present?
+      flash[:error] = I18n.t('flash.error.not_editing_permission')
+      redirect_to histories_path
+    end
   end
 
   def update
