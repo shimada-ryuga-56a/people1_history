@@ -1,5 +1,11 @@
 <div class="">
   <ul class="timeline timeline-vertical timeline-compact">
+    <% if @histories.empty? %>
+      <div class="my-3">
+        <p>表示するヒストリーがありません🤥</p>
+        <p>絞り込みから表示するカテゴリーを選択してください。</p>
+      </div>
+    <% end %>
     <% @histories.each_with_index do |history, i| %>
       <% case history %>
       <% when Event %>
@@ -13,4 +19,4 @@
   </ul>
 </div>
 
-<%= paginate @histories %>
+<%= paginate @histories unless @histories.empty? %>
