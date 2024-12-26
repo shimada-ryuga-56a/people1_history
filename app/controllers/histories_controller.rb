@@ -1,7 +1,6 @@
 class HistoriesController < ApplicationController
   def index
     params_inspection
-    Rails.logger.debug params
     @histories = []
     add_to_histories(:events, Event)
     if params[:discs] == '1'
