@@ -1,5 +1,6 @@
 class HistoriesController < ApplicationController
   def index
+    params_inspection
     @histories = []
     @histories << Event.all if params[:events] == "1"
     @histories << Disc.where.not(release_date: nil).select(:title, :release_date, :production_type, :id) if params[:discs] == "1"
@@ -59,5 +60,12 @@ class HistoriesController < ApplicationController
 
   def history_params
     params.require(:history).permit(:title, :remark, :date, :image).merge(user_id: current_user.id)
+  end
+
+  def params_inspection
+    valid_values = ["0", "1"]
+    params[:events] = valid_values.include?(params[:events]) ? params[:events] : nil
+    params[:discs] = valid_values.include?(params[:discs]) ? params[:discs] : nil
+    params[:histories] = valid_values.include?(params[:histories]) ? params[:histories] : nil
   end
 end
