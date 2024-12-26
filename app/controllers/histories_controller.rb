@@ -1,10 +1,12 @@
 class HistoriesController < ApplicationController
   def index
     @histories = []
-    @histories << Event.all
-    @histories << Disc.where.not(release_date: nil).select(:title, :release_date, :production_type, :id)
-    @histories << Disc.where.not(announcement_date: nil).select(:title, :announcement_date, :production_type, :id)
-    @histories << History.all
+    @histories << Event.all if params[:events] == "1"
+    @histories << Disc.where.not(release_date: nil).select(:title, :release_date, :production_type, :id) if params[:discs] == "1"
+    @histories << Disc.where.not(announcement_date: nil).select(:title, :announcement_date, :production_type, :id) if params[:discs] == "1"
+    @histories << History.all if params[:histories] == "1"
+
+    return if @histories.empty?
     @histories.flatten!.sort_by! do |history|
       if history.respond_to?('date')
         history.date
