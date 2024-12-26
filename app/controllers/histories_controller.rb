@@ -1,7 +1,7 @@
 class HistoriesController < ApplicationController
   def index
     params_inspection
-    p params
+    Rails.logger.debug params
     @histories = []
     add_to_histories(:events, Event)
     if params[:discs] == '1'
@@ -69,9 +69,9 @@ class HistoriesController < ApplicationController
 
   def params_inspection
     valid_values = %w[0 1]
-    params[:events] = "1" if (params[:events]).nil?
-    params[:discs] = "1" if (params[:discs]).nil?
-    params[:histories] = "1" if (params[:histories]).nil?
+    params[:events] = '1' if params[:events].nil?
+    params[:discs] = '1' if params[:discs].nil?
+    params[:histories] = '1' if params[:histories].nil?
     params[:events] = valid_values.include?(params[:events]) ? params[:events] : '0'
     params[:discs] = valid_values.include?(params[:discs]) ? params[:discs] : '0'
     params[:histories] = valid_values.include?(params[:histories]) ? params[:histories] : '0'
@@ -79,8 +79,9 @@ class HistoriesController < ApplicationController
 
   def add_to_histories(param_key, model)
     return if params[param_key] == '0'
-    if params[param_key] == '1'
-      @histories << model.all
-    end
+
+    return unless params[param_key] == '1'
+
+    @histories << model.all
   end
 end
