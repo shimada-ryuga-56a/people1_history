@@ -18,6 +18,12 @@
           </p>
         <% end %>
         <p class="my-2 text-xs md:text-sm lg:text-base"><%= history.remark.truncate(30) %></p>
+        <div class="flex mt-3">
+          <% if history.user == current_user %>
+            <i class="fa-solid fa-pen-to-square mr-3"></i>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        </div>
       </div>
     </div>
   <hr />
