@@ -1,13 +1,18 @@
 class HistoriesController < ApplicationController
   def index
     params_inspection
+    p params
     @histories = []
-    @histories << Event.all if params[:events] == "1"
-    @histories << Disc.where.not(release_date: nil).select(:title, :release_date, :production_type, :id) if params[:discs] == "1"
-    @histories << Disc.where.not(announcement_date: nil).select(:title, :announcement_date, :production_type, :id) if params[:discs] == "1"
-    @histories << History.all if params[:histories] == "1"
+    add_to_histories(:events, Event)
+    if params[:discs] == '1'
+      @histories << Disc.where.not(release_date: nil).select(:title, :release_date, :production_type, :id)
+      @histories << Disc.where.not(announcement_date: nil).select(:title, :announcement_date, :production_type,
+                                                                  :id)
+    end
+    add_to_histories(:histories, History)
 
     return if @histories.empty?
+
     @histories.flatten!.sort_by! do |history|
       if history.respond_to?('date')
         history.date
@@ -63,9 +68,19 @@ class HistoriesController < ApplicationController
   end
 
   def params_inspection
-    valid_values = ["0", "1"]
-    params[:events] = valid_values.include?(params[:events]) ? params[:events] : nil
-    params[:discs] = valid_values.include?(params[:discs]) ? params[:discs] : nil
-    params[:histories] = valid_values.include?(params[:histories]) ? params[:histories] : nil
+    valid_values = %w[0 1]
+    params[:events] = "1" if (params[:events]).nil?
+    params[:discs] = "1" if (params[:discs]).nil?
+    params[:histories] = "1" if (params[:histories]).nil?
+    params[:events] = valid_values.include?(params[:events]) ? params[:events] : '0'
+    params[:discs] = valid_values.include?(params[:discs]) ? params[:discs] : '0'
+    params[:histories] = valid_values.include?(params[:histories]) ? params[:histories] : '0'
+  end
+
+  def add_to_histories(param_key, model)
+    return if params[param_key] == '0'
+    if params[param_key] == '1'
+      @histories << model.all
+    end
   end
 end
