@@ -51,6 +51,14 @@ class HistoriesController < ApplicationController
     redirect_to histories_path
   end
 
+  def edit
+    @history = History.find(params[:id])
+  end
+
+  def update
+    @history = current_user.histories.find(params[:id])
+  end
+
   def disc_image
     @disc = Disc.find(params[:id])
     @disc_version = DiscVersion.includes(jacket_attachment: :blob).where(disc_id: @disc.id).first
