@@ -43,6 +43,14 @@ class HistoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @history = History.find(params[:id])
+    return if @history.user != current_user
+    @history.destroy
+    flash[:success] = I18n.t('flash.success.delete_post')
+    redirect_to histories_path
+  end
+
   def disc_image
     @disc = Disc.find(params[:id])
     @disc_version = DiscVersion.includes(jacket_attachment: :blob).where(disc_id: @disc.id).first
