@@ -1,0 +1,14 @@
+<div data-controller="dialog" data-action="click->dialog#backdropClose">
+  <dialog data-dialog-target="dialog" class="bg-neutral-200 p-5 text-slate-900 rounded-lg">
+    <div class="grid justify-items-end">
+      <button type="button" data-action="dialog#close" autofocus><i class="fa-regular fa-circle-xmark mr-1"></i></button>
+    </div>
+    <div class="mb-3 leading-8">
+
+    </div>
+  </dialog>
+  <button type="button" data-action="dialog#open" class="flex items-center">
+    <i class="fa-solid fa-filter mx-1"></i>
+    <p>絞り込み</p>
+  </button>
+</div>
