@@ -20,6 +20,16 @@
         </div>
       </turbo-frame>
     </div>
+      <div class="flex justify-end mt-3">
+        <% if @history.user == current_user %>
+          <%= link_to edit_history_path(@history.id) do %>
+            <i class="fa-solid fa-pen-to-square mr-3"></i>
+          <% end %>
+          <%= link_to history_path(@history.id), data: { "turbo-method": :delete, turbo_confirm: "投稿を削除します。よろしいですか？" } do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        <% end %>
+      </div>
     <div class="text-center">
       <p class="mb-3"><%= I18n.l(@history.date, format: "%Y/%m/%d(%a)") %></p>
       <p class="md:text-2xl md:mb-5 lg:text-3xl"><%= @history.title %></p>
