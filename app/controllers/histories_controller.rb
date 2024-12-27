@@ -32,6 +32,14 @@ class HistoriesController < ApplicationController
     @history = History.new
   end
 
+  def edit
+    @history = current_user.histories.find_by(id: params[:id])
+    return if @history.present?
+
+    flash[:error] = I18n.t('flash.error.not_editing_permission')
+    redirect_to histories_path
+  end
+
   def create
     @history = History.new(history_params)
     if @history.save
@@ -40,22 +48,6 @@ class HistoriesController < ApplicationController
     else
       flash.now[:error] = I18n.t('flash.error.post')
       render 'new', status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @history = History.find(params[:id])
-    return if @history.user != current_user
-    @history.destroy
-    flash[:success] = I18n.t('flash.success.delete_post')
-    redirect_to histories_path
-  end
-
-  def edit
-    @history = current_user.histories.find_by(id: params[:id])
-    unless @history.present?
-      flash[:error] = I18n.t('flash.error.not_editing_permission')
-      redirect_to histories_path
     end
   end
 
@@ -68,6 +60,15 @@ class HistoriesController < ApplicationController
       flash.now[:error] = I18n.t('flash.error.update')
       render 'edit', status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @history = History.find(params[:id])
+    return if @history.user != current_user
+
+    @history.destroy
+    flash[:success] = I18n.t('flash.success.delete_post')
+    redirect_to histories_path
   end
 
   def disc_image
