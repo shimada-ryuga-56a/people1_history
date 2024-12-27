@@ -47,10 +47,12 @@ ja:
     success:
       post: "無事投稿されました！"
       setlist_post: "ご協力ありがとうございます！"
+      update_post: "投稿を更新しました👍"
       delete_post: "投稿を削除しました👍"
     error:
       setlist_exist: "すでにセットリストが存在します。"
       not_editing_permission: "編集権限がありません。"
+      update_post: "更新に失敗しました。"
       post: "投稿に失敗しました。"
       setlist_post: "セットリストを投稿できませんでした。"
       cannot_post_setlist: "セットリストを投稿できません。"

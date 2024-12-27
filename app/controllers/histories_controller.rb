@@ -54,10 +54,10 @@ class HistoriesController < ApplicationController
   def update
     @history = current_user.histories.find(params[:id])
     if @history.update(history_params)
-      flash[:success] = I18n.t('flash.success.update')
+      flash[:success] = I18n.t('flash.success.update_post')
       redirect_to histories_path
     else
-      flash.now[:error] = I18n.t('flash.error.update')
+      flash.now[:error] = I18n.t('flash.error.update_post')
       render 'edit', status: :unprocessable_entity
     end
   end
