@@ -61,6 +61,13 @@ class HistoriesController < ApplicationController
 
   def update
     @history = current_user.histories.find(params[:id])
+    if @history.update(history_params)
+      flash[:success] = I18n.t('flash.success.update')
+      redirect_to histories_path
+    else
+      flash.now[:error] = I18n.t('flash.error.update')
+      render 'edit', status: :unprocessable_entity
+    end
   end
 
   def disc_image
