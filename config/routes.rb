@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   resources :members, only: [:index]
   resources :histories, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
     post "image/destroy" => "images#history_image_destroy"
+    resources :informations, only: [:create], module: :histories
   end
 
   resources :discs, only: [:show] do
