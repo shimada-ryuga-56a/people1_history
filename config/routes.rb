@@ -33,7 +33,9 @@ Rails.application.routes.draw do
   delete "notices" => "notices#destroy"
 
   resources :members, only: [:index]
-  resources :histories, only: [:index, :new, :create, :show, :destroy, :edit, :update]
+  resources :histories, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
+    resources :image, only: [:destroy]
+  end
 
   resources :discs, only: [:show] do
     resources :informations, only: [:create], module: :discs
