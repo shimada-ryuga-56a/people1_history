@@ -28,7 +28,7 @@ class HistoriesController < ApplicationController
     @history = History.find(params[:id])
     @new_info = @history.informations.build
     @form_url = history_informations_path(history_id: @history.id)
-    # @infos = Information.includes(:user).where(reportable_type: 'History', reportable_id: @history.id).order(created_at: :desc)
+    @infos = Information.includes(:user).where(reportable_type: 'History', reportable_id: @history.id).order(created_at: :desc)
   end
 
   def new
