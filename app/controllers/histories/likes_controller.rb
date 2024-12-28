@@ -1,9 +1,11 @@
 class Histories::LikesController < ApplicationController
   def create
-    history = History.find(params[:history_id])
-    likes = history.likes.new(user_id: current_user.id)
+    @history = History.find(params[:history_id])
+    likes = @history.likes.new(user_id: current_user.id)
     likes.save
-    redirect_to histories_path
+    respond_to do |format|
+      format.turbo_stream { render 'likes/create' }
+    end
   end
 
   def destroy

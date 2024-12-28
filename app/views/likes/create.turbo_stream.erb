@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "likes" do %>
+  <%= render partial: "likes/unlike", locals: { likes: @history.likes } %>
+<% end %>
