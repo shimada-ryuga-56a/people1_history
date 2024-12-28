@@ -1,6 +1,6 @@
 <div class="mx-2">
   <% if @events.present? %>
-    <%= render @events %>
+    <%= render partial: 'events/event', collection: @events %>
   <% else %>
     <div class="mb-3">イベント情報がありません</div>
   <% end %>
