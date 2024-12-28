@@ -2,12 +2,12 @@ require 'test_helper'
 
 class LikesOnSongInformationsControllerTest < ActionDispatch::IntegrationTest
   test 'should get create' do
-    get likes_on_song_informations_create_url
+    post song_information_likes_on_song_informations_url(song_information_id: 1)
     assert_response :success
   end
 
   test 'should get destroy' do
-    get likes_on_song_informations_destroy_url
+    delete song_information_likes_on_song_informations_url(song_information_id: 1)
     assert_response :success
   end
 end

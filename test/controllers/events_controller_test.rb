@@ -2,12 +2,12 @@ require 'test_helper'
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
-    get events_index_url
+    get events_url
     assert_response :success
   end
 
   test 'should get show' do
-    get events_show_url
+    get event_url(id: 1)
     assert_response :success
   end
 end
