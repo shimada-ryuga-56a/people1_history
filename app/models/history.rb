@@ -9,6 +9,6 @@ class History < ApplicationRecord
   validates :image, image: true
 
   def liked_by?(user)
-    likes.where(user_id: user.id).exists?
+    likes.exists?(user_id: user.id)
   end
 end
