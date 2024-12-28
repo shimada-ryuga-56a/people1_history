@@ -1,4 +1,4 @@
-<div class="flex mr-3 items-center">
+<%= link_to like_url, data: { "turbo-method": :post }, class: "flex mr-3 items-center" do %>
   <i class="fa-regular fa-heart mr-1"></i>
-  <p><%= history.likes.length %></p>
-</div>
+  <p><%= likes.length %></p>
+<% end %>
