@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class SongsControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @user = users(:one)
+    sign_in @user
+  end
+
   test 'should get index' do
     get songs_url
     assert_response :success
