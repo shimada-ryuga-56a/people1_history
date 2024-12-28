@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_25_021649) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_27_140739) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -127,6 +127,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_25_021649) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reportable_type", "reportable_id"], name: "index_information_on_reportable"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "likable_type", null: false
+    t.bigint "likable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["likable_type", "likable_id"], name: "index_likes_on_likable"
   end
 
   create_table "likes_on_event_informations", force: :cascade do |t|

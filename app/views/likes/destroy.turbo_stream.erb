@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "unlike_#{obj.class}_#{obj.id}" do %>
+  <%= render partial: "likes/like", locals: { likes: @history.likes, obj: obj, like_url: history_likes_path(history_id: history.id) } %>
+<% end %>
