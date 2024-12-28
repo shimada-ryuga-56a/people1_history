@@ -3,7 +3,9 @@
 one:
   title: MyString
   title_ruby: MyString
+  release_date: "2024-01-01"
 
 two:
   title: MyString
   title_ruby: MyString
+  release_date: "2024-01-01"
