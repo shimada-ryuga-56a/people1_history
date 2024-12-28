@@ -1,6 +1,6 @@
 class Histories::LikesController < ApplicationController
   def create
-    @history = History.find(params[:history_id])
+    @history = History.preload(:likes).find(params[:history_id])
     likes = @history.likes.new(user_id: current_user.id)
     likes.save
     respond_to do |format|
