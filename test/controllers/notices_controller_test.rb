@@ -2,12 +2,12 @@ require 'test_helper'
 
 class NoticesControllerTest < ActionDispatch::IntegrationTest
   test 'should get create' do
-    get notices_create_url
+    get notices
     assert_response :success
   end
 
   test 'should get destroy' do
-    get notices_destroy_url
+    delete notices
     assert_response :success
   end
 end
