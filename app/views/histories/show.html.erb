@@ -21,6 +21,7 @@
       </turbo-frame>
     </div>
       <div class="flex justify-end mt-3">
+        <%= render partial: "likes/likes", locals: { history: @history, likes: @history.likes, like_url: history_likes_path(history_id: @history.id) } %>
         <% if @history.user == current_user %>
           <%= link_to edit_history_path(@history.id) do %>
             <i class="fa-solid fa-pen-to-square mr-3"></i>
