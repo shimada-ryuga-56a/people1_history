@@ -2,12 +2,12 @@ require 'test_helper'
 
 class LikesOnEventInformationsControllerTest < ActionDispatch::IntegrationTest
   test 'should get create' do
-    get likes_on_event_informations_create_url
+    post event_information_likes_on_event_informations_url(event_information_id: 1)
     assert_response :success
   end
 
   test 'should get destroy' do
-    get likes_on_event_informations_destroy_url
+    delete event_information_likes_on_event_informations_url(event_information_id: 1)
     assert_response :success
   end
 end
