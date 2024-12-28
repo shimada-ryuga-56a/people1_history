@@ -19,6 +19,7 @@
         <% end %>
         <p class="my-2 text-xs md:text-sm lg:text-base"><%= history.remark.truncate(30) %></p>
         <div class="flex mt-3">
+          <%= render partial: "likes/likes", locals: { history: history } %>
           <% if history.user == current_user %>
             <%= link_to edit_history_path(history.id) do %>
               <i class="fa-solid fa-pen-to-square mr-3"></i>
