@@ -4,6 +4,8 @@ class SetlistitemInformationsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     sign_in @user
+    @event = create(:event)
+    @setlist = create(:setlist)
     @setlistitem = create(:setlistitem)
   end
 
