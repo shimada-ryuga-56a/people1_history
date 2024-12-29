@@ -8,7 +8,7 @@ class SongInformationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get create' do
-    post song_song_informations_url(song_id: 1, body: "test")
+    post song_song_informations_url(song_id: 1)
     assert_response :success
   end
 end
