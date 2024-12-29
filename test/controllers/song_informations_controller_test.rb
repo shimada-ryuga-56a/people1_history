@@ -8,7 +8,7 @@ class SongInformationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get create' do
-    post song_song_informations_url(song_id: @song.id), params: {
+    post "#{song_song_informations_url(song_id: @song.id)}.turbo_stream", params: {
       song_information: {
         body: 'Sample body text'
       }
