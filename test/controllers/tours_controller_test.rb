@@ -4,6 +4,7 @@ class ToursControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     sign_in @user
+    @tour = FactoryBot.create(:tour)
   end
 
   test 'should get show' do
