@@ -5,7 +5,6 @@ class ToursControllerTest < ActionDispatch::IntegrationTest
     @user = users(:one)
     sign_in @user
     @tour = create(:tour)
-    p @tour
   end
 
   test 'should get show' do
