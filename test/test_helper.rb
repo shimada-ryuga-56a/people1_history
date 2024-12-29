@@ -2,7 +2,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 
-class ActionDispatch::IntegrationTest
+ActionDispatch::IntegrationTest.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :system
   config.include Warden::Test::Helpers
 end
