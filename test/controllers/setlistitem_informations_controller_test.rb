@@ -10,7 +10,7 @@ class SetlistitemInformationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get create' do
-    post "#{setlistitem_informations_url(setlistitem: @setlistitem.id)}.turbo_stream", params: {
+    post "#{setlistitem_informations_url(setlistitem_id: @setlistitem.id)}.turbo_stream", params: {
       setlistitem_information: {
         body: 'Sample body text',
         user_id: @user.id,
