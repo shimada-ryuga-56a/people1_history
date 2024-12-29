@@ -4,8 +4,10 @@ one:
   user_id: 1
   noticeable_type: MyString
   noticeable_id: 1
+  action_type: like
 
 two:
   user_id: 1
   noticeable_type: MyString
   noticeable_id: 1
+  action_type: like

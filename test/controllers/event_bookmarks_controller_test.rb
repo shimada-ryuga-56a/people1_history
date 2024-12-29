@@ -1,13 +1,21 @@
 require 'test_helper'
 
 class EventBookmarksControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @user = users(:one)
+    sign_in @user
+    @event = create(:event)
+  end
+
   test 'should get create' do
-    get event_bookmarks_create_url
+    post event_event_bookmarks_url(event_id: 1)
     assert_response :success
   end
 
   test 'should get destroy' do
-    get event_bookmarks_destroy_url
+    @user = create(:user)
+    @event_bookmark = create(:event_bookmark)
+    delete event_event_bookmarks_url(event_id: 1)
     assert_response :success
   end
 end

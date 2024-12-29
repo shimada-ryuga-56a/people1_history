@@ -1,13 +1,18 @@
 require 'test_helper'
 
 class NoticesControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @user = users(:one)
+    sign_in @user
+  end
+
   test 'should get create' do
-    get notices_create_url
+    get notices_url
     assert_response :success
   end
 
   test 'should get destroy' do
-    get notices_destroy_url
+    delete notices_url
     assert_response :success
   end
 end

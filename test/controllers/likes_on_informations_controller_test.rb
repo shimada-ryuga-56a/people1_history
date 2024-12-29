@@ -1,13 +1,18 @@
 require 'test_helper'
 
 class LikesOnInformationsControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @user = users(:one)
+    sign_in @user
+  end
+
   test 'should get create' do
-    get likes_on_informations_create_url
+    post information_likes_on_informations_url(information_id: 1)
     assert_response :success
   end
 
   test 'should get destroy' do
-    get likes_on_informations_destroy_url
+    delete information_likes_on_informations_url(information_id: 1)
     assert_response :success
   end
 end

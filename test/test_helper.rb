@@ -2,6 +2,10 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 
+class ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+end
+
 module ActiveSupport
   class TestCase
     # Run tests in parallel with specified workers
@@ -11,5 +15,9 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+
+    include FactoryBot::Syntax::Methods
+    FactoryBot.definition_file_paths = [File.expand_path('../factories', __dir__)]
+    FactoryBot.find_definitions
   end
 end
