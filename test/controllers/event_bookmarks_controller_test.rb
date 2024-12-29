@@ -13,6 +13,8 @@ class EventBookmarksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get destroy' do
+    @user = create(:user)
+    @event_bookmark = create(:event_bookmark)
     delete event_event_bookmarks_url(event_id: 1)
     assert_response :success
   end
