@@ -4,6 +4,7 @@ class LikesOnTourInformationsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     sign_in @user
+    @tour_information = create(:tour_information)
   end
 
   test 'should get create' do
