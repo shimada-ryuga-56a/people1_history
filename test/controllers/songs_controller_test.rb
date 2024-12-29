@@ -4,6 +4,7 @@ class SongsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     sign_in @user
+    @song = create(:song)
   end
 
   test 'should get index' do
