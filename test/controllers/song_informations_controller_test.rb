@@ -8,7 +8,11 @@ class SongInformationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get create' do
-    post song_song_informations_url(song_id: 1)
+    post song_song_informations_url(song_id: @song.id), params: {
+      song_information: {
+        body: 'Sample body text'
+      }
+    }
     assert_response :success
   end
 end
