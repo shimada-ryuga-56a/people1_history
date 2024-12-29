@@ -4,6 +4,7 @@ class DiscsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     sign_in @user
+    @disc = create(:disc)
   end
 
   test 'should get show' do

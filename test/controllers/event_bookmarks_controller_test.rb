@@ -4,6 +4,7 @@ class EventBookmarksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     sign_in @user
+    @event = create(:event)
   end
 
   test 'should get create' do
