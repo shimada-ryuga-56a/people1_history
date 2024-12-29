@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SetlistitemInformationsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one)
+    @user = create(:user)
     sign_in @user
     @event = create(:event)
     @setlist = create(:setlist)
@@ -13,6 +13,7 @@ class SetlistitemInformationsControllerTest < ActionDispatch::IntegrationTest
     post "#{setlistitem_informations_url(setlistitem: @setlistitem.id)}.turbo_stream", params: {
       song_information: {
         body: 'Sample body text'
+        user_id: @user.id
       }
     }
     assert_response :success
