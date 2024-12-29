@@ -10,13 +10,15 @@ class SetlistitemInformationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get create' do
-    post "#{setlistitem_informations_url(setlistitem_id: @setlistitem.id)}.turbo_stream", params: {
-      setlistitem_information: {
-        body: 'Sample body text',
-        user_id: @user.id,
-        setlistitem_id: @setlistitem.id
-      }
-    }
+    post setlistitem_informations_url(setlistitem_id: @setlistitem.id),
+         params: {
+           setlistitem_information: {
+             body: 'Sample body text',
+             user_id: @user.id,
+             setlistitem_id: @setlistitem.id
+           }
+         },
+         headers: { 'Accept' => 'text/vnd.turbo-stream.html' }
     assert_response :success
   end
 end
