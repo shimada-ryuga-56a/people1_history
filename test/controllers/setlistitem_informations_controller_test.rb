@@ -11,9 +11,10 @@ class SetlistitemInformationsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get create' do
     post "#{setlistitem_informations_url(setlistitem: @setlistitem.id)}.turbo_stream", params: {
-      song_information: {
+      setlistitem_information: {
         body: 'Sample body text',
-        user_id: @user.id
+        user_id: @user.id,
+        setlistitem_id: @setlistitem.id
       }
     }
     assert_response :success
