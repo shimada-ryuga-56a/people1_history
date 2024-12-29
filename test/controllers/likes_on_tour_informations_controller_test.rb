@@ -3,7 +3,6 @@ require 'test_helper'
 class LikesOnTourInformationsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
-    current_user = @user
     sign_in @user
     @tour = create(:tour)
     @tour_information = create(:tour_information, tour: @tour)
