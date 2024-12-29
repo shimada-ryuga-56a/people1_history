@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :tour do
+  factory :tour_information do
     id { 1 }
     body { 'MyText' }
     user_id { '1' }
