@@ -3,5 +3,6 @@ FactoryBot.define do
     id { 1 }
     body { 'MyText' }
     user_id { '1' }
+    tour_id { '1' }
   end
 end
