@@ -7,6 +7,7 @@ class ToursControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get show' do
+    p @user 
     get tour_url(id: 1)
     assert_response :success
   end
