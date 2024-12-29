@@ -4,16 +4,18 @@ class LikesOnTourInformationsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     sign_in @user
+    @tour = create(:tour)
     @tour_information = create(:tour_information)
   end
 
   test 'should get create' do
-    post tour_information_likes_on_tour_informations_url(tour_information_id: 1)
+    post "#{tour_information_likes_on_tour_informations_url(tour_information_id: 1).turbo_stream}"
     assert_response :success
   end
 
   test 'should get destroy' do
-    delete tour_information_likes_on_tour_informations_url(tour_information_id: 1)
+    post "#{tour_information_likes_on_tour_informations_url(tour_information_id: 1).turbo_stream}"
+    delete "#{tour_information_likes_on_tour_informations_url(tour_information_id: 1).turbo_stream}"
     assert_response :success
   end
 end
