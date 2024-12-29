@@ -3,7 +3,8 @@ require_relative '../config/environment'
 require 'rails/test_help'
 
 class ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
+  config.include Devise::Test::IntegrationHelpers, type: :system
+  config.include Warden::Test::Helpers
 end
 
 module ActiveSupport
