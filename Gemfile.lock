@@ -119,6 +119,9 @@ GEM
     cssbundling-rails (1.4.1)
       railties (>= 6.0.0)
     csv (3.3.2)
+    dartsass-rails (0.5.1)
+      railties (>= 6.0.0)
+      sass-embedded (~> 1.63)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
@@ -199,6 +202,24 @@ GEM
       google-cloud-core (~> 1.6)
       googleauth (~> 1.9)
       mini_mime (~> 1.0)
+    google-protobuf (4.29.2)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.2-aarch64-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.2-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.2-x86-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.2-x86_64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.2-x86_64-linux)
+      bigdecimal
+      rake (>= 13)
     googleauth (1.11.2)
       faraday (>= 1.0, < 3.a)
       google-cloud-env (~> 2.1)
@@ -434,14 +455,18 @@ GEM
       logger
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
+    sass-embedded (1.83.0-aarch64-linux-gnu)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-arm-linux-gnueabihf)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-arm64-darwin)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86-linux-gnu)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86_64-darwin)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86_64-linux-gnu)
+      google-protobuf (~> 4.28)
     securerandom (0.4.1)
     selenium-webdriver (4.26.0)
       base64 (~> 0.2)
@@ -468,7 +493,6 @@ GEM
       railties (>= 6.0.0)
     stringio (3.1.2)
     thor (1.3.2)
-    tilt (2.5.0)
     timeout (0.4.2)
     trailblazer-option (0.1.2)
     turbo-rails (2.0.11)
@@ -512,6 +536,7 @@ DEPENDENCIES
   brakeman
   capybara
   cssbundling-rails
+  dartsass-rails (~> 0.5.1)
   debug
   devise
   devise-i18n-views
@@ -540,7 +565,6 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rails-omakase
   rubocop-rspec
-  sassc-rails
   selenium-webdriver
   sprockets-rails
   stimulus-rails
