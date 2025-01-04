@@ -1,5 +1,6 @@
 ActiveAdmin.register Disc do
-  permit_params :title, :title_ruby, :announcement_date, :release_date, :production_type, disc_versions_attributes: [:id, :version, :price, :_destroy]
+  permit_params :title, :title_ruby, :announcement_date, :release_date, :production_type,
+                disc_versions_attributes: [:id, :version, :price, :_destroy]
 
   form do |f|
     f.inputs do
@@ -11,7 +12,7 @@ ActiveAdmin.register Disc do
     end
 
     f.inputs do
-      f.has_many :disc_versions, allow_destroy: true do|t|
+      f.has_many :disc_versions, allow_destroy: true do |t|
         t.input :version
         t.input :price
       end
@@ -19,5 +20,4 @@ ActiveAdmin.register Disc do
 
     f.actions
   end
-
 end

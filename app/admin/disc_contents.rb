@@ -1,13 +1,12 @@
 ActiveAdmin.register DiscContent do
-  permit_params :disc_version_id, :event_id, :content_type, disc_items_attributes: [:id, :disc_content_id, :position, :song_id, :title, :is_arranged, :_destroy]
+  permit_params :disc_version_id, :event_id, :content_type,
+                disc_items_attributes: [:id, :disc_content_id, :position, :song_id, :title, :is_arranged, :_destroy]
 
   index do
     id_column
     column :disc_version
     column :content_type
     column :event
-    column :created_at
-    column :updated_at
     actions
   end
 
@@ -19,7 +18,7 @@ ActiveAdmin.register DiscContent do
     end
 
     f.inputs do
-      f.has_many :disc_items, allow_destroy: true do|t|
+      f.has_many :disc_items, allow_destroy: true do |t|
         t.input :position
         t.input :title
         t.input :song

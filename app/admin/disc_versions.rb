@@ -1,5 +1,6 @@
 ActiveAdmin.register DiscVersion do
-  permit_params :disc_id, :version, :price, :jacket, :remove_jacket ,disc_contents_attributes: [:id, :content_type, :event_id, :_destroy]
+  permit_params :disc_id, :version, :price, :jacket, :remove_jacket,
+                disc_contents_attributes: [:id, :content_type, :event_id, :_destroy]
   remove_filter :jacket_attachment, :jacket_blob
 
   form do |f|
@@ -12,7 +13,7 @@ ActiveAdmin.register DiscVersion do
     end
 
     f.inputs do
-      f.has_many :disc_contents ,allow_destroy: true do|t|
+      f.has_many :disc_contents, allow_destroy: true do |t|
         t.input :content_type
         t.input :event_id
       end
