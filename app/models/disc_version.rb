@@ -1,6 +1,8 @@
 class DiscVersion < ApplicationRecord
   belongs_to :disc
   has_many :disc_contents, dependent: :destroy
+  accepts_nested_attributes_for :disc_contents, allow_destroy: true
+
   has_one_attached :jacket
 
   validates :version, presence: true
