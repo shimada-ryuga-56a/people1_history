@@ -1,18 +1,18 @@
 ActiveAdmin.register DiscVersion do
-
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :disc_id, :version, :price
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:disc_id, :version, :price]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params :disc_id, :version, :price, :jacket, :remove_jacket
   remove_filter :jacket_attachment, :jacket_blob
+
+  form do |f|
+    f.inputs do
+      f.input :disc
+      f.input :version
+      f.input :price
+      f.input :jacket, as: :file, hint: f.object.jacket.present? ? image_tag(f.object.jacket) : nil
+      if f.object.jacket.present?
+        f.input :remove_jacket, as: :boolean, required: :false, label: '画像を削除する'
+      end
+    end
+
+    f.actions
+  end
 end
