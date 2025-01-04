@@ -13,7 +13,7 @@
           <p class="text-center">画像読み込み中...</p>
         </div>
       </turbo-frame>
-      <%= render partial: "content", locals: {version: version} %>
+      <%= render partial: "content", locals: {version: version, contents: @disc_contents.where(disc_version_id: version.id)} %>
     </div>
   </div>
 <% end %>
