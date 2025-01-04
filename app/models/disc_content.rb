@@ -2,6 +2,7 @@ class DiscContent < ApplicationRecord
   belongs_to :disc_version
   belongs_to :event, optional: true
   has_many :disc_items, dependent: :destroy
+  accepts_nested_attributes_for :disc_items, allow_destroy: true
 
   validates :content_type, presence: true
 
