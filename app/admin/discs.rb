@@ -6,8 +6,8 @@ ActiveAdmin.register Disc do
       f.input :title
       f.input :title_ruby
       f.input :production_type
-      f.input :announcement_date
       f.input :release_date
+      f.input :announcement_date
     end
 
     f.inputs do
