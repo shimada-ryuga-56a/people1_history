@@ -11,4 +11,8 @@ class DiscItem < ApplicationRecord
   def required_either_song_or_title
     nil if song_id.present? ^ title.present?
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "disc_content_id", "id", "id_value", "is_arranged", "position", "song_id", "title", "updated_at"]
+  end
 end
