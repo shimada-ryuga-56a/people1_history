@@ -10,4 +10,8 @@ class DiscVersion < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     ["created_at", "disc_id", "id", "id_value", "price", "updated_at", "version"]
   end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["disc", "disc_contents", "jacket_attachment", "jacket_blob"]
+  end
 end
