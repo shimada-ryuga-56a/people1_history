@@ -14,5 +14,5 @@ ActiveAdmin.register DiscVersion do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+  remove_filter :jacket_attachment, :jacket_blob
 end
