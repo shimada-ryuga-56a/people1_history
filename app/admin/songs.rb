@@ -19,5 +19,5 @@ ActiveAdmin.register Song do
   remove_filter :jk_attachment
   remove_filter :jk_blob
   remove_filter :youtube_link
-  permit_params :name, :name_kana_ruby, :name_hiragana_ruby, :announcement_date
+  permit_params :name, :name_kana_ruby, :name_hiragana_ruby, :announcement_date, :youtube_link
 end
