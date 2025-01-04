@@ -14,4 +14,13 @@ class DiscVersion < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["disc", "disc_contents", "jacket_attachment", "jacket_blob"]
   end
+
+  def remove_jacket
+    @remove_jacket || false
+  end
+
+  def remove_jacket=(value)
+    attribute_will_change!('remove_jacket') if remove_jacket != value
+    @remove_jacket = value
+  end
 end
