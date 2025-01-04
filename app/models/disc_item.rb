@@ -15,4 +15,8 @@ class DiscItem < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     ["created_at", "disc_content_id", "id", "id_value", "is_arranged", "position", "song_id", "title", "updated_at"]
   end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["disc_content", "song"]
+  end
 end
