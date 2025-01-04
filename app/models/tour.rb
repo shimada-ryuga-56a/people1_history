@@ -1,5 +1,6 @@
 class Tour < ApplicationRecord
   has_many :events, dependent: :destroy
+  accepts_nested_attributes_for :events, allow_destroy: true
   has_many :tour_informations, dependent: :destroy
   has_many :link_contents, as: :linkable, dependent: :destroy
 
