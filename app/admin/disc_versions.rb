@@ -14,7 +14,7 @@ ActiveAdmin.register DiscVersion do
     f.inputs do
       f.has_many :disc_contents ,allow_destroy: true do|t|
         t.input :content_type
-        t.input :event
+        t.input :event_id
       end
     end
 
