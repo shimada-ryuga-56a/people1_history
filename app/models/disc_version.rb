@@ -7,12 +7,12 @@ class DiscVersion < ApplicationRecord
 
   enum :version, { streaming: 0, normal: 1, first_press_limited: 2, limited_product_edition: 3, limited_time_edition: 4 }
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["created_at", "disc_id", "id", "id_value", "price", "updated_at", "version"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[created_at disc_id id id_value price updated_at version]
   end
 
-  def self.ransackable_associations(auth_object = nil)
-    ["disc", "disc_contents", "jacket_attachment", "jacket_blob"]
+  def self.ransackable_associations(_auth_object = nil)
+    %w[disc disc_contents jacket_attachment jacket_blob]
   end
 
   def remove_jacket

@@ -30,11 +30,11 @@ class Disc < ApplicationRecord
     respond_to?('release_date')
   end
 
-  def self.ransackable_associations(auth_object = nil)
-    ["disc_versions", "informations", "link_contents"]
+  def self.ransackable_associations(_auth_object = nil)
+    %w[disc_versions informations link_contents]
   end
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["announcement_date", "created_at", "id", "id_value", "production_type", "release_date", "title", "title_ruby", "updated_at"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[announcement_date created_at id id_value production_type release_date title title_ruby updated_at]
   end
 end

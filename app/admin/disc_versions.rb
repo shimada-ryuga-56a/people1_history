@@ -8,9 +8,7 @@ ActiveAdmin.register DiscVersion do
       f.input :version
       f.input :price
       f.input :jacket, as: :file, hint: f.object.jacket.present? ? image_tag(f.object.jacket) : nil
-      if f.object.jacket.present?
-        f.input :remove_jacket, as: :boolean, required: :false, label: '画像を削除する'
-      end
+      f.input :remove_jacket, as: :boolean, required: false, label: '画像を削除する' if f.object.jacket.present?
     end
 
     f.actions
