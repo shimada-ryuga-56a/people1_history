@@ -45,4 +45,13 @@ class Event < ApplicationRecord
   def self.ransackable_associations(_auth_object = nil)
     %w[name name_kana_ruby]
   end
+
+  def remove_visual_image
+    @remove_visual_image || false
+  end
+
+  def remove_visual_image=(value)
+    attribute_will_change!('remove_visual_image') if remove_visual_image != value
+    @remove_visual_image = value
+  end
 end
