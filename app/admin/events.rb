@@ -1,6 +1,15 @@
 ActiveAdmin.register Event do
-  remove_filter :tour, :event_informations, :event_bookmarks, :disc_contents, :setlist, :link_contents, :visual_image_attachment, :visual_image_blob, :place, :remark, :is_canceled
-  permit_params :category, :name, :name_kana_ruby, :date, :place, :place_prefecture, :remark, :is_canceled, :visual_image, :remove_visual_image
+  remove_filter :tour, :event_informations, :event_bookmarks, :disc_contents, :setlist, :link_contents, :visual_image_attachment,
+                :visual_image_blob, :place, :remark, :is_canceled
+  permit_params :category, :name, :name_kana_ruby, :date, :place, :place_prefecture, :remark, :is_canceled, :visual_image,
+                :remove_visual_image
+
+  index do
+    column :category
+    column :name
+    column :date
+    actions
+  end
 
   form do |f|
     f.inputs do
