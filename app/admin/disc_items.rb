@@ -1,5 +1,6 @@
 ActiveAdmin.register DiscItem do
   permit_params :disc_content_id, :position, :song_id, :title, :is_arranged
+  menu parent: "Disc"
 
   form do |f|
     f.inputs do
