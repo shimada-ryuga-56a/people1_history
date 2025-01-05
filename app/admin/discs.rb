@@ -1,6 +1,7 @@
 ActiveAdmin.register Disc do
   permit_params :title, :title_ruby, :announcement_date, :release_date, :production_type,
                 disc_versions_attributes: [:id, :version, :price, :_destroy]
+  menu parent: 'Disc'
 
   form do |f|
     f.inputs do
