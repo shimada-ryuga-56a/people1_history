@@ -13,11 +13,6 @@ ActiveAdmin.register Song do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  remove_filter :song_informations
-  remove_filter :disc_items
-  remove_filter :link_contents
-  remove_filter :jk_attachment
-  remove_filter :jk_blob
-  remove_filter :youtube_link
+  remove_filter :song_informations, :disc_items, :link_contents, :jk_attachment, :jk_blob, :youtube_link
   permit_params :name, :name_kana_ruby, :name_hiragana_ruby, :announcement_date, :youtube_link
 end
