@@ -19,4 +19,13 @@ class History < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     ["created_at", "date", "id", "id_value", "remark", "title", "updated_at", "user_id"]
   end
+
+  def remove_image
+    @remove_image || false
+  end
+
+  def remove_image=(value)
+    attribute_will_change!('remove_image') if remove_image != value
+    @remove_image = value
+  end
 end
