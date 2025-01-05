@@ -9,6 +9,7 @@ ActiveAdmin.register Event do
     column :category
     column :name
     column :date
+    actions
   end
 
   form do |f|
