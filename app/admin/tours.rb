@@ -4,7 +4,6 @@ ActiveAdmin.register Tour do
   permit_params :name, :name_kana_ruby,
                 events_attributes: [:category, :name, :name_kana_ruby, :date, :place, :place_prefecture,
                                     :remark, :is_canceled, :_destroy]
-  menu parent: "Event"
 
   form do |f|
     f.inputs do

@@ -2,7 +2,6 @@ ActiveAdmin.register DiscVersion do
   permit_params :disc_id, :version, :price, :jacket, :remove_jacket,
                 disc_contents_attributes: [:id, :content_type, :event_id, :_destroy]
   remove_filter :jacket_attachment, :jacket_blob
-  menu parent: "Disc"
 
   form do |f|
     f.inputs do
