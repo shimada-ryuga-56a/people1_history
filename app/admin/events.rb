@@ -3,13 +3,12 @@ ActiveAdmin.register Event do
                 :visual_image_blob, :place, :remark, :is_canceled
   permit_params :category, :name, :name_kana_ruby, :date, :place, :place_prefecture, :remark, :is_canceled, :visual_image,
                 :remove_visual_image
-  menu parent: "Event"
-
 
   index do
     column :category
     column :name
     column :date
+    actions
   end
 
   form do |f|

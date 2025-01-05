@@ -1,7 +1,6 @@
 ActiveAdmin.register DiscContent do
   permit_params :disc_version_id, :event_id, :content_type,
                 disc_items_attributes: [:id, :disc_content_id, :position, :song_id, :title, :is_arranged, :_destroy]
-  menu parent: "Disc"
 
   index do
     id_column
