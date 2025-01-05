@@ -7,11 +7,11 @@ class Tour < ApplicationRecord
   validates :name, presence: true
   validates :name_kana_ruby, presence: true
 
-  def self.ransackable_associations(auth_object = nil)
-    ["events", "link_contents", "tour_informations"]
+  def self.ransackable_associations(_auth_object = nil)
+    %w[events link_contents tour_informations]
   end
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["created_at", "id", "id_value", "name", "name_kana_ruby", "updated_at"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[created_at id id_value name name_kana_ruby updated_at]
   end
 end

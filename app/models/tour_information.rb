@@ -10,7 +10,7 @@ class TourInformation < ApplicationRecord
     likes_on_tour_informations.exists?(user_id: user.id)
   end
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["body", "created_at", "id", "id_value", "tour_id", "updated_at", "user_id"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[body created_at id id_value tour_id updated_at user_id]
   end
 end
