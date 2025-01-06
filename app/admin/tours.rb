@@ -1,8 +1,8 @@
 ActiveAdmin.register Tour do
   remove_filter :events, :links
 
-  permit_params :name, :name_kana_ruby,
-                events_attributes: [:category, :name, :name_kana_ruby, :date, :place, :place_prefecture,
+  permit_params :tour_id, :id, :name, :name_kana_ruby,
+                events_attributes: [:id, :category, :name, :name_kana_ruby, :date, :place, :place_prefecture,
                                     :remark, :is_canceled, :_destroy],
                 link_contents_attributes: [:id, :link_id, :_destroy]
   menu parent: 'Event'
