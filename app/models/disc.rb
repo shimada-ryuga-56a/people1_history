@@ -4,6 +4,8 @@ class Disc < ApplicationRecord
 
   has_many :informations, as: :reportable, dependent: :destroy
   has_many :link_contents, as: :linkable, dependent: :destroy
+  has_many :links, through: :link_contents
+  accepts_nested_attributes_for :link_contents, allow_destroy: true
 
   validates :title, presence: true
   validates :title_ruby, presence: true
