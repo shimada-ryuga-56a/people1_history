@@ -3,6 +3,8 @@ class Tour < ApplicationRecord
   accepts_nested_attributes_for :events, allow_destroy: true
   has_many :tour_informations, dependent: :destroy
   has_many :link_contents, as: :linkable, dependent: :destroy
+  accepts_nested_attributes_for :link_contents, allow_destroy: true
+  has_many :links, through: :link_contents
 
   validates :name, presence: true
   validates :name_kana_ruby, presence: true

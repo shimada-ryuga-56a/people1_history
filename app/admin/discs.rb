@@ -1,6 +1,8 @@
 ActiveAdmin.register Disc do
+  remove_filter :links
   permit_params :title, :title_ruby, :announcement_date, :release_date, :production_type,
-                disc_versions_attributes: [:id, :version, :price, :_destroy]
+                disc_versions_attributes: [:id, :version, :price, :_destroy],
+                link_contents_attributes: [:id, :link_id, :_destroy]
   menu parent: 'Disc'
 
   form do |f|
@@ -16,6 +18,12 @@ ActiveAdmin.register Disc do
       f.has_many :disc_versions, allow_destroy: true do |t|
         t.input :version
         t.input :price
+      end
+    end
+
+    f.inputs do
+      f.has_many :link_contents, allow_destroy: true do |t|
+        t.input :link_id, as: :select, collection: Link.all.order(remark: :asc).map { |x| [x.remark, x.id] }
       end
     end
 
