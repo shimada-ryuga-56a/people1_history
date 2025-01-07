@@ -5,6 +5,15 @@ ActiveAdmin.register Disc do
                 link_contents_attributes: [:id, :link_id, :_destroy]
   menu parent: 'Disc'
 
+  index do
+    column :id
+    column :title
+    column :announcement_date
+    column :release_date
+    column :production_type
+    actions
+  end
+
   form do |f|
     f.inputs do
       f.input :title

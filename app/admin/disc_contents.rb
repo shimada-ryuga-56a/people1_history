@@ -3,6 +3,11 @@ ActiveAdmin.register DiscContent do
                 disc_items_attributes: [:id, :disc_content_id, :position, :song_id, :title, :is_arranged, :_destroy]
   menu parent: 'Disc'
 
+  includes :event, :disc_version
+
+  filter :created_at
+  filter :updated_at
+
   index do
     id_column
     column :disc_version
@@ -22,7 +27,7 @@ ActiveAdmin.register DiscContent do
       f.has_many :disc_items, allow_destroy: true do |t|
         t.input :position
         t.input :title
-        t.input :song
+        t.input :song_id, as: :select, collection: Song.select(:name, :id).all.order(name: :asc).map { |x| [x.name, x.id] }
         t.input :is_arranged
       end
     end
