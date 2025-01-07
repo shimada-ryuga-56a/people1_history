@@ -1,5 +1,6 @@
 ActiveAdmin.register Tour do
-  remove_filter :events, :links
+  filter :created_at
+  filter :updated_at
 
   permit_params :tour_id, :id, :name, :name_kana_ruby,
                 events_attributes: [:id, :category, :name, :name_kana_ruby, :date, :place, :place_prefecture,
