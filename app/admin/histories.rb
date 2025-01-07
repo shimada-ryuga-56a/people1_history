@@ -1,5 +1,6 @@
 ActiveAdmin.register History do
-  remove_filter :image_attachment, :image_blob
+  includes :user
+  remove_filter :image_attachment, :image_blob, :user, :likes, :informations
   permit_params :title, :user_id, :date, :remark, :image, :remove_image
   form do |f|
     f.inputs do

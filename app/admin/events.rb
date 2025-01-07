@@ -29,7 +29,7 @@ ActiveAdmin.register Event do
 
     f.inputs do
       f.has_many :link_contents, allow_destroy: true do |t|
-        t.input :link_id, as: :select, collection: Link.all.order(remark: :asc).map { |x| [x.remark, x.id] }
+        t.input :link_id, as: :select, collection: Link.select(:id, :remark).all.order(remark: :asc).map { |x| [x.remark, x.id] }
       end
     end
 
