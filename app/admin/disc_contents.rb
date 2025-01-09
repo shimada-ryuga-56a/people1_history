@@ -27,7 +27,7 @@ ActiveAdmin.register DiscContent do
       f.has_many :disc_items, allow_destroy: true do |t|
         t.input :position
         t.input :title
-        t.input :song_id, as: :select, collection: Song.select(:name, :id).all.order(name: :asc).map { |x| [x.name, x.id] }
+        t.input :song_id, as: :select, collection: Song.select(:name, :id).order(name: :asc).map { |x| [x.name, x.id] }
         t.input :is_arranged
       end
     end
