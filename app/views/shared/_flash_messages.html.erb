@@ -1,11 +1,11 @@
 <%= turbo_frame_tag "flash_message" do %>
-  <div class="w-9/10 fixed top-20 left-0 right-0 truncate z-10 text-sm md:text-base">
+  <div class="w-9/10 fixed top-20 left-0 right-0 truncate z-10 text-sm md:text-base text-left">
     <% flash.each do |message_type, message| %>
       <div
         role="alert"
         data-controller="notification"
         data-notification-delay-value="2000"
-        class="transition transform duration-1000 hidden alert flex my-1
+        class="hidden alert flex justify-start my-1 transition transform duration-1000
         <% case message_type %>
           <% when "info", "notice" %>
             <%= " text-info-content bg-neutral" %>
