@@ -14,6 +14,8 @@
         <%= render partial: 'histories/disc', locals: { disc: history, previous_history: @histories[i - 1] } %>
       <% when History %>
         <%= render partial: 'histories/history', locals: { history: history, previous_history: @histories[i - 1] } %>
+      <% when TieUp %>
+        <%= render partial: 'histories/tie_up', locals: { tie_up: history, previous_history: @histories[i - 1] } %>
       <% end %>
     <% end %>
   </ul>
