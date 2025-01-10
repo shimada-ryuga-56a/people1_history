@@ -1,0 +1,9 @@
+<turbo-frame id="history_tie_up_<%= @tie_up.id %>">
+  <div class="flex items-center justify-center">
+    <% if @tie_up.image.attached? %>
+      <%= image_tag @tie_up.image.variant(resize_to_fill: [400, 400], format: :webp), class: "max-h-20" %>
+    <% else %>
+      <%= image_tag 'default_people_1.jpg', class: "max-h-20" %>
+    <% end %>
+  </div>
+</turbo-frame>

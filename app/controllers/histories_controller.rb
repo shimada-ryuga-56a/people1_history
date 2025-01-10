@@ -89,6 +89,10 @@ class HistoriesController < ApplicationController
     @history = History.includes(image_attachment: :blob).find(params[:id])
   end
 
+  def tie_up_image
+    @tie_up = TieUp.includes(image_attachment: :blob).find(params[:id])
+  end
+
   def show_page_image
     @history = History.includes(image_attachment: :blob).find(params[:id])
   end
