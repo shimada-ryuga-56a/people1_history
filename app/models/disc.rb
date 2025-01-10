@@ -2,6 +2,9 @@ class Disc < ApplicationRecord
   has_many :disc_versions, dependent: :destroy
   accepts_nested_attributes_for :disc_versions, allow_destroy: true
 
+  has_many :disc_dates, dependent: :destroy
+  accepts_nested_attributes_for :disc_dates, allow_destroy: true
+
   has_many :informations, as: :reportable, dependent: :destroy
   has_many :link_contents, as: :linkable, dependent: :destroy
   has_many :links, through: :link_contents
