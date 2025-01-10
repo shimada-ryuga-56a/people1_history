@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/visual_images/:id' => "events#image"
   get '/jacket/:id' => "songs#jacket"
   get '/version_jacket/:id' => "discs#jacket"
-  get '/history_discs/:id' => "histories#disc_image"
+  get '/history_disc_dates/:id' => "histories#disc_date_image"
   get '/history_events/:id' => "histories#event_image"
   get '/history_histories/:id' => "histories#history_image"
   get '/history_tie_ups/:id' => "histories#tie_up_image"
