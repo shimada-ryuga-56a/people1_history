@@ -1,14 +1,12 @@
 <% case previous_history %>
-  <% when History, Event %>
+  <% when History, Event, DiscDate %>
     <% previous_history_date = previous_history.date %>
   <% when TieUp %>
     <% previous_history_date = previous_history.announcement_date %>
 <% end %>
 
 <% case history %>
-  <% when History %>
-    <%= render partial: "timeline_mark", locals: { object_date: history.date, previous_history_date: previous_history_date } %>
-  <% when Event %>
+  <% when History, Event, DiscDate %>
     <%= render partial: "timeline_mark", locals: { object_date: history.date, previous_history_date: previous_history_date } %>
   <% when TieUp %>
     <%= render partial: "timeline_mark", locals: { object_date: history.announcement_date, previous_history_date: previous_history_date } %>
