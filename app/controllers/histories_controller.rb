@@ -5,6 +5,7 @@ class HistoriesController < ApplicationController
     add_to_histories(:events, Event, nil)
     add_to_histories(:histories, History, [:likes, :user])
     add_to_histories(:tie_ups, TieUp, :song)
+    add_to_histories(:disc_dates, DiscDate, :disc)
 
     return if @histories.empty?
 
@@ -100,11 +101,11 @@ class HistoriesController < ApplicationController
   def params_inspection
     valid_values = %w[0 1]
     params[:events] = '1' if params[:events].nil?
-    params[:discs] = '1' if params[:discs].nil?
+    params[:disc_dates] = '1' if params[:disc_dates].nil?
     params[:histories] = '1' if params[:histories].nil?
     params[:tie_ups] = '1' if params[:tie_ups].nil?
     params[:events] = valid_values.include?(params[:events]) ? params[:events] : '0'
-    params[:discs] = valid_values.include?(params[:discs]) ? params[:discs] : '0'
+    params[:disc_dates] = valid_values.include?(params[:disc_dates]) ? params[:disc_dates] : '0'
     params[:histories] = valid_values.include?(params[:histories]) ? params[:histories] : '0'
     params[:tie_ups] = valid_values.include?(params[:tie_ups]) ? params[:tie_ups] : '0'
   end
