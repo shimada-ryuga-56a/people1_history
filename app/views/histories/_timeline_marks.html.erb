@@ -1,3 +1,10 @@
+<% case previous_history %>
+  <% when History, Event %>
+    <% previous_history_date = previous_history.date %>
+  <% when TieUp %>
+    <% previous_history_date = previous_history.announcement_date %>
+<% end %>
+
 <% case history %>
   <% when History %>
     <%= render partial: "timeline_mark", locals: { object_date: history.date, previous_history_date: previous_history_date } %>
