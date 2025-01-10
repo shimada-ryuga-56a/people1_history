@@ -1,5 +1,5 @@
 ActiveAdmin.register Disc do
-  remove_filter :links
+  remove_filter :links, :disc_dates
   permit_params :title, :title_ruby, :announcement_date, :release_date, :production_type,
                 disc_versions_attributes: [:id, :version, :price, :_destroy],
                 link_contents_attributes: [:id, :link_id, :_destroy]
