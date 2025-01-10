@@ -12,7 +12,7 @@
       </div>
       <div class="divider divider-horizontal"></div>
       <div class="flex flex-col justify-center w-2/3 md:w-4/5 text-base md:text-lg lg:text-xl">
-        <p class="link">（仮）タイアップ決定‼️</p>
+        <p class=""><%= tie_up.collaboration_title %>と<%= "新曲" if tie_up.is_new_song? %><%= link_to tie_up.song.name, song_path(tie_up.song), class: "link mx-1" %>とのタイアップ発表</p>
       </div>
     </div>
   <hr />
