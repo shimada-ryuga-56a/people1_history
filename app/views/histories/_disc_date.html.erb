@@ -12,7 +12,18 @@
       </div>
       <div class="divider divider-horizontal"></div>
       <div class="flex flex-col justify-center w-2/3 md:w-4/5 text-base md:text-lg lg:text-xl">
-        <p class="">CDに関するアナウンスやで</p>
+        <div class="flex items-end mb-2">
+          <p class="text-xs md:text-sm lg:text-base mr-2"><%= disc_date.disc.production_type %></p>
+          <p class="link"><%= link_to disc_date.disc.title, disc_path(disc_date.disc)%></p>
+        </div>
+        <p>
+          <%= "解禁日をアナウンス" if disc_date.announcement? %>
+          <%= "解禁" if disc_date.release? %>
+          <%= "解禁の延期を告知" if disc_date.postponement? %>
+        </p>
+        <% if disc_date.remark.present? %>
+          <p class="my-2 text-xs md:text-sm lg:text-base"><%= disc_date.remark %></p>
+        <% end %>
       </div>
     </div>
   <hr />
