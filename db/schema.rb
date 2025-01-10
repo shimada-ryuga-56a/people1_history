@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_10_025654) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_10_052106) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -284,7 +284,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_10_025654) do
   create_table "tie_ups", force: :cascade do |t|
     t.string "collaboration_title", null: false
     t.integer "song_id", null: false
-    t.date "announce_date", null: false
+    t.date "announcement_date", null: false
     t.text "remark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
