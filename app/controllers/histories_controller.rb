@@ -2,12 +2,11 @@ class HistoriesController < ApplicationController
   def index
     params_inspection
     @histories = []
-    add_to_histories(:events, Event)
-    add_to_histories(:histories, History)
-    add_to_histories(:tie_ups, TieUp)
+    add_to_histories(:events, Event, nil)
+    add_to_histories(:histories, History, [:likes, :user])
+    add_to_histories(:tie_ups, TieUp, :song)
 
     return if @histories.empty?
-    p @histories
 
     @histories.flatten!.sort_by! do |history|
       if history.respond_to?('date')
@@ -110,11 +109,11 @@ class HistoriesController < ApplicationController
     params[:tie_ups] = valid_values.include?(params[:tie_ups]) ? params[:tie_ups] : '0'
   end
 
-  def add_to_histories(param_key, model)
+  def add_to_histories(param_key, model, joiner)
     return if params[param_key] == '0'
 
     return unless params[param_key] == '1'
 
-    @histories << model.all
+    @histories << model.eager_load(joiner).all
   end
 end
