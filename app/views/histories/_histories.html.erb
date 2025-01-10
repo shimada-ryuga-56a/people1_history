@@ -10,8 +10,8 @@
       <% case history %>
       <% when Event %>
         <%= render partial: 'histories/event', locals: { event: history, previous_history: @histories[i - 1] } %>
-      <% when Disc %>
-        <%= render partial: 'histories/disc', locals: { disc: history, previous_history: @histories[i - 1] } %>
+      <% when DiscDate %>
+        <%= render partial: 'histories/disc_date', locals: { disc_date: history, previous_history: @histories[i - 1] } %>
       <% when History %>
         <%= render partial: 'histories/history', locals: { history: history, previous_history: @histories[i - 1] } %>
       <% when TieUp %>
