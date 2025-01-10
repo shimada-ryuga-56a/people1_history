@@ -26,6 +26,7 @@ Layout/LineLength:
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
+    - "app/admin/*"
 
 # Assignment: 変数への代入
 # Branch: メソッド呼び出し

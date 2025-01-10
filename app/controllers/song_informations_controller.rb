@@ -9,7 +9,7 @@ class SongInformationsController < ApplicationController
         format.turbo_stream
       else
         @new_song_information = @info
-        @song_informations = SongInformation.where(song_id: params[:song_id]).order(created_at: 'DESC')
+        @song_informations = SongInformation.where(song_id: params[:song_id]).order(created_at: :desc)
         flash.now[:error] = I18n.t('flash.error.post')
         format.turbo_stream { render 'create_failure', status: :unprocessable_entity }
       end
