@@ -1,0 +1,28 @@
+<li>
+  <hr />
+    <%= render partial: "timeline_marks", locals: { history: disc_date, previous_history: previous_history} %>
+    <div class="timeline-end timeline-box flex bg-base-300 text-base-content my-3 w-full p-5">
+      <div class="my-2 w-1/3 md:w-1/5 items-center justify-center">
+        <turbo-frame id="history_disc_date_<%= disc_date.id %>" src="/history_disc_dates/<%= disc_date.id %>" loading="lazy">
+          <div class="my-3 flex">
+            <span class="loading loading-spinner loading-xs mr-1"></span>
+            <p class="text-center">画像読み込み中...</p>
+          </div>
+        </turbo-frame>
+      </div>
+      <div class="divider divider-horizontal"></div>
+      <div class="flex flex-col justify-center w-2/3 md:w-4/5 text-base md:text-lg lg:text-xl">
+        <p class="text-xs md:text-sm lg:text-base mb-1"><%= disc_date.disc.production_type %></p>
+        <p class="link mb-1"><%= link_to disc_date.disc.title, disc_path(disc_date.disc)%></p>
+        <p class="mb-1">
+          <%= "解禁日をアナウンス" if disc_date.announcement? %>
+          <%= "解禁" if disc_date.release? %>
+          <%= "解禁の延期を告知" if disc_date.postponement? %>
+        </p>
+        <% if disc_date.remark.present? %>
+          <p class="my-1 text-xs md:text-sm lg:text-base"><%= disc_date.remark %></p>
+        <% end %>
+      </div>
+    </div>
+  <hr />
+</li>

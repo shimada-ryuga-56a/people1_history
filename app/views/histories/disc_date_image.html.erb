@@ -1,6 +1,6 @@
-<turbo-frame id="history_disc_<%= @disc.id %>">
+<turbo-frame id="history_disc_date_<%= @disc_date.id %>">
   <div class="flex items-center justify-center">
-    <% if @disc_version.jacket.attached? %>
+    <% if @disc_version.present? && @disc_version.jacket.attached? %>
       <%= image_tag @disc_version.jacket.variant(resize_to_fill: [400, 400], format: :webp), class: "max-h-20" %>
     <% else %>
       <%= image_tag 'default_people_1.jpg', class: "max-h-20" %>
