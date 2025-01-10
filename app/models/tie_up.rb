@@ -2,7 +2,7 @@ class TieUp < ApplicationRecord
   belongs_to :song
 
   validates :collaboration_title, presence: true
-  validates :announce_date, presence: true
+  validates :announcement_date, presence: true
   validates :is_new_song, inclusion: [true, false]
 
   has_one_attached :image
