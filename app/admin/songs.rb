@@ -1,5 +1,5 @@
 ActiveAdmin.register Song do
-  remove_filter :song_informations, :disc_items, :link_contents, :jk_attachment, :jk_blob, :youtube_link, :links
+  remove_filter :song_informations, :disc_items, :link_contents, :jk_attachment, :jk_blob, :youtube_link, :links, :tie_ups
   permit_params :name, :name_kana_ruby, :name_hiragana_ruby, :announcement_date,
                 link_contents_attributes: [:id, :link_id, :_destroy]
 
