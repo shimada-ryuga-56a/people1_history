@@ -16,14 +16,14 @@ class EventsController < ApplicationController
     @link_contents = @event.link_contents
     @disc_contents = DiscContent.includes(:event, disc_version: :disc).where(event_id: params[:id])
     @info = EventInformation.new
-    @event_infomations = EventInformation.includes([:user,
-                                                    :likes_on_event_informations]).where(event_id: params[:id]).order(created_at: 'DESC')
+    @event_infomations = EventInformation.includes([:user, :likes_on_event_informations])
+                                         .where(event_id: params[:id]).order(created_at: :desc)
     return unless @event.setlist
 
     @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
     @infos = []
     @setlistitems.each do |item|
-      @infos << SetlistitemInformation.where(setlistitem_id: item.id).order(created_at: 'DESC')
+      @infos << SetlistitemInformation.where(setlistitem_id: item.id).order(created_at: :desc)
     end
     @infos.flatten!
     @setlistitem_new_info = SetlistitemInformation.new
