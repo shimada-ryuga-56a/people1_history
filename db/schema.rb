@@ -288,7 +288,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_10_025654) do
     t.text "remark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "is_new_song", null: false
+    t.boolean "is_new_song", default: true, null: false
   end
 
   create_table "tour_informations", force: :cascade do |t|
