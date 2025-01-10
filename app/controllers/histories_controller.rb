@@ -3,11 +3,6 @@ class HistoriesController < ApplicationController
     params_inspection
     @histories = []
     add_to_histories(:events, Event)
-    if params[:discs] == '1'
-      @histories << Disc.where.not(release_date: nil).select(:title, :release_date, :production_type, :id)
-      @histories << Disc.where.not(announcement_date: nil).select(:title, :announcement_date, :production_type,
-                                                                  :id)
-    end
     add_to_histories(:histories, History)
     add_to_histories(:tie_ups, TieUp)
 
