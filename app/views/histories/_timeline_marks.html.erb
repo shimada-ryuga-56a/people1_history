@@ -1,8 +1,10 @@
 <% case history %>
   <% when History %>
-    <%= render partial: "history_timeline_mark", locals: { history: history, previous_history: previous_history } %>
+    <%= render partial: "timeline_mark", locals: { object_date: history.date, previous_history: previous_history } %>
   <% when Disc %>
-    <%= render partial: "disc_timeline_mark", locals: { disc: history, previous_history: previous_history } %>
+    <%= render partial: "timeline_mark", locals: { object_date: history.release_date, previous_history: previous_history } %>
   <% when Event %>
-    <%= render partial: "event_timeline_mark", locals: { event: history, previous_history: previous_history } %>
+    <%= render partial: "timeline_mark", locals: { object_date: history.date, previous_history: previous_history } %>
+  <% when TieUp %>
+    <%= render partial: "timeline_mark", locals: { object_date: history.announcement_date, previous_history: previous_history } %>
 <% end %>

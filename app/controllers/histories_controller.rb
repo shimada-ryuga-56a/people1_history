@@ -2,13 +2,9 @@ class HistoriesController < ApplicationController
   def index
     params_inspection
     @histories = []
-    add_to_histories(:events, Event)
-    if params[:discs] == '1'
-      @histories << Disc.where.not(release_date: nil).select(:title, :release_date, :production_type, :id)
-      @histories << Disc.where.not(announcement_date: nil).select(:title, :announcement_date, :production_type,
-                                                                  :id)
-    end
-    add_to_histories(:histories, History)
+    add_to_histories(:events, Event, nil)
+    add_to_histories(:histories, History, [:likes, :user])
+    add_to_histories(:tie_ups, TieUp, :song)
 
     return if @histories.empty?
 
@@ -87,6 +83,10 @@ class HistoriesController < ApplicationController
     @history = History.includes(image_attachment: :blob).find(params[:id])
   end
 
+  def tie_up_image
+    @tie_up = TieUp.includes(image_attachment: :blob).find(params[:id])
+  end
+
   def show_page_image
     @history = History.includes(image_attachment: :blob).find(params[:id])
   end
@@ -102,16 +102,18 @@ class HistoriesController < ApplicationController
     params[:events] = '1' if params[:events].nil?
     params[:discs] = '1' if params[:discs].nil?
     params[:histories] = '1' if params[:histories].nil?
+    params[:tie_ups] = '1' if params[:tie_ups].nil?
     params[:events] = valid_values.include?(params[:events]) ? params[:events] : '0'
     params[:discs] = valid_values.include?(params[:discs]) ? params[:discs] : '0'
     params[:histories] = valid_values.include?(params[:histories]) ? params[:histories] : '0'
+    params[:tie_ups] = valid_values.include?(params[:tie_ups]) ? params[:tie_ups] : '0'
   end
 
-  def add_to_histories(param_key, model)
+  def add_to_histories(param_key, model, joiner)
     return if params[param_key] == '0'
 
     return unless params[param_key] == '1'
 
-    @histories << model.all
+    @histories << model.eager_load(joiner).all
   end
 end
