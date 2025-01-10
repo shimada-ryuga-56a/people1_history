@@ -9,8 +9,10 @@ class HistoriesController < ApplicationController
                                                                   :id)
     end
     add_to_histories(:histories, History)
+    add_to_histories(:tie_ups, TieUp)
 
     return if @histories.empty?
+    p @histories
 
     @histories.flatten!.sort_by! do |history|
       if history.respond_to?('date')
@@ -102,9 +104,11 @@ class HistoriesController < ApplicationController
     params[:events] = '1' if params[:events].nil?
     params[:discs] = '1' if params[:discs].nil?
     params[:histories] = '1' if params[:histories].nil?
+    params[:tie_ups] = '1' if params[:tie_ups].nil?
     params[:events] = valid_values.include?(params[:events]) ? params[:events] : '0'
     params[:discs] = valid_values.include?(params[:discs]) ? params[:discs] : '0'
     params[:histories] = valid_values.include?(params[:histories]) ? params[:histories] : '0'
+    params[:tie_ups] = valid_values.include?(params[:tie_ups]) ? params[:tie_ups] : '0'
   end
 
   def add_to_histories(param_key, model)
