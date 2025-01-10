@@ -17,7 +17,9 @@
             <%= history.title %><%= "（予定）" if history.date > Time.zone.today %>
           </p>
         <% end %>
-        <p class="my-2 text-xs md:text-sm lg:text-base"><%= history.remark.truncate(30) %></p>
+        <% if history.remark.present? %>
+          <p class="my-2 text-xs md:text-sm lg:text-base"><%= history.remark.truncate(30) %></p>
+        <% end %>
         <div class="flex mt-3">
           <%= render partial: "likes/likes", locals: { history: history, likes: history.likes, like_url: history_likes_path(history_id: history.id) } %>
           <% if history.user == current_user %>
