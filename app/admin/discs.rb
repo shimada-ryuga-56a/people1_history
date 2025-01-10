@@ -1,8 +1,9 @@
 ActiveAdmin.register Disc do
-  remove_filter :links
+  remove_filter :links, :disc_dates
   permit_params :title, :title_ruby, :announcement_date, :release_date, :production_type,
                 disc_versions_attributes: [:id, :version, :price, :_destroy],
-                link_contents_attributes: [:id, :link_id, :_destroy]
+                link_contents_attributes: [:id, :link_id, :_destroy],
+                disc_dates_attributes: [:id, :date_type, :date, :remark, :_destroy]
   menu parent: 'Disc'
 
   index do
@@ -27,6 +28,14 @@ ActiveAdmin.register Disc do
       f.has_many :disc_versions, allow_destroy: true do |t|
         t.input :version
         t.input :price
+      end
+    end
+
+    f.inputs do
+      f.has_many :disc_dates, allow_destroy: true do |t|
+        t.input :date_type
+        t.input :date
+        t.input :remark
       end
     end
 

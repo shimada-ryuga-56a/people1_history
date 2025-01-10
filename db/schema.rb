@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_10_052106) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_10_080942) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -76,6 +76,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_10_052106) do
     t.integer "event_id"
   end
 
+  create_table "disc_dates", force: :cascade do |t|
+    t.date "date", null: false
+    t.integer "disc_id", null: false
+    t.integer "date_type", null: false
+    t.text "remark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "disc_items", force: :cascade do |t|
     t.integer "disc_content_id", null: false
     t.integer "position", null: false
@@ -98,7 +107,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_10_052106) do
     t.string "title", null: false
     t.string "title_ruby", null: false
     t.date "announcement_date"
-    t.date "release_date", null: false
+    t.date "release_date"
     t.integer "production_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
