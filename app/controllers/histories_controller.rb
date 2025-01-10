@@ -71,8 +71,9 @@ class HistoriesController < ApplicationController
     redirect_to histories_path
   end
 
-  def disc_image
-    @disc = Disc.find(params[:id])
+  def disc_date_image
+    @disc_date = DiscDate.eager_load(:disc).find(params[:id])
+    @disc = @disc_date.disc
     @disc_version = DiscVersion.includes(jacket_attachment: :blob).where(disc_id: @disc.id).first
   end
 
