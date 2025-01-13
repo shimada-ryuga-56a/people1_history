@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_10_080942) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_13_031939) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -215,6 +215,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_10_080942) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["linkable_type", "linkable_id"], name: "index_link_contents_on_linkable"
+  end
+
+  create_table "link_dates", force: :cascade do |t|
+    t.date "date", null: false
+    t.integer "link_id", null: false
+    t.integer "date_type", null: false
+    t.text "remark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "links", force: :cascade do |t|
