@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/history_histories/:id' => "histories#history_image"
   get '/history_tie_ups/:id' => "histories#tie_up_image"
   get '/history_link_dates/:id' => "histories#link_date_image"
+  get '/history_link_views/:id' => "histories#link_view_image"
   get '/histories/images/:id' => "histories#show_page_image"
 
   # （ここから）Twitter認証以外を認めないようにルーティングを設定しようとした痕跡

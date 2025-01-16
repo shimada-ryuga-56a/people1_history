@@ -1,12 +1,13 @@
 class HistoriesController < ApplicationController
   def index
-    params_inspection
+    # params_inspection
     @histories = []
     add_to_histories(:events, Event, nil)
     add_to_histories(:histories, History, [:likes, :user])
     add_to_histories(:tie_ups, TieUp, :song)
     add_to_histories(:disc_dates, DiscDate, :disc)
     add_to_histories(:link_dates, LinkDate, :link)
+    add_to_histories(:link_views, LinkView, :link)
 
     return if @histories.empty?
 
@@ -98,6 +99,10 @@ class HistoriesController < ApplicationController
     @link_date = LinkDate.find(params[:id])
   end
 
+  def link_view_image
+    @link_view = LinkView.find(params[:id])
+  end
+
   private
 
   def history_params
@@ -111,17 +116,19 @@ class HistoriesController < ApplicationController
     params[:histories] = '1' if params[:histories].nil?
     params[:tie_ups] = '1' if params[:tie_ups].nil?
     params[:link_dates] = '1' if params[:link_dates].nil?
+    params[:link_views] = '1' if params[:link_views].nil?
     params[:events] = valid_values.include?(params[:events]) ? params[:events] : '0'
     params[:disc_dates] = valid_values.include?(params[:disc_dates]) ? params[:disc_dates] : '0'
     params[:histories] = valid_values.include?(params[:histories]) ? params[:histories] : '0'
     params[:tie_ups] = valid_values.include?(params[:tie_ups]) ? params[:tie_ups] : '0'
     params[:link_dates] = valid_values.include?(params[:link_dates]) ? params[:link_dates] : '0'
+    params[:link_views] = valid_values.include?(params[:link_views]) ? params[:link_views] : '0'
   end
 
   def add_to_histories(param_key, model, joiner)
-    return if params[param_key] == '0'
+    # return if params[param_key] == '0'
 
-    return unless params[param_key] == '1'
+    # return unless params[param_key] == '1'
 
     @histories << model.eager_load(joiner).all
   end
