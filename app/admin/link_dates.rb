@@ -1,18 +1,3 @@
 ActiveAdmin.register LinkDate do
-
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :date, :link_id, :date_type, :remark
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:date, :link_id, :date_type, :remark]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
+  menu false
 end
