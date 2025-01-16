@@ -99,6 +99,10 @@ class HistoriesController < ApplicationController
     @link_date = LinkDate.find(params[:id])
   end
 
+  def link_view_image
+    @link_view = LinkView.find(params[:id])
+  end
+
   private
 
   def history_params
