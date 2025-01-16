@@ -18,6 +18,8 @@
         <%= render partial: 'histories/tie_up', locals: { tie_up: history, previous_history: @histories[i - 1] } %>
       <% when LinkDate %>
         <%= render partial: 'histories/link_date', locals: { link_date: history, previous_history: @histories[i - 1] } %>
+      <% when LinkView %>
+        <%= render partial: 'histories/link_view', locals: { link_view: history, previous_history: @histories[i - 1] } %>
       <% end %>
     <% end %>
   </ul>
