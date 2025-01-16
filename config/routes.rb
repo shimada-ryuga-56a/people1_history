@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root "static_pages#top"
   get "contact" => "static_pages#contact"
   get "in_progress" => "static_pages#in_progress"
+  get "privacy_policy" => "static_pages#privacy_policy"
+  get "terms_of_service" => "static_pages#terms_of_service"
   get '/visual_images/:id' => "events#image"
   get '/jacket/:id' => "songs#jacket"
   get '/version_jacket/:id' => "discs#jacket"
