@@ -1,6 +1,8 @@
 ActiveAdmin.register Member do
   remove_filter :image_attachment, :image_blob, :instruments
-  permit_params :name, :name_ruby, :role, :x_link, :instagram, :thread, :birthday_year, :birthday_month, :birthday_day, :blood_type, :mbti, :birth_place, instruments_attributes: [:id, :name, :_destroy, gears_attributes: [:id, :name, :remark, :_destroy]]
+  permit_params :name, :name_ruby, :role, :x_link, :instagram, :thread, :birthday_year, :birthday_month, :birthday_day,
+                :blood_type, :mbti, :birth_place, instruments_attributes: [:id, :name, :_destroy,
+                                                                           { gears_attributes: [:id, :name, :remark, :_destroy] }]
 
   index do
     selectable_column

@@ -4,8 +4,8 @@ ActiveAdmin.register Link do
   filter :remark
 
   permit_params :platform, :url_link, :remark, :title,
-  link_dates_attributes: [:id, :link_id, :date, :date_type, :remark, :_destroy],
-  link_views_attributes: [:id, :link_id, :date, :record_type, :_destroy]
+                link_dates_attributes: [:id, :link_id, :date, :date_type, :remark, :_destroy],
+                link_views_attributes: [:id, :link_id, :date, :record_type, :_destroy]
 
   form do |f|
     f.inputs do
