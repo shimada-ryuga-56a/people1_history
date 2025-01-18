@@ -8,6 +8,14 @@
     </turbo-frame>
   </figure>
   <div class="card-body p-4">
-    <h2 class="card-title mb-3 link"><%= link_to member.name, member_path(member) %></h2>
+    <div class="flex items-end">
+      <h2 class="card-title link"><%= link_to member.name, member_path(member) %></h2>
+      <p class="ml-1 text-ms">(<%= member.role %>)</p>
+    </div>
+    <div>
+      <% member.instruments.each do |instrument| %>
+        <div class="badge badge-primary"><%= instrument.name %></div>
+      <% end %>
+    </div>
   </div>
 </div>
