@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_17_131425) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_18_064425) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -270,7 +270,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_17_131425) do
     t.integer "birthday_day"
     t.integer "blood_type"
     t.integer "mbti"
-    t.text "birth_place"
+    t.integer "birth_place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
