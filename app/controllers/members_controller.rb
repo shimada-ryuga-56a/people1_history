@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   def index
-    @members = Member.all.order(:id)
+    @members = Member.eager_load(:instruments).order(:id)
   end
 
   def show
