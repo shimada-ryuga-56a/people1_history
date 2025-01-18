@@ -28,4 +28,13 @@ class Member < ApplicationRecord
     %w[birth_place birthday_day birthday_month birthday_year blood_type created_at id instagram mbti
        name name_ruby role thread updated_at x_link]
   end
+
+  def remove_image
+    @remove_image || false
+  end
+
+  def remove_image=(value)
+    attribute_will_change!('remove_image') if remove_image != value
+    @remove_image = value
+  end
 end
