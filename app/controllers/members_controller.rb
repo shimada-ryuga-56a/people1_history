@@ -4,6 +4,7 @@ class MembersController < ApplicationController
   end
 
   def show
+    @member = Member.eager_load(instruments: :gears).find(params[:id])
   end
 
   def image

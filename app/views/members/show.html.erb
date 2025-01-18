@@ -1,0 +1,33 @@
+<div class="m-5">
+  <h1 class="flex justify-center text-3xl mb-5">
+    <%= title "メンバー詳細" %>
+  </h1>
+
+  <div class="divider mb-3"></div>
+
+  <div class="mb-8 leading-8 flex justify-center items-center">
+    <h1 class="text-center text-xl md:text-2xl font-semibold mb-2">
+      <%= title @member.name %>
+    </h1>
+    <% if @member.image.attached? %>
+      <div class="ml-5">
+        <%= image_tag @member.image.variant(resize_to_fit: [100, 100])%>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <div class="divider mb-5">
+      <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">プロフィール</h2>
+    </div>
+    <p>
+      メンバー名：<%= @member.name %><br>
+      メンバー名（カナ）：<%= @member.name_ruby %><br>
+      生年月日：
+      <% if @member.birthday_year.present? %>
+        <%= @member.birthday_year %>年
+      <% end %>
+      <%= @member.birthday_month %>月<%= @member.birthday_day %>日<br>
+    </p>
+  </div>
+</div>
