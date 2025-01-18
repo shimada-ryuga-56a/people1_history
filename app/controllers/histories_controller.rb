@@ -125,7 +125,7 @@ class HistoriesController < ApplicationController
     params[:link_views] = valid_values.include?(params[:link_views]) ? params[:link_views] : '0'
   end
 
-  def add_to_histories(param_key, model, joiner)
+  def add_to_histories(_param_key, model, joiner)
     # return if params[param_key] == '0'
 
     # return unless params[param_key] == '1'

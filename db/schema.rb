@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_16_040518) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_18_064425) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -145,6 +145,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_16_040518) do
     t.index ["tour_id"], name: "index_events_on_tour_id"
   end
 
+  create_table "gears", force: :cascade do |t|
+    t.integer "instrument_id", null: false
+    t.string "name", null: false
+    t.text "remark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "histories", force: :cascade do |t|
     t.text "title", null: false
     t.integer "user_id", null: false
@@ -162,6 +170,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_16_040518) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reportable_type", "reportable_id"], name: "index_information_on_reportable"
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.integer "member_id", null: false
+    t.integer "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
@@ -241,6 +256,23 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_16_040518) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title", default: "title"
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "name_ruby", null: false
+    t.text "x_link"
+    t.text "instagram"
+    t.text "thread"
+    t.integer "role", null: false
+    t.integer "birthday_year"
+    t.integer "birthday_month"
+    t.integer "birthday_day"
+    t.integer "blood_type"
+    t.integer "mbti"
+    t.integer "birth_place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notices", force: :cascade do |t|
