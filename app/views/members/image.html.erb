@@ -1,0 +1,7 @@
+<turbo-frame id="member_image_<%= @member.id %>">
+  <% if @member.image.attached? %>
+    <%= image_tag @member.image.variant(resize_to_fill: [400, 200], format: :webp) %>
+  <% else %>
+    <%= image_tag 'default_people_1.jpg', class: "h-40" %>
+  <% end %>
+</turbo-frame>
