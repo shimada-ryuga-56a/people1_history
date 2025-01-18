@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   end
 
   def show
-    @member = Member.eager_load(instruments: :gears).find(params[:id])
+    @member = Member.eager_load([instruments: [gears: :image_attachment]], :image_attachment).find(params[:id])
   end
 
   def image
