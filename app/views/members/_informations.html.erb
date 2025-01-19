@@ -1,3 +1,5 @@
-<% infos.each do |info| %>
-  <%= render partial: "members/information", locals: { info: info } %>
-<% end %>
+<div class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5">
+  <% infos.each do |info| %>
+    <%= render partial: "members/information", locals: { info: info } %>
+  <% end %>
+</div>
