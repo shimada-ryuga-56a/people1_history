@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/history_link_dates/:id' => "histories#link_date_image"
   get '/history_link_views/:id' => "histories#link_view_image"
   get '/histories/images/:id' => "histories#show_page_image"
+  get 'member/:id/image' => "members#image"
+  get 'gear/:id/image' => "members#gear_image"
 
   # （ここから）Twitter認証以外を認めないようにルーティングを設定しようとした痕跡
   # devise_for :users, skip: :all
@@ -39,7 +41,7 @@ Rails.application.routes.draw do
   resources :notices, only: [:index]
   delete "notices" => "notices#destroy"
 
-  resources :members, only: [:index]
+  resources :members, only: [:index, :show]
   resources :histories, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
     post "image/destroy" => "images#history_image_destroy"
     resources :informations, only: [:create], module: :histories

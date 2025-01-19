@@ -1,0 +1,9 @@
+<turbo-frame id="gear_image_<%= @gear.id %>">
+  <% if @gear.image.attached? %>
+    <%= image_tag @gear.image.variant(resize_to_fill: [200, 200], format: :webp), class: "w-full" %>
+  <% else %>
+    <div class="skeleton w-full h-full flex items-center justify-center">
+      <p class="text-sm text-center">画像は<br>ちょい待ち</p>
+    </div>
+  <% end %>
+</turbo-frame>
