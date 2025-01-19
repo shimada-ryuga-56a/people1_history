@@ -88,7 +88,7 @@
               <div class="">
                 ・<%= gear.name %>
                 <div class="my-3 h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64">
-                  <turbo-frame id="gear_image_<%= gear.id %>">
+                  <turbo-frame id="gear_image_<%= gear.id %>" src="/gear/<%= gear.id %>/image" loading="lazy">
                     <div class="skeleton w-full h-full"></div>
                   </turbo-frame>
                 </div>
