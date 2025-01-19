@@ -10,4 +10,8 @@ class MembersController < ApplicationController
   def image
     @member = Member.find(params[:id])
   end
+
+  def gear_image
+    @gear = Gear.find(params[:id])
+  end
 end
