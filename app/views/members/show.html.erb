@@ -11,7 +11,7 @@
     </h1>
     <div class="ml-5 h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64">
       <turbo-frame id="member_image_<%= @member.id %>" src="/member/<%= @member.id %>/image" loading="lazy">
-        <div class="skeleton"></div>
+        <div class="skeleton h-full w-full"></div>
       </turbo-frame>
     </div>
   </div>
@@ -80,18 +80,18 @@
       <div class="md:grid md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-5">
       <% @member.instruments.each do |instrument| %>
         <div>
-          <li>
+          <li class="text-lg md:text-xl lg:text-2xl md:mb-3">
             <%= instrument.name %>
           </li>
           <div class="ml-5">
             <% instrument.gears.each do |gear| %>
               <div class="">
                 ・<%= gear.name %>
-                <% if gear.image.attached? %>
-                  <div class="ml-5 my-2">
-                    <%= image_tag(gear.image.variant(resize_to_fill: [200, 200])) %>
-                  </div>
-                <% end %>
+                <div class="my-3 h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64">
+                  <turbo-frame id="gear_image_<%= gear.id %>">
+                    <div class="skeleton w-full h-full"></div>
+                  </turbo-frame>
+                </div>
                 <% if gear.remark.present? %>
                   <p class="ml-5">
                   （<%= gear.remark %>）
