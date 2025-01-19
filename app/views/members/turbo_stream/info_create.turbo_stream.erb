@@ -1,0 +1,11 @@
+<%= turbo_stream.replace "information_form" do %>
+  <%= render partial: "members/information_form", locals: { member: @member, info: @new_info } %>
+<% end %>
+
+<%= turbo_stream.replace "informations" do %>
+  <%= render partial: "members/informations", locals: { infos: @member_informations } %>
+<% end %>
+
+<%= turbo_stream.replace "flash_message" do %>
+  <%= render partial: "shared/flash_messages" %>
+<% end %>
