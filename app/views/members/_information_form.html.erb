@@ -1,4 +1,15 @@
 <%= form_with model: info, url: member_member_informations_path(member_id: member.id), local: true do |f| %>
-  <%= f.rich_text_area :content, class: "h-full w-full" %>
-  <%= f.submit "送信", class: "btn btn-primary" %>
+  <div class="card shadow-2xl mb-5">
+    <div class="card-body">
+      <div class="flex">
+        <h2 class="card-title text-base	md:text-xl mb-3">自由に書き込んでください👍</h2>
+        <%#= render partial: "modal" %>
+      </div>
+      <%= render 'shared/error_messages', model: f.object %>
+      <%= f.rich_text_area :content, class: "h-full w-full" %>
+      <div class="card-actions justify-end">
+        <%= f.submit '投稿', class: "btn btn-primary mt-3" %>
+      </div>
+    </div>
+  </div>
 <% end %>
