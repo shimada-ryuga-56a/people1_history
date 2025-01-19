@@ -9,63 +9,67 @@
     <h1 class="text-center text-xl md:text-2xl font-semibold mb-2">
       <%= @member.name %>
     </h1>
-    <% if @member.image.attached? %>
-      <div class="ml-5">
-        <%= image_tag @member.image.variant(resize_to_fit: [100, 100])%>
+    <div class="ml-5 h-32 w-32 md:h-48 md:w-48 lg:h-64 lg:w-64">
+      <turbo-frame id="member_image_<%= @member.id %>" src="/member/<%= @member.id %>/image" loading="lazy">
+        <div class="skeleton"></div>
+      </turbo-frame>
+    </div>
+  </div>
+
+  <div class="lg:grid lg:grid-cols-3 lg:gap-5">
+    <div class="lg:col-span-2">
+      <div class="divider mb-5">
+        <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">プロフィール</h2>
       </div>
-    <% end %>
-  </div>
-
-  <div>
-    <div class="divider mb-5">
-      <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">プロフィール</h2>
+      <div class="md:mx-5 md:text-lg lg:mx-10 lg:mb-10">
+        <p>
+          ・ メンバー名：<%= @member.name %>（<%= @member.name_ruby %>）
+        </p>
+        <p>
+          ・ 生年月日：
+          <% if @member.birthday_year.present? %>
+            <%= @member.birthday_year %>年
+          <% end %>
+          <% if @member.birthday_month.present? && @member.birthday_day.present? %>
+            <%= @member.birthday_month %>月<%= @member.birthday_day %>日<br>
+          <% else %>
+            生年月日不明（ご存じの方いたらご連絡ください。）
+          <% end %>
+        </p>
+        <p>
+          ・ 出身都道府県：<%= @member.birth_place.present? ? @member.birth_place : "不明（ご存じの方いたらご連絡ください。）" %>
+        </p>
+        <p>
+          ・ 血液型：<%= @member.blood_type.present? ? @member.blood_type.to_s + "型" : "不明（ご存じの方いたらご連絡ください。）" %>
+        </p>
+        <p>
+          ・ MBTI：<%= @member.mbti.present? ? @member.mbti : "不明（ご存じの方いたらご連絡ください。）" %>
+        </p>
+      </div>
     </div>
-    <div class="md:mx-5 md:text-lg lg:mx-10 lg:mb-10">
-      <p>
-        ・ メンバー名：<%= @member.name %>（<%= @member.name_ruby %>）
-      </p>
-      <p>
-        ・ 生年月日：
-        <% if @member.birthday_year.present? %>
-          <%= @member.birthday_year %>年
-        <% end %>
-        <% if @member.birthday_month.present? && @member.birthday_day.present? %>
-          <%= @member.birthday_month %>月<%= @member.birthday_day %>日<br>
-        <% else %>
-          生年月日不明（ご存じの方いたらご連絡ください。）
-        <% end %>
-      </p>
-      <p>
-        ・ 出身都道府県：<%= @member.birth_place.present? ? @member.birth_place : "不明（ご存じの方いたらご連絡ください。）" %>
-      </p>
-      <p>
-        ・ 血液型：<%= @member.blood_type.present? ? @member.blood_type.to_s + "型" : "不明（ご存じの方いたらご連絡ください。）" %>
-      </p>
-      <p>
-        ・ MBTI：<%= @member.mbti.present? ? @member.mbti : "不明（ご存じの方いたらご連絡ください。）" %>
-      </p>
-    </div>
-  </div>
 
-  <div class="divider mb-5 lg:mb-10">
-    <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">各種SNS</h2>
-  </div>
-  <div class="flex items-center justify-center mb-5 lg:mb-10">
-    <% if @member.x_link.present? %>
-      <%= link_to @member.x_link, target: "_blank" do %>
-        <i class="fa-brands fa-square-x-twitter fa-3x mx-3"></i>
-      <% end %>
-    <% end %>
-    <% if @member.instagram.present? %>
-      <%= link_to @member.instagram, target: "_blank" do %>
-        <i class="fa-brands fa-square-instagram fa-3x mx-3"></i>
-      <% end %>
-    <% end %>
-    <% if @member.thread.present? %>
-      <%= link_to @member.thread, target: "_blank" do %>
-        <i class="fa-brands fa-square-threads fa-3x mx-3", style="--fa-primary-opacity: 0.20"></i>
-      <% end %>
-    <% end %>
+    <div>
+      <div class="divider mb-5 lg:mb-10">
+        <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">各種SNS</h2>
+      </div>
+      <div class="flex items-center justify-center mb-5 lg:mb-10">
+        <% if @member.x_link.present? %>
+          <%= link_to @member.x_link, target: "_blank" do %>
+            <i class="fa-brands fa-square-x-twitter fa-3x mx-3"></i>
+          <% end %>
+        <% end %>
+        <% if @member.instagram.present? %>
+          <%= link_to @member.instagram, target: "_blank" do %>
+            <i class="fa-brands fa-square-instagram fa-3x mx-3"></i>
+          <% end %>
+        <% end %>
+        <% if @member.thread.present? %>
+          <%= link_to @member.thread, target: "_blank" do %>
+            <i class="fa-brands fa-square-threads fa-3x mx-3", style="--fa-primary-opacity: 0.20"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="divider mb-5">
@@ -73,23 +77,27 @@
   </div>
   <div class="md:mx-5 md:text-lg lg:mx-10 lg:mb-10">
     <ul class="list-disc list-inside">
-    <% @member.instruments.each do |instrument| %>
-      <li>
-        <%= instrument.name %>
-      </li>
-      <div class="ml-5">
-        <% instrument.gears.each do |gear| %>
-          <div class="">
-            ・<%= gear.name %>
-            <% if gear.image.attached? %>
-              <div class="ml-5 my-2">
-                <%= image_tag(gear.image.variant(resize_to_fill: [200, 200])) %>
+      <div class="md:grid md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-5">
+      <% @member.instruments.each do |instrument| %>
+        <div>
+          <li>
+            <%= instrument.name %>
+          </li>
+          <div class="ml-5">
+            <% instrument.gears.each do |gear| %>
+              <div class="">
+                ・<%= gear.name %>
+                <% if gear.image.attached? %>
+                  <div class="ml-5 my-2">
+                    <%= image_tag(gear.image.variant(resize_to_fill: [200, 200])) %>
+                  </div>
+                <% end %>
               </div>
             <% end %>
           </div>
-        <% end %>
+        </div>
+      <% end %>
       </div>
-    <% end %>
     </ul>
   </div>
 </div>
