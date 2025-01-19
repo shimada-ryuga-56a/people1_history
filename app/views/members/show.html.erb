@@ -52,7 +52,7 @@
       <div class="divider mb-5 lg:mb-10">
         <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">各種SNS</h2>
       </div>
-      <div class="flex items-center justify-center mb-5 lg:mb-10">
+      <div class="flex items-center justify-center mb-5 md:mb-10">
         <% if @member.x_link.present? %>
           <%= link_to @member.x_link, target: "_blank" do %>
             <i class="fa-brands fa-square-x-twitter fa-3x mx-3"></i>
@@ -91,6 +91,11 @@
                   <div class="ml-5 my-2">
                     <%= image_tag(gear.image.variant(resize_to_fill: [200, 200])) %>
                   </div>
+                <% end %>
+                <% if gear.remark.present? %>
+                  <p class="ml-5">
+                  （<%= gear.remark %>）
+                  </p>
                 <% end %>
               </div>
             <% end %>
