@@ -105,4 +105,9 @@
       </div>
     </ul>
   </div>
+
+  <div class="divider mb-5">
+    <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">メンバー情報</h2>
+  </div>
+  <%= render partial: "members/information_form", locals: { member: @member, info: @new_information } %>
 </div>

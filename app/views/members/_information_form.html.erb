@@ -1,0 +1,4 @@
+<%= form_with model: info, url: member_member_informations_path(member_id: member.id), local: true do |f| %>
+  <%= f.rich_text_area :content, class: "h-full w-full" %>
+  <%= f.submit "送信", class: "btn btn-primary" %>
+<% end %>
