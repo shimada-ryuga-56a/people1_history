@@ -26,9 +26,13 @@
         計<%= @events.length %>回、PEOPLE 1のライブに行きました！
       </p>
     </div>
-    <% @events.each do |event| %>
-      <%= render partial: 'events/event', locals: {event: event} %>
-    <% end %>
+    <div class="flex justify-center">
+      <% if @events.present? %>
+        <div class="md:grid md:grid-cols-2 lg:grid-cols-4 md:grid-3 gap-5">
+          <%= render partial: 'events/event', collection: @events %>
+        </div>
+      <% end %>
+    </div>
   <% else %>
     <div class="mb-5 flex items-center justify-center">
       <p>
