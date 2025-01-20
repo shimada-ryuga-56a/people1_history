@@ -41,7 +41,10 @@ Rails.application.routes.draw do
   resources :notices, only: [:index]
   delete "notices" => "notices#destroy"
 
-  resources :members, only: [:index, :show]
+  resources :members, only: [:index, :show] do
+    resources :member_informations, only: [:create], shallow: true
+  end
+
   resources :histories, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
     post "image/destroy" => "images#history_image_destroy"
     resources :informations, only: [:create], module: :histories

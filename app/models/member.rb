@@ -8,6 +8,8 @@ class Member < ApplicationRecord
   has_many :instruments, dependent: :destroy
   accepts_nested_attributes_for :instruments, allow_destroy: true
 
+  has_many :member_informations, dependent: :destroy
+
   enum :role, { member: 0, support: 1, staff: 2 }
   enum :blood_type, { A: 0, B: 1, O: 2, AB: 3 }
   enum :mbti,

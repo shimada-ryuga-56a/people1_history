@@ -6,6 +6,8 @@ class MembersController < ApplicationController
   def show
     @member = Member.eager_load([instruments: [gears: :image_attachment]], :image_attachment).find(params[:id])
     sort_instruments(@member.instruments)
+    @new_information = MemberInformation.new
+    @informations = @member.member_informations.includes(:user, :rich_text_content).order(created_at: :desc)
   end
 
   def image
