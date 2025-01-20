@@ -1,9 +1,7 @@
 <turbo-frame id="visual_image_<%= @event.id %>">
-  <div class="h-40 w-full">
-    <% if @event.visual_image.attached? %>
-      <%= image_tag @event.visual_image.variant(resize_to_fill: [400, 400], format: :webp), class: "object-cover " %>
-    <% else %>
-      <%= image_tag 'default_people_1.jpg', class: "object-cover mb-10" %>
-    <% end %>
-  </div>
+  <% if @event.visual_image.attached? %>
+    <%= image_tag @event.visual_image.variant(resize_to_fill: [500, 500], format: :webp), class: "object-cover " %>
+  <% else %>
+    <%= image_tag 'default_people_1.jpg', class: "object-cover mb-10" %>
+  <% end %>
 </turbo-frame>
