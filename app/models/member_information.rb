@@ -6,4 +6,8 @@ class MemberInformation < ApplicationRecord
 
   has_rich_text :content
   validates :content, presence: true
+
+  def liked?(user)
+    likes_on_member_infos.where(user_id: user.id).exists?
+  end
 end
