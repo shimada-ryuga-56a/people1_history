@@ -20,6 +20,7 @@ class User < ApplicationRecord
   has_many :histories, dependent: :destroy
   has_many :likes, as: :likable, dependent: :destroy
   has_many :member_informations, dependent: :destroy
+  has_many :likes_on_member_infos, dependent: :destroy
 
   # Twitter認証ログイン用
   # ユーザーの情報があれば探し、無ければ作成する
