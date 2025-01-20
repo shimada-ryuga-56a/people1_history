@@ -1,6 +1,6 @@
 <turbo-frame id="likes_<%= info.id %>">
   <%= link_to member_information_likes_on_member_infos_path(member_information_id: info.id), data: { "turbo-method": :post },  class: "flex items-center" do %>
     <i class="fa-regular fa-heart"></i>
-    <span class="ml-1 text-xs md:text-base"><%= info.likes_on_member_infos.count %></span>
+    <span class="ml-1 text-xs md:text-base"><%= info.likes_on_member_infos.length %></span>
   <% end %>
 </turbo-frame>
