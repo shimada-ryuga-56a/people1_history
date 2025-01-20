@@ -1,0 +1,3 @@
+<%= turbo_stream.update "likes_#{@info.id}" do %>
+  <%= render partial: "members/likes_on_member_info/unlike", locals: { info: @info } %>
+<% end %>

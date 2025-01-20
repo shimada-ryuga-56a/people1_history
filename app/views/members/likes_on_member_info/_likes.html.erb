@@ -1,0 +1,5 @@
+<% if info.liked?(current_user) %>
+  <%= render partial: "members/likes_on_member_info/unlike", locals: { info: info } %>
+<% else %>
+  <%= render partial: "members/likes_on_member_info/like", locals: { info: info } %>
+<% end %>

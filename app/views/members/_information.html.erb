@@ -9,6 +9,7 @@
     </div>
     <h2 class="card-title text-base md:text-lg"><%= info.content %></h2>
     <div>
+      <%= render partial: 'members/likes_on_member_info/likes', locals: { info: info } %>
     </div>
   </div>
 </div>

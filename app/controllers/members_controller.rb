@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   end
 
   def show
-    @member = Member.eager_load([instruments: [gears: :image_attachment]], :image_attachment).find(params[:id])
+    @member = Member.eager_load([instruments: [gears: :image_attachment], member_informations: :likes_on_member_infos], :image_attachment).find(params[:id])
     sort_instruments(@member.instruments)
     @new_information = MemberInformation.new
     @informations = @member.member_informations.includes(:user, :rich_text_content).order(created_at: :desc)
