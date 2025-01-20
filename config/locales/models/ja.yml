@@ -13,6 +13,8 @@ ja:
         remark: 説明
         date: 日付
         image: 画像
+      member_information:
+        content: コメント
       setlistitem_information:
         body: コメント
       event_information:
