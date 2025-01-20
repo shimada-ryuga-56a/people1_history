@@ -93,6 +93,10 @@ Rails.application.routes.draw do
     resource :likes_on_setlistitem_informations, only: [:create, :destroy], shallow: true
   end
 
+  resources :member_informations, only: [], shallow: true do
+    resource :likes_on_member_infos, only: [:create, :destroy], shallow: true
+  end
+
   resource :mypage, only: [:show]
 
   # セットリストのオートコンプリートのためのルーティング
