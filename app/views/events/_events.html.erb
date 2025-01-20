@@ -1,6 +1,6 @@
 <div class="flex justify-center">
   <% if @events.present? %>
-    <div class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:grid-3 gap-5 w-full">
+    <div class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:grid-3 gap-5 md:gap-8 w-full">
       <%= render partial: 'events/event', collection: @events %>
     </div>
   <% else %>
