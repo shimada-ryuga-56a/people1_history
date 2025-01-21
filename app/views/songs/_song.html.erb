@@ -1,16 +1,15 @@
-<div class="card w-full shadow-2xl mb-7 bg-base-300 text-base-content">
+<div class="card shadow-2xl mb-7 bg-base-300 text-base-content w-full">
   <figure>
-    <turbo-frame id="jacket_<%= song.id %>" src="/jacket/<%= song.id %>" loading="lazy">
-      <div class="my-3 flex">
-        <span class="loading loading-spinner loading-xs mr-1"></span>
-        <p class="text-center">画像読み込み中...</p>
-      </div>
-    </turbo-frame>
+    <div class="h-40 lg:h-60 w-full flex items-center justify-center">
+      <turbo-frame id="jacket_<%= song.id %>" src="/jacket/<%= song.id %>" loading="lazy">
+        <div class="my-3 flex">
+          <span class="loading loading-spinner loading-xs mr-1"></span>
+          <p class="text-center">画像読み込み中...</p>
+        </div>
+      </turbo-frame>
+    </div>
   </figure>
   <div class="card-body p-4">
-    <h2 class="card-title mb-3"><%= song.name %></h2>
-    <div class="card-actions justify-end">
-      <%= link_to "詳細", song_path(song), class: 'btn btn-primary' %>
-    </div>
+    <h2 class="card-title mb-3"><%= link_to song.name, song_path(song), class: 'link' %></h2>
   </div>
 </div>

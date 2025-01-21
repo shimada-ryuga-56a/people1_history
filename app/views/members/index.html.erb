@@ -5,7 +5,7 @@
 
   <div class="flex justify-center">
     <% if @members.present? %>
-      <div class="md:grid md:grid-cols-3">
+      <div class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:grid-3 gap-5 md:gap-8 w-full">
         <%= render partial: 'members/member', collection: @members %>
       </div>
     <% else %>

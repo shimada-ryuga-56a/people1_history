@@ -1,11 +1,13 @@
-<div class="card w-full shadow-2xl mb-7 bg-base-300 text-base-content">
+<div class="card shadow-2xl mb-7 bg-base-300 text-base-content w-full">
   <figure>
-    <turbo-frame id="visual_image_<%= event.id %>" src="/visual_images/<%= event.id %>" loading="lazy">
-      <div class="my-3 flex">
-        <span class="loading loading-spinner loading-xs mr-1"></span>
-        <p class="text-center">画像読み込み中...</p>
-      </div>
-    </turbo-frame>
+    <div class="h-40 lg:h-60 w-full flex items-center justify-center">
+      <turbo-frame id="visual_image_<%= event.id %>" src="/visual_images/<%= event.id %>" loading="lazy">
+        <div class="flex">
+          <span class="loading loading-spinner loading-xs mr-1"></span>
+          <p class="text-center">画像読み込み中...</p>
+        </div>
+      </turbo-frame>
+    </div>
   </figure>
   <div class="card-body leading-8	p-5">
     <h2 class="card-title link">

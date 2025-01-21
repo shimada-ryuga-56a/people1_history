@@ -8,7 +8,7 @@
   </div>
 
   <div class="flex justify-center">
-    <div class="md:w-1/3 md:mx-3">
+    <div class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:grid-3 gap-5 md:gap-8 w-full">
       <% if @songs.present? %>
         <%= render partial: 'songs/song', collection: @songs %>
       <% else %>

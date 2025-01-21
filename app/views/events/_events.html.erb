@@ -1,6 +1,8 @@
-<div class="mx-2">
+<div class="flex justify-center">
   <% if @events.present? %>
-    <%= render partial: 'events/event', collection: @events %>
+    <div class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:grid-3 gap-5 md:gap-8 w-full">
+      <%= render partial: 'events/event', collection: @events %>
+    </div>
   <% else %>
     <div class="mb-3">イベント情報がありません</div>
   <% end %>
