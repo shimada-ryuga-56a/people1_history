@@ -1,39 +1,41 @@
 <div class="m-5">
-  <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
+  <h1 class="text-center font-extrabold	text-2xl md:text-3xl mb-5 md:mb-10">
     <%= title @song.name %>
   </h1>
 
-  <div class="divider mb-3">
-    <h1 class="font-bold sm:text-lg md:text-xl">
+  <div class="divider mb-3 md:mb-8">
+    <h1 class="font-bold sm:text-xl md:text-2xl">
       演奏記録
     </h1>
   </div>
 
-  <div class="mb-5 leading-8">
+  <div class="mb-3 md:mb-8">
     <% if @events.present? %>
-      <div class="mb-2">
-        <p>【ライブ初演奏🎉】</p>
-        <p>
-          <%= I18n.l(@events.first.date, format: "%Y/%m/%d（%a）") %><br>
-          <%= link_to event_path(@events.first.id), class: "link link-primary" do %>
-            <p>
-              <%= @events.first.name %><br>
-              @<%= @events.first.place %>（<%= @events.first.place_prefecture_i18n %>）
-            </p>
-          <% end %>
-        </p>
-      </div>
-      <div class="mb-2">
-        <p>【直近での演奏👻】</p>
-        <p>
-          <%= I18n.l(@events.last.date, format: "%Y/%m/%d（%a）") %><br>
-          <%= link_to event_path(@events.last.id), class: "link link-primary" do %>
-            <p>
-              <%= @events.last.name %><br>
-              @<%= @events.last.place %>（<%= @events.last.place_prefecture_i18n %>）
-            </p>
-          <% end %>
-        </p>
+      <div class="mb-2 md:mb-4 text-center md:flex md:justify-center md:gap-8 lg:gap-16">
+        <div class="leading-8">
+          <p>【ライブ初演奏🎉】</p>
+          <p>
+            <%= I18n.l(@events.first.date, format: "%Y/%m/%d（%a）") %><br>
+            <%= link_to event_path(@events.first.id), class: "link link-primary" do %>
+              <p>
+                <%= @events.first.name %><br>
+                @<%= @events.first.place %>（<%= @events.first.place_prefecture_i18n %>）
+              </p>
+            <% end %>
+          </p>
+        </div>
+        <div class="leading-8">
+          <p>【直近での演奏👻】</p>
+          <p>
+            <%= I18n.l(@events.last.date, format: "%Y/%m/%d（%a）") %><br>
+            <%= link_to event_path(@events.last.id), class: "link link-primary" do %>
+              <p>
+                <%= @events.last.name %><br>
+                @<%= @events.last.place %>（<%= @events.last.place_prefecture_i18n %>）
+              </p>
+            <% end %>
+          </p>
+        </div>
       </div>
       <p class="text-center">👏今まで計<%= @events.length %>回演奏されました👏</p>
     <% else %>
