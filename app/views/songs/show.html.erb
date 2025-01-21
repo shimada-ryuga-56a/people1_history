@@ -3,17 +3,28 @@
     <%= title @song.name %>
   </h1>
 
-  <div class="divider mb-3 md:mb-8">
-    <h1 class="font-bold sm:text-xl md:text-2xl">
+  <div class="divider mb-5 md:mb-8">
+    <h2 class="font-bold sm:text-xl md:text-2xl">
       演奏記録
-    </h1>
+    </h2>
   </div>
 
-  <div class="mb-3 md:mb-8">
+  <div class="mb-5 md:mb-8">
     <% if @events.present? %>
-      <div class="mb-2 md:mb-4 text-center md:flex md:justify-center md:gap-8 lg:gap-16">
+      <p class="text-center md:text-lg mb-3">👏今まで計<%= @events.length %>回演奏されました👏</p>
+      <div class="mb-2 md:mb-4 text-center md:grid md:grid-cols-2 md:gap-2 lg:mx-36">
         <div class="leading-8">
-          <p>【ライブ初演奏🎉】</p>
+          <h3 class="md:text-xl">【ライブ初演奏🎉】</h3>
+          <div class="my-5 flex items-center justify-center w-full h-60 md:h-80">
+            <%= link_to event_path(@events.first), class: "w-60 md:w-80 h-full" do %>
+              <turbo-frame id="visual_image_<%= @events.first.id %>" src="/visual_images/<%= @events.first.id %>" loading="lazy">
+                <div class="skeleton w-full h-full flex items-center justify-center">
+                  <span class="loading loading-spinner loading-xs mr-1"></span>
+                  <p class="text-center">画像読み込み中...</p>
+                </div>
+              </turbo_frame>
+            <% end %>
+          </div>
           <p>
             <%= I18n.l(@events.first.date, format: "%Y/%m/%d（%a）") %><br>
             <%= link_to event_path(@events.first.id), class: "link link-primary" do %>
@@ -25,7 +36,17 @@
           </p>
         </div>
         <div class="leading-8">
-          <p>【直近での演奏👻】</p>
+          <h3 class="md:text-xl">【直近での演奏👻】</h3>
+          <div class="my-5 flex items-center justify-center w-full h-60 md:h-80">
+            <%= link_to event_path(@events.last), class: "w-60 md:w-80 h-full" do %>
+              <turbo-frame id="visual_image_<%= @events.last.id %>" src="/visual_images/<%= @events.last.id %>" loading="lazy">
+                <div class="skeleton w-full h-full flex items-center justify-center">
+                  <span class="loading loading-spinner loading-xs mr-1"></span>
+                  <p class="text-center">画像読み込み中...</p>
+                </div>
+              </turbo_frame>
+            <% end %>
+          </div>
           <p>
             <%= I18n.l(@events.last.date, format: "%Y/%m/%d（%a）") %><br>
             <%= link_to event_path(@events.last.id), class: "link link-primary" do %>
@@ -37,7 +58,6 @@
           </p>
         </div>
       </div>
-      <p class="text-center">👏今まで計<%= @events.length %>回演奏されました👏</p>
     <% else %>
       <p class="text-center">ライブ演奏の情報は現時点ではありません🤥</p>
     <% end %>
