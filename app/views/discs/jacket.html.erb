@@ -1,7 +1,7 @@
 <turbo-frame id="jacket_<%= @disc_version.id %>">
-  <div class="my-3 flex">
-    <% if @disc_version.jacket.attached? %>
-      <%= image_tag @disc_version.jacket.variant(resize_to_limit: [300, 300]), class: "w-1/2 md:w-1/3" %>
-    <% end %>
-  </div>
+  <% if @disc_version.jacket.attached? %>
+    <%= image_tag @disc_version.jacket.variant(resize_to_limit: [300, 300]), class: "" %>
+  <% else %>
+    <%= image_tag 'default_people_1.jpg', class: "" %>
+  <% end %>
 </turbo-frame>
