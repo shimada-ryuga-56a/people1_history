@@ -10,9 +10,6 @@
     </div>
   </figure>
   <div class="card-body p-4">
-    <h2 class="card-title mb-3"><%= song.name %></h2>
-    <div class="card-actions justify-end">
-      <%= link_to "詳細", song_path(song), class: 'btn btn-primary' %>
-    </div>
+    <h2 class="card-title mb-3"><%= link_to song.name, song_path(song), class: 'link' %></h2>
   </div>
 </div>
