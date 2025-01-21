@@ -7,7 +7,7 @@
   <% else %>
     <%= link_to song_information_likes_on_song_informations_path(song_information), data: { "turbo-method": :post }, remote: true do %>
       <i class="fa-regular fa-heart"></i>
-      <%= song_information.likes_on_song_informations.count %> いいね
+      <%= song_information.likes_on_song_informations.length %> いいね
     <% end %>
   <% end %>
 <% end %>

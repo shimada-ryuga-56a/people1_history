@@ -10,7 +10,7 @@ class SongsController < ApplicationController
     @song = Song.includes(link_contents: :link).find(params[:id])
     @link_contents = @song.link_contents
     @new_song_information = SongInformation.new
-    @song_informations = @song.song_informations.includes(:user).order(created_at: :desc)
+    @song_informations = @song.song_informations.includes(:user, :likes_on_song_informations).order(created_at: :desc)
     @events = Event.includes(setlist: :setlistitems).where(setlistitems: { song_id: params[:id] }).order(:date)
     @song_disc_items = DiscItem.includes(disc_content: { disc_version: :disc })
                                .where(disc_contents: { content_type: 0 },
