@@ -16,25 +16,25 @@
 
   <div class="md:grid md:grid-cols-3 md:gap-4">
     <div class="mb-5 md:col-span-2">
-      <div class="divider mb-5">
+      <div class="divider mb-5 lg:mb-8">
         <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">概要</h2>
       </div>
       </h1>
-      <div class="text-sm md:text-base">
-        <div class="flex items-center">
-          <i class="fa-solid fa-calendar-days mr-1"></i>
+      <div class="text-sm md:text-lg lg:text-xl">
+        <div class="flex items-center justify-center">
+          <i class="fa-solid fa-calendar-days mr-1 md:mr-2"></i>
           <p>
             <%= I18n.l(@event.date, format: "%Y/%m/%d(%a)") %>
           </p>
         </div>
-        <div class="flex items-center">
-          <i class="fa-solid fa-location-dot mr-1"></i>
+        <div class="flex items-center justify-center">
+          <i class="fa-solid fa-location-dot mr-1 md:mr-2"></i>
           <p>
             <%= t("activerecord.attributes.event.place_prefecture.#{@event.place_prefecture}") %> <%= @event.place %>
           </p>
         </div>
         <% if @event.remark.present? %>
-          <div class="flex items-start mt-3">
+          <div class="flex items-start mt-3 lg:justify-center">
             <%= @event.remark %>
           </div>
         <% end %>
@@ -46,11 +46,11 @@
         <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">収録情報</h2>
       </div>
       <% if @disc_contents.present? %>
-        <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
           <% @disc_contents.each do |content| %>
             <div class="mx-3">
-              <div class="h-32 md:h-40 w-full my-2 flex justify-center">
-                <%= link_to disc_path(content.disc_version.disc), class: "w-32 h-full md:w-40" do %>
+              <div class="h-32 w-full my-2 flex justify-center">
+                <%= link_to disc_path(content.disc_version.disc), class: "w-32 h-full" do %>
                   <turbo-frame id="jacket_<%= content.disc_version.id %>" src="/version_jacket/<%= content.disc_version.id %>" loading="lazy">
                     <div class="skeleton w-full h-full flex items-center justify-center">
                       <span class="loading loading-spinner loading-xs"></span>
