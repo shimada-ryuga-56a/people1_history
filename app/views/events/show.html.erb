@@ -58,16 +58,28 @@
       <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">収録情報</h2>
     </div>
     <% if @disc_contents.present? %>
-      <ul>
+      <div class="grid grid-cols-1 md:grid-cols-2">
         <% @disc_contents.each do |content| %>
-          <li>
-            <%= link_to disc_path(content.disc_version.disc.id), class: "link link-primary" do %>
-              <%= content.disc_version.disc.title %>
-              （<%= t("activerecord.attributes.disc_version.#{content.disc_version.version}") %>）
-            <% end %>
-          </li>
+          <div class="mx-3">
+            <div class="h-32 md:h-40 w-full my-2 flex justify-center">
+              <%= link_to disc_path(content.disc_version.disc), class: "w-32 h-full md:w-40" do %>
+                <turbo-frame id="jacket_<%= content.disc_version.id %>" src="/version_jacket/<%= content.disc_version.id %>" loading="lazy">
+                  <div class="skeleton w-full h-full flex items-center justify-center">
+                    <span class="loading loading-spinner loading-xs"></span>
+                  </div>
+                </turbo_frame>
+              <% end %>
+            </div>
+            <p class="text-xs text-center mb-2">
+              <%= link_to disc_path(content.disc_version.disc_id), class: "link link-primary" do %>
+                <%= content.disc_version.disc.title %><br>
+                （<%= t("activerecord.attributes.disc_version.#{content.disc_version.version}") %>）<br>
+              <% end %>
+            </p>
+          </div>
         <% end %>
-        <p>に収録されているヨ！</p>
+      </div>
+      <p class="text-center">に収録されています！</p>
     <% else %>
       <p class="text-center">😑この日の映像は発売されてないヨ😑</p>
     <% end %>
