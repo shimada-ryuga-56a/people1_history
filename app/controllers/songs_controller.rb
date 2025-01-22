@@ -7,8 +7,9 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = Song.includes(link_contents: :link).find(params[:id])
-    @link_contents = @song.link_contents
+    @song = Song.find(params[:id])
+    @youtube_contents = @song.links.where(platform: "YouTube").or(@song.links.where(platform: "YouTubeMusic"))
+    @tiktok_contents = @song.links.where(platform: "TikTok")
     @new_song_information = SongInformation.new
     @song_informations = @song.song_informations.includes(:user, :likes_on_song_informations).order(created_at: :desc)
     @events = Event.includes(setlist: :setlistitems).where(setlistitems: { song_id: params[:id] }).order(:date)
