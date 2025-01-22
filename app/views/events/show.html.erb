@@ -1,16 +1,3 @@
-<% 
-=begin
-%>
-<div class="relative">
-  <% if @event.visual_image.attached? %>
-    <%= image_tag @event.visual_image.variant(resize_to_fill: [600, 200]), class: "w-full contrast-50 blur-sm" %>
-    <h1 class="text-slate-50 truncate absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold text-3xl md:text-4xl lg:text-5xl">イベント詳細</h1>
-  <% end %>
-</div>
-<%
-=end
-%>
-
 <div class="m-5">
   <div class="mb-8 leading-8">
     <h1 class="text-center text-xl md:text-2xl font-semibold mb-2">
