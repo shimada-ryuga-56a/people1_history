@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   has_one :setlist, dependent: :destroy
 
   has_many :link_contents, as: :linkable, dependent: :destroy
-  has_many :links, dependent: :destroy, through: :link_contents
+  has_many :links, through: :link_contents
   accepts_nested_attributes_for :link_contents, allow_destroy: true
 
   has_one_attached :visual_image
