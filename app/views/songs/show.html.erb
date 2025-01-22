@@ -142,6 +142,6 @@
   <div class="divider">楽曲情報</div>
   <%= render partial: "song_informations/form", locals: { info: @new_song_information, song: @song } %>
   <%= turbo_frame_tag 'song_informations' do %>
-    <%= render partial: "song_informations/song_informations" %>
+    <%= render partial: "song_informations/song_informations", locals: { song_informations: @song_informations } %>
   <% end %>
 </div>
