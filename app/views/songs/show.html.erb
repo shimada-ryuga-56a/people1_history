@@ -71,7 +71,7 @@
 
   <div class="mb-5 mx-3 leading-8">
     <div>
-      <p class="text-center">【音源】</p>
+      <p class="text-center lg:text-left my-3">【音源】</p>
       <% if @song_disc_items.present? %>
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
           <% @song_disc_items.each do |disc_item| %>
@@ -95,34 +95,43 @@
           <% end %>
         </div>
       <% else %>
-        <p class="text-left">収録情報はありません🤥</p>
+        <p class="text-center lg:text-left">収録情報はありません🤥</p>
       <% end %>
     </div>
     <div>
-      <p class="text-left">【映像】</p>
+      <p class="text-center lg:text-left my-3">【映像】</p>
       <% if @movie_disc_items.present? %>
-        <ul class="list-disc ml-5">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
           <% @movie_disc_items.each do |disc_item| %>
-            <li class="text-left">
-              <%= link_to disc_path(disc_item.disc_content.disc_version.disc_id) do %>
-                <p class="link link-primary">
-                <%= disc_item.show_disc_title %>
-                （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
-                </p>
-              <% end %>
-              <% if disc_item.disc_content.event.present? %>
-                <%= disc_item.show_event_title %>
-                ＠<%= disc_item.show_event_place %>公演
-              <% elsif disc_item.title.present? %>
-                <%= disc_item.show_disc_title %>
-                （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）
-                <%= disc_item.title %>
-              <% end %>
-            </li>
+            <div class="mx-3">
+              <div class="h-24 md:h-28 md:h-32 w-full my-2 flex justify-center">
+                <%= link_to disc_path(disc_item.disc_content.disc_version.disc), class: "w-24 h-full md:w-28 md:w-32" do %>
+                  <turbo-frame id="jacket_<%= disc_item.disc_content.disc_version.id %>" src="/version_jacket/<%= disc_item.disc_content.disc_version.id %>" loading="lazy">
+                    <div class="skeleton w-full h-full flex items-center justify-center">
+                      <span class="loading loading-spinner loading-xs"></span>
+                    </div>
+                  </turbo_frame>
+                <% end %>
+              </div>
+              <p class="text-xs text-center mb-2">
+                <%= link_to disc_path(disc_item.disc_content.disc_version.disc_id), class: "link link-primary" do %>
+                  <%= disc_item.show_disc_title %><br>
+                  （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）<br>
+                <% end %>
+                <% if disc_item.disc_content.event.present? %>
+                  <%= disc_item.show_event_title %><br>
+                  ＠<%= disc_item.show_event_place %>公演
+                <% elsif disc_item.title.present? %>
+                  <%= disc_item.show_disc_title %><br>
+                  （<%= t("activerecord.attributes.disc_version.#{disc_item.show_disc_version}") %>）<br>
+                  <%= disc_item.title %>
+                <% end %>
+              </p>
+            </div>
           <% end %>
-        </ul>
+        </div>
       <% else %>
-        <p class="text-left">収録情報はありません🤥</p>
+        <p class="text-center lg:text-left">収録情報はありません🤥</p>
       <% end %>
     </div>
   </div>
