@@ -5,6 +5,7 @@ class SongInformationsController < ApplicationController
     respond_to do |format|
       if @info.save
         @new_song_information = SongInformation.new
+        @song_informations = SongInformation.where(song_id: params[:song_id]).order(created_at: :desc)
         flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream
       else
