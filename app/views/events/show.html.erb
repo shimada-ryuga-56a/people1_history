@@ -25,13 +25,25 @@
       <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">概要</h2>
     </div>
     </h1>
-    <p>
-    日時：<%= I18n.l(@event.date, format: "%Y/%m/%d(%a)") %><br>
-    会場：<%= t("activerecord.attributes.event.place_prefecture.#{@event.place_prefecture}") %> <%= @event.place %><br>
+    <div class="text-sm md:text-base">
+      <div class="flex items-center">
+        <i class="fa-solid fa-calendar-days mr-1"></i>
+        <p>
+          <%= I18n.l(@event.date, format: "%Y/%m/%d(%a)") %>
+        </p>
+      </div>
+      <div class="flex items-center">
+        <i class="fa-solid fa-location-dot mr-1"></i>
+        <p>
+          <%= t("activerecord.attributes.event.place_prefecture.#{@event.place_prefecture}") %> <%= @event.place %>
+        </p>
+      </div>
       <% if @event.remark.present? %>
-        備考：<%= @event.remark %>
+        <div class="flex items-start mt-3">
+          <%= @event.remark %>
+        </div>
       <% end %>
-    </p>
+    </div>
   </div>
 
 
@@ -82,7 +94,7 @@
     <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary mb-5' %>
   <% end %>
 
-  <%= render partial: "links/links", locals: { link_contents: @link_contents } %>
+  <%= render partial: "links/links", locals: { youtubes: @youtube_contents, tiktoks: @tiktok_contents } %>
 
   <%= render 'events/information_index', event_informations: @event_infomations %>
 </div>
