@@ -1,7 +1,6 @@
-<%= turbo_frame_tag item do %>
-  <div class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-3">
-    <% infos.each do |info| %>
-      <%= render partial: 'setlistitem_informations/setlistitem_information', locals: {setlistitem_info: info} %>
-    <% end %>
-  </div>
-<% end %>
+<div class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-3">
+  <% infos.each do |info| %>
+    <%= render partial: 'setlistitem_informations/setlistitem_information', locals: {setlistitem_info: info} %>
+  <% end %>
+</div>
+
