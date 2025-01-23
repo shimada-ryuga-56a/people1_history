@@ -1,7 +1,5 @@
 <%= turbo_frame_tag item do %>
   <% infos.each do |info| %>
-    <% if info.setlistitem_id == item.id %>
-      <%= render partial: 'setlistitem_informations/setlistitem_information', locals: {setlistitem_info: info} %>
-    <% end %>
+    <%= render partial: 'setlistitem_informations/setlistitem_information', locals: {setlistitem_info: info} %>
   <% end %>
 <% end %>

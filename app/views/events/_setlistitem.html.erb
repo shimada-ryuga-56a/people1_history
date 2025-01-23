@@ -11,7 +11,7 @@
         </div>
       <% end %>
       <%= render partial: 'setlistitem_informations/form', locals: {item: item} %>
-      <%= render partial: 'setlistitem_informations/setlistitem_informations', locals: {item: item, infos: infos} %>
+      <%= render partial: 'setlistitem_informations/setlistitem_informations', locals: {item: item, infos: infos.select{|i| i.setlistitem_id == item.id}} %>
     </div>
   </div>
 <% end %>
