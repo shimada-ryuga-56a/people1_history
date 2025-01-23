@@ -4,12 +4,12 @@
       <%= link_to setlistitem_information_likes_on_setlistitem_informations_path(setlistitem_information), data: { "turbo-method": :delete } do %>
         <i class="fa-solid fa-heart"></i>
       <% end %>
-      <%= setlistitem_information.likes_on_setlistitem_informations.count %> いいね
+      <%= setlistitem_information.likes_on_setlistitem_informations.length %> いいね
     <% else %>
       <%= link_to setlistitem_information_likes_on_setlistitem_informations_path(setlistitem_information), data: { "turbo-method": :post } do %>
         <i class="fa-regular fa-heart"></i>
       <% end %>
-      <%= setlistitem_information.likes_on_setlistitem_informations.count %> いいね
+      <%= setlistitem_information.likes_on_setlistitem_informations.length %> いいね
     <% end %>
   <% end %>
 </div>
