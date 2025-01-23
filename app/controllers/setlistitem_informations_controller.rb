@@ -4,6 +4,7 @@ class SetlistitemInformationsController < ApplicationController
     @item = Setlistitem.find(@info.setlistitem_id)
     respond_to do |format|
       if @info.save
+        @infos = SetlistitemInformation.where(setlistitem_id: @item.id).order(created_at: :desc)
         @setlistitem_new_info = SetlistitemInformation.new
         flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream
