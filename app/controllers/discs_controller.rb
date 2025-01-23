@@ -1,4 +1,6 @@
 class DiscsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[jacket]
+
   def show
     @disc = Disc.includes(link_contents: :link).find(params[:id])
     @youtube_contents = @disc.links.where(platform: "YouTube").or(@disc.links.where(platform: "YouTubeMusic"))
