@@ -11,7 +11,7 @@
       <h2 class="card-title text-base md:text-lg"><%= setlistitem_info.body %></h2>
       <div>
         <% if user_signed_in? %>
-          <%= turbo_frame_tag "like_on_setlistitem_info_#{setlistitem_info}" do %>
+          <%= turbo_frame_tag "like_on_setlistitem_info_#{setlistitem_info.id}" do %>
             <%= render partial: "setlistitems/info_fav_btn", locals: {setlistitem_info: setlistitem_info} %>
           <% end %>
         <% end %>
