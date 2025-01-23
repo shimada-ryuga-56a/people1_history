@@ -12,8 +12,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.includes([:setlist, { link_contents: :link }]).find(params[:id])
-    @link_contents = @event.link_contents
+    @event = Event.includes(:setlist).find(params[:id])
+    @youtube_contents = @event.links.where(platform: "YouTube").or(@event.links.where(platform: "YouTubeMusic"))
+    @tiktok_contents = @event.links.where(platform: "TikTok")
     @disc_contents = DiscContent.includes(:event, disc_version: :disc).where(event_id: params[:id])
     @info = EventInformation.new
     @event_infomations = EventInformation.includes([:user, :likes_on_event_informations])
@@ -23,7 +24,7 @@ class EventsController < ApplicationController
     @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
     @infos = []
     @setlistitems.each do |item|
-      @infos << SetlistitemInformation.where(setlistitem_id: item.id).order(created_at: :desc)
+      @infos << SetlistitemInformation.eager_load(:user, :likes_on_setlistitem_informations).where(setlistitem_id: item.id).order(created_at: :desc)
     end
     @infos.flatten!
     @setlistitem_new_info = SetlistitemInformation.new

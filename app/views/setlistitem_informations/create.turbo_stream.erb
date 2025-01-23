@@ -2,8 +2,8 @@
   <%= render partial: "form", locals: {item: @item} %>
 <% end %>
 
-<%= turbo_stream.prepend @item do %>
-  <%= render partial: "setlistitem_informations/setlistitem_information", locals: {setlistitem_info: @info} %>
+<%= turbo_stream.update "setlistitem_#{@item.id}_infos" do %>
+  <%= render partial: "setlistitem_informations/setlistitem_informations", locals: {infos: @infos, item: @item} %>
 <% end %>
 
 <%= turbo_stream.replace "flash_message" do %>

@@ -1,0 +1,16 @@
+<div>
+  <% if youtube.url_link.include?('https://youtu.be/') || youtube.url_link.include?('https://www.youtube.com/') %>
+    <iframe
+      src="https://www.youtube.com/embed/<%= find_youtube_url(youtube.url_link) %>"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+      class="w-full aspect-video mb-5">
+    </iframe>
+  <% end %>
+    <% if youtube.YouTubeMusic? %>
+    <p class="mb-5 text-left text-xs">（上記動画はご利用いただけない場合がございます）</p>
+  <% end %>
+</div>

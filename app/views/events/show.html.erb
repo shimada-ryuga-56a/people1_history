@@ -1,16 +1,3 @@
-<% 
-=begin
-%>
-<div class="relative">
-  <% if @event.visual_image.attached? %>
-    <%= image_tag @event.visual_image.variant(resize_to_fill: [600, 200]), class: "w-full contrast-50 blur-sm" %>
-    <h1 class="text-slate-50 truncate absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold text-3xl md:text-4xl lg:text-5xl">イベント詳細</h1>
-  <% end %>
-</div>
-<%
-=end
-%>
-
 <div class="m-5">
   <div class="mb-8 leading-8">
     <h1 class="text-center text-xl md:text-2xl font-semibold mb-2">
@@ -18,22 +5,8 @@
       <% if @event.is_canceled? %>
         <br>（開催見合わせ）
       <% end %>
-  </div>
-
-  <div class="mb-5">
-    <div class="divider mb-5">
-      <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">概要</h2>
-    </div>
     </h1>
-    <p>
-    日時：<%= I18n.l(@event.date, format: "%Y/%m/%d(%a)") %><br>
-    会場：<%= t("activerecord.attributes.event.place_prefecture.#{@event.place_prefecture}") %> <%= @event.place %><br>
-      <% if @event.remark.present? %>
-        備考：<%= @event.remark %>
-      <% end %>
-    </p>
   </div>
-
 
   <% if @event.tour_id %>
     <div class="card-actions justify-end mb-5">
@@ -41,24 +14,64 @@
     </div>
   <% end %>
 
-  <div class="mb-8">
-    <div class="divider mb-5">
-      <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">収録情報</h2>
-    </div>
-    <% if @disc_contents.present? %>
-      <ul>
-        <% @disc_contents.each do |content| %>
-          <li>
-            <%= link_to disc_path(content.disc_version.disc.id), class: "link link-primary" do %>
-              <%= content.disc_version.disc.title %>
-              （<%= t("activerecord.attributes.disc_version.#{content.disc_version.version}") %>）
-            <% end %>
-          </li>
+  <div class="md:grid md:grid-cols-3 md:gap-4">
+    <div class="mb-5 md:col-span-2">
+      <div class="divider mb-5 lg:mb-8">
+        <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">概要</h2>
+      </div>
+      </h1>
+      <div class="text-sm md:text-lg lg:text-xl">
+        <div class="flex items-center justify-center">
+          <i class="fa-solid fa-calendar-days mr-1 md:mr-2"></i>
+          <p>
+            <%= I18n.l(@event.date, format: "%Y/%m/%d(%a)") %>
+          </p>
+        </div>
+        <div class="flex items-center justify-center">
+          <i class="fa-solid fa-location-dot mr-1 md:mr-2"></i>
+          <p>
+            <%= t("activerecord.attributes.event.place_prefecture.#{@event.place_prefecture}") %> <%= @event.place %>
+          </p>
+        </div>
+        <% if @event.remark.present? %>
+          <div class="flex items-start mt-3 lg:justify-center">
+            <%= @event.remark %>
+          </div>
         <% end %>
-        <p>に収録されているヨ！</p>
-    <% else %>
-      <p class="text-center">😑この日の映像は発売されてないヨ😑</p>
-    <% end %>
+      </div>
+    </div>
+
+    <div class="mb-5">
+      <div class="divider mb-5">
+        <h2 class="font-bold text-lg md:text-2xl lg:text-3xl">収録情報</h2>
+      </div>
+      <% if @disc_contents.present? %>
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <% @disc_contents.each do |content| %>
+            <div class="mx-3">
+              <div class="h-32 w-full my-2 flex justify-center">
+                <%= link_to disc_path(content.disc_version.disc), class: "w-32 h-full" do %>
+                  <turbo-frame id="jacket_<%= content.disc_version.id %>" src="/version_jacket/<%= content.disc_version.id %>" loading="lazy">
+                    <div class="skeleton w-full h-full flex items-center justify-center">
+                      <span class="loading loading-spinner loading-xs"></span>
+                    </div>
+                  </turbo_frame>
+                <% end %>
+              </div>
+              <p class="text-xs text-center mb-2">
+                <%= link_to disc_path(content.disc_version.disc_id), class: "link link-primary" do %>
+                  <%= content.disc_version.disc.title %><br>
+                  （<%= t("activerecord.attributes.disc_version.#{content.disc_version.version}") %>）<br>
+                <% end %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+        <p class="text-center">に収録されています！</p>
+      <% else %>
+        <p class="text-center">😑この日の映像は発売されてないヨ😑</p>
+      <% end %>
+    </div>
   </div>
 
   <div class="divider mb-8">
@@ -82,7 +95,7 @@
     <%= link_to "セットリストを投稿", new_event_setlist_path(params[:id]), class: 'btn btn-primary mb-5' %>
   <% end %>
 
-  <%= render partial: "links/links", locals: { link_contents: @link_contents } %>
+  <%= render partial: "links/links", locals: { youtubes: @youtube_contents, tiktoks: @tiktok_contents } %>
 
   <%= render 'events/information_index', event_informations: @event_infomations %>
 </div>

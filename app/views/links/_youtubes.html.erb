@@ -1,0 +1,11 @@
+<h3>【YouTube】</h3>
+
+<% if youtubes.present? %>
+  <div class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-5 mt-5">
+    <% youtubes.each do |youtube| %>
+      <%= render partial: "links/youtube", locals: { youtube: youtube } %>
+    <% end %>
+  </div>
+<% else %>
+  <p>YouTube上で動画は見つかりませんでした🙅‍♂️</p>
+<% end %>

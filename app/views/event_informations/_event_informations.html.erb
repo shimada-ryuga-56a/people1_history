@@ -1,3 +1,5 @@
-<% event_informations.each do |info| %>
-  <%= render partial: "event_informations/event_information", locals: {event_information: info} %>
-<% end %>
+<div class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-3">
+  <% event_informations.each do |info| %>
+    <%= render partial: "event_informations/event_information", locals: {event_information: info} %>
+  <% end %>
+</div>

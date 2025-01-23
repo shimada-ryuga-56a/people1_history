@@ -4,12 +4,7 @@
   </h1>
 </div>
 
-<% if link_contents.present? %>
-  <% link_contents.each do |link| %>
-    <%= render partial: "links/link", locals: { link: link.link.url_link, platform: link.link.platform } %>
-  <% end %>
-<% else %>
-  <p class="text-center">
-    SNS上の動画は見つかりませんでした🤥
-  </p>
-<% end %>
+<div>
+  <%= render partial: "links/youtubes", locals: { youtubes: youtubes } %>
+  <%= render partial: "links/tiktoks", locals: { tiktoks: tiktoks } %>
+</div>

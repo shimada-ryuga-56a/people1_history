@@ -1,5 +1,6 @@
 class Link < ApplicationRecord
   has_many :link_contents, dependent: :destroy
+  has_many :links, dependent: :destroy, through: :link_contents
   has_many :link_dates, dependent: :destroy
   accepts_nested_attributes_for :link_dates, allow_destroy: true
 

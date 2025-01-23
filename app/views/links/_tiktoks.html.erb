@@ -1,0 +1,11 @@
+<h3 class="">【TikTok】</h3>
+
+<% if tiktoks.present? %>
+  <div class="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-5 mt-5">
+    <% tiktoks.each do |tiktok| %>
+      <%= render partial: "links/tiktok", locals: { tiktok: tiktok, url: tiktok.url_link } %>
+    <% end %>
+  </div>
+<% else %>
+  <p>TikTok上で動画は見つかりませんでした🙅‍♂️</p>
+<% end %>
