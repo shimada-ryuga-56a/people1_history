@@ -2,6 +2,6 @@
   <% if @event.visual_image.attached? %>
     <%= image_tag @event.visual_image.variant(resize_to_fill: [600, 600], format: :webp), class: "object-cover " %>
   <% else %>
-    <%= image_tag 'default_people_1.jpg', class: "object-cover mb-10" %>
+    <%= image_tag 'default_people_1.jpg', class: "object-cover " %>
   <% end %>
 </turbo-frame>
