@@ -2,9 +2,18 @@
   <div class="text-xl font-medium">
     <%= t("activerecord.attributes.disc_version.#{version.version}") %>
   </div>
+
+<% 
+=begin
+%>
+
   <% if version.price.present? %>
     <p class="mb-3"><%= number_to_currency(version.price, unit: "¥", format: "%u %n" ) %></p>
   <% end %>
+
+<%
+=end
+%>
   <div class="my-5 flex items-center justify-center w-full h-60 md:h-80">
     <div class="w-60 md:w-80 h-full">
       <turbo-frame id="jacket_<%= version.id %>" src="/version_jacket/<%= version.id %>" loading="lazy">
