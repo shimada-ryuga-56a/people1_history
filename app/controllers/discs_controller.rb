@@ -1,7 +1,8 @@
 class DiscsController < ApplicationController
   def show
     @disc = Disc.includes(link_contents: :link).find(params[:id])
-    @link_contents = @disc.link_contents
+    @youtube_contents = @disc.links.where(platform: "YouTube").or(@disc.links.where(platform: "YouTubeMusic"))
+    @tiktok_contents = @disc.links.where(platform: "TikTok")
     @disc_versions = DiscVersion.includes(:disc).where(disc_id: params[:id])
     @disc_contents = DiscContent.includes(:event, disc_version: :disc).where(disc: { id: params[:id] }).order(:id)
     @disc_items = DiscItem.includes(:song, disc_content: [:event, { disc_version: :disc }]).where(disc: { id: params[:id] })
