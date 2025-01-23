@@ -1,4 +1,4 @@
-<%= turbo_frame_tag event_information do %>
+<%= turbo_frame_tag "event_information" do %>
   <div class="card bg-base-100 w-full h-full shadow-xl mb-3">
     <div class="card-body">
       <div class="avatar flex items-center">
@@ -11,7 +11,9 @@
       <h2 class="card-title text-base md:text-lg"><%= event_information.body %></h2>
       <div>
         <% if user_signed_in? %>
-          <%= render partial: "events/info_fav_btn", locals: {event_information: event_information} %>
+          <%= turbo_frame_tag "like_on_event_info_#{event_information.id}" do %>
+            <%= render partial: "events/info_fav_btn", locals: {event_information: event_information} %>
+          <% end %>
         <% end %>
       </div>
     </div>
