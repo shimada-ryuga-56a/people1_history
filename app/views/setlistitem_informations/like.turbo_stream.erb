@@ -1,0 +1,4 @@
+<%= turbo_stream.update "like_on_setlistitem_info_#{setlistitem_info.id}" do %>
+  <%= render partial: "setlistitems/info_fav_btn", locals: {setlistitem_info: setlistitem_info} %>
+  <% p  %>
+<% end %>
