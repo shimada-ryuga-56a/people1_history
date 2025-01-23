@@ -4,4 +4,5 @@
   <% end %>
   <%= "【特典映像】" if content.others? %>
 </div>
-<%= render partial: "item", locals: { content: content, items: items.where(disc_content_id: content.id).order(position: :asc) } %>
+
+<%= render partial: "items", locals: { content: content, items: items.where(disc_content_id: content.id).order(position: :asc) } %>
