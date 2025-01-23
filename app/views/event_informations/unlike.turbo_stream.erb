@@ -1,0 +1,3 @@
+<%= turbo_stream.update "like_on_event_info_#{event_information.id}" do %>
+  <%= render partial: "events/info_fav_btn", locals: { event_information: event_information } %>
+<% end %>
