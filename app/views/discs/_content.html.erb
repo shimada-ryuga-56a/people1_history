@@ -1,9 +1,7 @@
-<% contents.each do |content| %>
-  <div class="my-3">
-    <%  if content.events? %>
-      <%= link_to "【" + content.event.name + " ＠" + content.event.place + "】", event_path(content.event_id), class: "link" %>
-    <% end %>
-    <%= "【特典映像】" if content.others? %>
-  </div>
-  <%= render partial: "item", locals: { content: content, items: @disc_items.where(disc_content_id: content.id) } %>
-<% end %>
+<div class="my-3">
+  <%  if content.events? %>
+    <%= link_to "【" + content.event.name + " ＠" + content.event.place + "】", event_path(content.event_id), class: "link" %>
+  <% end %>
+  <%= "【特典映像】" if content.others? %>
+</div>
+<%= render partial: "item", locals: { content: content, items: items.where(disc_content_id: content.id).order(position: :asc) } %>
