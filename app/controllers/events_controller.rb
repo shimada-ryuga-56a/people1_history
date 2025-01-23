@@ -24,7 +24,7 @@ class EventsController < ApplicationController
     @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
     @infos = []
     @setlistitems.each do |item|
-      @infos << SetlistitemInformation.where(setlistitem_id: item.id).order(created_at: :desc)
+      @infos << SetlistitemInformation.eager_load(:user, :likes_on_setlistitem_informations).where(setlistitem_id: item.id).order(created_at: :desc)
     end
     @infos.flatten!
     @setlistitem_new_info = SetlistitemInformation.new
