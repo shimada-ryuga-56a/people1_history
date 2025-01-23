@@ -4,12 +4,12 @@
       <%= link_to event_information_likes_on_event_informations_path(event_information), data: { "turbo-method": :delete } do %>
         <i class="fa-solid fa-heart"></i>
       <% end %>
-      <%= event_information.likes_on_event_informations.count %> いいね
+      <%= event_information.likes_on_event_informations.length %> いいね
     <% else %>
       <%= link_to event_information_likes_on_event_informations_path(event_information), data: { "turbo-method": :post } do %>
         <i class="fa-regular fa-heart"></i>
       <% end %>
-      <%= event_information.likes_on_event_informations.count %> いいね
+      <%= event_information.likes_on_event_informations.length %> いいね
     <% end %>
   <% end %>
 </div>
