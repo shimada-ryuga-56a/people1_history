@@ -1,7 +1,8 @@
-<div class="w-full mb-7 text-base-content">
+<div class="w-full mb-2 text-base-content">
   <div class="text-xl font-medium text-center">
     （<%= t("activerecord.attributes.disc_version.#{version.version}") %>）
   </div>
+</div>
 
 <% 
 =begin
@@ -14,7 +15,9 @@
 <%
 =end
 %>
-  <div class="my-5 flex items-center justify-center w-full h-60 md:h-80">
+
+<div class="md:grid md:grid-cols-5 md:gap-8">
+  <div class="md:grid-item md:col-span-2 my-5 flex items-center justify-center w-full h-60 md:h-80">
     <div class="w-60 md:w-80 h-full">
       <turbo-frame id="jacket_<%= version.id %>" src="/version_jacket/<%= version.id %>" loading="lazy">
         <div class="skeleton w-full h-full flex items-center justify-center">
@@ -24,5 +27,9 @@
       </turbo-frame>
     </div>
   </div>
-  <%= render partial: "contents", locals: {version: version, contents: @disc_contents.where(disc_version_id: version.id), items: items} %>
+  <div class="md:grid-item md:col-span-3">
+    <%= render partial: "contents", locals: {version: version, contents: @disc_contents.where(disc_version_id: version.id), items: items} %>
+  </div>
 </div>
+
+<div class="divider mb-5"></div>
