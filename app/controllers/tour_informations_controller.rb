@@ -5,7 +5,7 @@ class TourInformationsController < ApplicationController
       if @info.save
         @new_info = TourInformation.new
         @tour = Tour.find(@info.tour_id)
-        @infos = @tour.tour_informations.includes(:user).order(created_at: :desc)
+        @infos = @tour.tour_informations.includes(:user, :likes_on_tour_informations).order(created_at: :desc)
         flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream { render 'tour_informations/create' }
       else
