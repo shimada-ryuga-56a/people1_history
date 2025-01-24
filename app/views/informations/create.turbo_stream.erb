@@ -1,5 +1,5 @@
 <%= turbo_stream.replace "new_info" do %>
-  <%= render partial: "informations/form", locals: { reportable: @disc, new_info: @new_info, form_url: @form_url } %>
+  <%= render partial: "informations/form", locals: { reportable: @reportable, new_info: @new_info, form_url: @form_url } %>
 <% end %>
 
 <%= turbo_stream.update "#{@type}_infos" do %>

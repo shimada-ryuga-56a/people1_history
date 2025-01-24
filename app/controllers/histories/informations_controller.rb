@@ -6,6 +6,9 @@ class Histories::InformationsController < ApplicationController
     respond_to do |format|
       if @info.save
         @new_info = @history.informations.build
+        @reportable = @history
+        @type = "history"
+        @infos = @history.informations.order(created_at: :desc)
         flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream { render 'informations/create' }
       else
