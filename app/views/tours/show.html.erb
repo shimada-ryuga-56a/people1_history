@@ -7,15 +7,19 @@
     <table class="table">
       <thead>
         <tr>
+          <th></th>
           <th>日程</th>
           <th>場所</th>
           <th></th>
           <th>備考</th>
         </tr>
       </thead>
-      <% @tours.each do |event| %>
+      <% @tours.each_with_index do |event, i| %>
         <tbody class="<%= "bg-slate-400 text-black" if event.is_canceled? %>">
           <tr>
+            <td>
+              <p><%= i + 1 %></p>
+            </td>
             <td>
               <%= I18n.l(event.date, format: "%Y/%m/%d(%a)") %>
             </td>
