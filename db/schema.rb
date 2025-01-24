@@ -179,6 +179,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_20_025301) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "informations", force: :cascade do |t|
+    t.string "reportable_type"
+    t.bigint "reportable_id"
+    t.string "body", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["reportable_type", "reportable_id"], name: "index_information_on_reportable"
   end
 
@@ -407,11 +416,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_20_025301) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "event_informations", "events"
-  add_foreign_key "event_informations", "users"
-  add_foreign_key "events", "tours"
   add_foreign_key "tour_informations", "tours"
   add_foreign_key "tour_informations", "users"
 end
