@@ -36,9 +36,11 @@
     </table>
   </div>
 
-  <%= render partial: "links/links", locals: { link_contents: @link_contents } %>
+  <%= render partial: "links/links", locals: { youtubes: @youtube_contents, tiktoks: @tiktok_contents } %>
 
   <div class="divider"></div>
   <%= render partial: 'tour_informations/form', locals: {tour: @tour, new_info: @new_info} %>
-  <%= render partial: 'tour_informations/tour_informations', locals: {infos: @informations} %>
+  <%= turbo_frame_tag 'tour_informations' do %>
+    <%= render partial: 'tour_informations/tour_informations', locals: {infos: @informations} %>
+  <% end %>
 </div>
