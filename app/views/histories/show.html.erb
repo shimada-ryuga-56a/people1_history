@@ -11,40 +11,45 @@
     </div>
   </div>
 
-  <div class="lg:mb-8">
-    <div class="flex items-center justify-center w-full h-60 md:h-80">
-      <div class="w-60 md:w-80 h-full">
-        <turbo-frame id="history_image" src="/histories/images/<%= @history.id %>" loading="lazy">
-          <div class="skeleton w-full h-full flex items-center justify-center">
-            <span class="loading loading-spinner loading-xs mr-1"></span>
-            <p class="text-center">画像読み込み中...</p>
-          </div>
-        </turbo-frame>
+  <div class="md:grid md:grid-cols-5 md:gap-5">
+    <div class="md:col-span-2">
+      <div class="flex items-center justify-center w-full h-60 mb-2">
+        <div class="w-60 h-full">
+          <turbo-frame id="history_image" src="/histories/images/<%= @history.id %>" loading="lazy">
+            <div class="skeleton w-full h-full flex items-center justify-center">
+              <span class="loading loading-spinner loading-xs mr-1"></span>
+              <p class="text-center">画像読み込み中...</p>
+            </div>
+          </turbo-frame>
+        </div>
       </div>
     </div>
-    <div class="flex justify-end mt-3">
-      <%= render partial: "likes/likes", locals: { history: @history, likes: @history.likes, like_url: history_likes_path(history_id: @history.id) } %>
-      <% if @history.user == current_user %>
-        <%= link_to edit_history_path(@history.id) do %>
-          <i class="fa-solid fa-pen-to-square mr-3"></i>
+    <div class="md:col-span-3">
+      <div class="">
+        <div class="flex items-center mb-2">
+          <i class="mr-2 fa-solid fa-calendar-days"></i>
+          <p class=""><%= I18n.l(@history.date, format: "%Y/%m/%d(%a)") %></p>
+        </div>
+        <div class="md:flex md:items-end">
+          <p class="md:text-2xl mr-2"><%= @history.title %></p>
+        </div>
+      </div>
+      <div class="mt-3">
+        <%= @history.remark.present? ? @history.remark : nil %>
+      </div>
+      <div class="flex justify-end md:justify-start mt-3">
+        <% if @history.user == current_user %>
+          <%= link_to edit_history_path(@history.id) do %>
+            <i class="fa-solid fa-pen-to-square mr-3"></i>
+          <% end %>
+          <%= link_to history_path(@history.id), data: { "turbo-method": :delete, turbo_confirm: "投稿を削除します。よろしいですか？" } do %>
+            <i class="fa-solid fa-trash-can mr-3"></i>
+          <% end %>
         <% end %>
-        <%= link_to history_path(@history.id), data: { "turbo-method": :delete, turbo_confirm: "投稿を削除します。よろしいですか？" } do %>
-          <i class="fa-solid fa-trash-can"></i>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="text-center">
-      <p class="mb-3"><%= I18n.l(@history.date, format: "%Y/%m/%d(%a)") %></p>
-      <p class="md:text-2xl md:mb-5 lg:text-3xl"><%= @history.title %></p>
+        <%= render partial: "likes/likes", locals: { history: @history, likes: @history.likes, like_url: history_likes_path(history_id: @history.id) } %>
+      </div>
     </div>
   </div>
-
-  <% if @history.remark.present? %>
-    <div class="divider mb-3 md:mb-8">
-      <p class="md:text-lg">概要</p>
-    </div>
-    <p class="md:text-lg"><%= @history.remark %></p>
-  <% end %>
 
 
   <div>
