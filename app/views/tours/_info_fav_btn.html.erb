@@ -7,7 +7,7 @@
   <% else %>
     <%= link_to tour_information_likes_on_tour_informations_path(tour_information), data: { "turbo-method": :post } do %>
       <i class="fa-regular fa-heart"></i>
-      <%= tour_information.likes_on_tour_informations.count %> いいね
+      <%= tour_information.likes_on_tour_informations.length %> いいね
     <% end %>
   <% end %>
 <% end %>
