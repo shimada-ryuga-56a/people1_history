@@ -2,8 +2,8 @@
   <%= render partial: "informations/form", locals: { reportable: @disc, new_info: @new_info, form_url: @form_url } %>
 <% end %>
 
-<%= turbo_stream.prepend "infos" do %>
-  <%= render partial: "informations/information", locals: { info: @info } %>
+<%= turbo_stream.update "#{@type}_infos" do %>
+  <%= render partial: "informations/informations", locals: { infos: @infos } %>
 <% end %>
 
 <%= turbo_stream.replace "flash_message" do %>
