@@ -41,7 +41,9 @@
     <%= render partial: "informations/form", locals: { reportable: @disc, new_info: @new_info, form_url: @form_url } %>
   </div>
 
-  <%= render partial: "informations/informations", locals: { infos: @infos } %>
+  <%= turbo_frame_tag 'disc_infos' do %>
+    <%= render partial: "informations/informations", locals: { infos: @infos } %>
+  <% end %>
 
   <div class="mb-5 leading-8">
   </div>
