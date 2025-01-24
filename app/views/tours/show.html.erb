@@ -1,4 +1,4 @@
-<div class="m-3">
+<div class="m-5">
   <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
     <%= title @tour.name %>
   </h1>
@@ -7,15 +7,19 @@
     <table class="table">
       <thead>
         <tr>
+          <th></th>
           <th>日程</th>
           <th>場所</th>
           <th></th>
           <th>備考</th>
         </tr>
       </thead>
-      <% @tours.each do |event| %>
+      <% @tours.each_with_index do |event, i| %>
         <tbody class="<%= "bg-slate-400 text-black" if event.is_canceled? %>">
           <tr>
+            <td>
+              <p><%= i + 1 %></p>
+            </td>
             <td>
               <%= I18n.l(event.date, format: "%Y/%m/%d(%a)") %>
             </td>
@@ -36,9 +40,11 @@
     </table>
   </div>
 
-  <%= render partial: "links/links", locals: { link_contents: @link_contents } %>
+  <%= render partial: "links/links", locals: { youtubes: @youtube_contents, tiktoks: @tiktok_contents } %>
 
   <div class="divider"></div>
   <%= render partial: 'tour_informations/form', locals: {tour: @tour, new_info: @new_info} %>
-  <%= render partial: 'tour_informations/tour_informations', locals: {infos: @informations} %>
+  <%= turbo_frame_tag 'tour_informations' do %>
+    <%= render partial: 'tour_informations/tour_informations', locals: {infos: @informations} %>
+  <% end %>
 </div>

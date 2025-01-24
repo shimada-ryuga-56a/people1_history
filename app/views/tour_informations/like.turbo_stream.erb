@@ -1,0 +1,3 @@
+<%= turbo_stream.update "like_on_tour_information_#{@tour_information.id}" do %>
+  <%= render partial: "tours/info_fav_btn", locals: { tour_information: @tour_information } %>
+<% end %>
