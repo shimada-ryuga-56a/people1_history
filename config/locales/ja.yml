@@ -45,7 +45,7 @@ ja:
         hiragana_ruby: "全角ひらがなで入力して下さい。"
   flash:
     success:
-      post: "無事投稿されました！"
+      post: "投稿されました！"
       setlist_post: "ご協力ありがとうございます！"
       update_post: "投稿を更新しました👍"
       delete_post: "投稿を削除しました👍"

@@ -9,7 +9,7 @@
       <%= link_to information_likes_on_informations_path(information_id: information.id), data: { "turbo-method": :post } do %>
         <i class="fa-regular fa-heart"></i>
       <% end %>
-      <%= information.likes_on_informations.count %> いいね
+      <%= information.likes_on_informations.length %> いいね
     <% end %>
   </div>
 <% end %>

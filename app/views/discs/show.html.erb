@@ -1,16 +1,10 @@
 <div class="m-5">
-  <h1 class="text-center font-extrabold	sm:text-lg md:text-2xl mb-5">
+  <h1 class="flex justify-center text-center text-3xl mb-5">
     <%= title @disc.title %>
   </h1>
 
   <div class="mb-5">
-    <div class="divider mb-3">
-      <h1 class="font-bold sm:text-lg md:text-xl">
-        概要
-      </h1>
-    </div>
-    <div>
-      <p>形態：<%= t("activerecord.attributes.disc.#{@disc.production_type}") %></p>
+    <div class="text-center">
       <% if @disc.announcement_date.present? %>
         <p>解禁日：<%= I18n.l(@disc.announcement_date, format: "%Y/%m/%d(%a)") %></p>
       <% end %>
@@ -28,7 +22,7 @@
     </div>
     <div>
       <% if @disc_versions.present? %>
-        <%= render partial: "version" %>
+        <%= render partial: "versions", locals: {versions: @disc_versions, items: @disc_items} %>
       <% else %>
         <p>現時点で公開されている情報はありません</p>
       <% end %>
@@ -47,7 +41,9 @@
     <%= render partial: "informations/form", locals: { reportable: @disc, new_info: @new_info, form_url: @form_url } %>
   </div>
 
-  <%= render partial: "informations/informations", locals: { infos: @infos } %>
+  <%= turbo_frame_tag 'disc_infos' do %>
+    <%= render partial: "informations/informations", locals: { infos: @infos } %>
+  <% end %>
 
   <div class="mb-5 leading-8">
   </div>
