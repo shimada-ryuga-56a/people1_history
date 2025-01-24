@@ -8,6 +8,7 @@ class Discs::InformationsController < ApplicationController
         @new_info = @disc.informations.build
         @infos = Information.eager_load(:user, :likes_on_informations).where(reportable_type: "Disc", reportable_id: @disc.id).order(created_at: :desc)
         @type = "disc"
+        @reportable = @disc
         flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream { render 'informations/create' }
       else
