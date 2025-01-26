@@ -32,9 +32,9 @@
   </div>
 
   <div class="navbar-end">
-    <div class="indicator md:mx-2">
+    <%= link_to "https://twitter.com/share?url=https://people1-fansite.com/&text=#{ERB::Util.url_encode("#{current_user.name}さんが #ぴぽの掲示板 を閲覧しています！\n\n")}", target: '_blank', class: "indicator md:mx-2" do %>
       <i class="fa-brands fa-square-x-twitter"></i>
-    </div>
+    <% end %>
     <%= link_to notices_path, class: "btn btn-ghost btn-circle" do %>
       <div class="indicator">
         <svg
