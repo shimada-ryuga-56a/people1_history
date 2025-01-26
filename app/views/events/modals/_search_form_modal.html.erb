@@ -13,7 +13,7 @@
 
         <div class="mb-3">
           <% @categories.each do |category| %>
-            <div class="flex">
+            <div class="flex items-center">
               <%= f.check_box :category_eq_any, { multiple: true, include_hidden: false }, category[1] %>
               <%= f.label category[0], class: "ml-1" %>
             </div>
@@ -22,19 +22,18 @@
 
         <div class="mb-3">
           <%= f.label "都道府県" %>
-          <%= f.select :place_prefecture_eq, Event.place_prefectures.invert.map{|key, value| [t("activerecord.attributes.event.place_prefecture.#{value}"), Event.place_prefectures[value]]}, { include_blank: "指定なし" }, class: "select select-sm max-w-xs border-neutral-content bg-transparent"%>
+          <%= f.select :place_prefecture_eq, Event.place_prefectures.invert.map{|key, value| [t("activerecord.attributes.event.place_prefecture.#{value}"), Event.place_prefectures[value]]}, { include_blank: "指定なし" } %>
         </div>
 
         <div class="mb-3">
           <%= f.label "開催期間" %>
-          <div>
-            <%= f.date_field :date_gteq, include_blank: true, class: "p-1 text-white mb-3" %>
+          <div class="">
+            <%= f.date_field :date_gteq, include_blank: true, class: "p-1 mb-3" %>
             <span>~</span>
-            <%= f.date_field :date_lteq, include_blank: true, class: "p-1 text-white mb-3" %>
+            <%= f.date_field :date_lteq, include_blank: true, class: "p-1 mb-3" %>
           </div>
           <p class="text-xs">
-            ※デフォルトでは開催済みのイベントのみが表示されます。
-            未開催のイベントを表示したい場合、未来の期間を含めて検索を行ってください。
+            ※デフォルトでは開催済みのイベントのみが表示されています。検索を行うと、開催予定のイベントも表示されます。
           </p>
         </div>
 

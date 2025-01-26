@@ -1,24 +1,24 @@
-<div class="nested-form-wrapper border p-3 mb-5 mx-2" data-new-record="<%= f.object.new_record? %>">
-  <div data-controller="autocomplete" data-autocomplete-url-value="/setlists/search" role="combobox", class="mb-3">
-    <%= f.text_field :song_title, class: "input input-bordered w-full min-w-xs", placeholder: "楽曲名", data: { autocomplete_target: 'input' } %>
-    <ul class="list-group bg-white absolute w-10/12	md:text-sm" data-autocomplete-target="results"></ul>
+<div class="nested-form-wrapper border p-3 mb-5 mx-2 " data-new-record="<%= f.object.new_record? %>">
+  <div data-controller="autocomplete" data-autocomplete-url-value="/setlists/search" role="combobox", class="mb-3 w-full">
+    <%= f.text_field :song_title, class: "input input-bordered w-full min-w-xs text-neutral-content", placeholder: "楽曲名", data: { autocomplete_target: 'input' } %>
+    <ul class="list-group bg-white w-full md:text-sm" data-autocomplete-target="results"></ul>
   </div>
-  <div class="mb-3 flex">
+  <div class="mb-3 flex items-center">
     <%= f.check_box :is_song, class: "mr-2" %>
     <%= f.label :is_song %>
     <%= render partial: "setlists/modals/is_song" %>
   </div>
-  <div class="mb-3 flex">
+  <div class="mb-3 flex items-center">
     <%= f.check_box :is_arranged, class: "mr-2" %>
     <%= f.label :is_arranged %>
     <%= render partial: "setlists/modals/is_arranged" %>
   </div>
-  <div class="mb-3 flex">
+  <div class="mb-3 flex items-center">
     <%= f.check_box :is_rehearsal, class: "mr-2" %>
     <%= f.label :is_rehearsal %>
     <%= render partial: "setlists/modals/is_rehearsal" %>
   </div>
-  <div class="mb-3 flex">
+  <div class="mb-3 flex items-center">
     <%= f.check_box :is_encore, class: "mr-2" %>
     <%= f.label :is_encore %>
     <%= render partial: "setlists/modals/is_encore" %>
