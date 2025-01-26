@@ -5,19 +5,19 @@
 <%= form_with model: history, local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <div class="my-2 flex flex-col">
-    <%= f.label "日付（必須）" %>
-    <%= f.date_field :date, class: "bg-base-100 text-base-content border border-base-content rounded-lg p-1 my-3 max-w-40" %>
+    <%= f.label "日付 *" %>
+    <%= f.date_field :date, class: "text-neutral-content p-1 my-3 max-w-40" %>
   </div>
   <div>
-    <%= f.label "タイトル（必須）" %>
-    <%= f.text_field :title, placeholder: "(例)🎊MusicStation初出演！🎊", class: "input input-bordered w-full my-3" %>
+    <%= f.label "タイトル *" %>
+    <%= f.text_field :title, placeholder: "(例)🎊MusicStation初出演！🎊", class: "text-neutral-content input input-bordered w-full my-3" %>
   </div>
   <div>
-    <%= f.label "説明欄（任意）" %>
-    <%= f.text_field :remark, class: "textarea textarea-bordered w-full h-24 my-3", placeholder: "(例)メリバを披露" %>
+    <%= f.label "説明欄" %>
+    <%= f.text_field :remark, class: "textarea textarea-bordered text-neutral-content w-full h-24 my-3", placeholder: "(例)メリバを披露" %>
   </div>
   <div class="flex flex-col">
-    <%= f.label :image, '画像（任意）' %>
+    <%= f.label :image, '画像' %>
     <%= f.file_field :image, class: "file-input file-input-bordered w-full max-w-xs my-3" %>
   </div>
     <%= f.submit "登録する", class: "btn btn-primary my-4", data: { turbo_confirm: "ヒストリーを投稿します！よろしいですか？" } %>
