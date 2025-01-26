@@ -1,0 +1,7 @@
+<ul class="list-disc list-inside">
+  <div class="md:grid md:grid-cols-2 md:gap-3 lg:grid-cols-3 lg:gap-5">
+  <% instruments.each do |instrument| %>
+    <%= render partial: "instruments/instrument", locals: {instrument: instrument} %>
+  <% end %>
+  </div>
+</ul>
