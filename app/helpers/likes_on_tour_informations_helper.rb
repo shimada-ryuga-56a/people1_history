@@ -1,2 +1,0 @@
-module LikesOnTourInformationsHelper
-end
