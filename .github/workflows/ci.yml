@@ -69,7 +69,7 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Set up db
+      - name: Start test
         env:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
