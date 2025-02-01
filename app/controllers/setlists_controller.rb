@@ -37,7 +37,7 @@ class SetlistsController < ApplicationController
     params.expect(
       setlist: [:event_id,
                 { setlistitems_attributes: [[:song_title, :position, :is_encore, :is_song, :is_arranged, :is_rehearsal,
-                                            :_destroy]] }]
+                                             :_destroy]] }]
     ).merge(user_id: current_user.id, event_id: params[:event_id])
   end
 
