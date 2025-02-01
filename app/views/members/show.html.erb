@@ -54,17 +54,17 @@
       </div>
       <div class="flex items-center justify-center mb-5 md:mb-10">
         <% if @member.x_link.present? %>
-          <%= link_to @member.x_link, target: "_blank" do %>
+          <%= link_to @member.x_link.to_s, target: "_blank" do %>
             <i class="fa-brands fa-square-x-twitter fa-3x mx-3"></i>
           <% end %>
         <% end %>
         <% if @member.instagram.present? %>
-          <%= link_to @member.instagram, target: "_blank" do %>
+          <%= link_to @member.instagram.to_s, target: "_blank" do %>
             <i class="fa-brands fa-square-instagram fa-3x mx-3"></i>
           <% end %>
         <% end %>
         <% if @member.thread.present? %>
-          <%= link_to @member.thread, target: "_blank" do %>
+          <%= link_to @member.thread.to_s, target: "_blank" do %>
             <i class="fa-brands fa-square-threads fa-3x mx-3", style="--fa-primary-opacity: 0.20"></i>
           <% end %>
         <% end %>
