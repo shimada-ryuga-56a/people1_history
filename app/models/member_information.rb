@@ -8,6 +8,6 @@ class MemberInformation < ApplicationRecord
   validates :content, presence: true
 
   def liked?(user)
-    likes_on_member_infos.where(user_id: user.id).exists?
+    likes_on_member_infos.exists?(user_id: user.id)
   end
 end

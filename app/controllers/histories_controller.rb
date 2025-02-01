@@ -27,7 +27,8 @@ class HistoriesController < ApplicationController
     @history = History.find(params[:id])
     @new_info = @history.informations.build
     @form_url = history_informations_path(history_id: @history.id)
-    @infos = Information.includes(:user, :likes_on_informations).where(reportable_type: 'History', reportable_id: @history.id).order(created_at: :desc)
+    @infos = Information.includes(:user, :likes_on_informations).where(reportable_type: 'History',
+                                                                       reportable_id: @history.id).order(created_at: :desc)
   end
 
   def new
@@ -106,23 +107,7 @@ class HistoriesController < ApplicationController
   private
 
   def history_params
-    params.require(:history).permit(:title, :remark, :date, :image).merge(user_id: current_user.id)
-  end
-
-  def params_inspection
-    valid_values = %w[0 1]
-    params[:events] = '1' if params[:events].nil?
-    params[:disc_dates] = '1' if params[:disc_dates].nil?
-    params[:histories] = '1' if params[:histories].nil?
-    params[:tie_ups] = '1' if params[:tie_ups].nil?
-    params[:link_dates] = '1' if params[:link_dates].nil?
-    params[:link_views] = '1' if params[:link_views].nil?
-    params[:events] = valid_values.include?(params[:events]) ? params[:events] : '0'
-    params[:disc_dates] = valid_values.include?(params[:disc_dates]) ? params[:disc_dates] : '0'
-    params[:histories] = valid_values.include?(params[:histories]) ? params[:histories] : '0'
-    params[:tie_ups] = valid_values.include?(params[:tie_ups]) ? params[:tie_ups] : '0'
-    params[:link_dates] = valid_values.include?(params[:link_dates]) ? params[:link_dates] : '0'
-    params[:link_views] = valid_values.include?(params[:link_views]) ? params[:link_views] : '0'
+    params.expect(history: [:title, :remark, :date, :image]).merge(user_id: current_user.id)
   end
 
   def add_to_histories(_param_key, model, joiner)
