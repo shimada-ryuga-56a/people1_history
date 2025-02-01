@@ -69,5 +69,9 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Run RSpec tests  # RSpecテストの実行
+      - name: Run tests
+        env:
+          RAILS_ENV: test
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432
+          # REDIS_URL: redis://localhost:6379/0
         run: bundle exec rspec
