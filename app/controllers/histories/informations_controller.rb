@@ -7,7 +7,7 @@ class Histories::InformationsController < ApplicationController
       if @info.save
         @new_info = @history.informations.build
         @reportable = @history
-        @type = "history"
+        @type = 'history'
         @infos = @history.informations.order(created_at: :desc)
         flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream { render 'informations/create' }
@@ -22,6 +22,6 @@ class Histories::InformationsController < ApplicationController
   private
 
   def information_params
-    params.require(:information).permit(:body).merge(user_id: current_user.id)
+    params.expect(information: [:body]).merge(user_id: current_user.id)
   end
 end

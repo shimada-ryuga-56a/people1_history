@@ -19,6 +19,6 @@ class MemberInformationsController < ApplicationController
   private
 
   def member_params
-    params.require(:member_information).permit(:content).merge(user_id: current_user.id, member_id: params[:member_id])
+    params.expect(member_information: [:content]).merge(user_id: current_user.id, member_id: params[:member_id])
   end
 end

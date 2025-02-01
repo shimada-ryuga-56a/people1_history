@@ -20,6 +20,6 @@ class TourInformationsController < ApplicationController
   private
 
   def tour_information_params
-    params.require(:tour_information).permit(:body).merge(user_id: current_user.id, tour_id: params[:tour_id])
+    params.expect(tour_information: [:body]).merge(user_id: current_user.id, tour_id: params[:tour_id])
   end
 end

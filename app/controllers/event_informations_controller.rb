@@ -4,7 +4,8 @@ class EventInformationsController < ApplicationController
     @event = Event.find(params[:event_id])
     respond_to do |format|
       if @info.save
-        @infos = EventInformation.eager_load(:user, :likes_on_event_informations).where(event_id: @event.id).order(created_at: :desc)
+        @infos = EventInformation.eager_load(:user,
+                                             :likes_on_event_informations).where(event_id: @event.id).order(created_at: :desc)
         @new_info = EventInformation.new
         flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream { render 'create' }
@@ -19,6 +20,6 @@ class EventInformationsController < ApplicationController
   private
 
   def event_information_params
-    params.require(:event_information).permit(:body).merge(user_id: current_user.id, event_id: params[:event_id])
+    params.expect(event_information: [:body]).merge(user_id: current_user.id, event_id: params[:event_id])
   end
 end

@@ -27,7 +27,8 @@ class HistoriesController < ApplicationController
     @history = History.find(params[:id])
     @new_info = @history.informations.build
     @form_url = history_informations_path(history_id: @history.id)
-    @infos = Information.includes(:user, :likes_on_informations).where(reportable_type: 'History', reportable_id: @history.id).order(created_at: :desc)
+    @infos = Information.includes(:user, :likes_on_informations).where(reportable_type: 'History',
+                                                                       reportable_id: @history.id).order(created_at: :desc)
   end
 
   def new
@@ -106,7 +107,7 @@ class HistoriesController < ApplicationController
   private
 
   def history_params
-    params.require(:history).permit(:title, :remark, :date, :image).merge(user_id: current_user.id)
+    params.expect(history: [:title, :remark, :date, :image]).merge(user_id: current_user.id)
   end
 
   def params_inspection

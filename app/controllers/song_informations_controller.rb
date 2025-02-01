@@ -20,6 +20,6 @@ class SongInformationsController < ApplicationController
   private
 
   def song_information_params
-    params.require(:song_information).permit(:body).merge(user_id: current_user.id, song_id: params[:song_id])
+    params.expect(song_information: [:body]).merge(user_id: current_user.id, song_id: params[:song_id])
   end
 end
