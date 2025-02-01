@@ -25,9 +25,10 @@ module Myapp
     #
     config.time_zone = 'Asia/Tokyo'
     # config.eager_load_paths << Rails.root.join("extras")
+    config.active_support.to_time_preserves_timezone = :zone
 
     config.generators do |g|
-      g.test_framework false
+      g.test_framework :rspec
     end
   end
 end
