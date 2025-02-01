@@ -34,9 +34,10 @@ class SetlistsController < ApplicationController
   private
 
   def setlist_params
-    params.require(:setlist).permit(
-      :event_id,
-      setlistitems_attributes: [:song_title, :position, :is_encore, :is_song, :is_arranged, :is_rehearsal, :_destroy]
+    params.expect(
+      setlist: [:event_id,
+                { setlistitems_attributes: [[:song_title, :position, :is_encore, :is_song, :is_arranged, :is_rehearsal,
+                                            :_destroy]] }]
     ).merge(user_id: current_user.id, event_id: params[:event_id])
   end
 
