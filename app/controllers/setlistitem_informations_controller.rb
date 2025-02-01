@@ -4,7 +4,9 @@ class SetlistitemInformationsController < ApplicationController
     @item = Setlistitem.find(@info.setlistitem_id)
     respond_to do |format|
       if @info.save
-        @infos = SetlistitemInformation.eager_load(:user, :likes_on_setlistitem_informations).where(setlistitem_id: @item.id).order(created_at: :desc)
+        @infos = SetlistitemInformation
+                 .eager_load(:user, :likes_on_setlistitem_informations)
+                 .where(setlistitem_id: @item.id).order(created_at: :desc)
         @setlistitem_new_info = SetlistitemInformation.new
         flash.now[:success] = I18n.t('flash.success.post')
         format.turbo_stream
@@ -19,6 +21,6 @@ class SetlistitemInformationsController < ApplicationController
   private
 
   def setlistitem_information_params
-    params.require(:setlistitem_information).permit(:body, :setlistitem_id).merge(user_id: current_user.id)
+    params.expect(setlistitem_information: [:body, :setlistitem_id]).merge(user_id: current_user.id)
   end
 end
