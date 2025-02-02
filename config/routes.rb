@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/histories/images/:id' => "histories#show_page_image"
   get 'member/:id/image' => "members#image"
   get 'gear/:id/image' => "members#gear_image"
+  get 'images/ogp.png', to: 'images#ogp', as: 'images_ogp'
 
   # （ここから）Twitter認証以外を認めないようにルーティングを設定しようとした痕跡
   # devise_for :users, skip: :all
