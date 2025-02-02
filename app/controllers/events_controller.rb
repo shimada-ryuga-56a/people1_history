@@ -19,6 +19,7 @@ class EventsController < ApplicationController
     @info = EventInformation.new
     @event_infomations = EventInformation.includes([:user, :likes_on_event_informations])
                                          .where(event_id: params[:id]).order(created_at: :desc)
+    # 下記、セットリストが存在する場合のみ処理を行う
     return unless @event.setlist
 
     @setlistitems = Setlistitem.where(setlist_id: @event.setlist.id)
@@ -30,9 +31,31 @@ class EventsController < ApplicationController
     end
     @infos.flatten!
     @setlistitem_new_info = SetlistitemInformation.new
+    prepare_meta_tags(@event)
+    p meta_tags
   end
 
   def image
     @event = Event.includes(visual_image_attachment: :blob).find(params[:id])
+  end
+
+  private
+
+  def prepare_meta_tags(event)
+    image_url = "#{request.base_url}/images/ogp.png?text=#{CGI.escape(event.name)}"
+    set_meta_tags og: {
+                    site_name: 'ぴぽの掲示板',
+                    title: event.name,
+                    description: 'セットリスト情報を閲覧できます。',
+                    type: 'website',
+                    url: request.original_url,
+                    image: image_url,
+                    locale: 'ja-JP'
+                  },
+                  twitter: {
+                    card: 'summary_large_image',
+                    site: '@https://x.com/ohkyoku',
+                    image: image_url
+                  }
   end
 end
