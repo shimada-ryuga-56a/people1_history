@@ -83,7 +83,12 @@
       <div class="w-6 rounded-full mr-2">
         <img src="<%= @event.setlist.user.image %>" />
       </div>
-      <p><%= @event.setlist.user.name %><p>
+      <p><%= @event.setlist.user.name.truncate(20) %><p>
+    </div>
+    <div class="mb-5 flex items-center justify-end">
+      <%= link_to root_path, class: "btn btn-secondary" do %>
+        <p>セットリストを<i class="fa-brands fa-square-x-twitter fa-lg mx-1"></i>でシェア</p>
+      <% end %>
     </div>
     <%= render partial: 'events/setlistitem', locals: {setlistitems: @setlistitems, infos: @infos} %>
   <% elsif @event.is_canceled? %>
