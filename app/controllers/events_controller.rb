@@ -32,7 +32,6 @@ class EventsController < ApplicationController
     @infos.flatten!
     @setlistitem_new_info = SetlistitemInformation.new
     prepare_meta_tags(@event)
-    p meta_tags
   end
 
   def image
@@ -42,7 +41,8 @@ class EventsController < ApplicationController
   private
 
   def prepare_meta_tags(event)
-    image_url = "#{request.base_url}/images/ogp.png?text=#{CGI.escape(event.name)}"
+    event_data = "date:#{event.date.strftime('%Y/%m/%d')}, place:#{event.place.truncate(20)}, name:#{event.name.truncate(26)}"
+    image_url = "#{request.base_url}/images/ogp.png?text=#{CGI.escape(event_data)}"
     set_meta_tags og: {
                     site_name: 'ぴぽの掲示板',
                     title: event.name,
