@@ -10,7 +10,9 @@ class ImagesController < ApplicationController
 
   def ogp
     text = ogp_params[:text]
-    image = OgpCreator.build(text).tempfile.open.read
+    info = set_info(text)
+    sub_info = set_sub_info(text)
+    image = OgpCreator.build(info, sub_info).tempfile.open.read
     send_data image, type: 'image/png', disposition: 'inline'
   end
 
@@ -18,5 +20,13 @@ class ImagesController < ApplicationController
 
   def ogp_params
     params.permit(:text)
+  end
+
+  def set_info(text)
+    text.match(/name:(.+)$/)[1]
+  end
+
+  def set_sub_info(text)
+    text.match(/date:(.+), place:/)[1] + " @" + text.match(/place:(.+), name:/)[1]
   end
 end
