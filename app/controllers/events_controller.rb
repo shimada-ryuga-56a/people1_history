@@ -48,7 +48,7 @@ class EventsController < ApplicationController
     p "====================="
     set_meta_tags og: {
                     site_name: 'ぴぽの掲示板',
-                    title: event.name,
+                    title: 'ぴぽの掲示板',
                     description: 'セットリスト情報を閲覧できます。',
                     type: 'website',
                     url: request.original_url,
