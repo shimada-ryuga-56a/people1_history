@@ -41,7 +41,7 @@ class EventsController < ApplicationController
   private
 
   def prepare_meta_tags(event)
-    event_data = "date:#{event.date.strftime('%Y/%m/%d')}, place:#{event.place.truncate(20)}, name:#{event.name.truncate(66)}, remark:PEOPLE 1セットリスト"
+    event_data = "date:#{event.date.strftime('%Y/%m/%d')}, place:#{event.place.truncate(20)}, name:#{event.name.truncate(66)}, remark:PEOPLE 1 セットリスト"
     image_url = "#{request.base_url}/images/ogp.png?text=#{CGI.escape(event_data)}"
     p "====================="
     p image_url
