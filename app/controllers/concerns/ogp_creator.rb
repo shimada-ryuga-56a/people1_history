@@ -1,21 +1,21 @@
 class OgpCreator
   require 'mini_magick'
-  BASE_IMAGE_PATH = './app/assets/images/dynamic_ogp_background.jpeg'
-  FONT = './app/assets/fonts/DotGothic16,M_PLUS_1p/DotGothic16/DotGothic16-Regular.ttf'
-  GRAVITY = 'NorthWest'
+  BASE_IMAGE_PATH = './app/assets/images/dynamic_ogp_background.jpeg'.freeze
+  FONT = './app/assets/fonts/DotGothic16,M_PLUS_1p/DotGothic16/DotGothic16-Regular.ttf'.freeze
+  GRAVITY = 'NorthWest'.freeze
   ONE_LINE_MAX_LENGTH = 26
   TWO_LINE_FONT_SIZE = 25
   ONE_LINE_FONT_SIZE = 35
-  ONE_LINE_POSITION = '+56+110'
-  ONE_LINE_SHADOW_POSITION = '+54+108'
-  TWO_LINE_POSITION = '+56+100'
-  TWO_LINE_SHADOW_POSITION = '+54+101'
+  ONE_LINE_POSITION = '+56+110'.freeze
+  ONE_LINE_SHADOW_POSITION = '+54+108'.freeze
+  TWO_LINE_POSITION = '+56+100'.freeze
+  TWO_LINE_SHADOW_POSITION = '+54+101'.freeze
   SUB_FONT_SIZE = 17
-  SUB_TEXT_POSITION = '+56+68'
-  SUB_TEXT_SHADOW_POSITION = '+54+69'
+  SUB_TEXT_POSITION = '+56+68'.freeze
+  SUB_TEXT_SHADOW_POSITION = '+54+69'.freeze
   REMARK_FONT_SIZE = 20
-  REMARK_POSITION = '+56+190'
-  REMARK_SHADOW_POSITION = '+54+193'
+  REMARK_POSITION = '+56+190'.freeze
+  REMARK_SHADOW_POSITION = '+54+193'.freeze
   INDENTION_COUNT = 34
   SUB_TEXT_INDENTION_COUNT = 34
   ROW_LIMIT = 2
@@ -54,7 +54,6 @@ class OgpCreator
     end
   end
 
-  private
   def self.prepare_text(text)
     text.to_s.scan(/.{1,#{INDENTION_COUNT}}/)[0...ROW_LIMIT].join("\n")
   end
