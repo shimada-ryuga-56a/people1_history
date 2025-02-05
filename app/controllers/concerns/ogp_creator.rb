@@ -28,19 +28,7 @@ class OgpCreator
       config.font FONT
       config.gravity GRAVITY
       config.fill 'black'
-      if text.bytesize < ONE_LINE_MAX_LENGTH
-        config.pointsize ONE_LINE_FONT_SIZE
-        config.draw "text #{ONE_LINE_SHADOW_POSITION} '#{text}'"
-        config.fill 'white'
-        config.pointsize ONE_LINE_FONT_SIZE
-        config.draw "text #{ONE_LINE_POSITION} '#{text}'"
-      else
-        config.pointsize TWO_LINE_FONT_SIZE
-        config.draw "text #{TWO_LINE_SHADOW_POSITION} '#{text}'"
-        config.fill 'white'
-        config.pointsize TWO_LINE_FONT_SIZE
-        config.draw "text #{TWO_LINE_POSITION} '#{text}'"
-      end
+      determine_text_style(text, config)
       config.pointsize SUB_FONT_SIZE
       config.fill 'black'
       config.draw "text #{SUB_TEXT_SHADOW_POSITION} '#{sub_text}'"
@@ -56,5 +44,21 @@ class OgpCreator
 
   def self.prepare_text(text)
     text.to_s.scan(/.{1,#{INDENTION_COUNT}}/)[0...ROW_LIMIT].join("\n")
+  end
+
+  def self.determine_text_style(text, config)
+    if text.bytesize < ONE_LINE_MAX_LENGTH
+      config.pointsize ONE_LINE_FONT_SIZE
+      config.draw "text #{ONE_LINE_SHADOW_POSITION} '#{text}'"
+      config.fill 'white'
+      config.pointsize ONE_LINE_FONT_SIZE
+      config.draw "text #{ONE_LINE_POSITION} '#{text}'"
+    else
+      config.pointsize TWO_LINE_FONT_SIZE
+      config.draw "text #{TWO_LINE_SHADOW_POSITION} '#{text}'"
+      config.fill 'white'
+      config.pointsize TWO_LINE_FONT_SIZE
+      config.draw "text #{TWO_LINE_POSITION} '#{text}'"
+    end
   end
 end
