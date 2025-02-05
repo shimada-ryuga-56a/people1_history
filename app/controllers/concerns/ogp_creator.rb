@@ -3,11 +3,13 @@ class OgpCreator
   BASE_IMAGE_PATH = './app/assets/images/dynamic_ogp_background.jpeg'
   FONT = './app/assets/fonts/DotGothic16,M_PLUS_1p/DotGothic16/DotGothic16-Regular.ttf'
   GRAVITY = 'NorthWest'
-  MINI_TEXT_MAX_LENGTH = 26
-  LONG_TEXT_FONT_SIZE = 25
-  NORMAL_FONT_SIZE = 35
-  TEXT_POSITION = '+56+97'
-  TEXT_SHADOW_POSITION = '+54+98'
+  ONE_LINE_MAX_LENGTH = 26
+  TWO_LINE_FONT_SIZE = 25
+  ONE_LINE_FONT_SIZE = 35
+  ONE_LINE_POSITION = '+56+110'
+  ONE_LINE_SHADOW_POSITION = '+54+108'
+  TWO_LINE_POSITION = '+56+100'
+  TWO_LINE_SHADOW_POSITION = '+54+101'
   SUB_FONT_SIZE = 17
   SUB_TEXT_POSITION = '+56+68'
   SUB_TEXT_SHADOW_POSITION = '+54+69'
@@ -26,19 +28,19 @@ class OgpCreator
       config.font FONT
       config.gravity GRAVITY
       config.fill 'black'
-      if text.bytesize < MINI_TEXT_MAX_LENGTH
-        config.pointsize NORMAL_FONT_SIZE
+      if text.bytesize < ONE_LINE_MAX_LENGTH
+        config.pointsize ONE_LINE_FONT_SIZE
+        config.draw "text #{ONE_LINE_SHADOW_POSITION} '#{text}'"
+        config.fill 'white'
+        config.pointsize ONE_LINE_FONT_SIZE
+        config.draw "text #{ONE_LINE_POSITION} '#{text}'"
       else
-        config.pointsize LONG_TEXT_FONT_SIZE
+        config.pointsize TWO_LINE_FONT_SIZE
+        config.draw "text #{TWO_LINE_SHADOW_POSITION} '#{text}'"
+        config.fill 'white'
+        config.pointsize TWO_LINE_FONT_SIZE
+        config.draw "text #{TWO_LINE_POSITION} '#{text}'"
       end
-      config.draw "text #{TEXT_SHADOW_POSITION} '#{text}'"
-      config.fill 'white'
-      if text.bytesize < MINI_TEXT_MAX_LENGTH
-        config.pointsize NORMAL_FONT_SIZE
-      else
-        config.pointsize LONG_TEXT_FONT_SIZE
-      end
-      config.draw "text #{TEXT_POSITION} '#{text}'"
       config.pointsize SUB_FONT_SIZE
       config.fill 'black'
       config.draw "text #{SUB_TEXT_SHADOW_POSITION} '#{sub_text}'"
