@@ -86,7 +86,7 @@
       <p><%= @event.setlist.user.name.truncate(20) %><p>
     </div>
     <div class="mb-5 flex items-center justify-end">
-      <%= link_to "https://twitter.com/share?url=#{event_url(@event)}&text=#{ERB::Util.url_encode("【セトリ情報】\n#{current_user.name}さんが、「#{@event.name.truncate(50)}」でのPEOPLE 1 セットリストをシェアしました！\n#ぴぽの掲示板\n\n")}", target: '_blank', class: "btn btn-secondary" do %>
+      <%= link_to "https://twitter.com/share?url=#{event_url(@event)}&text=#{ERB::Util.url_encode("【セトリ情報】\n「#{@event.name.truncate(60)}」でのPEOPLE 1 セットリストをシェアしました！\n#ぴぽの掲示板\n\n")}", target: '_blank', class: "btn btn-secondary" do %>
         <p>セットリストを<i class="fa-brands fa-square-x-twitter fa-lg mx-1"></i>でシェア</p>
       <% end %>
     </div>
