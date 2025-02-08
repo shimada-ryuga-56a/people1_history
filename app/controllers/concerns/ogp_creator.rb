@@ -1,7 +1,7 @@
 class OgpCreator
   require 'mini_magick'
   BASE_IMAGE_PATH = './app/assets/images/dynamic_ogp_background.jpeg'.freeze
-  FONT = './app/assets/fonts/DotGothic16,M_PLUS_1p/DotGothic16/DotGothic16-Regular.ttf'.freeze
+  FONT = './app/assets/fonts/DotGothic16/DotGothic16-Regular.ttf'.freeze
   GRAVITY = 'NorthWest'.freeze
   ONE_LINE_MAX_LENGTH = 26
   TWO_LINE_FONT_SIZE = 25
