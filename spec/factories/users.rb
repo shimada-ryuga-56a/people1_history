@@ -1,32 +1,32 @@
 FactoryBot.define do
-  factory :x_user do
+  factory :user1 do
 		email {"rspec_test@test.com"}
 		uid {"123"}
 		provider {"twitter"}
+    password { "password12345" }
 		name {"anonymous"}
-		confirmed_at {Time.now}
   end
 
-  factory :x_user2, class: User do
+  factory :user2, class: User do
     email {"rspec_test2@test.com"}
     uid {"456"}
     provider {"twitter"}
+    password { "password12345" }
     name {"anonymous2"}
-    confirmed_at {Time.now}
   end
 
   factory :correct_x_user, class: User do
-		email {"rspec_test@test.com"}
+    sequence(:email) { |n| "x_test#{n}@example.com" }
 		uid {"123"}
 		provider {"twitter"}
+    password { "password12345" }
 		name {"anonymous"}
-		confirmed_at {Time.now}
   end
 
   factory :no_email_x_user, class: User do
     uid {"123"}
     provider {"twitter"}
+    password { "password12345" }
     name {"anonymous"}
-    confirmed_at {Time.now}
   end
 end
