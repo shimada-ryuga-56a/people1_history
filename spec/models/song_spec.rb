@@ -7,7 +7,7 @@ RSpec.describe Song, type: :model do
   let (:incorrect_name_hiragana_ruby_song) { build(:incorrect_name_hiragana_ruby_song) }
   let (:no_name_kana_ruby_song) { build(:no_name_kana_ruby_song) }
   let (:incorrect_name_kana_ruby_song) { build(:incorrect_name_kana_ruby_song) }
-  describe '[Model : Song] Success - バリデーションの確認' do
+  describe '正常系: バリデーション' do
     context '全ての属性が正しい場合' do
       it 'エラーなくSongが作成される' do
         expect(correct_song).to be_valid
@@ -16,7 +16,7 @@ RSpec.describe Song, type: :model do
     end
   end
 
-  describe '[Model : Song] Failure - バリデーションの確認' do
+  describe '異常系: バリデーション' do
     context 'nameが空の場合' do
       it 'エラーが発生する' do
         expect(no_name_song).to be_invalid
