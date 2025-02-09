@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Song, type: :model do
+  let (:correct_song) { build(:correct_song) }
+  let (:no_name_song) { build(:no_name_song) }
+  let (:no_name_hiragana_ruby_song) { build(:no_name_hiragana_ruby_song) }
+  let (:incorrect_name_hiragana_ruby_song) { build(:incorrect_name_hiragana_ruby_song) }
+  let (:no_name_kana_ruby_song) { build(:no_name_kana_ruby_song) }
+  let (:incorrect_name_kana_ruby_song) { build(:incorrect_name_kana_ruby_song) }
   describe 'バリデーションチェック' do
     it '設定したすべてのバリデーションが機能しているか' do
       song = create(:song)
