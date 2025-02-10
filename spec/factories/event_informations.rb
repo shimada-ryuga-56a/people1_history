@@ -4,7 +4,6 @@ FactoryBot.define do
     association :event
     user_id { user.id }
     event_id { event.id }
-    sequence(:body) { |_n| 'body' }
 
     factory :correct_event_information, class: EventInformation do
       association :user
