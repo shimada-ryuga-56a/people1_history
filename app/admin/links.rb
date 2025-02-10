@@ -17,7 +17,7 @@ ActiveAdmin.register Link do
 
     f.inputs do
       f.has_many :link_dates, allow_destroy: true, new_record: true do |t|
-        t.input :date, start_year: 2017
+        t.input :date, start_year: 2017, end_year: 2060
         t.input :date_type
         t.input :remark
       end
@@ -25,7 +25,7 @@ ActiveAdmin.register Link do
 
     f.inputs do
       f.has_many :link_views, allow_destroy: true, new_record: true do |t|
-        t.input :date, start_year: 2017
+        t.input :date, start_year: 2017, end_year: 2060
         t.input :record_type
       end
     end
