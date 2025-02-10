@@ -34,7 +34,7 @@ ActiveAdmin.register Disc do
     f.inputs do
       f.has_many :disc_dates, allow_destroy: true do |t|
         t.input :date_type
-        t.input :date
+        t.input :date, start_year: 2020, end_year: 2060
         t.input :remark
       end
     end
