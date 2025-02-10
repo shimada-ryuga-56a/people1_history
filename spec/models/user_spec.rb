@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let (:correct_x_user) { build(:correct_x_user) }
-  let (:no_email_x_user) { build(:no_email_x_user) }
+  let(:correct_x_user) { build(:correct_x_user) }
+  let(:no_email_x_user) { build(:no_email_x_user) }
 
   describe '正常系: バリデーション' do
     context '全ての属性が正しい場合' do

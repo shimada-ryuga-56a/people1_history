@@ -4,7 +4,7 @@ FactoryBot.define do
     association :song
     user_id { user.id }
     song_id { song.id }
-    sequence(:body) { |n| "body" }
+    sequence(:body) { |_n| 'body' }
   end
 
   factory :correct_song_information, class: SongInformation do
@@ -12,7 +12,7 @@ FactoryBot.define do
     association :song
     user_id { user.id }
     song_id { song.id }
-    sequence(:body) { |n| "body" }
+    sequence(:body) { |_n| 'body' }
   end
 
   factory :no_body_song_information, class: SongInformation do
