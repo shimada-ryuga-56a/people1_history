@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:twitter]
 
+  has_many :event_informations, dependent: :destroy
   has_many :setlists, dependent: :destroy
   has_many :setlistitem_informations, dependent: :destroy
   has_many :song_informations, dependent: :destroy
@@ -21,6 +22,8 @@ class User < ApplicationRecord
   has_many :likes, as: :likable, dependent: :destroy
   has_many :member_informations, dependent: :destroy
   has_many :likes_on_member_infos, dependent: :destroy
+
+  validates :email, presence: true
 
   # Twitter認証ログイン用
   # ユーザーの情報があれば探し、無ければ作成する
