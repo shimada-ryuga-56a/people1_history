@@ -19,6 +19,6 @@ primary_region = 'nrt'
 
 [[vm]]
   size = 'shared-cpu-1x'
-  memory = '2gb'
+  memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1
