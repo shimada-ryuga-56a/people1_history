@@ -16,7 +16,7 @@ FactoryBot.define do
     song_title { 'song_title' }
   end
 
-  factory :rehearsal_setlistitem, class; Setlistitem do
+  factory :rehearsal_setlistitem, class: Setlistitem do
     song_title { 'song_title' }
     is_rehearsal { true }
   end
