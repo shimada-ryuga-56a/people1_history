@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe EventInformation, type: :model do
-  let (:correct_event_information) { build(:correct_event_information) }
-  let (:no_body_event_information) { build(:no_body_event_information) }
+  let(:correct_event_information) { build(:correct_event_information) }
+  let(:no_body_event_information) { build(:no_body_event_information) }
   before do
     @user = FactoryBot.create(:user)
   end
