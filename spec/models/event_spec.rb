@@ -10,4 +10,11 @@ RSpec.describe Event, type: :model do
       end
     end
   end
+
+  describe '異常系: バリデーション' do
+    it { is_expected.to validate_presence_of :name }
+    it { is_expected.to validate_presence_of :date }
+    it { is_expected.to validate_presence_of :category }
+    it { is_expected.to validate_presence_of :name_kana_ruby }
+  end
 end
