@@ -1,5 +1,14 @@
 FactoryBot.define do
   factory :setlistitem do
+    association :setlist
+    association :song
+    setlist_id { setlist.id }
+    song_title { song.title }
+  end
+
+  factory :no_song_id_setlistitem, class: Setlistitem do
+    association :setlist
+    setlist_id { setlist.id }
     song_title { 'song_title' }
   end
 
