@@ -13,7 +13,9 @@ RSpec.describe EventInformation, type: :model do
         expect(correct_event_information.errors).to be_empty
       end
     end
+  end
 
+  describe '正常系: リレーション' do
     context '正しくEventInformationが作成された場合' do
       it 'Userとの紐付けが正しく保存されること' do
         FactoryBot.create(:correct_event_information, user: @user)
