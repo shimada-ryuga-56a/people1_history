@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :event do
+  factory :event, class: Event do
     category { Event.categories.keys.sample }
     name { "イベント名" }
     date { Faker::Date.between(from: 2.days.ago, to: Date.today) }
@@ -21,7 +21,7 @@ FactoryBot.define do
     end
   end
 
-  factory :correct_event do
+  factory :correct_event, class: Event do
     category { Event.categories.keys.sample }
     name { "イベント名" }
     date { Faker::Date.between(from: 2.days.ago, to: Date.today) }
