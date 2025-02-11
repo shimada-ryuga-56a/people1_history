@@ -8,7 +8,7 @@ class Setlist < ApplicationRecord
   validate :at_least_one_setlistitem
 
   def at_least_one_setlistitem
-    if setlistitems.reject { |item| item.song_title.blank? }.empty?
+    if setlistitems.select { |item| item.song_title.present? }.empty?
       errors.add(:setlistitems, 'は1つ以上必要です')
     end
   end
