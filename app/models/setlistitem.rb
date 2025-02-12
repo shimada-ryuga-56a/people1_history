@@ -1,6 +1,7 @@
 class Setlistitem < ApplicationRecord
   belongs_to :setlist
   has_many :setlistitem_informations, dependent: :destroy
+  has_one :song
 
   validates :is_song, inclusion: { in: [true, false] }
   validates :is_arranged, inclusion: { in: [true, false] }
