@@ -21,5 +21,7 @@ RSpec.describe Setlist, type: :model do
         expect(no_setlistitems_setlist.errors.messages[:setlistitems]).to include 'は1つ以上必要です'
       end
     end
+    it { is_expected.to validate_presence_of :user }
+    it { is_expected.to validate_presence_of :event }
   end
 end
