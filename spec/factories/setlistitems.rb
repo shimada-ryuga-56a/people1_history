@@ -27,6 +27,8 @@ FactoryBot.define do
   end
 
   factory :correct_setlistitem, class: Setlistitem do
+    association :setlist
+    setlist_id { setlist.id }
     song_title { 'song_title' }
   end
 
