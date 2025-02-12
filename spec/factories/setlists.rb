@@ -13,6 +13,13 @@ FactoryBot.define do
     event_id { event.id }
   end
 
+  factory :no_setlistitems_setlist, class: Setlist do
+    association :event
+    association :user
+    user_id { user.id }
+    event_id { event.id }
+  end
+
   factory :no_event_setlist, class: Setlist do
     association :user
     user_id { user.id }
