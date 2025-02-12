@@ -13,4 +13,8 @@ RSpec.describe Setlistitem, type: :model do
       end
     end
   end
+
+  describe '異常系: バリデーション' do
+    it { is_expected.to validate_presence_of :song_title }
+  end
 end
