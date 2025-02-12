@@ -5,6 +5,15 @@ RSpec.describe Setlist, type: :model do
   let (:correct_setlist) { build(:correct_setlist) }
   let (:no_setlistitems_setlist) { build(:no_setlistitems_setlist) }
 
+  describe '正常系: バリデーション' do
+    context '全ての属性が正しい場合' do
+      it 'エラーなくSetlistが作成される' do
+        expect(correct_setlist).to be_valid
+        expect(correct_setlist.errors).to be_empty
+      end
+    end
+  end
+
   describe '異常系: バリデーション' do
     context 'setlistitemsが空の場合' do
       it 'at_least_one_setlistitemバリデーションに引っ掛かる' do
