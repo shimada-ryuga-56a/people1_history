@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Setlistitem, type: :model do
-  let (:setlistitem) { build(:setlistitem) }
-  let (:correct_setlistitem) { build(:correct_setlistitem) }
+  let(:setlistitem) { build(:setlistitem) }
+  let(:correct_setlistitem) { build(:correct_setlistitem) }
   before do
     @song = FactoryBot.create(:song)
   end

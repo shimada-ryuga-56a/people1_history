@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Setlist, type: :model do
-  let (:setlist) { build(:setlist) }
-  let (:correct_setlist) { build(:correct_setlist) }
-  let (:no_setlistitems_setlist) { build(:no_setlistitems_setlist) }
+  let(:setlist) { build(:setlist) }
+  let(:correct_setlist) { build(:correct_setlist) }
+  let(:no_setlistitems_setlist) { build(:no_setlistitems_setlist) }
 
   describe '正常系: バリデーション' do
     context '全ての属性が正しい場合' do
