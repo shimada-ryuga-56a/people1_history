@@ -13,19 +13,6 @@ FactoryBot.define do
     song_title { song.name }
   end
 
-  factory :setlistitem_with_existed_song, class: Setlistitem do
-    association :setlist
-    association :song
-    setlist_id { setlist.id }
-    song_title { song.name }
-  end
-
-  factory :no_song_id_setlistitem, class: Setlistitem do
-    association :setlist
-    setlist_id { setlist.id }
-    song_title { 'song_title' }
-  end
-
   factory :correct_setlistitem, class: Setlistitem do
     association :setlist
     setlist_id { setlist.id }
