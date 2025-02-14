@@ -44,7 +44,10 @@ class EventsController < ApplicationController
     else
       search_word = params[:q]
     end
-    @events = Event.where(['name LIKE(?) or name_kana_ruby LIKE(?)', "%#{search_word}%", "%#{search_word}%"]).order(date: :desc)
+    @events = Event
+              .where(['name LIKE(?) or name_kana_ruby LIKE(?)', "%#{search_word}%", "%#{search_word}%"])
+              .order(date: :desc)
+              .uniq { |event| event[:name] }
     respond_to do |format|
       format.js
     end
