@@ -38,6 +38,13 @@ class EventsController < ApplicationController
     @event = Event.includes(visual_image_attachment: :blob).find(params[:id])
   end
 
+  def search
+    @events = Event.where(['name LIKE(?) or name_kana_ruby LIKE(?)', "%#{params[:q]}%", "%#{params[:q]}%"])
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def prepare_meta_tags(event)
