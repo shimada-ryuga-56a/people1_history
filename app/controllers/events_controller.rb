@@ -38,7 +38,26 @@ class EventsController < ApplicationController
     @event = Event.includes(visual_image_attachment: :blob).find(params[:id])
   end
 
+  def search
+    search_word = if params[:q] =~ /\A[ぁ-んー－]+\z/
+                    convert_to_katakana(params[:q])
+                  else
+                    params[:q]
+                  end
+    @events = Event
+              .where(['name LIKE(?) or name_kana_ruby LIKE(?)', "%#{search_word}%", "%#{search_word}%"])
+              .order(date: :desc)
+              .uniq { |event| event[:name] }
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
+
+  def convert_to_katakana(str)
+    str.tr('ぁ-ん', 'ァ-ン')
+  end
 
   def prepare_meta_tags(event)
     event_date = event.date.strftime('%Y/%m/%d')
