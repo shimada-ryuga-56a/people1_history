@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe LinkView, type: :model do
-  let (:link_view) { build(:link_view) }
-  let (:correct_link_view) { build(:correct_link_view) }
+  let(:link_view) { build(:link_view) }
+  let(:correct_link_view) { build(:correct_link_view) }
 
   describe '正常系: バリデーション' do
     context '全ての属性が正しい場合' do
