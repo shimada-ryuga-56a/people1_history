@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show image]
+  skip_before_action :authenticate_user!, only: %i[index show image search]
 
   def index
     @categories = Event.categories

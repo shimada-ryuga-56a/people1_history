@@ -1,5 +1,5 @@
 <div class="nested-form-wrapper border p-3 mb-5 mx-2 " data-new-record="<%= f.object.new_record? %>">
-  <div data-controller="autocomplete" data-autocomplete-url-value="/setlists/search" role="combobox", class="mb-3 w-full">
+  <div data-controller="autocomplete" data-autocomplete-url-value="/songs/search" role="combobox", class="mb-3 w-full">
     <%= f.text_field :song_title, class: "input input-bordered w-full min-w-xs text-neutral-content", placeholder: "楽曲名", data: { autocomplete_target: 'input' } %>
     <ul class="list-group bg-white w-full md:text-sm" data-autocomplete-target="results"></ul>
   </div>

@@ -102,11 +102,6 @@ Rails.application.routes.draw do
 
   resource :mypage, only: [:show]
 
-  # セットリストのオートコンプリートのためのルーティング
-  resources :setlists do
-    get :search, on: :collection
-  end
-
   get "up" => "rails/health#show", as: :rails_health_check
 
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
