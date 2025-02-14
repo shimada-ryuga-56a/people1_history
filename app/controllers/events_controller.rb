@@ -39,13 +39,22 @@ class EventsController < ApplicationController
   end
 
   def search
-    @events = Event.where(['name LIKE(?) or name_kana_ruby LIKE(?)', "%#{params[:q]}%", "%#{params[:q]}%"])
+    if params[:q] =~ /\A[ぁ-んー－]+\z/
+      search_word = convert_to_katakana(params[:q])
+    else
+      search_word = params[:q]
+    end
+    @events = Event.where(['name LIKE(?) or name_kana_ruby LIKE(?)', "%#{search_word}%", "%#{search_word}%"])
     respond_to do |format|
       format.js
     end
   end
 
   private
+
+  def convert_to_katakana(str)
+    str.tr('ぁ-ん', 'ァ-ン')
+  end
 
   def prepare_meta_tags(event)
     event_date = event.date.strftime('%Y/%m/%d')
