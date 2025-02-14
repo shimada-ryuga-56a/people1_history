@@ -39,11 +39,11 @@ class EventsController < ApplicationController
   end
 
   def search
-    if params[:q] =~ /\A[ぁ-んー－]+\z/
-      search_word = convert_to_katakana(params[:q])
-    else
-      search_word = params[:q]
-    end
+    search_word = if params[:q] =~ /\A[ぁ-んー－]+\z/
+                    convert_to_katakana(params[:q])
+                  else
+                    params[:q]
+                  end
     @events = Event
               .where(['name LIKE(?) or name_kana_ruby LIKE(?)', "%#{search_word}%", "%#{search_word}%"])
               .order(date: :desc)
