@@ -1,6 +1,6 @@
 namespace :job do
-  desc "TODO"
+  desc "YouTubeAPIリクエストを送信する"
   task fetch_youtube_record: :environment do
+    FetchYoutubeRecordJob.perform_now
   end
-
 end
