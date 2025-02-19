@@ -23,7 +23,7 @@ class Link < ApplicationRecord
 
   def extract_youtube_id
     if url_link.include?('https://youtu.be/')
-      url_link.gsub(/https\:\/\/youtu.be\//, '').gsub(/\?si=.*/, '')
+      url_link.gsub(%r{https://youtu.be/}, '').gsub(/\?si=.*/, '')
     else
       url_link.gsub('https://www.youtube.com/watch?v=', '')
     end
