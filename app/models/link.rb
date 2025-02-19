@@ -20,4 +20,12 @@ class Link < ApplicationRecord
   def self.ransackable_attributes(_auth_object = nil)
     %w[created_at id id_value platform remark updated_at url_link]
   end
+
+  def extract_youtube_id
+    if url_link.include?('https://youtu.be/')
+      url_link.gsub(%r{https://youtu.be/}, '').gsub(/\?si=.*/, '')
+    else
+      url_link.gsub('https://www.youtube.com/watch?v=', '')
+    end
+  end
 end
