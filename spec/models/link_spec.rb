@@ -16,7 +16,7 @@ RSpec.describe Link, type: :model do
   describe '正常系: 独自メソッド' do
     context 'YouTubeのリンクの場合' do
       it 'YouTubeのリンクが正しく判定される' do
-        link = create(:link_youtube, url_link: link_prefixes[0] + 'abcdefg')
+        link = create(:link_youtube, url_link: "#{link_prefixes[0]}abcdefg")
         expect(link.extract_youtube_id).to eq 'abcdefg'
       end
     end
