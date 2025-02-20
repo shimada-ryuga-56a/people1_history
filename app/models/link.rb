@@ -7,6 +7,9 @@ class Link < ApplicationRecord
   has_many :link_views, dependent: :destroy
   accepts_nested_attributes_for :link_views, allow_destroy: true
 
+  has_many :link_view_counts, dependent: :destroy
+  accepts_nested_attributes_for :link_view_counts, allow_destroy: true
+
   validates :platform, presence: true
   validates :url_link, presence: true
   validates :remark, presence: true
