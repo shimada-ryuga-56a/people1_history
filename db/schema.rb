@@ -198,14 +198,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_20_020407) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "like_view_counts", force: :cascade do |t|
-    t.integer "link_id", null: false
-    t.date "date", null: false
-    t.integer "view_count", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "likable_type", null: false
@@ -271,6 +263,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_20_020407) do
     t.integer "link_id", null: false
     t.integer "date_type", null: false
     t.text "remark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "link_view_counts", force: :cascade do |t|
+    t.integer "link_id", null: false
+    t.date "date", null: false
+    t.integer "view_count", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
