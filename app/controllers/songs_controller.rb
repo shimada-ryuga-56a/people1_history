@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show jacket]
+  skip_before_action :authenticate_user!, only: %i[index show jacket search]
 
   def index
     @q = Song.ransack(params[:q])
