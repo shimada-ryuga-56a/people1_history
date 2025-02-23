@@ -5,7 +5,8 @@ ActiveAdmin.register Link do
 
   permit_params :platform, :url_link, :remark, :title,
                 link_dates_attributes: [:id, :link_id, :date, :date_type, :remark, :_destroy],
-                link_views_attributes: [:id, :link_id, :date, :record_type, :_destroy]
+                link_views_attributes: [:id, :link_id, :date, :record_type, :_destroy],
+                link_view_counts_attributes: [:id, :link_id, :date, :view_count, :_destroy]
 
   form do |f|
     f.inputs do
@@ -27,6 +28,13 @@ ActiveAdmin.register Link do
       f.has_many :link_views, allow_destroy: true, new_record: true do |t|
         t.input :date, start_year: 2017, end_year: 2060
         t.input :record_type
+      end
+    end
+
+    f.inputs do
+      f.has_many :link_view_counts, allow_destroy: true, new_record: true do |t|
+        t.input :date, start_year: 2017, end_year: 2060
+        t.input :view_count
       end
     end
 
