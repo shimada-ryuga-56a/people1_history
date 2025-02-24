@@ -14,16 +14,7 @@
       <div class="flex flex-col justify-center w-2/3 md:w-4/5 text-base md:text-lg lg:text-xl">
         <p class="link"><%= link_to link_view.link.title, link_view.link.url_link, target: "_blank", rel: "noopener noreferrer" %></p>
         <p class="mt-1">
-          <% case link_view.record_type %>
-            <% when "one_million" %>
-              100万回再生達成🔥
-            <% when "ten_million" %>
-              1000万回再生達成🔥
-            <% when "hundred_million" %>
-              1億回再生達成🔥
-            <% when "one_billion" %>
-              10億再生達成！
-          <% end %>
+          <span class="text-base md:text-lg lg:text-xl"><%= t("activerecord.attributes.link_view.#{link_view.record_type}") %>回再生達成🎉</span>
         </p>
         <p class="my-1 text-xs"></p>
       </div>

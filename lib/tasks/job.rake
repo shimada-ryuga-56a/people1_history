@@ -3,4 +3,9 @@ namespace :job do
   task fetch_youtube_record: :environment do
     FetchYoutubeRecordJob.perform_now
   end
+
+  desc 'link_view_recordを作成する'
+  task create_link_view_record: :environment do
+    CreateLinkViewRecordJob.perform_now
+  end
 end

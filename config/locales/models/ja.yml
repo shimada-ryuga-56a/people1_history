@@ -3,6 +3,35 @@ ja:
     models:
       user: ユーザー
     attributes:
+      link_view:
+        one_million: 100万
+        two_million: 200万
+        three_million: 300万
+        four_million: 400万
+        five_million: 500万
+        six_million: 600万
+        seven_million: 700万
+        eight_million: 800万
+        nine_million: 900万
+        ten_million: 1000万
+        twenty_million: 2000万
+        thirty_million: 3000万
+        forty_million: 4000万
+        fifty_million: 5000万
+        sixty_million: 6000万
+        seventy_million: 7000万
+        eighty_million: 8000万
+        ninety_million: 9000万
+        one_hundred_million: 1億
+        two_hundred_million: 2億
+        three_hundred_million: 3億
+        four_hundred_million: 4億
+        five_hundred_million: 5億
+        six_hundred_million: 6億
+        seven_hundred_million: 7億
+        eight_hundred_million: 8億
+        nine_hundred_million: 9億
+        one_billion: 10億
       setlistitem:
         is_song: 楽曲
         is_arranged: 新訳
