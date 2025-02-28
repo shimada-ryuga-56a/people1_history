@@ -27,6 +27,8 @@ services:
       - node_modules:/myapp/node_modules
     environment:
       TZ: Asia/Tokyo
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      MYAPP_DATABASE_PASSWORD: ${MYAPP_DATABASE_PASSWORD}
     ports:
       - "3000:3000"
     depends_on:
