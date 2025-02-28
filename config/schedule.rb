@@ -5,7 +5,7 @@ set :environment, rails_env
 set :output, "#{Rails.root}/log/cron.log"
 ENV.each { |k, v| env(k, v) }
 
-every 1.minute do
+every 6.hours do
   rake "job:process_link_view_records"
 end
 
