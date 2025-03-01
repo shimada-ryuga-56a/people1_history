@@ -6,16 +6,24 @@
 app = 'people1-history'
 primary_region = 'nrt'
 
+[processes]
+  web = "bin/rails server"
+  cron = "supercronic /rails/crontab"
+
 [build]
   dockerfile = './Dockerfile'
 
 [http_service]
   internal_port = 3000
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
-  processes = ['app']
+  processes = ["web"]
+
+[[statics]]
+  guest_path = "/rails/public"
+  url_prefix = "/"
 
 [[vm]]
   size = 'shared-cpu-1x'
