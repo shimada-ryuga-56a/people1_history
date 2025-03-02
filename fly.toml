@@ -15,10 +15,16 @@ primary_region = 'nrt'
   auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
-  processes = ['app']
+  processes = ["web"]
 
 [[vm]]
   size = 'shared-cpu-1x'
   memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1
+
+[processes]
+  # The command below is used to launch a Rails server; be sure to
+  # replace with the command you're using to launch your server.
+  web = "bin/rails fly:server"
+  cron = "supercronic /app/crontab"
