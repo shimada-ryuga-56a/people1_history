@@ -6,25 +6,28 @@
 app = 'people1-history'
 primary_region = 'nrt'
 
+[processes]
+  web = "bin/rails server"
+  cron = "supercronic /rails/crontab"
+
 [build]
   dockerfile = './Dockerfile'
 
 [http_service]
   internal_port = 3000
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
   processes = ["web"]
+
+[[statics]]
+  guest_path = "/rails/public"
+  url_prefix = "/"
 
 [[vm]]
   size = 'shared-cpu-1x'
   memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1
-
-[processes]
-  # The command below is used to launch a Rails server; be sure to
-  # replace with the command you're using to launch your server.
-  web = "bin/rails fly:server"
-  cron = "supercronic /app/crontab"
+  processes = ['cron', 'web']
