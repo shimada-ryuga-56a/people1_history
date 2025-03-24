@@ -1,7 +1,9 @@
 ActiveAdmin.register Disc do
   remove_filter :links, :disc_dates
   permit_params :title, :title_ruby, :announcement_date, :release_date, :production_type,
-                disc_versions_attributes: [:id, :version, :price, :_destroy],
+                disc_versions_attributes: [:id, :version, :price, :_destroy,
+                                           disc_contents_attributes: [:id, :content_type, :event_id, :_destroy,
+                                                                     disc_items_attributes: [:id, :position, :title, :song_id, :is_arranged, :_destroy]]],
                 link_contents_attributes: [:id, :link_id, :_destroy],
                 disc_dates_attributes: [:id, :date_type, :date, :remark, :_destroy]
   menu parent: 'Disc'
@@ -35,6 +37,7 @@ ActiveAdmin.register Disc do
             i.input :position
             i.input :title
             i.input :song_id, as: :select, collection: Song.order(name: :asc).map { |x| [x.name, x.id] }
+            i.input :is_arranged, as: :boolean
           end
         end
       end
