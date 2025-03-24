@@ -31,6 +31,11 @@ ActiveAdmin.register Disc do
         t.has_many :disc_contents, allow_destroy: true do |c|
           c.input :content_type
           c.input :event_id, as: :select, collection: Event.order(date: :desc).map { |x| [x.name, x.id] }
+          c.has_many :disc_items, allow_destroy: true do |i|
+            i.input :position
+            i.input :title
+            i.input :song_id, as: :select, collection: Song.order(name: :asc).map { |x| [x.name, x.id] }
+          end
         end
       end
     end
