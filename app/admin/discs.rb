@@ -28,6 +28,10 @@ ActiveAdmin.register Disc do
       f.has_many :disc_versions, allow_destroy: true do |t|
         t.input :version
         t.input :price
+        t.has_many :disc_contents, allow_destroy: true do |c|
+          c.input :content_type
+          c.input :event_id, as: :select, collection: Event.order(date: :desc).map { |x| [x.name, x.id] }
+        end
       end
     end
 
