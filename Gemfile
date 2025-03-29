@@ -49,6 +49,7 @@ gem 'omniauth-twitter'
 gem 'pry-byebug'
 gem 'rails-i18n'
 gem 'ransack'
+gem 'sassc-rails'
 gem 'whenever', require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
@@ -83,6 +84,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'webdriver'
 end
 
 gem 'dartsass-rails', '~> 0.5.1'
