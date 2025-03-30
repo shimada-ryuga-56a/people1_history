@@ -5,9 +5,6 @@ RSpec.describe History, type: :model do
   let(:correct_history) { build(:correct_history) }
   let(:no_title_history) { build(:no_title_history) }
   let(:no_date_history) { build(:no_date_history) }
-  before do
-    @user = FactoryBot.create(:user)
-  end
 
   describe '正常系: バリデーション' do
     context '全ての属性が正しい場合' do
@@ -21,8 +18,9 @@ RSpec.describe History, type: :model do
   describe '正常系: リレーション' do
     context '正しくHistoryが作成された場合' do
       it 'Userとの紐付けが正しく保存されること' do
-        FactoryBot.create(:history, user: @user)
-        expect(history.user).to eq @user
+        user = FactoryBot.create(:user)
+        FactoryBot.create(:history, user: user, title: 'Sample title', date: '2021-01-01')
+        expect(History.first.user).to eq user
       end
     end
   end

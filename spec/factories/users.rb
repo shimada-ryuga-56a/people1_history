@@ -1,4 +1,12 @@
 FactoryBot.define do
+  factory :user do
+    email { 'example@test.com' }
+    uid { '123' }
+    provider { 'twitter' }
+    password { 'password12345' }
+    name { 'anonymous' }
+  end
+
   factory :user1 do
     email { 'rspec_test@test.com' }
     uid { '123' }
