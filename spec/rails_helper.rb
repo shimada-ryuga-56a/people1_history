@@ -80,6 +80,9 @@ RSpec.configure do |config|
     # driven_by(:selenium_chrome)
     # driven_by(:rack_test)
   end
+
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
 end
 
 Shoulda::Matchers.configure do |config|
