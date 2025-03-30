@@ -6,7 +6,7 @@ RSpec.describe 'Events', type: :system do
   let(:event1) { create(:event, name: 'イベント1') }
   let(:event2) { create(:event, name: 'イベント2') }
   let(:event3) { create(:event, name: 'イベント3') }
-  let(:event4) { create(:event, name: 'イベント4', category: "tour", tour: tour) }
+  let(:event4) { create(:event, name: 'イベント4', category: 'tour', tour: tour) }
 
   before do
     driven_by(:rack_test)
@@ -45,7 +45,7 @@ RSpec.describe 'Events', type: :system do
         event4
         tour
         visit event_path(event4)
-        click_link "ツアー詳細"
+        click_link 'ツアー詳細'
         expect(page).to have_content('ログインが必要です')
       end
     end
@@ -88,7 +88,7 @@ RSpec.describe 'Events', type: :system do
         event4
         tour
         visit event_path(event4)
-        click_link "ツアー詳細"
+        click_link 'ツアー詳細'
         expect(page).to have_current_path(tour_path(tour))
       end
     end
