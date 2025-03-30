@@ -85,6 +85,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdriver'
+  gem "simplecov", require: false
 end
 
 gem 'dartsass-rails', '~> 0.5.1'
