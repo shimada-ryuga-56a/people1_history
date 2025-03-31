@@ -38,11 +38,6 @@ RSpec.describe 'Songs', type: :system do
         visit song_path(song1)
         expect(page).to have_content('title_1')
       end
-
-      it '楽曲詳細ページに楽曲情報が表示される' do
-        visit song_path(song1)
-        expect(page).to have_content('title_1')
-      end
     end
   end
 
@@ -75,11 +70,6 @@ RSpec.describe 'Songs', type: :system do
 
     context '楽曲詳細ページにアクセスした時' do
       it '楽曲詳細ページが表示される' do
-        visit song_path(song1)
-        expect(page).to have_content('title_1')
-      end
-
-      it '楽曲詳細ページに楽曲情報が表示される' do
         visit song_path(song1)
         expect(page).to have_content('title_1')
       end
