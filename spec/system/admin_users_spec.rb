@@ -31,7 +31,6 @@ RSpec.describe 'AdminUsers', type: :system do
 
     context '管理者ログインページにアクセスした時' do
       it '管理者トップページにリダイレクトされる' do
-        sign_in admin_user
         visit new_admin_user_session_path
         expect(page).to have_current_path(admin_root_path)
       end
