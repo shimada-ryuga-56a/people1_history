@@ -16,11 +16,11 @@ RSpec.describe AdminUser, type: :model do
     it { is_expected.to validate_presence_of :email }
     it { is_expected.to validate_presence_of :password }
 
-    context "passwordとpassword_confirmationが一致しない場合" do
-      it "エラーが発生する" do
-        admin_user.password_confirmation = "different_password"
+    context 'passwordとpassword_confirmationが一致しない場合' do
+      it 'エラーが発生する' do
+        admin_user.password_confirmation = 'different_password'
         expect(admin_user).not_to be_valid
-        expect(admin_user.errors[:password_confirmation]).to include("とPasswordの入力が一致しません")
+        expect(admin_user.errors[:password_confirmation]).to include('とPasswordの入力が一致しません')
       end
     end
   end
