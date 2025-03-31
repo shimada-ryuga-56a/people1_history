@@ -74,4 +74,4 @@ jobs:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
           # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:create && bundle exec rspec
+        run: bin/rails db:create && bin/rails assets:precompile && bundle exec rspec
