@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Member, type: :model do
-  let (:member) { build(:member) }
+  let(:member) { build(:member) }
   describe '正常系: バリデーション' do
     context '全ての属性が正しい場合' do
       it 'エラーなくMemberが作成される' do

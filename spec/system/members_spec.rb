@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Members", type: :system do
+RSpec.describe 'Members', type: :system do
   before do
     driven_by(:rack_test)
   end

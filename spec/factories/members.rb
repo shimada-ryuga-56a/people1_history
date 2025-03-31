@@ -1,6 +1,6 @@
 FactoryBot.define do
   hiragana_texts = ('あ'..'ん').to_a
-  katakana_texts = ('ア'..'ン').to_a
+  ('ア'..'ン').to_a
 
   factory :member do
     sequence(:name) { |n| "member_#{n}" }
