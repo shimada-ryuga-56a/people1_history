@@ -45,4 +45,44 @@ RSpec.describe "Songs", type: :system do
       end
     end
   end
+
+  describe "ログイン時" do
+    before do
+      sign_in user
+    end
+
+    context "楽曲一覧ページにアクセスした時" do
+      it "楽曲一覧ページが表示される" do
+        visit songs_path
+        expect(page).to have_content("楽曲一覧")
+      end
+
+      it "楽曲が表示される" do
+        song1
+        song2
+        visit songs_path
+        expect(page).to have_content("title_1")
+        expect(page).to have_content("title_2")
+      end
+
+      it "楽曲をクリックすると詳細ページに遷移する" do
+        song1
+        visit songs_path
+        click_link "title_1"
+        expect(page).to have_current_path(song_path(song1))
+      end
+    end
+
+    context "楽曲詳細ページにアクセスした時" do
+      it "楽曲詳細ページが表示される" do
+        visit song_path(song1)
+        expect(page).to have_content("title_1")
+      end
+
+      it "楽曲詳細ページに楽曲情報が表示される" do
+        visit song_path(song1)
+        expect(page).to have_content("title_1")
+      end
+    end
+  end
 end
