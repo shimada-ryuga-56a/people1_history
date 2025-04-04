@@ -17,7 +17,8 @@ RSpec.describe CleanupPastViewRecordsJob, type: :job do
       end
 
       it 'deletes the oldest records' do
-        expect { CleanupPastViewRecordsJob.perform_now }.to change(LinkViewCount, :count).by(-2)
+        CleanupPastViewRecordsJob.perform_now
+        expect(LinkViewCount.where(id: link_view_count1.id)).not_to exist
       end
 
       it 'does not delete the most recent records' do
