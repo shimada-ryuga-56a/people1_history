@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CleanupPastViewRecordsJob, type: :job do
-  let(:link) { create(:link) }
+  let(:link) { create(:link_youtube) }
   let(:link_view_count1) { create(:link_view_count, link: link, view_count: 0, created_at: 20_200_101) }
   let(:link_view_count2) { create(:link_view_count, link: link, view_count: 10_000_000, created_at: 20_200_102) }
   let(:link_view_count3) { create(:link_view_count, link: link, view_count: 20_000_000, created_at: 20_200_103) }
@@ -10,6 +10,7 @@ RSpec.describe CleanupPastViewRecordsJob, type: :job do
   describe '#perform' do
     context 'when there are more than 2 link_view_counts' do
       before do
+        link
         link_view_count1
         link_view_count2
         link_view_count3
@@ -29,6 +30,7 @@ RSpec.describe CleanupPastViewRecordsJob, type: :job do
 
     context 'when there are 2 or fewer link_view_counts' do
       before do
+        link
         link_view_count1
         link_view_count2
       end
