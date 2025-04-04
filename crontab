@@ -1,2 +1,2 @@
 0 0,6,12,18 * * * bundle exec rake job:process_link_view_records
-*/1 * * * * echo "cron is running!"
+*/30 * * * * echo "cron is running!"
